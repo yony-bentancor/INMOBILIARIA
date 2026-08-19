@@ -1,110 +1,110 @@
 {% extends "layouts/main.njk" %}
 
 {% block content %}
-<section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <span class="eyebrow">PLANTILLA REUTILIZABLE</span>
-      <h1>Una base preparada para empezar proyectos sin arrancar de cero.</h1>
-      <p class="hero-text">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">PLANTILLA REUTILIZABLE</span>
+        <h1>Una base preparada para empezar proyectos sin arrancar de cero.</h1>
+        <p class="hero-text">
         Usuarios, administrador, MongoDB Atlas, sesiones, CRUD genérico,
         Nunjucks, CSS responsive y estructura lista para Git y Heroku.
       </p>
 
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="/items">Ver ejemplo CRUD</a>
-        {% if not currentUser %}
-          <a class="btn btn-secondary" href="/auth/register">Crear usuario</a>
-        {% else %}
-          <a class="btn btn-secondary" href="/dashboard">Ir a mi panel</a>
-        {% endif %}
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/items">Ver ejemplo CRUD</a>
+          {% if not currentUser %}
+            <a class="btn btn-secondary" href="/auth/register">Crear usuario</a>
+          {% else %}
+            <a class="btn btn-secondary" href="/dashboard">Ir a mi panel</a>
+          {% endif %}
+        </div>
       </div>
-    </div>
 
-    <div class="hero-card">
-      <img src="/img/placeholder.svg" alt="Imagen de ejemplo">
-      <div>
-        <span class="badge">Lista para adaptar</span>
-        <h2>Producto / Persona / Usuario / Casa</h2>
-        <p>
+      <div class="hero-card">
+        <img src="/img/placeholder.jpg" alt="Imagen de ejemplo">
+        <div>
+          <span class="badge">Lista para adaptar</span>
+          <h2>Producto / Persona / Usuario / Casa</h2>
+          <p>
           El modelo <code>Item</code> funciona como ejemplo genérico y después
           lo podés reemplazar por el modelo real de cada proyecto.
         </p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section">
-  <div class="container">
-    <div class="section-heading">
-      <span class="eyebrow">INCLUIDO</span>
-      <h2>Lo básico ya resuelto</h2>
-    </div>
-
-    <div class="feature-grid">
-      <article class="feature-card">
-        <div class="feature-icon">👤</div>
-        <h3>Usuarios</h3>
-        <p>Registro, login, logout, contraseña con hash y estado activo.</p>
-      </article>
-
-      <article class="feature-card">
-        <div class="feature-icon">🛡️</div>
-        <h3>Administrador</h3>
-        <p>Panel separado, métricas, gestión de roles y usuarios.</p>
-      </article>
-
-      <article class="feature-card">
-        <div class="feature-icon">🗃️</div>
-        <h3>MongoDB Atlas</h3>
-        <p>Mongoose preparado y conexión opcional mediante variables de entorno.</p>
-      </article>
-
-      <article class="feature-card">
-        <div class="feature-icon">🧱</div>
-        <h3>CRUD adaptable</h3>
-        <p>Un ejemplo de altas, listado, edición y eliminación reutilizable.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="section section-alt">
-  <div class="container">
-    <div class="section-heading row-between">
-      <div>
-        <span class="eyebrow">EJEMPLOS</span>
-        <h2>Últimos elementos</h2>
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">INCLUIDO</span>
+        <h2>Lo básico ya resuelto</h2>
       </div>
-      <a href="/items">Ver todos →</a>
-    </div>
 
-    {% if latestItems.length %}
-      <div class="item-grid">
-        {% for item in latestItems %}
-          <article class="item-card">
-            <img
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="feature-icon">👤</div>
+          <h3>Usuarios</h3>
+          <p>Registro, login, logout, contraseña con hash y estado activo.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <h3>Administrador</h3>
+          <p>Panel separado, métricas, gestión de roles y usuarios.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">🗃️</div>
+          <h3>MongoDB Atlas</h3>
+          <p>Mongoose preparado y conexión opcional mediante variables de entorno.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">🧱</div>
+          <h3>CRUD adaptable</h3>
+          <p>Un ejemplo de altas, listado, edición y eliminación reutilizable.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-heading row-between">
+        <div>
+          <span class="eyebrow">EJEMPLOS</span>
+          <h2>Últimos elementos</h2>
+        </div>
+        <a href="/items">Ver todos →</a>
+      </div>
+
+      {% if latestItems.length %}
+        <div class="item-grid">
+          {% for item in latestItems %}
+            <article class="item-card">
+              <img
               src="{{ item.imageUrl or '/img/placeholder.svg' }}"
               alt="{{ item.title }}"
             >
-            <div class="item-card-body">
-              <span class="badge">{{ item.kind }}</span>
-              <h3>{{ item.title }}</h3>
-              <p>{{ item.description or "Sin descripción" }}</p>
-              {% if item.price %}
-                <strong class="price">$ {{ item.price }}</strong>
-              {% endif %}
-            </div>
-          </article>
-        {% endfor %}
-      </div>
-    {% else %}
-      <div class="empty-state">
-        <h3>Todavía no hay elementos cargados.</h3>
-        <p>Conectá MongoDB Atlas y agregá el primero desde el ejemplo CRUD.</p>
-      </div>
-    {% endif %}
-  </div>
-</section>
+              <div class="item-card-body">
+                <span class="badge">{{ item.kind }}</span>
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.description or "Sin descripción" }}</p>
+                {% if item.price %}
+                  <strong class="price">$ {{ item.price }}</strong>
+                {% endif %}
+              </div>
+            </article>
+          {% endfor %}
+        </div>
+      {% else %}
+        <div class="empty-state">
+          <h3>Todavía no hay elementos cargados.</h3>
+          <p>Conectá MongoDB Atlas y agregá el primero desde el ejemplo CRUD.</p>
+        </div>
+      {% endif %}
+    </div>
+  </section>
 {% endblock %}
