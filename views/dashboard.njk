@@ -1,0 +1,37 @@
+{% extends "layouts/main.njk" %}
+
+{% block content %}
+<section class="section">
+  <div class="container">
+    <div class="dashboard-hero">
+      <div>
+        <span class="eyebrow">ÁREA DE USUARIO</span>
+        <h1>Hola, {{ currentUser.name }}</h1>
+        <p>Esta zona representa la parte privada de un usuario común.</p>
+      </div>
+      <div class="user-pill">
+        <span>{{ currentUser.role }}</span>
+        {{ currentUser.email }}
+      </div>
+    </div>
+
+    <div class="feature-grid">
+      <article class="feature-card">
+        <h3>Mis datos</h3>
+        <p>Acá podés agregar perfil, teléfono, dirección, avatar y preferencias.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Mis elementos</h3>
+        <p>Podés transformar esta sección en propiedades, productos, pedidos o personas.</p>
+        <a href="/items/new">Agregar elemento →</a>
+      </article>
+
+      <article class="feature-card">
+        <h3>Mi actividad</h3>
+        <p>Espacio preparado para historial, favoritos, pedidos o notificaciones.</p>
+      </article>
+    </div>
+  </div>
+</section>
+{% endblock %}

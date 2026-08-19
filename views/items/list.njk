@@ -1,0 +1,75 @@
+{% extends "layouts/main.njk" %}
+
+{% block content %}
+<section class="section">
+  <div class="container">
+    <div class="section-heading row-between">
+      <div>
+        <span class="eyebrow">CRUD GENÉRICO</span>
+        <h1>Elementos</h1>
+        <p>Adaptalo a productos, personas, usuarios, casas o cualquier entidad.</p>
+      </div>
+
+      {% if currentUser %}
+        <a class="btn btn-primary" href="/items/new">+ Nuevo</a>
+      {% endif %}
+    </div>
+
+    <form class="filter-bar" method="GET" action="/items">
+      <select name="kind">
+        <option value="">Todos los tipos</option>
+        <option value="producto">Producto</option>
+        <option value="persona">Persona</option>
+        <option value="usuario">Usuario</option>
+        <option value="casa">Casa</option>
+        <option value="servicio">Servicio</option>
+        <option value="otro">Otro</option>
+      </select>
+      <button class="btn btn-secondary" type="submit">Filtrar</button>
+    </form>
+
+    {% if dbDisabled %}
+      <div class="alert alert-error">
+        MongoDB está desactivado. Configurá MONGO_URI para usar este CRUD.
+      </div>
+    {% endif %}
+
+    {% if items.length %}
+      <div class="item-grid">
+        {% for item in items %}
+          <article class="item-card">
+            <img src="{{ item.imageUrl or '/img/placeholder.svg' }}" alt="{{ item.title }}">
+            <div class="item-card-body">
+              <span class="badge">{{ item.kind }}</span>
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.description or "Sin descripción" }}</p>
+
+              {% if item.price %}
+                <strong class="price">$ {{ item.price }}</strong>
+              {% endif %}
+
+              {% if currentUser %}
+                <div class="card-actions">
+                  <a href="/items/{{ item._id }}/edit">Editar</a>
+                  <form action="/items/{{ item._id }}?_method=DELETE" method="POST">
+                    <button type="submit" class="danger-link" data-confirm="¿Eliminar este elemento?">
+                      Eliminar
+                    </button>
+                  </form>
+                </div>
+              {% endif %}
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="empty-state">
+        <h3>No hay elementos para mostrar.</h3>
+        {% if currentUser %}
+          <a class="btn btn-primary" href="/items/new">Crear el primero</a>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends "layouts/main.njk" %}
+
+{% block content %}
+<section class="section">
+  <div class="container form-page">
+    <div class="section-heading">
+      <span class="eyebrow">FORMULARIO BASE</span>
+      <h1>{{ title }}</h1>
+      <p>Este formulario sirve como ejemplo para adaptar en futuros proyectos.</p>
+    </div>
+
+    <form action="{{ formAction }}" method="{{ method }}" class="form-card">
+      <div class="form-grid">
+        <label>
+          Tipo
+          <select name="kind" required>
+            {% for kind in ["producto", "persona", "usuario", "casa", "servicio", "otro"] %}
+              <option value="{{ kind }}" {% if item and item.kind === kind %}selected{% endif %}>
+                {{ kind | capitalize }}
+              </option>
+            {% endfor %}
+          </select>
+        </label>
+
+        <label>
+          Título / nombre
+          <input
+            type="text"
+            name="title"
+            required
+            maxlength="120"
+            value="{{ item.title if item else '' }}"
+          >
+        </label>
+
+        <label>
+          Precio / valor
+          <input
+            type="number"
+            name="price"
+            min="0"
+            step="0.01"
+            value="{{ item.price if item else 0 }}"
+          >
+        </label>
+
+        <label>
+          URL de imagen
+          <input
+            type="url"
+            name="imageUrl"
+            placeholder="https://..."
+            value="{{ item.imageUrl if item else '' }}"
+          >
+        </label>
+      </div>
+
+      <label>
+        Descripción
+        <textarea name="description" rows="6" maxlength="2000">{{ item.description if item else '' }}</textarea>
+      </label>
+
+      <div class="form-actions">
+        <a class="btn btn-secondary" href="/items">Cancelar</a>
+        <button class="btn btn-primary" type="submit">Guardar</button>
+      </div>
+    </form>
+  </div>
+</section>
+{% endblock %}

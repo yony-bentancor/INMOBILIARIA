@@ -1,0 +1,12 @@
+{% extends "layouts/main.njk" %}
+
+{% block content %}
+<section class="error-page">
+  <div class="container error-card">
+    <span class="error-code">{{ status }}</span>
+    <h1>Ocurrió un error</h1>
+    <p>{{ message }}</p>
+    <a class="btn btn-primary" href="/">Volver al inicio</a>
+  </div>
+</section>
+{% endblock %}

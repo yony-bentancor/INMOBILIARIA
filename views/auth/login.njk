@@ -1,0 +1,31 @@
+{% extends "layouts/main.njk" %}
+
+{% block content %}
+<section class="auth-section">
+  <div class="container">
+    <div class="auth-card">
+      <span class="eyebrow">ACCESO</span>
+      <h1>Iniciar sesión</h1>
+      <p>Ingresá con tu usuario normal o administrador.</p>
+
+      <form action="/auth/login" method="POST" class="form-stack">
+        <label>
+          Email
+          <input type="email" name="email" required autocomplete="email">
+        </label>
+
+        <label>
+          Contraseña
+          <input type="password" name="password" required autocomplete="current-password">
+        </label>
+
+        <button class="btn btn-primary btn-full" type="submit">Ingresar</button>
+      </form>
+
+      <p class="form-note">
+        ¿No tenés cuenta? <a href="/auth/register">Registrate</a>.
+      </p>
+    </div>
+  </div>
+</section>
+{% endblock %}

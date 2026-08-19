@@ -1,0 +1,71 @@
+{% extends "layouts/main.njk" %}
+
+{% block content %}
+<section class="section admin-page">
+  <div class="container">
+    <div class="dashboard-hero admin-hero">
+      <div>
+        <span class="eyebrow">ADMINISTRACIÓN</span>
+        <h1>Panel administrador</h1>
+        <p>Base inicial para gestionar todo el proyecto.</p>
+      </div>
+      <a class="btn btn-light" href="/admin/users">Gestionar usuarios</a>
+    </div>
+
+    <div class="stat-grid">
+      <article class="stat-card">
+        <span>Usuarios</span>
+        <strong>{{ stats.usersCount }}</strong>
+      </article>
+      <article class="stat-card">
+        <span>Administradores</span>
+        <strong>{{ stats.adminsCount }}</strong>
+      </article>
+      <article class="stat-card">
+        <span>Elementos</span>
+        <strong>{{ stats.itemsCount }}</strong>
+      </article>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <h2>Últimos usuarios</h2>
+        <a href="/admin/users">Ver todos →</a>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Email</th>
+              <th>Rol</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for user in latestUsers %}
+              <tr>
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td><span class="badge">{{ user.role }}</span></td>
+                <td>
+                  {% if user.active %}
+                    <span class="status status-ok">Activo</span>
+                  {% else %}
+                    <span class="status status-off">Inactivo</span>
+                  {% endif %}
+                </td>
+              </tr>
+            {% else %}
+              <tr>
+                <td colspan="4">No hay usuarios.</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

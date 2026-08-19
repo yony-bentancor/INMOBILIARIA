@@ -1,0 +1,62 @@
+{% extends "layouts/main.njk" %}
+
+{% block content %}
+<section class="section admin-page">
+  <div class="container">
+    <div class="section-heading row-between">
+      <div>
+        <span class="eyebrow">ADMINISTRACIÓN</span>
+        <h1>Usuarios</h1>
+      </div>
+      <a href="/admin">← Panel</a>
+    </div>
+
+    <div class="panel">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Email</th>
+              <th>Rol</th>
+              <th>Activo</th>
+              <th>Creado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for user in users %}
+              <tr>
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td><span class="badge">{{ user.role }}</span></td>
+                <td>{{ "Sí" if user.active else "No" }}</td>
+                <td>{{ user.createdAt }}</td>
+                <td>
+                  <div class="table-actions">
+                    <form action="/admin/users/{{ user._id }}/toggle-role" method="POST">
+                      <button class="small-btn" type="submit">
+                        Cambiar rol
+                      </button>
+                    </form>
+
+                    <form action="/admin/users/{{ user._id }}/toggle-active" method="POST">
+                      <button class="small-btn" type="submit">
+                        Activar/Desactivar
+                      </button>
+                    </form>
+                  </div>
+                </td>
+              </tr>
+            {% else %}
+              <tr>
+                <td colspan="6">No hay usuarios.</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

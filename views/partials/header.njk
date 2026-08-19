@@ -1,0 +1,35 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/">
+      <img src="/img/logo.svg" alt="Logo" class="brand-logo">
+      <span>
+        <strong>Proyecto Base</strong>
+        <small>Node + Express + Atlas</small>
+      </span>
+    </a>
+
+    <button class="nav-toggle" type="button" data-nav-toggle aria-label="Abrir menú">
+      ☰
+    </button>
+
+    <nav class="main-nav" data-nav>
+      <a href="/">Inicio</a>
+      <a href="/items">Elementos</a>
+
+      {% if currentUser %}
+        <a href="/dashboard">Mi panel</a>
+
+        {% if currentUser.role === "admin" %}
+          <a href="/admin" class="admin-link">Admin</a>
+        {% endif %}
+
+        <form action="/auth/logout" method="POST" class="inline-form">
+          <button type="submit" class="link-button">Salir</button>
+        </form>
+      {% else %}
+        <a href="/auth/login">Ingresar</a>
+        <a href="/auth/register" class="nav-cta">Registrarme</a>
+      {% endif %}
+    </nav>
+  </div>
+</header>

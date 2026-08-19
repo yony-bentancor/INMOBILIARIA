@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Imagen de ejemplo">
+  <rect width="1200" height="800" fill="#5AB0DC"/>
+  <circle cx="960" cy="120" r="55" fill="#ffffff" opacity=".9"/>
+  <path d="M0 450 Q250 380 470 450 T850 455 T1200 430 V800 H0Z" fill="#E8CE96"/>
+  <path d="M300 500 520 330 740 500V720H300Z" fill="#ffffff"/>
+  <path d="M465 720V555H575V720" fill="#B4976B"/>
+  <rect x="610" y="535" width="75" height="75" rx="8" fill="#5AB0DC"/>
+  <text x="70" y="120" font-family="Arial, sans-serif" font-size="54" font-weight="700" fill="#263238">Imagen de ejemplo</text>
+  <text x="70" y="180" font-family="Arial, sans-serif" font-size="30" fill="#263238">Reemplazala por productos, personas, casas o servicios.</text>
+</svg>
