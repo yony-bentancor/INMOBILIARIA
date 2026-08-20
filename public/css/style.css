@@ -695,3 +695,100 @@ th {
     padding: 22px;
   }
 }
+.main-nav a {
+  position: relative;
+  text-decoration: none;
+  color: #263238;
+  font-weight: 600;
+
+  padding: 10px 8px;
+
+  transition: all .2s ease;
+}
+
+
+/* HOVER */
+
+.main-nav a:hover {
+  color: #2d8dbc;
+}
+
+
+/* ACTIVO */
+
+.main-nav a.active {
+  color: #2d8dbc;
+}
+
+
+/* LÍNEA ABAJO DEL ACTIVO */
+
+.main-nav a.active::after {
+  content: "";
+
+  position: absolute;
+
+  left: 8px;
+  right: 8px;
+  bottom: 2px;
+
+  height: 3px;
+
+  background: #d19a38;
+
+  border-radius: 10px;
+}
+
+
+/* BOTÓN REGISTRARME */
+
+.main-nav .nav-cta {
+  background: #5ab0dc;
+  color: white;
+
+  padding: 11px 20px;
+
+  border-radius: 25px;
+
+  margin-left: 5px;
+}
+
+.main-nav .nav-cta:hover {
+  background: #2d8dbc;
+  color: white;
+}
+
+
+/* NO MOSTRAR LÍNEA BAJO REGISTRARME */
+
+.main-nav .nav-cta::after {
+  display: none;
+}
+
+
+/* ADMIN */
+
+.main-nav .admin-link {
+  background: #e8ce96;
+
+  padding: 10px 15px;
+
+  border-radius: 20px;
+}
+
+
+/* SALIR */
+
+.link-button {
+  border: none;
+  background: none;
+
+  font-weight: 600;
+  color: #777;
+
+  cursor: pointer;
+}
+
+.link-button:hover {
+  color: #c0392b;
+}

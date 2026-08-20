@@ -1,35 +1,116 @@
 <header class="site-header">
   <div class="container header-inner">
+
+    <!-- LOGO -->
     <a class="brand" href="/">
-      <img src="/img/logo.svg" alt="Logo" class="brand-logo">
+      <img src="/img/logo.svg" alt="Mercado Casas" class="brand-logo">
+
       <span>
         <strong>Mercado Casas</strong>
-        <small>Compra + Venta + Alquileres</small>
+        <small>Compra · Venta · Alquileres</small>
       </span>
     </a>
 
-    <button class="nav-toggle" type="button" data-nav-toggle aria-label="Abrir menú">
+    <!-- MENU MOBILE -->
+    <button
+      class="nav-toggle"
+      type="button"
+      data-nav-toggle
+      aria-label="Abrir menú"
+    >
       ☰
     </button>
 
+    <!-- NAVEGACIÓN -->
     <nav class="main-nav" data-nav>
-      <a href="/">Inicio</a>
-      <a href="/items">Buscar</a>
 
+      <a
+        href="/comprar"
+        class="{% if '/comprar' in currentPath %}active{% endif %}"
+      >
+        Comprar
+      </a>
+
+      <a
+        href="/alquilar"
+        class="{% if '/alquilar' in currentPath %}active{% endif %}"
+      >
+        Alquilar
+      </a>
+
+      <a
+        href="/publicar"
+        class="{% if '/publicar' in currentPath %}active{% endif %}"
+      >
+        Publicar
+      </a>
+
+      <a
+        href="/servicios"
+        class="{% if '/servicios' in currentPath %}active{% endif %}"
+      >
+        Servicios
+      </a>
+
+      <!-- SOLO USUARIO LOGUEADO -->
       {% if currentUser %}
-        <a href="/dashboard">Mi panel</a>
+
+        <a
+          href="/favoritos"
+          class="{% if '/favoritos' in currentPath %}active{% endif %}"
+        >
+          ♡ Favoritos
+        </a>
+
+        <a
+          href="/dashboard"
+          class="mi-cuenta {% if '/dashboard' in currentPath %}active{% endif %}"
+        >
+          👤 Mi cuenta
+        </a>
 
         {% if currentUser.role === "admin" %}
-          <a href="/admin" class="admin-link">Admin</a>
+          <a
+            href="/admin"
+            class="admin-link {% if '/admin' in currentPath %}active{% endif %}"
+          >
+            Admin
+          </a>
         {% endif %}
 
-        <form action="/auth/logout" method="POST" class="inline-form">
-          <button type="submit" class="link-button">Salir</button>
+        <form
+          action="/auth/logout"
+          method="POST"
+          class="inline-form"
+        >
+          <button
+            type="submit"
+            class="link-button"
+          >
+            Salir
+          </button>
         </form>
+
+        <!-- USUARIO NO LOGUEADO -->
       {% else %}
-        <a href="/auth/login">Ingresar</a>
-        <a href="/auth/register" class="nav-cta">Registrarme</a>
+
+        <a
+          href="/auth/login"
+          class="{% if '/auth/login' in currentPath %}active{% endif %}"
+        >
+          Ingresar
+        </a>
+
+        <a
+          href="/auth/register"
+          class="nav-cta {% if '/auth/register' in currentPath %}active{% endif %}"
+        >
+          Registrarme
+        </a>
+
       {% endif %}
+
     </nav>
+
   </div>
 </header>
