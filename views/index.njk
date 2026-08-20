@@ -4,8 +4,8 @@
   <section class="hero">
     <div class="container hero-grid">
       <div>
-        <span class="eyebrow">PLANTILLA REUTILIZABLE</span>
-        <h1>Una base preparada para empezar proyectos sin arrancar de cero.</h1>
+        <span class="eyebrow">NUESTRA FILOSOFIA</span>
+        <h1>Una base solida para construir tus proyectos sin arrancar de cero.</h1>
         <p class="hero-text">
         Usuarios, administrador, MongoDB Atlas, sesiones, CRUD genérico,
         Nunjucks, CSS responsive y estructura lista para Git y Heroku.
@@ -25,7 +25,7 @@
         <img src="/img/placeholder1.jpg" alt="Imagen de ejemplo">
         <div>
           <span class="badge">Busca lo que precisas</span>
-          <h2>Casas / Apartamentos / Chacras / Campo</h2>
+          <h2>Casas/Apartamentos /Chacras/Campo</h2>
           <p>
           Estas buscando cambiar tu futuro ?<code>Bienvenido</code> Podemos ayudarte!!
         </p>
@@ -42,68 +42,71 @@
       </div>
 
       <div class="feature-grid">
+
         <article class="feature-card">
-          <div class="feature-icon">👤</div>
-          <h3>Usuarios</h3>
-          <p>Registro, login, logout, contraseña con hash y estado activo.</p>
+          <div class="feature-icon">📋</div>
+          <h3>ADMINISTRACIÓN</h3>
+          <p>Delegá la gestión de tu alquiler y nosotros nos ocupamos por vos.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">🧹</div>
+          <h3>LIMPIEZA</h3>
+          <p>Contratá la limpieza de tu propiedad cuando la necesites.</p>
         </article>
 
         <article class="feature-card">
           <div class="feature-icon">🛡️</div>
-          <h3>Administrador</h3>
-          <p>Panel separado, métricas, gestión de roles y usuarios.</p>
+          <h3>SEGURIDAD</h3>
+          <p>Sumá protección y tranquilidad a tu propiedad durante el alquiler.</p>
         </article>
 
         <article class="feature-card">
-          <div class="feature-icon">🗃️</div>
-          <h3>MongoDB Atlas</h3>
-          <p>Mongoose preparado y conexión opcional mediante variables de entorno.</p>
+          <div class="feature-icon">⚙️</div>
+          <h3>SISTEMA DE GESTIÓN</h3>
+          <p>Administrá reservas, disponibilidad y pagos desde un solo lugar.</p>
         </article>
 
-        <article class="feature-card">
-          <div class="feature-icon">🧱</div>
-          <h3>CRUD adaptable</h3>
-          <p>Un ejemplo de altas, listado, edición y eliminación reutilizable.</p>
-        </article>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section section-alt">
-    <div class="container">
-      <div class="section-heading row-between">
-        <div>
-          <span class="eyebrow">EJEMPLOS</span>
-          <h2>Últimos elementos</h2>
-        </div>
-        <a href="/items">Ver todos →</a>
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-heading row-between">
+      <div>
+        <span class="eyebrow">EJEMPLOS</span>
+        <h2>Últimos elementos</h2>
       </div>
+      <a href="/items">Ver todos →</a>
+    </div>
 
-      {% if latestItems.length %}
-        <div class="item-grid">
-          {% for item in latestItems %}
-            <article class="item-card">
-              <img
+    {% if latestItems.length %}
+      <div class="item-grid">
+        {% for item in latestItems %}
+          <article class="item-card">
+            <img
               src="{{ item.imageUrl or '/img/placeholder.svg' }}"
               alt="{{ item.title }}"
             >
-              <div class="item-card-body">
-                <span class="badge">{{ item.kind }}</span>
-                <h3>{{ item.title }}</h3>
-                <p>{{ item.description or "Sin descripción" }}</p>
-                {% if item.price %}
-                  <strong class="price">$ {{ item.price }}</strong>
-                {% endif %}
-              </div>
-            </article>
-          {% endfor %}
-        </div>
-      {% else %}
-        <div class="empty-state">
-          <h3>Todavía no hay elementos cargados.</h3>
-          <p>Conectá MongoDB Atlas y agregá el primero desde el ejemplo CRUD.</p>
-        </div>
-      {% endif %}
-    </div>
-  </section>
+            <div class="item-card-body">
+              <span class="badge">{{ item.kind }}</span>
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.description or "Sin descripción" }}</p>
+              {% if item.price %}
+                <strong class="price">$ {{ item.price }}</strong>
+              {% endif %}
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="empty-state">
+        <h3>Todavía no hay elementos cargados.</h3>
+        <p>Conectá MongoDB Atlas y agregá el primero desde el ejemplo CRUD.</p>
+      </div>
+    {% endif %}
+  </div>
+</section>
 {% endblock %}
