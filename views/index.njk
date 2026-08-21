@@ -1,217 +1,186 @@
 {% extends "layouts/main.njk" %}
 
 {% block content %}
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">NUESTRA FILOSOFIA</span>
+        {# <h1>Una base solida para construir tus proyectos sin arrancar de cero.</h1> #}
+        <h2>UN APARTAMENTO, UNA CASA, UN CAMPO, UN HOGAR</h2>
 
-  <!-- =====================================================
-     HERO
-===================================================== -->
+        <p class="hero-text">
+          {#  Usuarios, administrador, MongoDB Atlas, sesiones, CRUD genérico,
+        Nunjucks, CSS responsive y estructura lista para Git y Heroku. #}
+        </p>
 
-  <section class="home-hero">
-
-    <div class="container home-hero-grid">
-
-      <!-- TEXTO -->
-      <div class="home-hero-content">
-
-        <span class="home-eyebrow">
-        ENCONTRÁ TU LUGAR
-      </span>
-
-        <h1>
-        UN APARTAMENTO,<br>
-        UNA CASA, UN CAMPO,<br>
-        UN <span>HOGAR</span>
-        </h1>
-
-        <p>
-        Casas, apartamentos, chacras y campos<br>
-        en un solo lugar.
-      </p>
-
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/items">Ver ejemplo CRUD</a>
+          {% if not currentUser %}
+            <a class="btn btn-secondary" href="/auth/register">Crear usuario</a>
+          {% else %}
+            <a class="btn btn-secondary" href="/dashboard">Ir a mi panel</a>
+          {% endif %}
+        </div>
       </div>
 
-      <!-- IMAGEN -->
-      <div class="home-hero-image">
+      <div class="hero-card">
+        <img src="/img/placeholder1.jpg" alt="Imagen de ejemplo">
+        <div>
+          {# <span class="badge">Busca lo que precisas</span> #}
+          {#   <h2>Casas</h2>
+          <p>
+            <span class="badge"> Estas buscando cambiar tu hogar ?</span>
+            <code>Bienvenido</code> Podemos ayudarte!!
+        </p> #}
 
-        <img
-        src="/img/placeholder1.jpg"
-        alt="Propiedades en Mercado Casas"
-      >
-
+        </div>
       </div>
 
     </div>
+  </section>
 
-    <!-- ===================================================
-       BUSCADOR
-  ==================================================== -->
+  <!-- BUSCADOR -->
+  <form action="/buscar" method="GET" class="property-search">
 
+    <!-- OPERACIÓN -->
+    <div class="property-search-field">
+      <label>Quiero</label>
+      <select name="operacion">
+        <option value="comprar">Comprar</option>
+        <option value="alquilar">Alquilar</option>
+      </select>
+    </div>
+
+    <!-- TIPO -->
+    <div class="property-search-field">
+      <label>Tipo de propiedad</label>
+      <select name="tipo">
+        <option value="">Todas</option>
+        <option value="casa">Casa</option>
+        <option value="apartamento">Apartamento</option>
+        <option value="chacra">Chacra</option>
+        <option value="campo">Campo</option>
+      </select>
+    </div>
+
+    <!-- DEPARTAMENTO -->
+    <div class="property-search-field property-search-depto">
+      <label>Departamento</label>
+      <select name="departamento">
+        <option value="">Todos los departamentos (19)</option>
+        <option value="artigas">Artigas</option>
+        <option value="canelones">Canelones</option>
+        <option value="cerro-largo">Cerro Largo</option>
+        <option value="colonia">Colonia</option>
+        <option value="durazno">Durazno</option>
+        <option value="flores">Flores</option>
+        <option value="florida">Florida</option>
+        <option value="lavalleja">Lavalleja</option>
+        <option value="maldonado">Maldonado</option>
+        <option value="montevideo">Montevideo</option>
+        <option value="paysandu">Paysandú</option>
+        <option value="rio-negro">Río Negro</option>
+        <option value="rivera">Rivera</option>
+        <option value="rocha">Rocha</option>
+        <option value="salto">Salto</option>
+        <option value="san-jose">San José</option>
+        <option value="soriano">Soriano</option>
+        <option value="tacuarembo">Tacuarembó</option>
+        <option value="treinta-y-tres">Treinta y Tres</option>
+      </select>
+    </div>
+
+    <!-- PALABRA CLAVE -->
+    <div class="property-search-field property-search-keyword">
+      <label>Palabra clave</label>
+      <input
+        type="text"
+        name="q"
+        placeholder="Ej: Pocitos, piscina, vista al mar..."
+      >
+    </div>
+
+    <!-- LUPA -->
+    <button type="submit" class="property-search-button" aria-label="Buscar">
+      &#128269;
+    </button>
+
+  </form>
+</div>
+
+{# <section class="section">
     <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">INCLUIDO</span>
+        <h2>Lo básico ya resuelto</h2>
+      </div>
 
-      <form
-      action="/buscar"
-      method="GET"
-      class="property-search"
-    >
+      <div class="feature-grid">
 
-        <!-- OPERACIÓN -->
+        <article class="feature-card">
+          <div class="feature-icon">📋</div>
+          <h3>ADMINISTRACIÓN</h3>
+          <p>Delegá la gestión de tu alquiler y nosotros nos ocupamos por vos.</p>
+        </article>
 
-        <div class="property-search-field">
+        <article class="feature-card">
+          <div class="feature-icon">🧹</div>
+          <h3>LIMPIEZA</h3>
+          <p>Contratá la limpieza de tu propiedad cuando la necesites.</p>
+        </article>
 
-          <label>Quiero</label>
+        <article class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <h3>SEGURIDAD</h3>
+          <p>Sumá protección y tranquilidad a tu propiedad durante el alquiler.</p>
+        </article>
 
-          <select name="operacion">
-            <option value="comprar">Comprar</option>
-            <option value="alquilar">Alquilar</option>
-          </select>
+        <article class="feature-card">
+          <div class="feature-icon">⚙️</div>
+          <h3>SISTEMA DE GESTIÓN</h3>
+          <p>Administrá reservas, disponibilidad y pagos desde un solo lugar.</p>
+        </article>
 
-        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <!-- TIPO -->
-
-        <div class="property-search-field">
-
-          <label>Tipo de propiedad</label>
-
-          <select name="tipo">
-
-            <option value="">Todas</option>
-
-            <option value="casa">
-            Casa
-          </option>
-
-            <option value="apartamento">
-            Apartamento
-          </option>
-
-            <option value="chacra">
-            Chacra
-          </option>
-
-            <option value="campo">
-            Campo
-          </option>
-
-          </select>
-
-        </div>
-
-        <!-- DEPARTAMENTO -->
-
-        <div class="property-search-field">
-
-          <label>Departamento</label>
-
-          <select name="departamento">
-
-            <option value="">
-            Todos los departamentos (19)
-          </option>
-
-            <option value="artigas">Artigas</option>
-            <option value="canelones">Canelones</option>
-            <option value="cerro-largo">Cerro Largo</option>
-            <option value="colonia">Colonia</option>
-            <option value="durazno">Durazno</option>
-            <option value="flores">Flores</option>
-            <option value="florida">Florida</option>
-            <option value="lavalleja">Lavalleja</option>
-            <option value="maldonado">Maldonado</option>
-            <option value="montevideo">Montevideo</option>
-            <option value="paysandu">Paysandú</option>
-            <option value="rio-negro">Río Negro</option>
-            <option value="rivera">Rivera</option>
-            <option value="rocha">Rocha</option>
-            <option value="salto">Salto</option>
-            <option value="san-jose">San José</option>
-            <option value="soriano">Soriano</option>
-            <option value="tacuarembo">Tacuarembó</option>
-            <option value="treinta-y-tres">Treinta y Tres</option>
-
-          </select>
-
-        </div>
-
-        <!-- PALABRA CLAVE -->
-
-        <div class="property-search-field property-search-keyword">
-
-          <label>Palabra clave</label>
-
-          <input
-          type="text"
-          name="q"
-          placeholder="Ej: Pocitos, piscina, vista al mar..."
-        >
-
-        </div>
-
-        <!-- BUSCAR -->
-
-        <button
-        type="submit"
-        class="property-search-button"
-        aria-label="Buscar propiedades"
-      >
-          <span class="search-icon"></span>
-        </button>
-
-      </form>
-
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-heading row-between">
+      <div>
+        <span class="eyebrow">EJEMPLOS</span>
+        <h2>Últimos elementos</h2>
+      </div>
+      <a href="/items">Ver todos →</a>
     </div>
 
-  </section>
-
-  <!-- =====================================================
-     BENEFICIOS
-===================================================== -->
-
-  <section class="home-benefits">
-
-    <div class="container benefits-grid">
-
-      <div class="benefit">
-
-        <div class="benefit-icon">
-        ✓
+    {% if latestItems.length %}
+      <div class="item-grid">
+        {% for item in latestItems %}
+          <article class="item-card">
+            <img
+              src="{{ item.imageUrl or '/img/placeholder.svg' }}"
+              alt="{{ item.title }}"
+            >
+            <div class="item-card-body">
+              <span class="badge">{{ item.kind }}</span>
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.description or "Sin descripción" }}</p>
+              {% if item.price %}
+                <strong class="price">$ {{ item.price }}</strong>
+              {% endif %}
+            </div>
+          </article>
+        {% endfor %}
       </div>
-
-        <div>
-          <strong>Propiedades verificadas</strong>
-          <span>Publicaciones reales y confiables.</span>
-        </div>
-
+    {% else %}
+      <div class="empty-state">
+        <h3>Todavía no hay elementos cargados.</h3>
+        <p>Conectá MongoDB Atlas y agregá el primero desde el ejemplo CRUD.</p>
       </div>
-
-      <div class="benefit">
-
-        <div class="benefit-icon">
-        ♡
-      </div>
-
-        <div>
-          <strong>Atención personalizada</strong>
-          <span>Te ayudamos cuando lo necesites.</span>
-        </div>
-
-      </div>
-
-      <div class="benefit">
-
-        <div class="benefit-icon">
-        🔒
-      </div>
-
-        <div>
-          <strong>Transacciones seguras</strong>
-          <span>Tu seguridad es nuestra prioridad.</span>
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
+    {% endif %}
+  </div>
+</section> #}
 {% endblock %}
