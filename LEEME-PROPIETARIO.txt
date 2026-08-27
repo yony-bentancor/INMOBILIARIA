@@ -1,0 +1,102 @@
+QCASA - SECCIÓN PROPIETARIO COMPLETA
+
+ESTA ACTUALIZACIÓN HACE DOS COSAS IMPORTANTES:
+
+1) Refuerza el login/sesión para Heroku.
+2) Convierte la sección Propietario en un área funcional.
+
+ARCHIVOS A REEMPLAZAR
+=====================
+app.js
+routes/auth.js
+routes/dashboard.js
+data/demo.js
+models/Property.js
+views/layouts/owner.njk
+views/owner/dashboard.njk
+public/css/dashboard.css
+config/demoUsers.js
+
+ARCHIVOS NUEVOS
+===============
+controllers/ownerController.js
+services/propertyService.js
+views/owner/property-form.njk
+views/owner/complaint-detail.njk
+views/owner/profile.njk
+
+FUNCIONES DEL PROPIETARIO
+=========================
+- Entrar con:
+  propietario@qcasa.uy
+  prop123
+
+- Ver estadísticas reales de sus reclamos.
+- Filtrar:
+  Pendientes
+  En curso
+  Urgentes
+  Resueltos
+
+- Crear nuevas propiedades.
+- Editar propiedades.
+- Eliminar propiedades.
+- Modificar inquilino de cada propiedad.
+- Ver código QCASA de cada propiedad.
+- Probar el QR de la propiedad.
+- Ver detalle de cada reclamo.
+- Ver técnico asignado.
+- Ver estado.
+- Ver facturas/comprobantes vinculados al reclamo.
+- Modificar datos del perfil del propietario.
+
+RUTAS NUEVAS
+============
+/propietario
+/propietario?estado=pendientes#reclamos
+/propietario?estado=encurso#reclamos
+/propietario?estado=urgentes#reclamos
+/propietario?estado=resueltos#reclamos
+
+/propietario/propiedades/nueva
+/propietario/propiedades/CODIGO/editar
+/propietario/reclamos/124
+/propietario/perfil
+
+IMPORTANTE SOBRE MODO DEMO
+==========================
+Con USE_MONGO=false:
+
+- Crear/editar/eliminar propiedades funciona en memoria.
+- Los cambios duran mientras el proceso Node siga vivo.
+- Heroku puede reiniciar el dyno, por lo cual esos datos demo pueden volver al estado inicial.
+- Los datos del perfil se guardan en la sesión actual.
+
+Cuando actives MongoDB Atlas, propertyService usa Mongo automáticamente
+para las propiedades.
+
+Las facturas demo se muestran dentro de cada reclamo.
+La subida real de PDF/imagen de facturas todavía requiere agregar almacenamiento
+(S3/Cloudinary) y persistencia en MongoDB.
+
+SUBIR A GITHUB
+==============
+git status
+git add -A
+git commit -m "Completo panel propietario y CRUD de propiedades"
+git push
+
+PRUEBAS
+=======
+1) Entrar:
+https://inmo-ccd0a6e144fd.herokuapp.com/ingresar
+
+2) Usuario:
+propietario@qcasa.uy
+prop123
+
+3) Panel:
+https://inmo-ccd0a6e144fd.herokuapp.com/propietario
+
+4) Nueva propiedad:
+https://inmo-ccd0a6e144fd.herokuapp.com/propietario/propiedades/nueva

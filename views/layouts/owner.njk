@@ -12,18 +12,25 @@
   <link rel="stylesheet" href="/css/dashboard.css">
 </head>
 <body class="role-body owner-role">
-  <header class="role-header">
-    <a href="/propietario" class="role-brand"><img src="/img/logo-qcasa.svg" alt="QCASA"></a>
+  <header class="role-header owner-header">
+    <a href="/propietario" class="role-brand">
+      <img src="/img/logo-qcasa.svg" alt="QCASA">
+    </a>
+
     <nav class="role-nav">
       <a href="/propietario">Inicio</a>
       <a href="/propietario#propiedades">Mis propiedades</a>
-      <a href="/propietario#reclamos">Reclamos</a>
+      <a href="/propietario?estado=pendientes#reclamos">Reclamos</a>
       <a href="/propietario#notificaciones">Notificaciones</a>
       <a href="/propietario#documentos">Documentos</a>
+      <a href="/propietario/perfil">Mi cuenta</a>
     </nav>
+
     <div class="role-account">
       <span>{{ sessionUser.name }}</span>
-      <form method="post" action="/salir"><button class="btn btn-ghost">Salir</button></form>
+      <form method="post" action="/salir">
+        <button class="btn btn-ghost">Salir</button>
+      </form>
     </div>
   </header>
 

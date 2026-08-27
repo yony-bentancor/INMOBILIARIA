@@ -1,0 +1,43 @@
+{% extends 'layouts/owner.njk' %}
+{% block content %}
+<section class="owner-form-shell">
+  <div class="owner-form-head">
+    <a href="/propietario">← Volver al panel</a>
+    <span class="eyebrow">MI CUENTA</span>
+    <h1>Mis datos</h1>
+    <p class="muted">Actualizá tus datos de contacto.</p>
+  </div>
+
+  {% if error %}<div class="owner-alert error">{{ error }}</div>{% endif %}
+  {% if success %}<div class="owner-alert success">{{ success }}</div>{% endif %}
+
+  <form class="owner-form-card" method="post">
+    <div class="form-grid">
+      <label>
+        Nombre *
+        <input type="text" name="name" required value="{{ owner.name or '' }}">
+      </label>
+
+      <label>
+        Teléfono
+        <input type="tel" name="phone" value="{{ owner.phone or '' }}">
+      </label>
+
+      <label class="span-2">
+        Email *
+        <input type="email" name="email" required value="{{ owner.email or '' }}">
+      </label>
+    </div>
+
+    <div class="owner-form-actions">
+      <a href="/propietario" class="btn btn-light">Cancelar</a>
+      <button class="btn btn-primary" type="submit">Guardar mis datos</button>
+    </div>
+  </form>
+
+  <div class="owner-demo-note">
+    <strong>Modo demo:</strong>
+    los cambios de tu perfil se guardan en la sesión actual. Cuando activemos usuarios reales en MongoDB, quedarán persistidos en la base de datos.
+  </div>
+</section>
+{% endblock %}

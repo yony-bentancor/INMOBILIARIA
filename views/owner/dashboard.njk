@@ -1,56 +1,167 @@
 {% extends 'layouts/owner.njk' %}
 {% block content %}
-<section class="dashboard-shell">
-  <div class="dash-head">
+<section class="dashboard-shell owner-dashboard">
+  <div class="dash-head owner-dash-head">
     <div>
       <span class="eyebrow">PROPIETARIO</span>
       <h1>Hola, {{ sessionUser.name }}</h1>
-      <p class="muted">Un resumen simple de lo que está pasando en tus propiedades.</p>
+      <p class="muted">Tus propiedades, reclamos y documentación en un solo lugar.</p>
     </div>
+
+    <a href="/propietario/propiedades/nueva" class="btn btn-primary btn-lg">
+      + Nueva propiedad
+    </a>
   </div>
 
-  <div class="stats">
-    <div><strong>{{ properties|length }}</strong><span>Propiedades</span></div>
-    <div><strong>1</strong><span>Sin problemas</span></div>
-    <div><strong>1</strong><span>En curso</span></div>
-    <div class="danger"><strong>1</strong><span>Urgente</span></div>
+  <div class="owner-stats">
+    <a href="/propietario#propiedades" class="owner-stat">
+      <strong>{{ stats.properties }}</strong>
+      <span>Propiedades</span>
+      <small>Ver todas</small>
+    </a>
+
+    <a href="/propietario?estado=pendientes#reclamos"
+       class="owner-stat pending {% if activeFilter == 'pendientes' %}active{% endif %}">
+      <strong>{{ stats.pending }}</strong>
+      <span>Pendientes</span>
+      <small>Nuevo + Revisando</small>
+    </a>
+
+    <a href="/propietario?estado=encurso#reclamos"
+       class="owner-stat progress {% if activeFilter == 'encurso' %}active{% endif %}">
+      <strong>{{ stats.inProgress }}</strong>
+      <span>En curso</span>
+      <small>Trabajos en gestión</small>
+    </a>
+
+    <a href="/propietario?estado=urgentes#reclamos"
+       class="owner-stat urgent {% if activeFilter == 'urgentes' %}active{% endif %}">
+      <strong>{{ stats.urgent }}</strong>
+      <span>Urgentes</span>
+      <small>Atención prioritaria</small>
+    </a>
+
+    <a href="/propietario?estado=resueltos#reclamos"
+       class="owner-stat resolved {% if activeFilter == 'resueltos' %}active{% endif %}">
+      <strong>{{ stats.resolved }}</strong>
+      <span>Resueltos</span>
+      <small>Historial cerrado</small>
+    </a>
   </div>
 
-  <div class="dash-grid">
-    <section class="panel" id="reclamos">
-      <div class="panel-title"><h2>Reclamos recientes</h2><span class="muted">Solo tus propiedades</span></div>
-      {% for c in complaints %}
-      <article class="complaint-row">
-        <div>
-          <b>{{ c.title or c.category }}</b>
-          <span>#{{ c.number or c.id }} · {{ c.propertyCode }}</span>
+  <section class="panel owner-complaints" id="reclamos">
+    <div class="panel-title owner-section-title">
+      <div>
+        <h2>
+          {% if activeFilter == 'pendientes' %}Reclamos pendientes
+          {% elif activeFilter == 'encurso' %}Reclamos en curso
+          {% elif activeFilter == 'urgentes' %}Reclamos urgentes
+          {% elif activeFilter == 'resueltos' %}Reclamos resueltos
+          {% else %}Reclamos recientes{% endif %}
+        </h2>
+        <span class="muted">Solo reclamos de tus propiedades.</span>
+      </div>
+
+      {% if activeFilter != 'todos' %}
+        <a href="/propietario#reclamos" class="btn btn-light">Ver todos</a>
+      {% endif %}
+    </div>
+
+    {% for c in complaints %}
+      <a href="/propietario/reclamos/{{ c.number or c.id }}" class="owner-complaint-card">
+        <div class="owner-complaint-main">
+          <div class="owner-ticket-number">#{{ c.number or c.id }}</div>
+          <div>
+            <h3>{{ c.title or c.category }}</h3>
+            <p>{{ c.description }}</p>
+            <div class="owner-complaint-meta">
+              <span>Propiedad: {{ c.propertyCode }}</span>
+              {% if c.technician %}
+                <span>Técnico: {{ c.technician }}</span>
+              {% else %}
+                <span>Técnico: sin asignar</span>
+              {% endif %}
+              {% if c.invoices and c.invoices|length %}
+                <span>📄 {{ c.invoices|length }} factura(s)</span>
+              {% endif %}
+            </div>
+          </div>
         </div>
-        <span class="status">{{ c.status }}</span>
+
+        <div class="owner-complaint-status">
+          {% if c.priority == 'urgent' %}
+            <span class="owner-badge urgent">Urgente</span>
+          {% endif %}
+          <span class="owner-badge">{{ c.status }}</span>
+          <small>Ver detalle →</small>
+        </div>
+      </a>
+    {% else %}
+      <div class="empty-filter">
+        <strong>No hay reclamos en esta categoría.</strong>
+        <p>Cuando haya movimientos en tus propiedades aparecerán acá.</p>
+      </div>
+    {% endfor %}
+  </section>
+
+  <section class="panel" id="propiedades">
+    <div class="panel-title owner-section-title">
+      <div>
+        <h2>Mis propiedades</h2>
+        <span class="muted">Podés crear, editar o eliminar tus propiedades.</span>
+      </div>
+      <a href="/propietario/propiedades/nueva" class="btn btn-primary">+ Nueva propiedad</a>
+    </div>
+
+    <div class="owner-property-grid">
+      {% for p in properties %}
+      <article class="owner-property-card">
+        <div class="owner-property-top">
+          <div>
+            <span class="property-type">{{ p.type or 'Propiedad' }}</span>
+            <h3>{{ p.address }}</h3>
+            <p>{{ p.unit }}{% if p.city %} · {{ p.city }}{% endif %}</p>
+          </div>
+          <span class="property-state">
+            {{ '🔴' if p.status == 'urgent' else '🟡' if p.status == 'in_progress' else '🟢' }}
+          </span>
+        </div>
+
+        <div class="property-data">
+          <span><b>Código QR</b>{{ p.code }}</span>
+          <span><b>Inquilino</b>{{ p.tenant.name or 'Sin asignar' }}</span>
+          <span><b>Teléfono</b>{{ p.tenant.phone or '—' }}</span>
+        </div>
+
+        <div class="owner-property-actions">
+          <a href="/propietario/propiedades/{{ p.code }}/editar" class="btn btn-light">Editar</a>
+          <a href="/r/{{ p.code }}" class="btn btn-light">Probar QR</a>
+          <form method="post"
+                action="/propietario/propiedades/{{ p.code }}/eliminar"
+                onsubmit="return confirm('¿Seguro que querés eliminar esta propiedad?');">
+            <button class="btn owner-delete" type="submit">Eliminar</button>
+          </form>
+        </div>
       </article>
       {% else %}
-      <p>No hay reclamos recientes.</p>
+        <div class="empty-filter">
+          <strong>Todavía no tenés propiedades.</strong>
+          <p>Creá la primera y QCASA generará un código para ella.</p>
+          <a href="/propietario/propiedades/nueva" class="btn btn-primary">Crear propiedad</a>
+        </div>
       {% endfor %}
-    </section>
-
-    <section class="panel" id="propiedades">
-      <div class="panel-title"><h2>Mis propiedades</h2></div>
-      {% for p in properties %}
-      <article class="property-row">
-        <div><b>{{ p.address }}</b><span>{{ p.unit }}</span></div>
-        <span>{{ '🔴' if p.status == 'urgent' else '🟡' if p.status == 'in_progress' else '🟢' }}</span>
-      </article>
-      {% endfor %}
-    </section>
-  </div>
+    </div>
+  </section>
 
   <div class="dash-grid secondary-panels">
     <section class="panel" id="notificaciones">
       <h2>Notificaciones</h2>
-      <p class="muted">Acá aparecerán asignaciones de técnicos, cambios de estado y cierres de reclamos.</p>
+      <p class="muted">Asignaciones de técnicos, cambios de estado y cierres de reclamos aparecerán acá.</p>
     </section>
+
     <section class="panel" id="documentos">
       <h2>Documentos</h2>
-      <p class="muted">Espacio preparado para contratos, garantías y documentos de cada propiedad.</p>
+      <p class="muted">Las facturas se consultan dentro de cada reclamo. Más adelante este espacio puede centralizar contratos y garantías.</p>
     </section>
   </div>
 </section>
