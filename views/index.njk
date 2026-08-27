@@ -5,31 +5,70 @@
     <div class="dot-pattern"></div>
     <h1>Tu hogar, un QR.<br><span>Todo resuelto.</span></h1>
     <p>La forma más rápida y simple de reportar problemas en tu propiedad.</p>
+
     <div class="hero-actions">
-      <a class="btn btn-primary btn-lg" href="/r/AB123X">▦ Reportar un problema</a>
-      <a class="btn btn-light btn-lg" href="/propiedades">⌂ Ver propiedades</a>
+      <a class="btn btn-primary btn-lg" href="/qr">▦ Escanear QR</a>
+      <a class="btn btn-light btn-lg" href="/r/AB123X">📝 Probar reclamo</a>
     </div>
+
+    <div class="hero-code-link">
+      ¿No podés escanearlo?
+      <a href="/qr#codigo">Ingresá el código manualmente</a>
+    </div>
+
     <div class="hero-benefits">
-      <span>◉ Sin apps</span><span>◷ Respuesta rápida</span><span>✓ Seguimiento en tiempo real</span>
+      <span>◉ Sin apps</span>
+      <span>◷ Respuesta rápida</span>
+      <span>✓ Seguimiento en tiempo real</span>
     </div>
   </div>
+
   <div class="hero-photo" aria-label="Interior de una propiedad"></div>
+
   <div class="hero-qr-side">
     <div class="qr-sticker">
       <img class="sticker-logo" src="/img/logo-qcasa.svg" alt="QCASA">
       <h3>¿Algo no funciona?</h3>
       <p>Escaneá y reportalo.</p>
-      <img class="qr-demo" src="/img/qr-demo.svg" alt="QR de ejemplo">
-      <div class="sticker-bottom">▯ &nbsp; Sin app. Sin llamadas.<br><strong>Lo resolvemos.</strong></div>
+      <a href="/qr" aria-label="Abrir lector QR">
+        <img class="qr-demo" src="/img/qr-demo.svg" alt="QR de ejemplo">
+      </a>
+      <div class="sticker-bottom">
+        ▯ &nbsp; Sin app. Sin llamadas.<br>
+        <strong>Lo resolvemos.</strong>
+      </div>
     </div>
   </div>
 </section>
 
+<section class="qr-entry-strip">
+  <div>
+    <span class="qr-entry-icon">▦</span>
+    <div>
+      <strong>¿Tenés un QR de QCASA?</strong>
+      <p>Usá la cámara del celular o ingresá el código de tu propiedad.</p>
+    </div>
+  </div>
+  <a class="btn btn-primary" href="/qr">Abrir lector QR</a>
+</section>
+
 <section class="steps-strip">
-  <article><div class="step-icon">▦</div><div><h3>Escaneá</h3><p>Encontrá el código QR único de tu propiedad.</p></div></article>
-  <article><div class="step-icon">📝</div><div><h3>Reportá</h3><p>Contanos el problema en pocos pasos.</p></div></article>
-  <article><div class="step-icon">🔔</div><div><h3>Seguimiento</h3><p>Recibí actualizaciones del estado.</p></div></article>
-  <article><div class="step-icon">✓</div><div><h3>Resuelto</h3><p>Nos encargamos para que vuelvas a disfrutar tu hogar.</p></div></article>
+  <article>
+    <div class="step-icon">▦</div>
+    <div><h3>Escaneá</h3><p>Encontrá el código QR único de tu propiedad.</p></div>
+  </article>
+  <article>
+    <div class="step-icon">📝</div>
+    <div><h3>Reportá</h3><p>Contanos el problema en pocos pasos.</p></div>
+  </article>
+  <article>
+    <div class="step-icon">🔔</div>
+    <div><h3>Seguimiento</h3><p>Recibí actualizaciones del estado.</p></div>
+  </article>
+  <article>
+    <div class="step-icon">✓</div>
+    <div><h3>Resuelto</h3><p>Nos encargamos para que vuelvas a disfrutar tu hogar.</p></div>
+  </article>
 </section>
 
 <section class="how section">
@@ -44,12 +83,35 @@
 </section>
 
 <section class="section role-section">
-  <div class="section-head"><div><span class="eyebrow">QCASA</span><h2>Una plataforma, cuatro experiencias simples.</h2></div><p>Cada perfil ve solo lo que necesita para que el proceso sea rápido.</p></div>
+  <div class="section-head">
+    <div>
+      <span class="eyebrow">QCASA</span>
+      <h2>Una plataforma, cuatro experiencias simples.</h2>
+    </div>
+    <p>Cada perfil ve solo lo que necesita para que el proceso sea rápido.</p>
+  </div>
+
   <div class="role-grid">
-    <a href="/r/AB123X" class="role-card"><span>01</span><h3>Inquilino</h3><p>QR → problema → foto → teléfono → enviar.</p></a>
-    <a href="/propietario" class="role-card"><span>02</span><h3>Propietario</h3><p>Propiedades, reclamos y notificaciones.</p></a>
-    <a href="/admin" class="role-card"><span>03</span><h3>Administrador</h3><p>Control total de la operación y estados.</p></a>
-    <a href="/tecnico" class="role-card"><span>04</span><h3>Técnico</h3><p>Trabajos, agenda, historial y acciones rápidas.</p></a>
+    <a href="/qr" class="role-card">
+      <span>01</span>
+      <h3>Inquilino</h3>
+      <p>QR → problema → foto → teléfono → enviar.</p>
+    </a>
+    <a href="/propietario" class="role-card">
+      <span>02</span>
+      <h3>Propietario</h3>
+      <p>Propiedades, reclamos y notificaciones.</p>
+    </a>
+    <a href="/admin" class="role-card">
+      <span>03</span>
+      <h3>Administrador</h3>
+      <p>Control total de la operación y estados.</p>
+    </a>
+    <a href="/tecnico" class="role-card">
+      <span>04</span>
+      <h3>Técnico</h3>
+      <p>Trabajos, agenda, historial y acciones rápidas.</p>
+    </a>
   </div>
 </section>
 {% endblock %}
