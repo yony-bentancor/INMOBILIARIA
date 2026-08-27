@@ -1,0 +1,23 @@
+{
+  "name": "QCASA",
+  "description": "Plataforma de reclamos y reparaciones por QR",
+  "repository": "https://github.com/TU_USUARIO/qcasa",
+  "keywords": ["node", "express", "nunjucks", "mongodb", "qr", "reparaciones"],
+  "env": {
+    "SESSION_SECRET": {
+      "description": "Clave privada de sesión",
+      "generator": "secret"
+    },
+    "USE_MONGO": {
+      "description": "Activa MongoDB Atlas",
+      "value": "false"
+    },
+    "MONGO_URI": {
+      "description": "Cadena de conexión de MongoDB Atlas",
+      "required": false
+    },
+    "APP_URL": {
+      "description": "URL pública de la aplicación"
+    }
+  }
+}

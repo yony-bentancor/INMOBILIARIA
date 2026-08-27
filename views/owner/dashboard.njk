@@ -1,0 +1,5 @@
+{% extends 'layouts/main.njk' %}{% block content %}
+<section class="dashboard-shell"><div class="dash-head"><div><span class="eyebrow">PROPIETARIO</span><h1>Hola, {{ sessionUser.name }}</h1></div></div>
+<div class="stats"><div><strong>{{ properties|length }}</strong><span>Propiedades</span></div><div><strong>9</strong><span>Sin problemas</span></div><div><strong>2</strong><span>En curso</span></div><div class="danger"><strong>1</strong><span>Urgente</span></div></div>
+<div class="dash-grid"><section class="panel"><div class="panel-title"><h2>Reclamos recientes</h2><a href="#">Ver todos</a></div>{% for c in complaints %}<article class="complaint-row"><div><b>{{ c.title or c.category }}</b><span>#{{ c.number or c.id }} · {{ c.propertyCode }}</span></div><span class="status">{{ c.status }}</span></article>{% endfor %}</section>
+<section class="panel"><h2>Mis propiedades</h2>{% for p in properties %}<article class="property-row"><div><b>{{ p.address }}</b><span>{{ p.unit }}</span></div><span>{{ '🔴' if p.status == 'urgent' else '🟡' if p.status == 'in_progress' else '🟢' }}</span></article>{% endfor %}</section></div></section>{% endblock %}

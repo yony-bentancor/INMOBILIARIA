@@ -1,0 +1,30 @@
+{% extends 'layouts/main.njk' %}
+{% block content %}
+<div class="tenant-shell">
+  <div class="tenant-brand"><img src="/img/logo-qcasa.svg" alt="QCASA"></div>
+  <div class="property-pill">📍 {{ property.address }}{% if property.unit %} — {{ property.unit }}{% endif %}</div>
+  <section class="tenant-card">
+    <h1>¿Qué problema tenés?</h1>
+    <p class="muted">La propiedad ya está identificada por el QR. Solo contanos qué pasa.</p>
+    <form method="post" class="complaint-form">
+      <div class="category-grid">
+        {% for c, icon in [('Electricidad','⚡'),('Agua','💧'),('Cañerías','🔧'),('Gas','🔥'),('Infraestructura','🧱'),('Otro','＋')] %}
+        <label class="category"><input type="radio" name="category" value="{{ c }}" {% if loop.first %}checked{% endif %}><span>{{ icon }}</span><strong>{{ c }}</strong></label>
+        {% endfor %}
+      </div>
+      <label>¿Qué está pasando?</label>
+      <select name="quickIssue">
+        <option>No tengo luz</option><option>Pérdida de agua</option><option>Canilla rota</option><option>Humedad</option><option>Problema con calefón</option><option>Cerradura</option><option>Otro</option>
+      </select>
+      <label>📷 Agregar foto o video</label>
+      <div class="upload-placeholder">Adjuntar archivos <small>La carga real se agrega después con S3/Cloudinary.</small></div>
+      <label>📝 Descripción opcional</label>
+      <textarea name="description" rows="4" placeholder="Ej.: pierde agua debajo de la pileta..."></textarea>
+      <label>📞 Teléfono de contacto</label>
+      <input name="phone" inputmode="tel" placeholder="099 123 456" required>
+      <button class="btn btn-primary btn-submit">Enviar reclamo</button>
+    </form>
+  </section>
+  <div class="tenant-links"><a href="/reclamos/124">Mis reclamos</a><a href="tel:911">Emergencia</a></div>
+</div>
+{% endblock %}
