@@ -1,2 +1,2 @@
-{% extends 'layouts/main.njk' %}
+{% extends 'layouts/tenant.njk' %}
 {% block content %}<div class="tenant-shell"><div class="tenant-brand"><img src="/img/logo-qcasa.svg"></div><section class="success-card"><div class="success-icon">✓</div><h1>Reclamo #{{ complaint.number or complaint.id }}</h1><h2>Recibido</h2><p>Te avisaremos cuando asignemos un técnico.</p><a class="btn btn-primary" href="/reclamos/{{ complaint.number or complaint.id }}">Ver estado</a></section></div>{% endblock %}

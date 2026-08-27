@@ -1,30 +1,19 @@
-{% extends 'layouts/main.njk' %}
+{% extends 'layouts/tenant.njk' %}
 
 {% block content %}
 <section class="scanner-shell">
-  <div class="scanner-topbar">
-    <a href="/" class="scanner-back">← Volver</a>
-    <img src="/img/logo-qcasa.svg" alt="QCASA">
-    <span></span>
-  </div>
-
   <div class="scanner-card">
-    <span class="eyebrow">RECLAMOS QCASA</span>
+    <span class="eyebrow">INQUILINO</span>
     <h1>Escaneá el QR de tu propiedad</h1>
-    <p class="muted">
-      El QR identifica automáticamente la propiedad y la unidad.
-      No necesitás ingresar dirección ni datos del propietario.
-    </p>
+    <p class="muted">No tenés que ingresar dirección, apartamento ni propietario. El QR ya identifica todo eso.</p>
 
-    <div class="scanner-video-wrap" id="scannerVideoWrap">
+    <div class="scanner-video-wrap">
       <video id="qrVideo" playsinline muted></video>
-      <div class="scanner-frame" aria-hidden="true">
-        <i></i><i></i><i></i><i></i>
-      </div>
+      <div class="scanner-frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
       <div class="scanner-placeholder" id="scannerPlaceholder">
         <div class="scanner-placeholder-icon">▦</div>
         <strong>Cámara detenida</strong>
-        <small>Presioná el botón para comenzar</small>
+        <small>Presioná “Abrir cámara”</small>
       </div>
     </div>
 
@@ -32,53 +21,28 @@
       Tocá “Abrir cámara” y apuntá al QR.
     </div>
 
-    <button type="button" class="btn btn-primary btn-lg scanner-main-btn" id="startScanner">
-      📷 Abrir cámara
-    </button>
+    <button type="button" class="btn btn-primary btn-lg scanner-main-btn" id="startScanner">📷 Abrir cámara</button>
 
-    <label class="btn btn-light btn-lg scanner-photo-btn" for="qrPhoto">
-      📸 Tomar foto del QR
-    </label>
-    <input
-      id="qrPhoto"
-      class="scanner-file-input"
-      type="file"
-      accept="image/*"
-      capture="environment"
-    >
+    <label class="btn btn-light btn-lg scanner-photo-btn" for="qrPhoto">📸 Tomar foto del QR</label>
+    <input id="qrPhoto" class="scanner-file-input" type="file" accept="image/*" capture="environment">
 
     <div class="scanner-divider"><span>o</span></div>
 
     <div id="codigo" class="manual-code">
       <h2>Ingresar código manualmente</h2>
-      <p class="muted">Ejemplo: <strong>AB123X</strong></p>
-
+      <p class="muted">Si no podés escanear, escribí el código del adhesivo. Ejemplo: <strong>AB123X</strong>.</p>
       <form id="manualCodeForm">
         <label for="propertyCode">Código QCASA</label>
         <div class="manual-code-row">
-          <input
-            id="propertyCode"
-            name="propertyCode"
-            type="text"
-            placeholder="AB123X"
-            maxlength="30"
-            autocomplete="off"
-            required
-          >
+          <input id="propertyCode" name="propertyCode" type="text" placeholder="AB123X" maxlength="30" autocomplete="off" required>
           <button class="btn btn-primary" type="submit">Continuar</button>
         </div>
       </form>
     </div>
-
-    <div class="scanner-help">
-      <strong>¿Qué pasa después?</strong>
-      <p>
-        Al detectar el QR te llevamos directamente al formulario de esa propiedad
-        para que indiques el problema y envíes el reclamo.
-      </p>
-    </div>
   </div>
 </section>
+{% endblock %}
 
+{% block scripts %}
 <script src="/js/qr-scanner.js"></script>
 {% endblock %}

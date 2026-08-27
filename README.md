@@ -1,135 +1,139 @@
 # QCASA
 
-Base completa de un MVP de gestión de reparaciones por QR para propiedades.
+MVP de gestión de reparaciones para propiedades con entrada principal por QR.
 
-## Incluye
+## Idea central
 
-- Index inspirado en la imagen de referencia suministrada.
-- Flujo de inquilino sin login: `QR -> reclamo -> confirmación -> estado`.
-- Panel de propietario.
-- Panel administrador con bandeja tipo Trello/Kanban.
-- Panel de técnico con acciones rápidas.
-- Login demo por rol.
-- QR por propiedad.
-- MongoDB Atlas opcional.
-- Configuración lista para GitHub y Heroku.
-- `.env`, `.env.example`, `.gitignore`, `Procfile` y `app.json`.
+**QR → reclamo → administrador → técnico → reparación → propietario informado → reclamo cerrado**
 
-## 1. Ejecutar localmente
+La interfaz está separada por tipo de usuario para que cada persona vea únicamente lo necesario.
+
+## Experiencias
+
+### Web institucional
+Ruta: `/`
+
+Explica QCASA y muestra:
+- Cómo funciona
+- Propietarios
+- Técnicos
+- Contacto
+- Ingresar
+- **Escanear QR** como acción principal
+
+### Inquilino
+No necesita usuario ni contraseña.
+
+Rutas principales:
+- `/qr`
+- `/r/:codigo`
+- `/mis-reclamos`
+- `/emergencia`
+
+El QR identifica propiedad y unidad. El inquilino no tiene que escribir dirección, propietario ni datos que QCASA ya conoce.
+
+### Propietario
+Ruta: `/propietario`
+
+Ve:
+- Inicio
+- Mis propiedades
+- Reclamos
+- Notificaciones
+- Documentos
+
+### Técnico
+Ruta: `/tecnico`
+
+Ve:
+- Trabajos
+- Agenda
+- Historial
+- Mi perfil
+
+### Administrador
+Ruta: `/admin`
+
+Ve toda la operación:
+- Reclamos
+- Propiedades
+- Propietarios
+- Inquilinos
+- Técnicos
+- Agenda
+- Notificaciones
+- Archivos
+- Configuración
+
+## Ejecutar localmente
 
 ```bash
 npm install
 npm run dev
 ```
 
-Abrí: `http://localhost:3000`
+Abrir:
 
-### QR de prueba
+```text
+http://localhost:3000
+```
 
-`http://localhost:3000/r/AB123X`
+Lector QR:
 
-## 2. Usuarios demo
+```text
+http://localhost:3000/qr
+```
+
+QR demo:
+
+```text
+http://localhost:3000/r/AB123X
+```
+
+## Usuarios demo
 
 - Admin: `admin@qcasa.uy` / `admin123`
 - Propietario: `propietario@qcasa.uy` / `prop123`
 - Técnico: `tecnico@qcasa.uy` / `tec123`
 
-> Son credenciales de demostración. Antes de producción hay que reemplazarlas por usuarios almacenados en MongoDB, contraseñas con hash y recuperación segura.
+## MongoDB
 
-## 3. MongoDB Atlas (opcional)
-
-Por defecto el sistema funciona SIN Mongo:
+El proyecto funciona sin Mongo:
 
 ```env
 USE_MONGO=false
 ```
 
-Cuando tengas Atlas listo:
-
-1. Creá un cluster en MongoDB Atlas.
-2. Creá un usuario de base de datos.
-3. En `Network Access`, habilitá tu IP para desarrollo y configurá correctamente el acceso para Heroku.
-4. Copiá la connection string.
-5. En `.env`:
+Para activar Atlas:
 
 ```env
 USE_MONGO=true
 MONGO_URI=mongodb+srv://usuario:clave@cluster.mongodb.net/qcasa?retryWrites=true&w=majority
 ```
 
-Si Mongo falla, esta base continúa con datos demo para que la web no caiga durante el desarrollo.
+## GitHub
 
-## 4. GitHub
+No subas `.env`.
 
 ```bash
-git init
-git add .
-git commit -m "Primer commit QCASA"
-git branch -M main
-git remote add origin https://github.com/TU_USUARIO/qcasa.git
-git push -u origin main
+git add -A
+git commit -m "QCASA experiencias separadas por rol"
+git push
 ```
 
-**Importante:** `.env` está dentro de `.gitignore`; no debe subirse a GitHub.
+## Heroku
 
-## 5. Heroku
+El proyecto incluye `Procfile` y `app.json`.
 
-Con Heroku CLI:
+Variables mínimas:
 
 ```bash
-heroku login
-heroku create qcasa-app
+heroku config:set USE_MONGO=false
 heroku config:set SESSION_SECRET="una-clave-larga"
-heroku config:set USE_MONGO="false"
-heroku config:set APP_URL="https://qcasa-app.herokuapp.com"
-git push heroku main
 ```
 
-Para activar Mongo luego:
+La cámara del navegador necesita HTTPS en producción. Heroku entrega HTTPS.
 
-```bash
-heroku config:set USE_MONGO="true"
-heroku config:set MONGO_URI="mongodb+srv://..."
-```
+## Importante
 
-Ver logs:
-
-```bash
-heroku logs --tail
-```
-
-## 6. Estructura
-
-```text
-qcasa/
-├── app.js
-├── package.json
-├── Procfile
-├── app.json
-├── .env
-├── .env.example
-├── .gitignore
-├── config/
-├── controllers/
-├── data/
-├── middleware/
-├── models/
-├── routes/
-├── services/
-├── views/
-└── public/
-    ├── css/
-    ├── js/
-    └── img/
-```
-
-## 7. Próximos pasos recomendados
-
-- Subida real de imágenes/video a S3 o Cloudinary.
-- Usuarios reales en MongoDB y bcrypt.
-- Notificaciones por WhatsApp/email.
-- Asignación de técnicos y permisos más granulares.
-- Historial de eventos por reclamo.
-- WebSockets para estado en tiempo real.
-- PWA para técnicos.
-- Presupuestos y pagos, recién en una segunda etapa.
+Este proyecto sigue siendo un MVP. Algunas secciones de propietario, técnico y administrador están preparadas visualmente pero todavía usan datos demo. La persistencia real, usuarios seguros, archivos, notificaciones y búsquedas reales deben conectarse a MongoDB y servicios externos en las próximas etapas.

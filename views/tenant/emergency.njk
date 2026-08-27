@@ -1,0 +1,19 @@
+{% extends 'layouts/tenant.njk' %}
+{% block content %}
+<section class="tenant-shell">
+  <div class="tenant-card emergency-card">
+    <span class="eyebrow">EMERGENCIA</span>
+    <h1>¿Es una situación urgente?</h1>
+    <p class="muted">Si existe riesgo para personas o la vivienda, priorizá la seguridad.</p>
+
+    <div class="emergency-list">
+      <div><strong>🔥 Incendio o humo</strong><span>Salí del lugar y contactá emergencias.</span></div>
+      <div><strong>⚡ Riesgo eléctrico</strong><span>No manipules cables, tableros ni zonas mojadas.</span></div>
+      <div><strong>💧 Pérdida importante de agua</strong><span>Si sabés hacerlo con seguridad, cerrá la llave general.</span></div>
+      <div><strong>🔥 Olor a gas</strong><span>No enciendas luces ni generes chispas; ventilá y salí del lugar.</span></div>
+    </div>
+
+    <a href="/qr" class="btn btn-primary btn-submit">Reportar por QCASA</a>
+  </div>
+</section>
+{% endblock %}

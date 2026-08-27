@@ -1,0 +1,32 @@
+QCASA - REEMPLAZO COMPLETO DEL REPOSITORIO
+
+Este ZIP contiene el proyecto completo SIN la carpeta .git y SIN node_modules.
+
+FORMA RECOMENDADA
+1. En D:\node\inmobiliaria conservá únicamente la carpeta oculta .git.
+2. Borrá el resto del contenido del proyecto.
+3. Descomprimí este ZIP.
+4. Copiá TODO el contenido de QCASA-PROYECTO-COMPLETO dentro de D:\node\inmobiliaria.
+5. Ejecutá:
+
+npm install
+npm run dev
+
+6. Probá:
+http://localhost:3000
+http://localhost:3000/qr
+http://localhost:3000/r/AB123X
+
+7. Si está correcto:
+
+git status
+git add -A
+git commit -m "QCASA experiencias separadas por rol"
+git push
+
+IMPORTANTE
+- .env está ignorado por Git.
+- No subas contraseñas ni MONGO_URI reales.
+- El proyecto arranca con USE_MONGO=false.
+- El inquilino no ve el menú institucional cuando entra al flujo QR.
+- Propietario, técnico y administrador tienen navegaciones propias.

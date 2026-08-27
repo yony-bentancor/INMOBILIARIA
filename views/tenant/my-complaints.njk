@@ -1,0 +1,20 @@
+{% extends 'layouts/tenant.njk' %}
+{% block content %}
+<section class="tenant-shell">
+  <div class="tenant-card">
+    <span class="eyebrow">INQUILINO</span>
+    <h1>Mis reclamos</h1>
+    <p class="muted">En la versión inicial podés identificar tus reclamos con el teléfono usado al reportar.</p>
+
+    <form class="complaint-form" action="#" method="get">
+      <label for="phone">Teléfono</label>
+      <input id="phone" name="phone" type="tel" placeholder="099 123 456">
+      <button class="btn btn-primary btn-submit" type="submit">Buscar reclamos</button>
+    </form>
+
+    <div class="tenant-note">
+      Esta pantalla queda preparada para conectar la búsqueda real cuando activemos MongoDB.
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,5 +1,75 @@
-{% extends 'layouts/main.njk' %}{% block content %}
-<section class="dashboard-shell"><div class="dash-head"><div><span class="eyebrow">ADMINISTRADOR</span><h1>Operación QCASA</h1></div><div class="admin-menu"><a>Panel</a><a>Reclamos</a><a>Propiedades</a><a>Propietarios</a><a>Inquilinos</a><a>Técnicos</a><a>Agenda</a><a>Configuración</a></div></div>
-<div class="stats"><div class="danger"><strong>3</strong><span>Urgentes</span></div><div><strong>5</strong><span>Pendientes</span></div><div><strong>4</strong><span>Técnicos asignados</span></div><div><strong>7</strong><span>Resueltos hoy</span></div></div>
-<section class="kanban-wrap"><div class="panel-title"><h2>Bandeja de reclamos</h2><span class="muted">Vista estilo Trello</span></div><div class="kanban">{% for col in columns %}<div class="kanban-col"><h3>{{ col }}</h3>{% for c in complaints %}{% if c.status == col %}<article class="ticket"><div class="ticket-top"><b>#{{ c.number or c.id }}</b><span>{{ c.category }}</span></div><h4>{{ c.title or c.category }}</h4><p>{{ c.description }}</p><form method="post" action="/admin/reclamos/{{ c.number or c.id }}/estado"><select name="status">{% for s in ['Nuevo','Revisando','Técnico asignado','Aceptado','En camino','En reparación','Resuelto','Cancelado','Necesita presupuesto','Necesita repuesto'] %}<option {% if s == c.status %}selected{% endif %}>{{ s }}</option>{% endfor %}</select><button>Actualizar</button></form></article>{% endif %}{% endfor %}</div>{% endfor %}</div></section>
-<section class="panel"><div class="panel-title"><h2>QR de propiedades</h2></div><div class="property-table">{% for p in properties %}<div><span>{{ p.address }} — {{ p.unit }}</span><a class="btn btn-light" href="/admin/propiedades/{{ p.code }}/qr">Ver QR</a></div>{% endfor %}</div></section></section>{% endblock %}
+{% extends 'layouts/admin.njk' %}
+{% block content %}
+<section class="dashboard-shell admin-dashboard">
+  <div class="dash-head">
+    <div>
+      <span class="eyebrow">ADMINISTRADOR</span>
+      <h1>Operación QCASA</h1>
+      <p class="muted">Toda la operación en un solo lugar.</p>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="danger"><strong>1</strong><span>Urgente</span></div>
+    <div><strong>1</strong><span>Pendiente</span></div>
+    <div><strong>1</strong><span>Técnico asignado</span></div>
+    <div><strong>1</strong><span>Resuelto</span></div>
+  </div>
+
+  <section class="kanban-wrap" id="reclamos">
+    <div class="panel-title">
+      <h2>Bandeja de reclamos</h2>
+      <span class="muted">Mové la operación cambiando el estado.</span>
+    </div>
+
+    <div class="kanban">
+      {% for col in columns %}
+      <div class="kanban-col">
+        <h3>{{ col }}</h3>
+        {% for c in complaints %}
+          {% if c.status == col %}
+          <article class="ticket">
+            <div class="ticket-top"><b>#{{ c.number or c.id }}</b><span>{{ c.category }}</span></div>
+            <h4>{{ c.title or c.category }}</h4>
+            <p>{{ c.description }}</p>
+            <small>{{ c.propertyCode }}</small>
+
+            <form method="post" action="/admin/reclamos/{{ c.number or c.id }}/estado">
+              <select name="status">
+                {% for s in ['Nuevo','Revisando','Técnico asignado','Aceptado','En camino','En reparación','Resuelto','Cancelado','Necesita presupuesto','Necesita repuesto'] %}
+                  <option value="{{ s }}" {% if s == c.status %}selected{% endif %}>{{ s }}</option>
+                {% endfor %}
+              </select>
+              <button>Actualizar</button>
+            </form>
+          </article>
+          {% endif %}
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="panel" id="propiedades">
+    <div class="panel-title"><h2>Propiedades y QR</h2><span class="muted">Cada propiedad tiene un código único.</span></div>
+    <div class="property-table">
+      {% for p in properties %}
+      <div>
+        <span><strong>{{ p.address }}</strong> — {{ p.unit }} · {{ p.code }}</span>
+        <a class="btn btn-light" href="/admin/propiedades/{{ p.code }}/qr">Ver QR</a>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <div class="admin-placeholder-grid">
+    <section class="panel" id="propietarios"><h2>Propietarios</h2><p class="muted">Alta y gestión de propietarios.</p></section>
+    <section class="panel" id="inquilinos"><h2>Inquilinos</h2><p class="muted">Datos vinculados a cada propiedad.</p></section>
+    <section class="panel" id="tecnicos"><h2>Técnicos</h2><p class="muted">Profesionales disponibles y especialidades.</p></section>
+    <section class="panel" id="agenda"><h2>Agenda</h2><p class="muted">Visitas y trabajos programados.</p></section>
+    <section class="panel" id="notificaciones"><h2>Notificaciones</h2><p class="muted">Historial de avisos enviados.</p></section>
+    <section class="panel" id="archivos"><h2>Archivos</h2><p class="muted">Fotos, videos y documentos.</p></section>
+    <section class="panel" id="configuracion"><h2>Configuración</h2><p class="muted">Datos generales y futuras integraciones.</p></section>
+  </div>
+</section>
+{% endblock %}

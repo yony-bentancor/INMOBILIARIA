@@ -1,1 +1,57 @@
-{% extends 'layouts/main.njk' %}{% block content %}<section class="dashboard-shell"><div class="dash-head"><div><span class="eyebrow">TÉCNICO</span><h1>Trabajos</h1></div><div class="admin-menu"><a>Trabajos</a><a>Agenda</a><a>Historial</a><a>Mi perfil</a></div></div><div class="jobs-grid">{% for c in complaints %}<article class="job-card"><div class="ticket-top"><b>Trabajo #{{ c.number or c.id }}</b><span>{{ c.category }}</span></div><h2>{{ c.title or c.category }}</h2><p>{{ c.description }}</p><div class="job-meta"><span>Zona: {{ c.propertyCode }}</span><span>Prioridad: {{ c.priority }}</span></div><form method="post" action="/tecnico/trabajos/{{ c.number or c.id }}/estado" class="tech-actions">{% for s in ['Aceptado','En camino','En reparación','Resuelto','Necesita repuesto'] %}<button name="status" value="{{ s }}" class="btn {% if s == 'Resuelto' %}btn-primary{% else %}btn-light{% endif %}">{{ s }}</button>{% endfor %}</form></article>{% else %}<p>No hay trabajos asignados.</p>{% endfor %}</div></section>{% endblock %}
+{% extends 'layouts/technician.njk' %}
+{% block content %}
+<section class="dashboard-shell">
+  <div class="dash-head">
+    <div>
+      <span class="eyebrow">TÉCNICO</span>
+      <h1>Hola, {{ sessionUser.name }}</h1>
+      <p class="muted">Acá ves solamente tus trabajos y las acciones necesarias para resolverlos.</p>
+    </div>
+  </div>
+
+  <div class="technician-summary">
+    <div><strong>{{ complaints|length }}</strong><span>Trabajos activos</span></div>
+    <div><strong>Hoy</strong><span>Agenda</span></div>
+  </div>
+
+  <div class="jobs-grid">
+    {% for c in complaints %}
+    <article class="job-card">
+      <div class="ticket-top">
+        <b>Trabajo #{{ c.number or c.id }}</b>
+        <span>{{ c.category }}</span>
+      </div>
+
+      <h2>{{ c.title or c.category }}</h2>
+      <p>{{ c.description }}</p>
+
+      <div class="job-meta">
+        <span>📍 Propiedad: {{ c.propertyCode }}</span>
+        <span>Prioridad: {{ c.priority }}</span>
+        <span>Estado: {{ c.status }}</span>
+      </div>
+
+      <form method="post" action="/tecnico/trabajos/{{ c.number or c.id }}/estado" class="tech-actions">
+        {% for s in ['Aceptado','En camino','En reparación','Necesita repuesto','Resuelto'] %}
+          <button name="status" value="{{ s }}" class="btn {% if s == 'Resuelto' %}btn-primary{% else %}btn-light{% endif %}">
+            {{ s }}
+          </button>
+        {% endfor %}
+      </form>
+    </article>
+    {% else %}
+      <section class="panel"><p>No tenés trabajos asignados.</p></section>
+    {% endfor %}
+  </div>
+
+  <div class="dash-grid secondary-panels">
+    <section class="panel" id="agenda"><h2>Agenda</h2><p class="muted">Próximas visitas y horarios asignados.</p></section>
+    <section class="panel" id="historial"><h2>Historial</h2><p class="muted">Trabajos finalizados anteriormente.</p></section>
+  </div>
+
+  <section class="panel" id="perfil">
+    <h2>Mi perfil</h2>
+    <p class="muted">{{ sessionUser.name }} · Técnico QCASA</p>
+  </section>
+</section>
+{% endblock %}

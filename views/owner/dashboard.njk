@@ -1,5 +1,57 @@
-{% extends 'layouts/main.njk' %}{% block content %}
-<section class="dashboard-shell"><div class="dash-head"><div><span class="eyebrow">PROPIETARIO</span><h1>Hola, {{ sessionUser.name }}</h1></div></div>
-<div class="stats"><div><strong>{{ properties|length }}</strong><span>Propiedades</span></div><div><strong>9</strong><span>Sin problemas</span></div><div><strong>2</strong><span>En curso</span></div><div class="danger"><strong>1</strong><span>Urgente</span></div></div>
-<div class="dash-grid"><section class="panel"><div class="panel-title"><h2>Reclamos recientes</h2><a href="#">Ver todos</a></div>{% for c in complaints %}<article class="complaint-row"><div><b>{{ c.title or c.category }}</b><span>#{{ c.number or c.id }} · {{ c.propertyCode }}</span></div><span class="status">{{ c.status }}</span></article>{% endfor %}</section>
-<section class="panel"><h2>Mis propiedades</h2>{% for p in properties %}<article class="property-row"><div><b>{{ p.address }}</b><span>{{ p.unit }}</span></div><span>{{ '🔴' if p.status == 'urgent' else '🟡' if p.status == 'in_progress' else '🟢' }}</span></article>{% endfor %}</section></div></section>{% endblock %}
+{% extends 'layouts/owner.njk' %}
+{% block content %}
+<section class="dashboard-shell">
+  <div class="dash-head">
+    <div>
+      <span class="eyebrow">PROPIETARIO</span>
+      <h1>Hola, {{ sessionUser.name }}</h1>
+      <p class="muted">Un resumen simple de lo que está pasando en tus propiedades.</p>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div><strong>{{ properties|length }}</strong><span>Propiedades</span></div>
+    <div><strong>1</strong><span>Sin problemas</span></div>
+    <div><strong>1</strong><span>En curso</span></div>
+    <div class="danger"><strong>1</strong><span>Urgente</span></div>
+  </div>
+
+  <div class="dash-grid">
+    <section class="panel" id="reclamos">
+      <div class="panel-title"><h2>Reclamos recientes</h2><span class="muted">Solo tus propiedades</span></div>
+      {% for c in complaints %}
+      <article class="complaint-row">
+        <div>
+          <b>{{ c.title or c.category }}</b>
+          <span>#{{ c.number or c.id }} · {{ c.propertyCode }}</span>
+        </div>
+        <span class="status">{{ c.status }}</span>
+      </article>
+      {% else %}
+      <p>No hay reclamos recientes.</p>
+      {% endfor %}
+    </section>
+
+    <section class="panel" id="propiedades">
+      <div class="panel-title"><h2>Mis propiedades</h2></div>
+      {% for p in properties %}
+      <article class="property-row">
+        <div><b>{{ p.address }}</b><span>{{ p.unit }}</span></div>
+        <span>{{ '🔴' if p.status == 'urgent' else '🟡' if p.status == 'in_progress' else '🟢' }}</span>
+      </article>
+      {% endfor %}
+    </section>
+  </div>
+
+  <div class="dash-grid secondary-panels">
+    <section class="panel" id="notificaciones">
+      <h2>Notificaciones</h2>
+      <p class="muted">Acá aparecerán asignaciones de técnicos, cambios de estado y cierres de reclamos.</p>
+    </section>
+    <section class="panel" id="documentos">
+      <h2>Documentos</h2>
+      <p class="muted">Espacio preparado para contratos, garantías y documentos de cada propiedad.</p>
+    </section>
+  </div>
+</section>
+{% endblock %}
