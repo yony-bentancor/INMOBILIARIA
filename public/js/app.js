@@ -1,3 +1,1 @@
-const menuBtn = document.querySelector('[data-menu]');
-const nav = document.getElementById('mainNav');
-if (menuBtn && nav) menuBtn.addEventListener('click', () => nav.classList.toggle('open'));
+document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const el=document.querySelector(a.getAttribute('href'));if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'})}}))});

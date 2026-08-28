@@ -1,0 +1,1 @@
+const r=require('express').Router();const c=require('../controllers/publicController');const upload=require('../middleware/upload');r.get('/',c.home);r.get('/r/:code',c.qrLanding);r.post('/r/:code/reclamar',upload.array('attachments',6),c.createComplaint);r.get('/reclamo-enviado/:number',c.success);r.get('/trabajo/:token',c.publicJob);module.exports=r;

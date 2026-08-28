@@ -1,27 +1,13 @@
 {
-  "name": "qcasa",
+  "name": "qcasa-v1",
   "version": "1.0.0",
-  "description": "QCASA - gestión de reclamos y reparaciones por QR para propiedades",
+  "description": "QCASA - gestión integral de propiedades, QR, alertas, cobros, documentos y mantenimiento.",
   "main": "app.js",
-  "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js",
-    "check": "node -e \"require('./app'); setTimeout(() => process.exit(0), 500)\""
-  },
-  "engines": {
-    "node": ">=20.x"
-  },
+  "scripts": {"start":"node app.js","dev":"nodemon app.js"},
+  "engines": {"node": ">=20"},
   "dependencies": {
-    "dotenv": "^16.4.5",
-    "express": "^4.21.1",
-    "express-session": "^1.18.1",
-    "helmet": "^8.0.0",
-    "mongoose": "^8.8.0",
-    "morgan": "^1.10.0",
-    "nunjucks": "^3.2.4",
-    "qrcode": "^1.5.4"
+    "dotenv":"^16.4.7","express":"^4.21.2","express-session":"^1.18.1",
+    "mongoose":"^8.9.5","multer":"^1.4.5-lts.1","nunjucks":"^3.2.4","qrcode":"^1.5.4"
   },
-  "devDependencies": {
-    "nodemon": "^3.1.7"
-  }
+  "devDependencies": {"nodemon":"^3.1.9"}
 }

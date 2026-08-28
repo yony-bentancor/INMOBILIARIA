@@ -1,8 +1,0 @@
-<svg width="520" height="120" viewBox="0 0 520 120" xmlns="http://www.w3.org/2000/svg">
-  <rect x="6" y="8" width="92" height="92" rx="2" fill="#171c20"/>
-  <path d="M26 68 L52 40 L82 68 V88 H26Z" fill="#f1a000"/>
-  <path d="M37 68 L52 53 L70 69 V88 H37Z" fill="#fff"/>
-  <rect x="47" y="71" width="8" height="8" fill="#171c20"/><rect x="59" y="71" width="8" height="8" fill="#171c20"/><rect x="47" y="82" width="8" height="8" fill="#171c20"/><rect x="59" y="82" width="8" height="8" fill="#171c20"/>
-  <g fill="#171c20"><rect x="105" y="8" width="14" height="14"/><rect x="124" y="8" width="14" height="14"/><rect x="105" y="27" width="7" height="7"/><rect x="119" y="27" width="19" height="7"/><rect x="105" y="40" width="14" height="14"/><rect x="126" y="40" width="12" height="12"/><rect x="105" y="60" width="8" height="8"/><rect x="118" y="56" width="8" height="19"/><rect x="132" y="60" width="8" height="8"/><rect x="104" y="80" width="14" height="14"/><rect x="126" y="78" width="14" height="14"/></g>
-  <text x="164" y="78" font-family="Inter,Arial,sans-serif" font-weight="700" font-size="62" fill="#171c20" letter-spacing="4"><tspan fill="#f1a000">Q</tspan>CASA</text>
-</svg>

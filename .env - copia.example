@@ -1,5 +1,5 @@
 PORT=3000
-SESSION_SECRET=qcasa-cambiar-esta-clave
+SESSION_SECRET=qcasa-local-2026
 USE_MONGO=false
 MONGO_URI=
 BASE_URL=http://localhost:3000
