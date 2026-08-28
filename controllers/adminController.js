@@ -31,4 +31,50 @@ exports.paymentDelete=(req,res)=>{const i=store.payments.findIndex(x=>x.id===req
 exports.documents=(req,res)=>res.render('admin/documents.njk',{title:'Documentos | QCASA',documents:store.documents,properties:store.properties,documentTypes:DOCUMENT_TYPES});
 exports.documentCreate=(req,res)=>{store.documents.unshift({id:uid('doc'),propertyCode:req.body.propertyCode,type:req.body.type||'Otro',title:req.body.title||'',issueDate:req.body.issueDate||'',dueDate:req.body.dueDate||'',fileUrl:req.body.fileUrl||'#',notes:req.body.notes||''});res.redirect('/admin/documentos')};
 exports.documentDelete=(req,res)=>{const i=store.documents.findIndex(x=>x.id===req.params.id);if(i>=0)store.documents.splice(i,1);res.redirect('/admin/documentos')};
-exports.settings=(req,res)=>res.render('admin/settings.njk',{title:'Configuración | QCASA'});
+exports.settings=(req,res)=>{
+  const rentedProperties=store.properties.filter(p=>p.active!==false&&p.status==='Alquilada');
+  const totalMonthlyRent=rentedProperties.reduce((sum,p)=>sum+safeNumber(p.lease?.amount),0);
+
+  const now=new Date();
+  const parts=new Intl.DateTimeFormat('en-CA',{
+    timeZone:'America/Montevideo',
+    year:'numeric',
+    month:'2-digit'
+  }).formatToParts(now);
+  const year=Number(parts.find(x=>x.type==='year')?.value||now.getUTCFullYear());
+  const month=Number(parts.find(x=>x.type==='month')?.value||(now.getUTCMonth()+1));
+
+  function isComplaintFromCurrentMonth(c){
+    if(!c.createdAt)return false;
+    const d=new Date(c.createdAt);
+    if(Number.isNaN(d.getTime()))return false;
+    const p=new Intl.DateTimeFormat('en-CA',{
+      timeZone:'America/Montevideo',
+      year:'numeric',
+      month:'2-digit'
+    }).formatToParts(d);
+    const y=Number(p.find(x=>x.type==='year')?.value);
+    const m=Number(p.find(x=>x.type==='month')?.value);
+    return y===year&&m===month;
+  }
+
+  const monthlyComplaints=store.complaints.filter(isComplaintFromCurrentMonth);
+  const openMonthlyComplaints=monthlyComplaints.filter(c=>!['Resuelto','Cancelado'].includes(c.status));
+
+  const monthLabel=new Intl.DateTimeFormat('es-UY',{
+    timeZone:'America/Montevideo',
+    month:'long',
+    year:'numeric'
+  }).format(now);
+
+  res.render('admin/settings.njk',{
+    title:'Configuración | QCASA',
+    salaryCalculator:{
+      rentedProperties:rentedProperties.length,
+      totalMonthlyRent,
+      monthlyComplaints:monthlyComplaints.length,
+      openMonthlyComplaints:openMonthlyComplaints.length,
+      monthLabel
+    }
+  });
+};
