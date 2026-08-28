@@ -315,6 +315,39 @@ exports.dashboard=(req,res)=>{
     .sort((a,b)=>String(a.dueDate).localeCompare(String(b.dueDate)))
     .map(a=>({...a,dateLabel:formatDate(a.dueDate),dateShort:formatDateShort(a.dueDate)}));
 
+  // Agrupa los vencimientos por concepto.
+  // Cada grupo conserva el orden cronológico que ya tiene `deadlines`.
+  const deadlineGroups={
+    contribucion:[],
+    primaria:[],
+    alquileres:[],
+    seguros:[],
+    impuestos:[],
+    otros:[]
+  };
+
+  deadlines.forEach(a=>{
+    const text=`${a.type||''} ${a.title||''} ${a.category||''}`.toLowerCase();
+
+    if(text.includes('contribución')||text.includes('contribucion')){
+      deadlineGroups.contribucion.push(a);
+    }else if(text.includes('primaria')){
+      deadlineGroups.primaria.push(a);
+    }else if(text.includes('alquiler')){
+      deadlineGroups.alquileres.push(a);
+    }else if(text.includes('seguro')){
+      deadlineGroups.seguros.push(a);
+    }else if(
+      text.includes('impuesto')||
+      text.includes('tributo')||
+      text.includes('tax')
+    ){
+      deadlineGroups.impuestos.push(a);
+    }else{
+      deadlineGroups.otros.push(a);
+    }
+  });
+
   const attention=buildAttention({properties,complaints,alerts,payments,period});
 
   res.render('owner/dashboard.njk',{
@@ -326,6 +359,7 @@ exports.dashboard=(req,res)=>{
     payments,
     openComplaints,
     deadlines,
+    deadlineGroups,
     attention,
     taxAlerts,
     economy:{

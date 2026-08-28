@@ -959,6 +959,11 @@
   .owner-summary-columns{grid-template-columns:1.15fr .85fr}
   .owner-property-row{grid-template-columns:175px minmax(0,1fr) 115px}
 }
+
+/* =========================================================
+   QCASA · Economía + Vencimientos agrupados
+   ========================================================= */
+
 .owner-economic-result{
   margin-top:18px;
   padding:22px;
@@ -978,6 +983,7 @@
 .owner-economic-result strong{
   font-size:32px;
   line-height:1.1;
+  overflow-wrap:anywhere;
 }
 
 .owner-economic-result small{
@@ -985,3 +991,59 @@
   font-size:10px;
   line-height:1.4;
 }
+
+.owner-deadline-groups{
+  display:grid;
+  gap:14px;
+}
+
+.owner-deadline-group{
+  padding:0;
+  overflow:hidden;
+}
+
+.owner-deadline-group-head{
+  min-height:66px;
+  padding:15px 16px;
+  background:#fff;
+  border-bottom:1px solid #e7e2db;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.owner-deadline-group-head h3{
+  margin:4px 0 0;
+  font-size:18px;
+  line-height:1.1;
+  letter-spacing:-.02em;
+}
+
+.owner-deadline-count{
+  flex:0 0 auto;
+  min-width:30px;
+  height:30px;
+  padding:0 8px;
+  display:inline-grid;
+  place-items:center;
+  background:#171717;
+  color:#fff;
+  font-size:11px;
+  font-weight:900;
+}
+
+.owner-deadline-group .owner-deadline-list{
+  padding:0 16px;
+}
+
+@media(min-width:760px){
+  .owner-deadline-group-head{
+    padding:17px 20px;
+  }
+
+  .owner-deadline-group .owner-deadline-list{
+    padding:0 20px;
+  }
+}
+
