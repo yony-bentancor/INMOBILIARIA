@@ -6,10 +6,10 @@
     "warning": "Todos los nombres, documentos, RUT, cuentas, direcciones y datos son ficticios/demo."
   },
   "owner": {
-    "name": "Hector Suarez",
+    "name": "Suarez",
     "document": "1.234.567-8",
     "phone": "099 111 222",
-    "email": "hector.suarez@qcasa.demo",
+    "email": "suarez@qcasa.demo",
     "address": "Montevideo, Uruguay"
   },
   "properties": [
@@ -37,10 +37,10 @@
       "longitude": -56.212,
       "coverPhoto": "/img/demo/fachada-1.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
@@ -106,10 +106,10 @@
       "longitude": -56.204,
       "coverPhoto": "/img/demo/fachada-2.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
@@ -175,10 +175,10 @@
       "longitude": -56.196,
       "coverPhoto": "/img/demo/fachada-3.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
@@ -244,10 +244,10 @@
       "longitude": -56.188,
       "coverPhoto": "/img/demo/fachada-1.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
@@ -313,10 +313,10 @@
       "longitude": -56.18,
       "coverPhoto": "/img/demo/fachada-2.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
@@ -382,10 +382,10 @@
       "longitude": -56.172,
       "coverPhoto": "/img/demo/fachada-3.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
@@ -451,10 +451,10 @@
       "longitude": -56.164,
       "coverPhoto": "/img/demo/fachada-1.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
@@ -520,10 +520,10 @@
       "longitude": -56.156,
       "coverPhoto": "/img/demo/fachada-2.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
@@ -589,10 +589,10 @@
       "longitude": -56.148,
       "coverPhoto": "/img/demo/fachada-3.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
@@ -658,10 +658,10 @@
       "longitude": -56.14,
       "coverPhoto": "/img/demo/fachada-1.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
@@ -727,10 +727,10 @@
       "longitude": -56.132,
       "coverPhoto": "/img/demo/fachada-2.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
@@ -796,10 +796,10 @@
       "longitude": -56.22,
       "coverPhoto": "/img/demo/fachada-3.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
@@ -865,10 +865,10 @@
       "longitude": -56.212,
       "coverPhoto": "/img/demo/fachada-1.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
@@ -934,10 +934,10 @@
       "longitude": -56.204,
       "coverPhoto": "/img/demo/fachada-2.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
@@ -1003,10 +1003,10 @@
       "longitude": -56.196,
       "coverPhoto": "/img/demo/fachada-3.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
@@ -1072,10 +1072,10 @@
       "longitude": -56.188,
       "coverPhoto": "/img/demo/fachada-1.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
@@ -1141,10 +1141,10 @@
       "longitude": -56.18,
       "coverPhoto": "/img/demo/fachada-2.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
@@ -1210,10 +1210,10 @@
       "longitude": -56.172,
       "coverPhoto": "/img/demo/fachada-3.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
@@ -1279,10 +1279,10 @@
       "longitude": -56.164,
       "coverPhoto": "/img/demo/fachada-1.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
@@ -1348,10 +1348,10 @@
       "longitude": -56.156,
       "coverPhoto": "/img/demo/fachada-2.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
@@ -1417,10 +1417,10 @@
       "longitude": -56.148,
       "coverPhoto": "/img/demo/fachada-3.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
@@ -1486,10 +1486,10 @@
       "longitude": -56.14,
       "coverPhoto": "/img/demo/fachada-1.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
@@ -1555,10 +1555,10 @@
       "longitude": -56.132,
       "coverPhoto": "/img/demo/fachada-2.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
@@ -1624,10 +1624,10 @@
       "longitude": -56.22,
       "coverPhoto": "/img/demo/fachada-3.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
@@ -1693,10 +1693,10 @@
       "longitude": -56.212,
       "coverPhoto": "/img/demo/fachada-1.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
@@ -1762,10 +1762,10 @@
       "longitude": -56.204,
       "coverPhoto": "/img/demo/fachada-2.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
@@ -1831,10 +1831,10 @@
       "longitude": -56.196,
       "coverPhoto": "/img/demo/fachada-3.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
@@ -1900,10 +1900,10 @@
       "longitude": -56.188,
       "coverPhoto": "/img/demo/fachada-1.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
@@ -1969,10 +1969,10 @@
       "longitude": -56.18,
       "coverPhoto": "/img/demo/fachada-2.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
@@ -2038,10 +2038,10 @@
       "longitude": -56.172,
       "coverPhoto": "/img/demo/fachada-3.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
@@ -2107,10 +2107,10 @@
       "longitude": -56.164,
       "coverPhoto": "/img/demo/fachada-1.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
@@ -2176,10 +2176,10 @@
       "longitude": -56.156,
       "coverPhoto": "/img/demo/fachada-2.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
@@ -2245,10 +2245,10 @@
       "longitude": -56.148,
       "coverPhoto": "/img/demo/fachada-3.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
@@ -2314,10 +2314,10 @@
       "longitude": -56.14,
       "coverPhoto": "/img/demo/fachada-1.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
@@ -2383,10 +2383,10 @@
       "longitude": -56.132,
       "coverPhoto": "/img/demo/fachada-2.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
@@ -2452,10 +2452,10 @@
       "longitude": -56.22,
       "coverPhoto": "/img/demo/fachada-3.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
@@ -2521,10 +2521,10 @@
       "longitude": -56.212,
       "coverPhoto": "/img/demo/fachada-1.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
@@ -2590,10 +2590,10 @@
       "longitude": -56.204,
       "coverPhoto": "/img/demo/fachada-2.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
@@ -2659,10 +2659,10 @@
       "longitude": -56.196,
       "coverPhoto": "/img/demo/fachada-3.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
@@ -2728,10 +2728,10 @@
       "longitude": -56.188,
       "coverPhoto": "/img/demo/fachada-1.svg",
       "owner": {
-        "name": "Hector Suarez",
+        "name": "Suarez",
         "document": "1.234.567-8",
         "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "email": "suarez@qcasa.demo",
         "address": "Montevideo, Uruguay"
       },
       "tenant": {
