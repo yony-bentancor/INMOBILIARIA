@@ -378,37 +378,38 @@
     </small>
             </div>
         </section>
+    </section>
 
-        <section class="owner-tab-panel" data-owner-panel="vencimientos">
-            <div class="owner-section-title">
-                <div>
-                    <span class="owner-eyebrow">AGENDA</span>
-                    <h2>Vencimientos por fecha</h2>
-                    <p>Contratos, alquileres, impuestos, seguros y cualquier obligación futura.</p>
-                </div>
+    <section class="owner-tab-panel" data-owner-panel="vencimientos">
+        <div class="owner-section-title">
+            <div>
+                <span class="owner-eyebrow">AGENDA</span>
+                <h2>Vencimientos por fecha</h2>
+                <p>Contratos, alquileres, impuestos, seguros y cualquier obligación futura.</p>
             </div>
+        </div>
 
-            <div class="owner-deadline-list owner-deadline-full">
-                {% for a in deadlines %}
-                    <a href="/propietario/propiedades/{{ a.propertyCode }}" class="owner-deadline-item">
-                        <time>
-                            <strong>{{ a.dateShort }}</strong>
-                            <small>{{ a.dateLabel }}</small>
-                        </time>
-                        <div>
-                            <strong>{{ a.title }}</strong>
-                            <span>{{ a.propertyCode }} · {{ a.property.address if a.property else a.type }}</span>
-                        </div>
-                        {% if a.amount %}
-                            <b>{{ money(a.amount,a.currency) }}</b>
-                        {% endif %}
-                        <span class="owner-state owner-state-{{ a.level }}">{{ a.statusText }}</span>
-                    </a>
-                {% else %}
-                    <div class="owner-empty">
-                        <strong>Sin vencimientos pendientes.</strong>
+        <div class="owner-deadline-list owner-deadline-full">
+            {% for a in deadlines %}
+                <a href="/propietario/propiedades/{{ a.propertyCode }}" class="owner-deadline-item">
+                    <time>
+                        <strong>{{ a.dateShort }}</strong>
+                        <small>{{ a.dateLabel }}</small>
+                    </time>
+                    <div>
+                        <strong>{{ a.title }}</strong>
+                        <span>{{ a.propertyCode }} · {{ a.property.address if a.property else a.type }}</span>
                     </div>
-                {% endfor %}
-            </div>
-        </section>
-    {% endblock %}
+                    {% if a.amount %}
+                        <b>{{ money(a.amount,a.currency) }}</b>
+                    {% endif %}
+                    <span class="owner-state owner-state-{{ a.level }}">{{ a.statusText }}</span>
+                </a>
+            {% else %}
+                <div class="owner-empty">
+                    <strong>Sin vencimientos pendientes.</strong>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
