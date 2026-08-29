@@ -1,9 +1,10 @@
 {
   "meta": {
     "name": "QCASA dataset demo",
-    "version": 1,
+    "version": 2,
     "generatedFor": "Pruebas",
-    "warning": "Todos los nombres, documentos, RUT, cuentas, direcciones y datos son ficticios/demo."
+    "warning": "Todos los nombres, documentos, RUT, cuentas, direcciones y datos son ficticios/demo.",
+    "notes": "Ajustado para pruebas: 40 propiedades (39 alquiladas, 1 vacía), 34 alquileres pagados, 5 sin pagar y 5 reclamos."
   },
   "owner": {
     "name": "Suarez",
@@ -3064,331 +3065,6 @@
           "note": "Estado demo."
         }
       ]
-    },
-    {
-      "id": "clm-206",
-      "number": 206,
-      "propertyCode": "QC-0013",
-      "category": "Techos",
-      "title": "Filtración de techo",
-      "description": "Reclamo ficticio de demostración con información suficiente para probar el flujo.",
-      "phone": "098 113 213",
-      "priority": "high",
-      "status": "Resuelto",
-      "technicianId": "tec-006",
-      "technicianName": "Técnico Demo 06",
-      "technicianEmail": "tecnico06@qcasa.demo",
-      "attachments": [],
-      "shareToken": "c06dff9c373fec4523e64665a7b768f8",
-      "createdAt": "2026-08-16T12:00:00.000Z",
-      "updatedAt": "2026-08-28T12:00:00.000Z",
-      "history": [
-        {
-          "at": "2026-08-28T12:00:00.000Z",
-          "status": "Resuelto",
-          "note": "Estado demo."
-        }
-      ]
-    },
-    {
-      "id": "clm-207",
-      "number": 207,
-      "propertyCode": "QC-0015",
-      "category": "Otros",
-      "title": "Revisión general",
-      "description": "Reclamo ficticio de demostración con información suficiente para probar el flujo.",
-      "phone": "097 115 215",
-      "priority": "urgent",
-      "status": "Cancelado",
-      "technicianId": null,
-      "technicianName": null,
-      "technicianEmail": null,
-      "attachments": [],
-      "shareToken": "7c905672a04ec8fe97078f735d68dcf8",
-      "createdAt": "2026-08-17T12:00:00.000Z",
-      "updatedAt": "2026-08-28T12:00:00.000Z",
-      "history": [
-        {
-          "at": "2026-08-28T12:00:00.000Z",
-          "status": "Cancelado",
-          "note": "Estado demo."
-        }
-      ]
-    },
-    {
-      "id": "clm-208",
-      "number": 208,
-      "propertyCode": "QC-0018",
-      "category": "Sanitaria",
-      "title": "Pérdida de agua",
-      "description": "Reclamo ficticio de demostración con información suficiente para probar el flujo.",
-      "phone": "097 118 218",
-      "priority": "low",
-      "status": "Nuevo",
-      "technicianId": null,
-      "technicianName": null,
-      "technicianEmail": null,
-      "attachments": [],
-      "shareToken": "cea28a4b435aa5ee30c324fedec455e3",
-      "createdAt": "2026-08-18T12:00:00.000Z",
-      "updatedAt": "2026-08-28T12:00:00.000Z",
-      "history": [
-        {
-          "at": "2026-08-28T12:00:00.000Z",
-          "status": "Nuevo",
-          "note": "Estado demo."
-        }
-      ]
-    },
-    {
-      "id": "clm-209",
-      "number": 209,
-      "propertyCode": "QC-0019",
-      "category": "Electricidad",
-      "title": "Corte eléctrico",
-      "description": "Reclamo ficticio de demostración con información suficiente para probar el flujo.",
-      "phone": "098 119 219",
-      "priority": "medium",
-      "status": "Revisando",
-      "technicianId": null,
-      "technicianName": null,
-      "technicianEmail": null,
-      "attachments": [],
-      "shareToken": "9a793b91d7cdc50ffb3a21f6b03b4f59",
-      "createdAt": "2026-08-19T12:00:00.000Z",
-      "updatedAt": "2026-08-28T12:00:00.000Z",
-      "history": [
-        {
-          "at": "2026-08-28T12:00:00.000Z",
-          "status": "Revisando",
-          "note": "Estado demo."
-        }
-      ]
-    },
-    {
-      "id": "clm-210",
-      "number": 210,
-      "propertyCode": "QC-0021",
-      "category": "Cerrajería",
-      "title": "Cerradura trabada",
-      "description": "Reclamo ficticio de demostración con información suficiente para probar el flujo.",
-      "phone": "097 121 221",
-      "priority": "high",
-      "status": "Técnico asignado",
-      "technicianId": "tec-002",
-      "technicianName": "Técnico Demo 02",
-      "technicianEmail": "tecnico02@qcasa.demo",
-      "attachments": [],
-      "shareToken": "13124b4116720060119a636a78df55a1",
-      "createdAt": "2026-08-20T12:00:00.000Z",
-      "updatedAt": "2026-08-28T12:00:00.000Z",
-      "history": [
-        {
-          "at": "2026-08-28T12:00:00.000Z",
-          "status": "Técnico asignado",
-          "note": "Estado demo."
-        }
-      ]
-    },
-    {
-      "id": "clm-211",
-      "number": 211,
-      "propertyCode": "QC-0023",
-      "category": "Humedad",
-      "title": "Humedad en pared",
-      "description": "Reclamo ficticio de demostración con información suficiente para probar el flujo.",
-      "phone": "099 123 223",
-      "priority": "urgent",
-      "status": "En reparación",
-      "technicianId": "tec-003",
-      "technicianName": "Técnico Demo 03",
-      "technicianEmail": "tecnico03@qcasa.demo",
-      "attachments": [],
-      "shareToken": "0f0c66b7f60998ee65e7d649ccdb34a2",
-      "createdAt": "2026-08-21T12:00:00.000Z",
-      "updatedAt": "2026-08-28T12:00:00.000Z",
-      "history": [
-        {
-          "at": "2026-08-28T12:00:00.000Z",
-          "status": "En reparación",
-          "note": "Estado demo."
-        }
-      ]
-    },
-    {
-      "id": "clm-212",
-      "number": 212,
-      "propertyCode": "QC-0025",
-      "category": "Pintura",
-      "title": "Pintura descascarada",
-      "description": "Reclamo ficticio de demostración con información suficiente para probar el flujo.",
-      "phone": "098 125 225",
-      "priority": "low",
-      "status": "Necesita presupuesto",
-      "technicianId": "tec-004",
-      "technicianName": "Técnico Demo 04",
-      "technicianEmail": "tecnico04@qcasa.demo",
-      "attachments": [],
-      "shareToken": "eb16ef441a6fb4a69b3f0c78f8b3fa05",
-      "createdAt": "2026-08-22T12:00:00.000Z",
-      "updatedAt": "2026-08-28T12:00:00.000Z",
-      "history": [
-        {
-          "at": "2026-08-28T12:00:00.000Z",
-          "status": "Necesita presupuesto",
-          "note": "Estado demo."
-        }
-      ]
-    },
-    {
-      "id": "clm-213",
-      "number": 213,
-      "propertyCode": "QC-0027",
-      "category": "Climatización",
-      "title": "Aire acondicionado no enfría",
-      "description": "Reclamo ficticio de demostración con información suficiente para probar el flujo.",
-      "phone": "097 127 227",
-      "priority": "medium",
-      "status": "Necesita repuesto",
-      "technicianId": "tec-005",
-      "technicianName": "Técnico Demo 05",
-      "technicianEmail": "tecnico05@qcasa.demo",
-      "attachments": [],
-      "shareToken": "7b09ec8f7b26acbec6bcc788a764f98a",
-      "createdAt": "2026-08-23T12:00:00.000Z",
-      "updatedAt": "2026-08-28T12:00:00.000Z",
-      "history": [
-        {
-          "at": "2026-08-28T12:00:00.000Z",
-          "status": "Necesita repuesto",
-          "note": "Estado demo."
-        }
-      ]
-    },
-    {
-      "id": "clm-214",
-      "number": 214,
-      "propertyCode": "QC-0029",
-      "category": "Techos",
-      "title": "Filtración de techo",
-      "description": "Reclamo ficticio de demostración con información suficiente para probar el flujo.",
-      "phone": "099 129 229",
-      "priority": "high",
-      "status": "Resuelto",
-      "technicianId": "tec-006",
-      "technicianName": "Técnico Demo 06",
-      "technicianEmail": "tecnico06@qcasa.demo",
-      "attachments": [],
-      "shareToken": "ea3434a94db136c264c75fc09564352f",
-      "createdAt": "2026-08-24T12:00:00.000Z",
-      "updatedAt": "2026-08-28T12:00:00.000Z",
-      "history": [
-        {
-          "at": "2026-08-28T12:00:00.000Z",
-          "status": "Resuelto",
-          "note": "Estado demo."
-        }
-      ]
-    },
-    {
-      "id": "clm-215",
-      "number": 215,
-      "propertyCode": "QC-0031",
-      "category": "Otros",
-      "title": "Revisión general",
-      "description": "Reclamo ficticio de demostración con información suficiente para probar el flujo.",
-      "phone": "098 131 231",
-      "priority": "urgent",
-      "status": "Cancelado",
-      "technicianId": null,
-      "technicianName": null,
-      "technicianEmail": null,
-      "attachments": [],
-      "shareToken": "5f5584f3466bf6e398e61b1a6d859e38",
-      "createdAt": "2026-08-25T12:00:00.000Z",
-      "updatedAt": "2026-08-28T12:00:00.000Z",
-      "history": [
-        {
-          "at": "2026-08-28T12:00:00.000Z",
-          "status": "Cancelado",
-          "note": "Estado demo."
-        }
-      ]
-    },
-    {
-      "id": "clm-216",
-      "number": 216,
-      "propertyCode": "QC-0033",
-      "category": "Sanitaria",
-      "title": "Pérdida de agua",
-      "description": "Reclamo ficticio de demostración con información suficiente para probar el flujo.",
-      "phone": "097 133 233",
-      "priority": "low",
-      "status": "Nuevo",
-      "technicianId": null,
-      "technicianName": null,
-      "technicianEmail": null,
-      "attachments": [],
-      "shareToken": "2e41816f1962db8e448d68fc99a89abd",
-      "createdAt": "2026-08-26T12:00:00.000Z",
-      "updatedAt": "2026-08-28T12:00:00.000Z",
-      "history": [
-        {
-          "at": "2026-08-28T12:00:00.000Z",
-          "status": "Nuevo",
-          "note": "Estado demo."
-        }
-      ]
-    },
-    {
-      "id": "clm-217",
-      "number": 217,
-      "propertyCode": "QC-0035",
-      "category": "Electricidad",
-      "title": "Corte eléctrico",
-      "description": "Reclamo ficticio de demostración con información suficiente para probar el flujo.",
-      "phone": "099 135 235",
-      "priority": "medium",
-      "status": "Revisando",
-      "technicianId": null,
-      "technicianName": null,
-      "technicianEmail": null,
-      "attachments": [],
-      "shareToken": "6045ea0f11a26b8e5ce37054930f44f5",
-      "createdAt": "2026-08-27T12:00:00.000Z",
-      "updatedAt": "2026-08-28T12:00:00.000Z",
-      "history": [
-        {
-          "at": "2026-08-28T12:00:00.000Z",
-          "status": "Revisando",
-          "note": "Estado demo."
-        }
-      ]
-    },
-    {
-      "id": "clm-218",
-      "number": 218,
-      "propertyCode": "QC-0037",
-      "category": "Cerrajería",
-      "title": "Cerradura trabada",
-      "description": "Reclamo ficticio de demostración con información suficiente para probar el flujo.",
-      "phone": "098 137 237",
-      "priority": "high",
-      "status": "Técnico asignado",
-      "technicianId": "tec-002",
-      "technicianName": "Técnico Demo 02",
-      "technicianEmail": "tecnico02@qcasa.demo",
-      "attachments": [],
-      "shareToken": "a932178242242ec873a1dd194a6a1108",
-      "createdAt": "2026-08-10T12:00:00.000Z",
-      "updatedAt": "2026-08-28T12:00:00.000Z",
-      "history": [
-        {
-          "at": "2026-08-28T12:00:00.000Z",
-          "status": "Técnico asignado",
-          "note": "Estado demo."
-        }
-      ]
     }
   ],
   "alerts": [
@@ -5294,8 +4970,8 @@
       "dueDate": "2026-09-02",
       "amount": 55500,
       "currency": "UYU",
-      "status": "Pendiente",
-      "paidAt": "",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
       "method": "",
       "reference": "",
       "notes": "Movimiento demo."
@@ -5336,8 +5012,8 @@
       "dueDate": "2026-09-05",
       "amount": 52000,
       "currency": "UYU",
-      "status": "Pendiente",
-      "paidAt": "",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
       "method": "",
       "reference": "",
       "notes": "Movimiento demo."
@@ -5378,8 +5054,8 @@
       "dueDate": "2026-09-02",
       "amount": 38000,
       "currency": "UYU",
-      "status": "Pendiente",
-      "paidAt": "",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
       "method": "",
       "reference": "",
       "notes": "Movimiento demo."
@@ -5448,8 +5124,8 @@
       "dueDate": "2026-09-02",
       "amount": 59000,
       "currency": "UYU",
-      "status": "Pendiente",
-      "paidAt": "",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
       "method": "",
       "reference": "",
       "notes": "Movimiento demo."
@@ -5462,8 +5138,8 @@
       "dueDate": "2026-08-14",
       "amount": 38000,
       "currency": "UYU",
-      "status": "Vencido",
-      "paidAt": "",
+      "status": "Pagado",
+      "paidAt": "2026-08-14",
       "method": "",
       "reference": "",
       "notes": "Movimiento demo."
@@ -5490,8 +5166,8 @@
       "dueDate": "2026-09-05",
       "amount": 43000,
       "currency": "UYU",
-      "status": "Pendiente",
-      "paidAt": "",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
       "method": "",
       "reference": "",
       "notes": "Movimiento demo."
@@ -5532,8 +5208,8 @@
       "dueDate": "2026-09-02",
       "amount": 55500,
       "currency": "UYU",
-      "status": "Pendiente",
-      "paidAt": "",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
       "method": "",
       "reference": "",
       "notes": "Movimiento demo."
@@ -5546,8 +5222,8 @@
       "dueDate": "2026-08-20",
       "amount": 91000,
       "currency": "UYU",
-      "status": "Vencido",
-      "paidAt": "",
+      "status": "Pagado",
+      "paidAt": "2026-08-20",
       "method": "",
       "reference": "",
       "notes": "Movimiento demo."
@@ -5574,8 +5250,8 @@
       "dueDate": "2026-09-05",
       "amount": 55500,
       "currency": "UYU",
-      "status": "Pendiente",
-      "paidAt": "",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
       "method": "",
       "reference": "",
       "notes": "Movimiento demo."
@@ -5616,8 +5292,8 @@
       "dueDate": "2026-09-02",
       "amount": 52000,
       "currency": "UYU",
-      "status": "Pendiente",
-      "paidAt": "",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
       "method": "",
       "reference": "",
       "notes": "Movimiento demo."
@@ -5630,8 +5306,8 @@
       "dueDate": "2026-08-14",
       "amount": 69500,
       "currency": "UYU",
-      "status": "Vencido",
-      "paidAt": "",
+      "status": "Pagado",
+      "paidAt": "2026-08-14",
       "method": "",
       "reference": "",
       "notes": "Movimiento demo."
@@ -5658,8 +5334,8 @@
       "dueDate": "2026-09-05",
       "amount": 52000,
       "currency": "UYU",
-      "status": "Pendiente",
-      "paidAt": "",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
       "method": "",
       "reference": "",
       "notes": "Movimiento demo."
@@ -5700,8 +5376,8 @@
       "dueDate": "2026-09-02",
       "amount": 48500,
       "currency": "UYU",
-      "status": "Pendiente",
-      "paidAt": "",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
       "method": "",
       "reference": "",
       "notes": "Movimiento demo."
@@ -5714,8 +5390,8 @@
       "dueDate": "2026-08-20",
       "amount": 66000,
       "currency": "UYU",
-      "status": "Vencido",
-      "paidAt": "",
+      "status": "Pagado",
+      "paidAt": "2026-08-20",
       "method": "",
       "reference": "",
       "notes": "Movimiento demo."
