@@ -1,6 +1,7 @@
 const r=require('express').Router();
 const c=require('../controllers/adminController');
 const dashboard=require('../controllers/adminDashboardController');
+const paymentsDashboard=require('../controllers/adminPaymentsController');
 const{requireRole}=require('../middleware/auth');
 
 r.use(requireRole('admin'));
@@ -32,7 +33,7 @@ r.post('/vencimientos/nuevo',c.alertCreate);
 r.post('/vencimientos/:id/toggle',c.alertToggle);
 r.post('/vencimientos/:id/eliminar',c.alertDelete);
 
-r.get('/cobros',c.payments);
+r.get('/cobros',paymentsDashboard.payments);
 r.post('/cobros/nuevo',c.paymentCreate);
 r.post('/cobros/:id/toggle',c.paymentToggle);
 r.post('/cobros/:id/eliminar',c.paymentDelete);
