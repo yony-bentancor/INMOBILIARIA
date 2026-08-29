@@ -1,0 +1,4994 @@
+{
+  "meta": {
+    "name": "QCASA dataset demo",
+    "version": 3,
+    "generatedFor": "Pruebas",
+    "warning": "Todos los nombres, documentos, RUT, cuentas, direcciones y datos son ficticios/demo.",
+    "notes": "Dataset demo reducido y sincronizado: 40 propiedades (39 alquiladas, 1 vacía), 34 alquileres pagados, 5 pendientes, 5 reclamos y 20 vencimientos próximos (5 Contribución, 5 Primaria, 5 Contratos y 5 Alquileres), todos dentro de 30 días."
+  },
+  "owner": {
+    "name": "Suarez",
+    "document": "1.234.567-8",
+    "phone": "099 111 222",
+    "email": "suarez@qcasa.demo",
+    "address": "Montevideo, Uruguay"
+  },
+  "properties": [
+    {
+      "id": "prop-001",
+      "code": "QC-0001",
+      "active": true,
+      "type": "Local comercial",
+      "address": "Av. 18 de Julio 837",
+      "unit": "Local 2",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Centro",
+      "postalCode": "11101",
+      "cadastralNumber": "120137",
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "builtArea": 52,
+      "landArea": 0,
+      "yearBuilt": 1958,
+      "status": "Alquilada",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=Av.+18+de+Julio+837+Montevideo",
+      "latitude": -34.934,
+      "longitude": -56.212,
+      "coverPhoto": "/img/demo/fachada-1.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "Ana Pérez",
+        "document": "4.101.207-1",
+        "phone": "098 101 201",
+        "email": "inquilino01@qcasa.demo",
+        "emergencyContact": "Contacto alternativo 01 · 099 141 241",
+        "notes": "Coordinar después de las 14:00."
+      },
+      "lease": {
+        "amount": 55500,
+        "currency": "UYU",
+        "paymentDay": 6,
+        "startDate": "2026-02-02",
+        "endDate": "2026-12-09",
+        "guaranteeType": "CGN",
+        "guaranteeRef": "GAR-0001",
+        "depositAmount": 0,
+        "adjustment": "Semestral",
+        "status": "Vigente"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440001",
+        "uteAccount": "UTE-770001",
+        "antelAccount": "",
+        "commonExpensesAccount": "GC-0001"
+      },
+      "qrCode": "QC-0001",
+      "qrPublicPath": "/r/QC-0001",
+      "photos": [
+        {
+          "id": "ph-001-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-1.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    },
+    {
+      "id": "prop-002",
+      "code": "QC-0002",
+      "active": true,
+      "type": "Local comercial",
+      "address": "Av. Italia 874",
+      "unit": "Local 3",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Malvín",
+      "postalCode": "11102",
+      "cadastralNumber": "120274",
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "builtArea": 59,
+      "landArea": 0,
+      "yearBuilt": 1961,
+      "status": "Alquilada",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=Av.+Italia+874+Montevideo",
+      "latitude": -34.928,
+      "longitude": -56.204,
+      "coverPhoto": "/img/demo/fachada-2.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "Martín González",
+        "document": "5.102.214-2",
+        "phone": "099 102 202",
+        "email": "inquilino02@qcasa.demo",
+        "emergencyContact": "Contacto alternativo 02 · 097 142 242",
+        "notes": "Horario comercial."
+      },
+      "lease": {
+        "amount": 59000,
+        "currency": "UYU",
+        "paymentDay": 7,
+        "startDate": "2025-03-03",
+        "endDate": "2026-12-22",
+        "guaranteeType": "Porto Seguro",
+        "guaranteeRef": "GAR-0002",
+        "depositAmount": 0,
+        "adjustment": "Anual por IMS",
+        "status": "Vigente"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440002",
+        "uteAccount": "UTE-770002",
+        "antelAccount": "",
+        "commonExpensesAccount": "GC-0002"
+      },
+      "qrCode": "QC-0002",
+      "qrPublicPath": "/r/QC-0002",
+      "photos": [
+        {
+          "id": "ph-002-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-2.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    },
+    {
+      "id": "prop-003",
+      "code": "QC-0003",
+      "active": true,
+      "type": "Local comercial",
+      "address": "Av. Rivera 911",
+      "unit": "Local 4",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Pocitos",
+      "postalCode": "11103",
+      "cadastralNumber": "120411",
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "builtArea": 66,
+      "landArea": 0,
+      "yearBuilt": 1964,
+      "status": "Alquilada",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=Av.+Rivera+911+Montevideo",
+      "latitude": -34.922,
+      "longitude": -56.196,
+      "coverPhoto": "/img/demo/fachada-3.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "Lucía Fernández",
+        "document": "6.103.221-3",
+        "phone": "097 103 203",
+        "email": "inquilino03@qcasa.demo",
+        "emergencyContact": "Contacto alternativo 03 · 098 143 243",
+        "notes": "Sin observaciones."
+      },
+      "lease": {
+        "amount": 62500,
+        "currency": "UYU",
+        "paymentDay": 8,
+        "startDate": "2026-04-04",
+        "endDate": "2027-01-04",
+        "guaranteeType": "Depósito",
+        "guaranteeRef": "GAR-0003",
+        "depositAmount": 125000,
+        "adjustment": "Anual por IPC",
+        "status": "Vigente"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440003",
+        "uteAccount": "UTE-770003",
+        "antelAccount": "ANTEL-550003",
+        "commonExpensesAccount": "GC-0003"
+      },
+      "qrCode": "QC-0003",
+      "qrPublicPath": "/r/QC-0003",
+      "photos": [
+        {
+          "id": "ph-003-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-3.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    },
+    {
+      "id": "prop-004",
+      "code": "QC-0004",
+      "active": true,
+      "type": "Oficina",
+      "address": "Bv. España 948",
+      "unit": "Of. 104",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Parque Rodó",
+      "postalCode": "11104",
+      "cadastralNumber": "120548",
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "builtArea": 73,
+      "landArea": 0,
+      "yearBuilt": 1967,
+      "status": "Alquilada",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=Bv.+España+948+Montevideo",
+      "latitude": -34.916,
+      "longitude": -56.188,
+      "coverPhoto": "/img/demo/fachada-1.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "Diego Rodríguez",
+        "document": "7.104.228-4",
+        "phone": "098 104 204",
+        "email": "inquilino04@qcasa.demo",
+        "emergencyContact": "Contacto alternativo 04 · 099 144 244",
+        "notes": "Prefiere WhatsApp."
+      },
+      "lease": {
+        "amount": 50000,
+        "currency": "UYU",
+        "paymentDay": 9,
+        "startDate": "2025-05-05",
+        "endDate": "2027-01-17",
+        "guaranteeType": "SURA",
+        "guaranteeRef": "GAR-0004",
+        "depositAmount": 0,
+        "adjustment": "Semestral",
+        "status": "Vigente"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440004",
+        "uteAccount": "UTE-770004",
+        "antelAccount": "",
+        "commonExpensesAccount": "GC-0004"
+      },
+      "qrCode": "QC-0004",
+      "qrPublicPath": "/r/QC-0004",
+      "photos": [
+        {
+          "id": "ph-004-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-1.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    },
+    {
+      "id": "prop-005",
+      "code": "QC-0005",
+      "active": true,
+      "type": "Casa",
+      "address": "Colonia 985",
+      "unit": "",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Cordón",
+      "postalCode": "11105",
+      "cadastralNumber": "120685",
+      "bedrooms": 4,
+      "bathrooms": 2,
+      "builtArea": 80,
+      "landArea": 165,
+      "yearBuilt": 1970,
+      "status": "Alquilada",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=Colonia+985+Montevideo",
+      "latitude": -34.91,
+      "longitude": -56.18,
+      "coverPhoto": "/img/demo/fachada-2.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "Sofía Méndez",
+        "document": "3.105.235-5",
+        "phone": "099 105 205",
+        "email": "inquilino05@qcasa.demo",
+        "emergencyContact": "Contacto alternativo 05 · 097 145 245",
+        "notes": "Coordinar después de las 14:00."
+      },
+      "lease": {
+        "amount": 55500,
+        "currency": "UYU",
+        "paymentDay": 10,
+        "startDate": "2026-06-06",
+        "endDate": "2027-08-28",
+        "guaranteeType": "ANDA",
+        "guaranteeRef": "GAR-0005",
+        "depositAmount": 0,
+        "adjustment": "Anual por IMS",
+        "status": "Vigente"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440005",
+        "uteAccount": "UTE-770005",
+        "antelAccount": "",
+        "commonExpensesAccount": ""
+      },
+      "qrCode": "QC-0005",
+      "qrPublicPath": "/r/QC-0005",
+      "photos": [
+        {
+          "id": "ph-005-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-2.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    },
+    {
+      "id": "prop-006",
+      "code": "QC-0006",
+      "active": true,
+      "type": "Casa",
+      "address": "Mercedes 1022",
+      "unit": "",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Centro",
+      "postalCode": "11106",
+      "cadastralNumber": "120822",
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "builtArea": 87,
+      "landArea": 174,
+      "yearBuilt": 1973,
+      "status": "Alquilada",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=Mercedes+1022+Montevideo",
+      "latitude": -34.904,
+      "longitude": -56.172,
+      "coverPhoto": "/img/demo/fachada-3.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "Comercial del Sur SRL",
+        "document": "4.106.242-6",
+        "phone": "097 106 206",
+        "email": "inquilino06@qcasa.demo",
+        "emergencyContact": "Contacto alternativo 06 · 098 146 246",
+        "notes": "Horario comercial."
+      },
+      "lease": {
+        "amount": 59000,
+        "currency": "UYU",
+        "paymentDay": 5,
+        "startDate": "2025-07-07",
+        "endDate": "2027-02-12",
+        "guaranteeType": "CGN",
+        "guaranteeRef": "GAR-0006",
+        "depositAmount": 0,
+        "adjustment": "Anual por IPC",
+        "status": "Vigente"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440006",
+        "uteAccount": "UTE-770006",
+        "antelAccount": "ANTEL-550006",
+        "commonExpensesAccount": ""
+      },
+      "qrCode": "QC-0006",
+      "qrPublicPath": "/r/QC-0006",
+      "photos": [
+        {
+          "id": "ph-006-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-3.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    },
+    {
+      "id": "prop-007",
+      "code": "QC-0007",
+      "active": true,
+      "type": "Oficina",
+      "address": "San José 1059",
+      "unit": "Of. 107",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Centro",
+      "postalCode": "11107",
+      "cadastralNumber": "120959",
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "builtArea": 94,
+      "landArea": 0,
+      "yearBuilt": 1976,
+      "status": "Alquilada",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=San+José+1059+Montevideo",
+      "latitude": -34.898,
+      "longitude": -56.164,
+      "coverPhoto": "/img/demo/fachada-1.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "Norte Servicios SAS",
+        "document": "5.107.249-7",
+        "phone": "098 107 207",
+        "email": "inquilino07@qcasa.demo",
+        "emergencyContact": "Contacto alternativo 07 · 099 147 247",
+        "notes": "Sin observaciones."
+      },
+      "lease": {
+        "amount": 36000,
+        "currency": "UYU",
+        "paymentDay": 6,
+        "startDate": "2026-08-08",
+        "endDate": "2027-02-25",
+        "guaranteeType": "Porto Seguro",
+        "guaranteeRef": "GAR-0007",
+        "depositAmount": 0,
+        "adjustment": "Semestral",
+        "status": "Vigente"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440007",
+        "uteAccount": "UTE-770007",
+        "antelAccount": "",
+        "commonExpensesAccount": "GC-0007"
+      },
+      "qrCode": "QC-0007",
+      "qrPublicPath": "/r/QC-0007",
+      "photos": [
+        {
+          "id": "ph-007-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-1.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    },
+    {
+      "id": "prop-008",
+      "code": "QC-0008",
+      "active": true,
+      "type": "Local comercial",
+      "address": "Yi 1096",
+      "unit": "Local 1",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Cordón",
+      "postalCode": "11108",
+      "cadastralNumber": "121096",
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "builtArea": 101,
+      "landArea": 0,
+      "yearBuilt": 1979,
+      "status": "Alquilada",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=Yi+1096+Montevideo",
+      "latitude": -34.892,
+      "longitude": -56.156,
+      "coverPhoto": "/img/demo/fachada-2.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "Estudio López & Asociados",
+        "document": "6.108.256-8",
+        "phone": "099 108 208",
+        "email": "inquilino08@qcasa.demo",
+        "emergencyContact": "Contacto alternativo 08 · 097 148 248",
+        "notes": "Prefiere WhatsApp."
+      },
+      "lease": {
+        "amount": 55500,
+        "currency": "UYU",
+        "paymentDay": 7,
+        "startDate": "2025-09-09",
+        "endDate": "2026-09-02",
+        "guaranteeType": "Depósito",
+        "guaranteeRef": "GAR-0008",
+        "depositAmount": 111000,
+        "adjustment": "Anual por IMS",
+        "status": "Próximo a vencer"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440008",
+        "uteAccount": "UTE-770008",
+        "antelAccount": "",
+        "commonExpensesAccount": "GC-0008"
+      },
+      "qrCode": "QC-0008",
+      "qrPublicPath": "/r/QC-0008",
+      "photos": [
+        {
+          "id": "ph-008-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-2.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    },
+    {
+      "id": "prop-009",
+      "code": "QC-0009",
+      "active": true,
+      "type": "Local comercial",
+      "address": "Ejido 1133",
+      "unit": "Local 2",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Centro",
+      "postalCode": "11109",
+      "cadastralNumber": "121233",
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "builtArea": 108,
+      "landArea": 0,
+      "yearBuilt": 1982,
+      "status": "Alquilada",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=Ejido+1133+Montevideo",
+      "latitude": -34.886,
+      "longitude": -56.148,
+      "coverPhoto": "/img/demo/fachada-3.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "María Silva",
+        "document": "7.109.263-0",
+        "phone": "097 109 209",
+        "email": "inquilino09@qcasa.demo",
+        "emergencyContact": "Contacto alternativo 09 · 098 149 249",
+        "notes": "Coordinar después de las 14:00."
+      },
+      "lease": {
+        "amount": 59000,
+        "currency": "UYU",
+        "paymentDay": 8,
+        "startDate": "2026-10-10",
+        "endDate": "2027-03-23",
+        "guaranteeType": "SURA",
+        "guaranteeRef": "GAR-0009",
+        "depositAmount": 0,
+        "adjustment": "Anual por IPC",
+        "status": "Vigente"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440009",
+        "uteAccount": "UTE-770009",
+        "antelAccount": "ANTEL-550009",
+        "commonExpensesAccount": "GC-0009"
+      },
+      "qrCode": "QC-0009",
+      "qrPublicPath": "/r/QC-0009",
+      "photos": [
+        {
+          "id": "ph-009-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-3.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    },
+    {
+      "id": "prop-010",
+      "code": "QC-0010",
+      "active": true,
+      "type": "Oficina",
+      "address": "Convención 1170",
+      "unit": "Of. 110",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Centro",
+      "postalCode": "11110",
+      "cadastralNumber": "121370",
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "builtArea": 115,
+      "landArea": 0,
+      "yearBuilt": 1985,
+      "status": "Alquilada",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=Convención+1170+Montevideo",
+      "latitude": -34.94,
+      "longitude": -56.14,
+      "coverPhoto": "/img/demo/fachada-1.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "Carlos Pereira",
+        "document": "3.110.270-1",
+        "phone": "098 110 210",
+        "email": "inquilino10@qcasa.demo",
+        "emergencyContact": "Contacto alternativo 10 · 099 150 250",
+        "notes": "Horario comercial."
+      },
+      "lease": {
+        "amount": 46500,
+        "currency": "UYU",
+        "paymentDay": 9,
+        "startDate": "2025-01-11",
+        "endDate": "2027-04-05",
+        "guaranteeType": "ANDA",
+        "guaranteeRef": "GAR-0010",
+        "depositAmount": 0,
+        "adjustment": "Semestral",
+        "status": "Vigente"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440010",
+        "uteAccount": "UTE-770010",
+        "antelAccount": "",
+        "commonExpensesAccount": "GC-0010"
+      },
+      "qrCode": "QC-0010",
+      "qrPublicPath": "/r/QC-0010",
+      "photos": [
+        {
+          "id": "ph-010-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-1.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    },
+    {
+      "id": "prop-011",
+      "code": "QC-0011",
+      "active": true,
+      "type": "Casa",
+      "address": "Av. Brasil 1207",
+      "unit": "",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Pocitos",
+      "postalCode": "11111",
+      "cadastralNumber": "121507",
+      "bedrooms": 4,
+      "bathrooms": 2,
+      "builtArea": 122,
+      "landArea": 219,
+      "yearBuilt": 1988,
+      "status": "Alquilada",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=Av.+Brasil+1207+Montevideo",
+      "latitude": -34.934,
+      "longitude": -56.132,
+      "coverPhoto": "/img/demo/fachada-2.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "Fernanda Costa",
+        "document": "4.111.277-2",
+        "phone": "099 111 211",
+        "email": "inquilino11@qcasa.demo",
+        "emergencyContact": "Contacto alternativo 11 · 097 151 251",
+        "notes": "Sin observaciones."
+      },
+      "lease": {
+        "amount": 52000,
+        "currency": "UYU",
+        "paymentDay": 10,
+        "startDate": "2026-02-12",
+        "endDate": "2026-09-20",
+        "guaranteeType": "CGN",
+        "guaranteeRef": "GAR-0011",
+        "depositAmount": 0,
+        "adjustment": "Anual por IMS",
+        "status": "Próximo a vencer"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440011",
+        "uteAccount": "UTE-770011",
+        "antelAccount": "",
+        "commonExpensesAccount": ""
+      },
+      "qrCode": "QC-0011",
+      "qrPublicPath": "/r/QC-0011",
+      "photos": [
+        {
+          "id": "ph-011-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-2.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    },
+    {
+      "id": "prop-012",
+      "code": "QC-0012",
+      "active": true,
+      "type": "Oficina",
+      "address": "Luis Alberto de Herrera 1244",
+      "unit": "Of. 112",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Buceo",
+      "postalCode": "11112",
+      "cadastralNumber": "121644",
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "builtArea": 129,
+      "landArea": 0,
+      "yearBuilt": 1991,
+      "status": "Alquilada",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=Luis+Alberto+de+Herrera+1244+Montevideo",
+      "latitude": -34.928,
+      "longitude": -56.22,
+      "coverPhoto": "/img/demo/fachada-3.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "Río Plata Diseño SAS",
+        "document": "5.112.284-3",
+        "phone": "097 112 212",
+        "email": "inquilino12@qcasa.demo",
+        "emergencyContact": "Contacto alternativo 12 · 098 152 252",
+        "notes": "Prefiere WhatsApp."
+      },
+      "lease": {
+        "amount": 53500,
+        "currency": "UYU",
+        "paymentDay": 5,
+        "startDate": "2025-03-13",
+        "endDate": "2027-08-28",
+        "guaranteeType": "Porto Seguro",
+        "guaranteeRef": "GAR-0012",
+        "depositAmount": 0,
+        "adjustment": "Anual por IPC",
+        "status": "Vigente"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440012",
+        "uteAccount": "UTE-770012",
+        "antelAccount": "ANTEL-550012",
+        "commonExpensesAccount": "GC-0012"
+      },
+      "qrCode": "QC-0012",
+      "qrPublicPath": "/r/QC-0012",
+      "photos": [
+        {
+          "id": "ph-012-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-3.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    },
+    {
+      "id": "prop-013",
+      "code": "QC-0013",
+      "active": true,
+      "type": "Casa",
+      "address": "José Ellauri 1281",
+      "unit": "",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Pocitos",
+      "postalCode": "11113",
+      "cadastralNumber": "121781",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "builtArea": 136,
+      "landArea": 237,
+      "yearBuilt": 1994,
+      "status": "Alquilada",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=José+Ellauri+1281+Montevideo",
+      "latitude": -34.922,
+      "longitude": -56.212,
+      "coverPhoto": "/img/demo/fachada-1.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "Gabriel Núñez",
+        "document": "6.113.291-4",
+        "phone": "098 113 213",
+        "email": "inquilino13@qcasa.demo",
+        "emergencyContact": "Contacto alternativo 13 · 099 153 253",
+        "notes": "Coordinar después de las 14:00."
+      },
+      "lease": {
+        "amount": 59000,
+        "currency": "UYU",
+        "paymentDay": 6,
+        "startDate": "2026-04-14",
+        "endDate": "2027-05-14",
+        "guaranteeType": "Depósito",
+        "guaranteeRef": "GAR-0013",
+        "depositAmount": 118000,
+        "adjustment": "Semestral",
+        "status": "Vigente"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440013",
+        "uteAccount": "UTE-770013",
+        "antelAccount": "",
+        "commonExpensesAccount": ""
+      },
+      "qrCode": "QC-0013",
+      "qrPublicPath": "/r/QC-0013",
+      "photos": [
+        {
+          "id": "ph-013-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-1.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    },
+    {
+      "id": "prop-014",
+      "code": "QC-0014",
+      "active": true,
+      "type": "Casa",
+      "address": "21 de Setiembre 1318",
+      "unit": "",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Punta Carretas",
+      "postalCode": "11114",
+      "cadastralNumber": "121918",
+      "bedrooms": 4,
+      "bathrooms": 1,
+      "builtArea": 143,
+      "landArea": 246,
+      "yearBuilt": 1997,
+      "status": "Alquilada",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=21+de+Setiembre+1318+Montevideo",
+      "latitude": -34.916,
+      "longitude": -56.204,
+      "coverPhoto": "/img/demo/fachada-2.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "Valentina Torres",
+        "document": "7.114.298-5",
+        "phone": "099 114 214",
+        "email": "inquilino14@qcasa.demo",
+        "emergencyContact": "Contacto alternativo 14 · 097 154 254",
+        "notes": "Horario comercial."
+      },
+      "lease": {
+        "amount": 38000,
+        "currency": "UYU",
+        "paymentDay": 7,
+        "startDate": "2025-05-15",
+        "endDate": "2027-05-27",
+        "guaranteeType": "SURA",
+        "guaranteeRef": "GAR-0014",
+        "depositAmount": 0,
+        "adjustment": "Anual por IMS",
+        "status": "Vigente"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440014",
+        "uteAccount": "UTE-770014",
+        "antelAccount": "",
+        "commonExpensesAccount": ""
+      },
+      "qrCode": "QC-0014",
+      "qrPublicPath": "/r/QC-0014",
+      "photos": [
+        {
+          "id": "ph-014-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-2.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    },
+    {
+      "id": "prop-015",
+      "code": "QC-0015",
+      "active": true,
+      "type": "Local comercial",
+      "address": "Gabriel Pereira 1355",
+      "unit": "Local 8",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Pocitos",
+      "postalCode": "11115",
+      "cadastralNumber": "122055",
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "builtArea": 150,
+      "landArea": 0,
+      "yearBuilt": 2000,
+      "status": "Alquilada",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=Gabriel+Pereira+1355+Montevideo",
+      "latitude": -34.91,
+      "longitude": -56.196,
+      "coverPhoto": "/img/demo/fachada-3.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "Almacén Central SRL",
+        "document": "3.115.305-6",
+        "phone": "097 115 215",
+        "email": "inquilino15@qcasa.demo",
+        "emergencyContact": "Contacto alternativo 15 · 098 155 255",
+        "notes": "Sin observaciones."
+      },
+      "lease": {
+        "amount": 55500,
+        "currency": "UYU",
+        "paymentDay": 8,
+        "startDate": "2026-06-16",
+        "endDate": "2027-06-09",
+        "guaranteeType": "ANDA",
+        "guaranteeRef": "GAR-0015",
+        "depositAmount": 0,
+        "adjustment": "Anual por IPC",
+        "status": "Vigente"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440015",
+        "uteAccount": "UTE-770015",
+        "antelAccount": "ANTEL-550015",
+        "commonExpensesAccount": "GC-0015"
+      },
+      "qrCode": "QC-0015",
+      "qrPublicPath": "/r/QC-0015",
+      "photos": [
+        {
+          "id": "ph-015-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-3.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    },
+    {
+      "id": "prop-016",
+      "code": "QC-0016",
+      "active": true,
+      "type": "Oficina",
+      "address": "Agraciada 1392",
+      "unit": "Of. 116",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Aguada",
+      "postalCode": "11116",
+      "cadastralNumber": "122192",
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "builtArea": 157,
+      "landArea": 0,
+      "yearBuilt": 2003,
+      "status": "Alquilada",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=Agraciada+1392+Montevideo",
+      "latitude": -34.904,
+      "longitude": -56.188,
+      "coverPhoto": "/img/demo/fachada-1.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "Jorge Suárez",
+        "document": "4.116.312-7",
+        "phone": "098 116 216",
+        "email": "inquilino16@qcasa.demo",
+        "emergencyContact": "Contacto alternativo 16 · 099 156 256",
+        "notes": "Prefiere WhatsApp."
+      },
+      "lease": {
+        "amount": 43000,
+        "currency": "UYU",
+        "paymentDay": 9,
+        "startDate": "2025-07-17",
+        "endDate": "2027-06-22",
+        "guaranteeType": "CGN",
+        "guaranteeRef": "GAR-0016",
+        "depositAmount": 0,
+        "adjustment": "Semestral",
+        "status": "Vigente"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440016",
+        "uteAccount": "UTE-770016",
+        "antelAccount": "",
+        "commonExpensesAccount": "GC-0016"
+      },
+      "qrCode": "QC-0016",
+      "qrPublicPath": "/r/QC-0016",
+      "photos": [
+        {
+          "id": "ph-016-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-1.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    },
+    {
+      "id": "prop-017",
+      "code": "QC-0017",
+      "active": true,
+      "type": "Oficina",
+      "address": "Millán 1429",
+      "unit": "Of. 117",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Prado",
+      "postalCode": "11117",
+      "cadastralNumber": "122329",
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "builtArea": 164,
+      "landArea": 0,
+      "yearBuilt": 2006,
+      "status": "Vacía",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=Millán+1429+Montevideo",
+      "latitude": -34.898,
+      "longitude": -56.18,
+      "coverPhoto": "/img/demo/fachada-2.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "",
+        "document": "",
+        "phone": "",
+        "email": "",
+        "emergencyContact": "",
+        "notes": "Propiedad vacía."
+      },
+      "lease": {
+        "amount": 0,
+        "currency": "UYU",
+        "paymentDay": 10,
+        "startDate": "",
+        "endDate": "",
+        "guaranteeType": "",
+        "guaranteeRef": "",
+        "depositAmount": 0,
+        "adjustment": "",
+        "status": "Sin contrato"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440017",
+        "uteAccount": "UTE-770017",
+        "antelAccount": "",
+        "commonExpensesAccount": "GC-0017"
+      },
+      "qrCode": "QC-0017",
+      "qrPublicPath": "/r/QC-0017",
+      "photos": [
+        {
+          "id": "ph-017-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-2.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    },
+    {
+      "id": "prop-018",
+      "code": "QC-0018",
+      "active": true,
+      "type": "Casa",
+      "address": "General Flores 1466",
+      "unit": "",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "La Comercial",
+      "postalCode": "11118",
+      "cadastralNumber": "122466",
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "builtArea": 51,
+      "landArea": 282,
+      "yearBuilt": 2009,
+      "status": "Alquilada",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=General+Flores+1466+Montevideo",
+      "latitude": -34.892,
+      "longitude": -56.172,
+      "coverPhoto": "/img/demo/fachada-3.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "Oficina 21 SAS",
+        "document": "6.118.326-0",
+        "phone": "097 118 218",
+        "email": "inquilino18@qcasa.demo",
+        "emergencyContact": "Contacto alternativo 18 · 098 158 258",
+        "notes": "Horario comercial."
+      },
+      "lease": {
+        "amount": 52000,
+        "currency": "UYU",
+        "paymentDay": 5,
+        "startDate": "2025-09-19",
+        "endDate": "2027-07-18",
+        "guaranteeType": "Depósito",
+        "guaranteeRef": "GAR-0018",
+        "depositAmount": 104000,
+        "adjustment": "Anual por IPC",
+        "status": "Vigente"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440018",
+        "uteAccount": "UTE-770018",
+        "antelAccount": "ANTEL-550018",
+        "commonExpensesAccount": ""
+      },
+      "qrCode": "QC-0018",
+      "qrPublicPath": "/r/QC-0018",
+      "photos": [
+        {
+          "id": "ph-018-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-3.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    },
+    {
+      "id": "prop-019",
+      "code": "QC-0019",
+      "active": true,
+      "type": "Local comercial",
+      "address": "Camino Carrasco 1503",
+      "unit": "Local 4",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Carrasco Norte",
+      "postalCode": "11119",
+      "cadastralNumber": "122603",
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "builtArea": 58,
+      "landArea": 0,
+      "yearBuilt": 2012,
+      "status": "Alquilada",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=Camino+Carrasco+1503+Montevideo",
+      "latitude": -34.886,
+      "longitude": -56.164,
+      "coverPhoto": "/img/demo/fachada-1.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "Miguel Acosta",
+        "document": "7.119.333-1",
+        "phone": "098 119 219",
+        "email": "inquilino19@qcasa.demo",
+        "emergencyContact": "Contacto alternativo 19 · 099 159 259",
+        "notes": "Sin observaciones."
+      },
+      "lease": {
+        "amount": 69500,
+        "currency": "UYU",
+        "paymentDay": 6,
+        "startDate": "2026-10-20",
+        "endDate": "2027-07-31",
+        "guaranteeType": "SURA",
+        "guaranteeRef": "GAR-0019",
+        "depositAmount": 0,
+        "adjustment": "Semestral",
+        "status": "Vigente"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440019",
+        "uteAccount": "UTE-770019",
+        "antelAccount": "",
+        "commonExpensesAccount": "GC-0019"
+      },
+      "qrCode": "QC-0019",
+      "qrPublicPath": "/r/QC-0019",
+      "photos": [
+        {
+          "id": "ph-019-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-1.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    },
+    {
+      "id": "prop-020",
+      "code": "QC-0020",
+      "active": true,
+      "type": "Casa",
+      "address": "Orinoco 1540",
+      "unit": "",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Malvín",
+      "postalCode": "11120",
+      "cadastralNumber": "122740",
+      "bedrooms": 4,
+      "bathrooms": 1,
+      "builtArea": 65,
+      "landArea": 300,
+      "yearBuilt": 2015,
+      "status": "Alquilada",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=Orinoco+1540+Montevideo",
+      "latitude": -34.94,
+      "longitude": -56.156,
+      "coverPhoto": "/img/demo/fachada-2.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "Paula Bentancor",
+        "document": "3.120.340-2",
+        "phone": "099 120 220",
+        "email": "inquilino20@qcasa.demo",
+        "emergencyContact": "Contacto alternativo 20 · 097 160 260",
+        "notes": "Prefiere WhatsApp."
+      },
+      "lease": {
+        "amount": 59000,
+        "currency": "UYU",
+        "paymentDay": 7,
+        "startDate": "2025-01-01",
+        "endDate": "2027-08-13",
+        "guaranteeType": "ANDA",
+        "guaranteeRef": "GAR-0020",
+        "depositAmount": 0,
+        "adjustment": "Anual por IMS",
+        "status": "Vigente"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440020",
+        "uteAccount": "UTE-770020",
+        "antelAccount": "",
+        "commonExpensesAccount": ""
+      },
+      "qrCode": "QC-0020",
+      "qrPublicPath": "/r/QC-0020",
+      "photos": [
+        {
+          "id": "ph-020-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-2.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    },
+    {
+      "id": "prop-021",
+      "code": "QC-0021",
+      "active": true,
+      "type": "Casa",
+      "address": "Rambla República del Perú 1577",
+      "unit": "",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Pocitos",
+      "postalCode": "11121",
+      "cadastralNumber": "122877",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "builtArea": 72,
+      "landArea": 309,
+      "yearBuilt": 2018,
+      "status": "Alquilada",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=Rambla+República+del+Perú+1577+Montevideo",
+      "latitude": -34.934,
+      "longitude": -56.148,
+      "coverPhoto": "/img/demo/fachada-3.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "MVD Trading SRL",
+        "document": "4.121.347-3",
+        "phone": "097 121 221",
+        "email": "inquilino21@qcasa.demo",
+        "emergencyContact": "Contacto alternativo 21 · 098 161 261",
+        "notes": "Coordinar después de las 14:00."
+      },
+      "lease": {
+        "amount": 38000,
+        "currency": "UYU",
+        "paymentDay": 8,
+        "startDate": "2026-02-02",
+        "endDate": "2026-09-08",
+        "guaranteeType": "CGN",
+        "guaranteeRef": "GAR-0021",
+        "depositAmount": 0,
+        "adjustment": "Anual por IPC",
+        "status": "Próximo a vencer"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440021",
+        "uteAccount": "UTE-770021",
+        "antelAccount": "ANTEL-550021",
+        "commonExpensesAccount": ""
+      },
+      "qrCode": "QC-0021",
+      "qrPublicPath": "/r/QC-0021",
+      "photos": [
+        {
+          "id": "ph-021-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-3.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    },
+    {
+      "id": "prop-022",
+      "code": "QC-0022",
+      "active": true,
+      "type": "Oficina",
+      "address": "Canelones 1614",
+      "unit": "Of. 122",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Palermo",
+      "postalCode": "11122",
+      "cadastralNumber": "123014",
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "builtArea": 79,
+      "landArea": 0,
+      "yearBuilt": 1955,
+      "status": "Alquilada",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=Canelones+1614+Montevideo",
+      "latitude": -34.928,
+      "longitude": -56.14,
+      "coverPhoto": "/img/demo/fachada-1.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "Laura Viera",
+        "document": "5.122.354-4",
+        "phone": "098 122 222",
+        "email": "inquilino22@qcasa.demo",
+        "emergencyContact": "Contacto alternativo 22 · 099 162 262",
+        "notes": "Horario comercial."
+      },
+      "lease": {
+        "amount": 39500,
+        "currency": "UYU",
+        "paymentDay": 9,
+        "startDate": "2025-03-03",
+        "endDate": "2027-09-08",
+        "guaranteeType": "Porto Seguro",
+        "guaranteeRef": "GAR-0022",
+        "depositAmount": 0,
+        "adjustment": "Semestral",
+        "status": "Vigente"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440022",
+        "uteAccount": "UTE-770022",
+        "antelAccount": "",
+        "commonExpensesAccount": "GC-0022"
+      },
+      "qrCode": "QC-0022",
+      "qrPublicPath": "/r/QC-0022",
+      "photos": [
+        {
+          "id": "ph-022-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-1.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    },
+    {
+      "id": "prop-023",
+      "code": "QC-0023",
+      "active": true,
+      "type": "Oficina",
+      "address": "Maldonado 1651",
+      "unit": "Of. 123",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Cordón",
+      "postalCode": "11123",
+      "cadastralNumber": "123151",
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "builtArea": 86,
+      "landArea": 0,
+      "yearBuilt": 1958,
+      "status": "Alquilada",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=Maldonado+1651+Montevideo",
+      "latitude": -34.922,
+      "longitude": -56.132,
+      "coverPhoto": "/img/demo/fachada-2.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "Andrés Sosa",
+        "document": "6.123.361-5",
+        "phone": "099 123 223",
+        "email": "inquilino23@qcasa.demo",
+        "emergencyContact": "Contacto alternativo 23 · 097 163 263",
+        "notes": "Sin observaciones."
+      },
+      "lease": {
+        "amount": 43000,
+        "currency": "UYU",
+        "paymentDay": 10,
+        "startDate": "2026-04-04",
+        "endDate": "2027-09-21",
+        "guaranteeType": "Depósito",
+        "guaranteeRef": "GAR-0023",
+        "depositAmount": 86000,
+        "adjustment": "Anual por IMS",
+        "status": "Vigente"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440023",
+        "uteAccount": "UTE-770023",
+        "antelAccount": "",
+        "commonExpensesAccount": "GC-0023"
+      },
+      "qrCode": "QC-0023",
+      "qrPublicPath": "/r/QC-0023",
+      "photos": [
+        {
+          "id": "ph-023-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-2.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    },
+    {
+      "id": "prop-024",
+      "code": "QC-0024",
+      "active": true,
+      "type": "Oficina",
+      "address": "Durazno 1688",
+      "unit": "Of. 124",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Palermo",
+      "postalCode": "11124",
+      "cadastralNumber": "123288",
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "builtArea": 93,
+      "landArea": 0,
+      "yearBuilt": 1961,
+      "status": "Alquilada",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=Durazno+1688+Montevideo",
+      "latitude": -34.916,
+      "longitude": -56.22,
+      "coverPhoto": "/img/demo/fachada-3.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "Camila Ramos",
+        "document": "7.124.368-6",
+        "phone": "097 124 224",
+        "email": "inquilino24@qcasa.demo",
+        "emergencyContact": "Contacto alternativo 24 · 098 164 264",
+        "notes": "Prefiere WhatsApp."
+      },
+      "lease": {
+        "amount": 46500,
+        "currency": "UYU",
+        "paymentDay": 5,
+        "startDate": "2025-05-05",
+        "endDate": "2027-10-04",
+        "guaranteeType": "SURA",
+        "guaranteeRef": "GAR-0024",
+        "depositAmount": 0,
+        "adjustment": "Anual por IPC",
+        "status": "Vigente"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440024",
+        "uteAccount": "UTE-770024",
+        "antelAccount": "ANTEL-550024",
+        "commonExpensesAccount": "GC-0024"
+      },
+      "qrCode": "QC-0024",
+      "qrPublicPath": "/r/QC-0024",
+      "photos": [
+        {
+          "id": "ph-024-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-3.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    },
+    {
+      "id": "prop-025",
+      "code": "QC-0025",
+      "active": true,
+      "type": "Casa",
+      "address": "Soriano 1725",
+      "unit": "",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Centro",
+      "postalCode": "11125",
+      "cadastralNumber": "123425",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "builtArea": 100,
+      "landArea": 345,
+      "yearBuilt": 1964,
+      "status": "Alquilada",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=Soriano+1725+Montevideo",
+      "latitude": -34.91,
+      "longitude": -56.212,
+      "coverPhoto": "/img/demo/fachada-1.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "Sur Logística SAS",
+        "document": "3.125.375-7",
+        "phone": "098 125 225",
+        "email": "inquilino25@qcasa.demo",
+        "emergencyContact": "Contacto alternativo 25 · 099 165 265",
+        "notes": "Coordinar después de las 14:00."
+      },
+      "lease": {
+        "amount": 52000,
+        "currency": "UYU",
+        "paymentDay": 6,
+        "startDate": "2026-06-06",
+        "endDate": "2027-10-17",
+        "guaranteeType": "ANDA",
+        "guaranteeRef": "GAR-0025",
+        "depositAmount": 0,
+        "adjustment": "Semestral",
+        "status": "Vigente"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440025",
+        "uteAccount": "UTE-770025",
+        "antelAccount": "",
+        "commonExpensesAccount": ""
+      },
+      "qrCode": "QC-0025",
+      "qrPublicPath": "/r/QC-0025",
+      "photos": [
+        {
+          "id": "ph-025-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-1.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    },
+    {
+      "id": "prop-026",
+      "code": "QC-0026",
+      "active": true,
+      "type": "Casa",
+      "address": "Av. 18 de Julio 1762",
+      "unit": "",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Centro",
+      "postalCode": "11126",
+      "cadastralNumber": "123562",
+      "bedrooms": 4,
+      "bathrooms": 1,
+      "builtArea": 107,
+      "landArea": 354,
+      "yearBuilt": 1967,
+      "status": "Alquilada",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=Av.+18+de+Julio+1762+Montevideo",
+      "latitude": -34.904,
+      "longitude": -56.204,
+      "coverPhoto": "/img/demo/fachada-2.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "Sebastián Castro",
+        "document": "4.126.382-8",
+        "phone": "099 126 226",
+        "email": "inquilino26@qcasa.demo",
+        "emergencyContact": "Contacto alternativo 26 · 097 166 266",
+        "notes": "Horario comercial."
+      },
+      "lease": {
+        "amount": 55500,
+        "currency": "UYU",
+        "paymentDay": 7,
+        "startDate": "2025-07-07",
+        "endDate": "2027-10-30",
+        "guaranteeType": "CGN",
+        "guaranteeRef": "GAR-0026",
+        "depositAmount": 0,
+        "adjustment": "Anual por IMS",
+        "status": "Vigente"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440026",
+        "uteAccount": "UTE-770026",
+        "antelAccount": "",
+        "commonExpensesAccount": ""
+      },
+      "qrCode": "QC-0026",
+      "qrPublicPath": "/r/QC-0026",
+      "photos": [
+        {
+          "id": "ph-026-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-2.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    },
+    {
+      "id": "prop-027",
+      "code": "QC-0027",
+      "active": true,
+      "type": "Depósito",
+      "address": "Av. Italia 1799",
+      "unit": "Depósito 27",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Malvín",
+      "postalCode": "11127",
+      "cadastralNumber": "123699",
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "builtArea": 114,
+      "landArea": 0,
+      "yearBuilt": 1970,
+      "status": "Alquilada",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=Av.+Italia+1799+Montevideo",
+      "latitude": -34.898,
+      "longitude": -56.196,
+      "coverPhoto": "/img/demo/fachada-3.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "Victoria Rivas",
+        "document": "5.127.389-0",
+        "phone": "097 127 227",
+        "email": "inquilino27@qcasa.demo",
+        "emergencyContact": "Contacto alternativo 27 · 098 167 267",
+        "notes": "Sin observaciones."
+      },
+      "lease": {
+        "amount": 91000,
+        "currency": "UYU",
+        "paymentDay": 8,
+        "startDate": "2026-08-08",
+        "endDate": "2026-09-27",
+        "guaranteeType": "Porto Seguro",
+        "guaranteeRef": "GAR-0027",
+        "depositAmount": 0,
+        "adjustment": "Anual por IPC",
+        "status": "Próximo a vencer"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440027",
+        "uteAccount": "UTE-770027",
+        "antelAccount": "ANTEL-550027",
+        "commonExpensesAccount": "GC-0027"
+      },
+      "qrCode": "QC-0027",
+      "qrPublicPath": "/r/QC-0027",
+      "photos": [
+        {
+          "id": "ph-027-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-3.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    },
+    {
+      "id": "prop-028",
+      "code": "QC-0028",
+      "active": true,
+      "type": "Oficina",
+      "address": "Av. Rivera 1836",
+      "unit": "Of. 128",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Pocitos",
+      "postalCode": "11128",
+      "cadastralNumber": "123836",
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "builtArea": 121,
+      "landArea": 0,
+      "yearBuilt": 1973,
+      "status": "Alquilada",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=Av.+Rivera+1836+Montevideo",
+      "latitude": -34.892,
+      "longitude": -56.188,
+      "coverPhoto": "/img/demo/fachada-1.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "Punto Office SAS",
+        "document": "6.128.396-1",
+        "phone": "098 128 228",
+        "email": "inquilino28@qcasa.demo",
+        "emergencyContact": "Contacto alternativo 28 · 099 168 268",
+        "notes": "Prefiere WhatsApp."
+      },
+      "lease": {
+        "amount": 36000,
+        "currency": "UYU",
+        "paymentDay": 9,
+        "startDate": "2025-09-09",
+        "endDate": "2027-11-25",
+        "guaranteeType": "Depósito",
+        "guaranteeRef": "GAR-0028",
+        "depositAmount": 72000,
+        "adjustment": "Semestral",
+        "status": "Vigente"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440028",
+        "uteAccount": "UTE-770028",
+        "antelAccount": "",
+        "commonExpensesAccount": "GC-0028"
+      },
+      "qrCode": "QC-0028",
+      "qrPublicPath": "/r/QC-0028",
+      "photos": [
+        {
+          "id": "ph-028-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-1.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    },
+    {
+      "id": "prop-029",
+      "code": "QC-0029",
+      "active": true,
+      "type": "Local comercial",
+      "address": "Bv. España 1873",
+      "unit": "Local 6",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Parque Rodó",
+      "postalCode": "11129",
+      "cadastralNumber": "123973",
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "builtArea": 128,
+      "landArea": 0,
+      "yearBuilt": 1976,
+      "status": "Alquilada",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=Bv.+España+1873+Montevideo",
+      "latitude": -34.886,
+      "longitude": -56.18,
+      "coverPhoto": "/img/demo/fachada-2.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "Daniela Moreira",
+        "document": "7.129.403-2",
+        "phone": "099 129 229",
+        "email": "inquilino29@qcasa.demo",
+        "emergencyContact": "Contacto alternativo 29 · 097 169 269",
+        "notes": "Coordinar después de las 14:00."
+      },
+      "lease": {
+        "amount": 55500,
+        "currency": "UYU",
+        "paymentDay": 10,
+        "startDate": "2026-10-10",
+        "endDate": "2027-12-08",
+        "guaranteeType": "SURA",
+        "guaranteeRef": "GAR-0029",
+        "depositAmount": 0,
+        "adjustment": "Anual por IMS",
+        "status": "Vigente"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440029",
+        "uteAccount": "UTE-770029",
+        "antelAccount": "",
+        "commonExpensesAccount": "GC-0029"
+      },
+      "qrCode": "QC-0029",
+      "qrPublicPath": "/r/QC-0029",
+      "photos": [
+        {
+          "id": "ph-029-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-2.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    },
+    {
+      "id": "prop-030",
+      "code": "QC-0030",
+      "active": true,
+      "type": "Local comercial",
+      "address": "Colonia 1910",
+      "unit": "Local 7",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Cordón",
+      "postalCode": "11130",
+      "cadastralNumber": "124110",
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "builtArea": 135,
+      "landArea": 0,
+      "yearBuilt": 1979,
+      "status": "Alquilada",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=Colonia+1910+Montevideo",
+      "latitude": -34.94,
+      "longitude": -56.172,
+      "coverPhoto": "/img/demo/fachada-3.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "Ricardo Lima",
+        "document": "3.130.410-3",
+        "phone": "097 130 230",
+        "email": "inquilino30@qcasa.demo",
+        "emergencyContact": "Contacto alternativo 30 · 098 170 270",
+        "notes": "Horario comercial."
+      },
+      "lease": {
+        "amount": 59000,
+        "currency": "UYU",
+        "paymentDay": 5,
+        "startDate": "2025-01-11",
+        "endDate": "2027-12-21",
+        "guaranteeType": "ANDA",
+        "guaranteeRef": "GAR-0030",
+        "depositAmount": 0,
+        "adjustment": "Anual por IPC",
+        "status": "Vigente"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440030",
+        "uteAccount": "UTE-770030",
+        "antelAccount": "ANTEL-550030",
+        "commonExpensesAccount": "GC-0030"
+      },
+      "qrCode": "QC-0030",
+      "qrPublicPath": "/r/QC-0030",
+      "photos": [
+        {
+          "id": "ph-030-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-3.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    },
+    {
+      "id": "prop-031",
+      "code": "QC-0031",
+      "active": true,
+      "type": "Oficina",
+      "address": "Mercedes 1947",
+      "unit": "Of. 131",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Centro",
+      "postalCode": "11131",
+      "cadastralNumber": "124247",
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "builtArea": 142,
+      "landArea": 0,
+      "yearBuilt": 1982,
+      "status": "Alquilada",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=Mercedes+1947+Montevideo",
+      "latitude": -34.934,
+      "longitude": -56.164,
+      "coverPhoto": "/img/demo/fachada-1.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "Casa Norte SRL",
+        "document": "4.131.417-4",
+        "phone": "098 131 231",
+        "email": "inquilino31@qcasa.demo",
+        "emergencyContact": "Contacto alternativo 31 · 099 171 271",
+        "notes": "Sin observaciones."
+      },
+      "lease": {
+        "amount": 46500,
+        "currency": "UYU",
+        "paymentDay": 6,
+        "startDate": "2026-02-12",
+        "endDate": "2028-01-03",
+        "guaranteeType": "CGN",
+        "guaranteeRef": "GAR-0031",
+        "depositAmount": 0,
+        "adjustment": "Semestral",
+        "status": "Vigente"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440031",
+        "uteAccount": "UTE-770031",
+        "antelAccount": "",
+        "commonExpensesAccount": "GC-0031"
+      },
+      "qrCode": "QC-0031",
+      "qrPublicPath": "/r/QC-0031",
+      "photos": [
+        {
+          "id": "ph-031-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-1.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    },
+    {
+      "id": "prop-032",
+      "code": "QC-0032",
+      "active": true,
+      "type": "Casa",
+      "address": "San José 1984",
+      "unit": "",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Centro",
+      "postalCode": "11132",
+      "cadastralNumber": "124384",
+      "bedrooms": 4,
+      "bathrooms": 1,
+      "builtArea": 149,
+      "landArea": 408,
+      "yearBuilt": 1985,
+      "status": "Alquilada",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=San+José+1984+Montevideo",
+      "latitude": -34.928,
+      "longitude": -56.156,
+      "coverPhoto": "/img/demo/fachada-2.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "Agustín Cabrera",
+        "document": "5.132.424-5",
+        "phone": "099 132 232",
+        "email": "inquilino32@qcasa.demo",
+        "emergencyContact": "Contacto alternativo 32 · 097 172 272",
+        "notes": "Prefiere WhatsApp."
+      },
+      "lease": {
+        "amount": 52000,
+        "currency": "UYU",
+        "paymentDay": 7,
+        "startDate": "2025-03-13",
+        "endDate": "2028-01-16",
+        "guaranteeType": "Porto Seguro",
+        "guaranteeRef": "GAR-0032",
+        "depositAmount": 0,
+        "adjustment": "Anual por IMS",
+        "status": "Vigente"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440032",
+        "uteAccount": "UTE-770032",
+        "antelAccount": "",
+        "commonExpensesAccount": ""
+      },
+      "qrCode": "QC-0032",
+      "qrPublicPath": "/r/QC-0032",
+      "photos": [
+        {
+          "id": "ph-032-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-2.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    },
+    {
+      "id": "prop-033",
+      "code": "QC-0033",
+      "active": true,
+      "type": "Local comercial",
+      "address": "Yi 2021",
+      "unit": "Local 2",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Cordón",
+      "postalCode": "11133",
+      "cadastralNumber": "124521",
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "builtArea": 156,
+      "landArea": 0,
+      "yearBuilt": 1988,
+      "status": "Alquilada",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=Yi+2021+Montevideo",
+      "latitude": -34.922,
+      "longitude": -56.148,
+      "coverPhoto": "/img/demo/fachada-3.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "Mariana Pereyra",
+        "document": "6.133.431-6",
+        "phone": "097 133 233",
+        "email": "inquilino33@qcasa.demo",
+        "emergencyContact": "Contacto alternativo 33 · 098 173 273",
+        "notes": "Coordinar después de las 14:00."
+      },
+      "lease": {
+        "amount": 69500,
+        "currency": "UYU",
+        "paymentDay": 8,
+        "startDate": "2026-04-14",
+        "endDate": "2026-09-14",
+        "guaranteeType": "Depósito",
+        "guaranteeRef": "GAR-0033",
+        "depositAmount": 139000,
+        "adjustment": "Anual por IPC",
+        "status": "Próximo a vencer"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440033",
+        "uteAccount": "UTE-770033",
+        "antelAccount": "ANTEL-550033",
+        "commonExpensesAccount": "GC-0033"
+      },
+      "qrCode": "QC-0033",
+      "qrPublicPath": "/r/QC-0033",
+      "photos": [
+        {
+          "id": "ph-033-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-3.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    },
+    {
+      "id": "prop-034",
+      "code": "QC-0034",
+      "active": true,
+      "type": "Local comercial",
+      "address": "Ejido 2058",
+      "unit": "Local 3",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Centro",
+      "postalCode": "11134",
+      "cadastralNumber": "124658",
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "builtArea": 163,
+      "landArea": 0,
+      "yearBuilt": 1991,
+      "status": "Alquilada",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=Ejido+2058+Montevideo",
+      "latitude": -34.916,
+      "longitude": -56.14,
+      "coverPhoto": "/img/demo/fachada-1.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "Estudio Prado SAS",
+        "document": "7.134.438-7",
+        "phone": "098 134 234",
+        "email": "inquilino34@qcasa.demo",
+        "emergencyContact": "Contacto alternativo 34 · 099 174 274",
+        "notes": "Horario comercial."
+      },
+      "lease": {
+        "amount": 73000,
+        "currency": "UYU",
+        "paymentDay": 9,
+        "startDate": "2025-05-15",
+        "endDate": "2028-02-11",
+        "guaranteeType": "SURA",
+        "guaranteeRef": "GAR-0034",
+        "depositAmount": 0,
+        "adjustment": "Semestral",
+        "status": "Vigente"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440034",
+        "uteAccount": "UTE-770034",
+        "antelAccount": "",
+        "commonExpensesAccount": "GC-0034"
+      },
+      "qrCode": "QC-0034",
+      "qrPublicPath": "/r/QC-0034",
+      "photos": [
+        {
+          "id": "ph-034-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-1.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    },
+    {
+      "id": "prop-035",
+      "code": "QC-0035",
+      "active": true,
+      "type": "Local comercial",
+      "address": "Convención 2095",
+      "unit": "Local 4",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Centro",
+      "postalCode": "11135",
+      "cadastralNumber": "124795",
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "builtArea": 50,
+      "landArea": 0,
+      "yearBuilt": 1994,
+      "status": "Alquilada",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=Convención+2095+Montevideo",
+      "latitude": -34.91,
+      "longitude": -56.132,
+      "coverPhoto": "/img/demo/fachada-2.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "Florencia Delgado",
+        "document": "3.135.445-8",
+        "phone": "099 135 235",
+        "email": "inquilino35@qcasa.demo",
+        "emergencyContact": "Contacto alternativo 35 · 097 175 275",
+        "notes": "Sin observaciones."
+      },
+      "lease": {
+        "amount": 52000,
+        "currency": "UYU",
+        "paymentDay": 10,
+        "startDate": "2026-06-16",
+        "endDate": "2028-02-24",
+        "guaranteeType": "ANDA",
+        "guaranteeRef": "GAR-0035",
+        "depositAmount": 0,
+        "adjustment": "Anual por IMS",
+        "status": "Vigente"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440035",
+        "uteAccount": "UTE-770035",
+        "antelAccount": "",
+        "commonExpensesAccount": "GC-0035"
+      },
+      "qrCode": "QC-0035",
+      "qrPublicPath": "/r/QC-0035",
+      "photos": [
+        {
+          "id": "ph-035-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-2.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    },
+    {
+      "id": "prop-036",
+      "code": "QC-0036",
+      "active": true,
+      "type": "Local comercial",
+      "address": "Av. Brasil 2132",
+      "unit": "Local 5",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Pocitos",
+      "postalCode": "11136",
+      "cadastralNumber": "124932",
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "builtArea": 57,
+      "landArea": 0,
+      "yearBuilt": 1997,
+      "status": "Alquilada",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=Av.+Brasil+2132+Montevideo",
+      "latitude": -34.904,
+      "longitude": -56.22,
+      "coverPhoto": "/img/demo/fachada-3.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "Ignacio Morales",
+        "document": "4.136.452-0",
+        "phone": "097 136 236",
+        "email": "inquilino36@qcasa.demo",
+        "emergencyContact": "Contacto alternativo 36 · 098 176 276",
+        "notes": "Prefiere WhatsApp."
+      },
+      "lease": {
+        "amount": 55500,
+        "currency": "UYU",
+        "paymentDay": 5,
+        "startDate": "2025-07-17",
+        "endDate": "2028-03-08",
+        "guaranteeType": "CGN",
+        "guaranteeRef": "GAR-0036",
+        "depositAmount": 0,
+        "adjustment": "Anual por IPC",
+        "status": "Vigente"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440036",
+        "uteAccount": "UTE-770036",
+        "antelAccount": "ANTEL-550036",
+        "commonExpensesAccount": "GC-0036"
+      },
+      "qrCode": "QC-0036",
+      "qrPublicPath": "/r/QC-0036",
+      "photos": [
+        {
+          "id": "ph-036-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-3.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    },
+    {
+      "id": "prop-037",
+      "code": "QC-0037",
+      "active": true,
+      "type": "Local comercial",
+      "address": "Luis Alberto de Herrera 2169",
+      "unit": "Local 6",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Buceo",
+      "postalCode": "11137",
+      "cadastralNumber": "125069",
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "builtArea": 64,
+      "landArea": 0,
+      "yearBuilt": 2000,
+      "status": "Alquilada",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=Luis+Alberto+de+Herrera+2169+Montevideo",
+      "latitude": -34.898,
+      "longitude": -56.212,
+      "coverPhoto": "/img/demo/fachada-1.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "Centro Uno SRL",
+        "document": "5.137.459-1",
+        "phone": "098 137 237",
+        "email": "inquilino37@qcasa.demo",
+        "emergencyContact": "Contacto alternativo 37 · 099 177 277",
+        "notes": "Coordinar después de las 14:00."
+      },
+      "lease": {
+        "amount": 59000,
+        "currency": "UYU",
+        "paymentDay": 6,
+        "startDate": "2026-08-18",
+        "endDate": "2028-03-21",
+        "guaranteeType": "Porto Seguro",
+        "guaranteeRef": "GAR-0037",
+        "depositAmount": 0,
+        "adjustment": "Semestral",
+        "status": "Vigente"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440037",
+        "uteAccount": "UTE-770037",
+        "antelAccount": "",
+        "commonExpensesAccount": "GC-0037"
+      },
+      "qrCode": "QC-0037",
+      "qrPublicPath": "/r/QC-0037",
+      "photos": [
+        {
+          "id": "ph-037-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-1.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    },
+    {
+      "id": "prop-038",
+      "code": "QC-0038",
+      "active": true,
+      "type": "Casa",
+      "address": "José Ellauri 2206",
+      "unit": "",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Pocitos",
+      "postalCode": "11138",
+      "cadastralNumber": "125206",
+      "bedrooms": 4,
+      "bathrooms": 1,
+      "builtArea": 71,
+      "landArea": 462,
+      "yearBuilt": 2003,
+      "status": "Alquilada",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=José+Ellauri+2206+Montevideo",
+      "latitude": -34.892,
+      "longitude": -56.204,
+      "coverPhoto": "/img/demo/fachada-2.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "Marcos Díaz",
+        "document": "6.138.466-2",
+        "phone": "099 138 238",
+        "email": "inquilino38@qcasa.demo",
+        "emergencyContact": "Contacto alternativo 38 · 097 178 278",
+        "notes": "Horario comercial."
+      },
+      "lease": {
+        "amount": 48500,
+        "currency": "UYU",
+        "paymentDay": 7,
+        "startDate": "2025-09-19",
+        "endDate": "2028-04-03",
+        "guaranteeType": "Depósito",
+        "guaranteeRef": "GAR-0038",
+        "depositAmount": 97000,
+        "adjustment": "Anual por IMS",
+        "status": "Vigente"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440038",
+        "uteAccount": "UTE-770038",
+        "antelAccount": "",
+        "commonExpensesAccount": ""
+      },
+      "qrCode": "QC-0038",
+      "qrPublicPath": "/r/QC-0038",
+      "photos": [
+        {
+          "id": "ph-038-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-2.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    },
+    {
+      "id": "prop-039",
+      "code": "QC-0039",
+      "active": true,
+      "type": "Local comercial",
+      "address": "21 de Setiembre 2243",
+      "unit": "Local 8",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Punta Carretas",
+      "postalCode": "11139",
+      "cadastralNumber": "125343",
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "builtArea": 78,
+      "landArea": 0,
+      "yearBuilt": 2006,
+      "status": "Alquilada",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=21+de+Setiembre+2243+Montevideo",
+      "latitude": -34.886,
+      "longitude": -56.196,
+      "coverPhoto": "/img/demo/fachada-3.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "Carolina Fagúndez",
+        "document": "7.139.473-3",
+        "phone": "097 139 239",
+        "email": "inquilino39@qcasa.demo",
+        "emergencyContact": "Contacto alternativo 39 · 098 179 279",
+        "notes": "Sin observaciones."
+      },
+      "lease": {
+        "amount": 66000,
+        "currency": "UYU",
+        "paymentDay": 8,
+        "startDate": "2026-10-20",
+        "endDate": "2028-04-16",
+        "guaranteeType": "SURA",
+        "guaranteeRef": "GAR-0039",
+        "depositAmount": 0,
+        "adjustment": "Anual por IPC",
+        "status": "Vigente"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440039",
+        "uteAccount": "UTE-770039",
+        "antelAccount": "ANTEL-550039",
+        "commonExpensesAccount": "GC-0039"
+      },
+      "qrCode": "QC-0039",
+      "qrPublicPath": "/r/QC-0039",
+      "photos": [
+        {
+          "id": "ph-039-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-3.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    },
+    {
+      "id": "prop-040",
+      "code": "QC-0040",
+      "active": true,
+      "type": "Local comercial",
+      "address": "Gabriel Pereira 2280",
+      "unit": "Local 1",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Pocitos",
+      "postalCode": "11140",
+      "cadastralNumber": "125480",
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "builtArea": 85,
+      "landArea": 0,
+      "yearBuilt": 2009,
+      "status": "Alquilada",
+      "notes": "Propiedad demo ficticia para pruebas de QCASA.",
+      "mapUrl": "https://maps.google.com/?q=Gabriel+Pereira+2280+Montevideo",
+      "latitude": -34.94,
+      "longitude": -56.188,
+      "coverPhoto": "/img/demo/fachada-1.svg",
+      "owner": {
+        "name": "Suarez",
+        "document": "1.234.567-8",
+        "phone": "099 111 222",
+        "email": "suarez@qcasa.demo",
+        "address": "Montevideo, Uruguay"
+      },
+      "tenant": {
+        "name": "Ana Pérez",
+        "document": "3.140.480-4",
+        "phone": "098 140 240",
+        "email": "inquilino40@qcasa.demo",
+        "emergencyContact": "Contacto alternativo 40 · 099 180 280",
+        "notes": "Prefiere WhatsApp."
+      },
+      "lease": {
+        "amount": 69500,
+        "currency": "UYU",
+        "paymentDay": 9,
+        "startDate": "2025-01-01",
+        "endDate": "2028-04-29",
+        "guaranteeType": "ANDA",
+        "guaranteeRef": "GAR-0040",
+        "depositAmount": 0,
+        "adjustment": "Semestral",
+        "status": "Vigente"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440040",
+        "uteAccount": "UTE-770040",
+        "antelAccount": "",
+        "commonExpensesAccount": "GC-0040"
+      },
+      "qrCode": "QC-0040",
+      "qrPublicPath": "/r/QC-0040",
+      "photos": [
+        {
+          "id": "ph-040-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-1.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-08-01T10:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z"
+    }
+  ],
+  "technicians": [
+    {
+      "id": "tec-001",
+      "active": true,
+      "companyName": "Empresa Demo 01",
+      "contactName": "Técnico Demo 01",
+      "phone": "097 181 281",
+      "whatsapp": "598097181281",
+      "email": "tecnico01@qcasa.demo",
+      "rut": "219999990001",
+      "address": "Montevideo · dirección demo 1",
+      "zones": [
+        "Montevideo"
+      ],
+      "specialties": [
+        "Sanitaria",
+        "Humedad"
+      ],
+      "notes": "Proveedor ficticio para pruebas.",
+      "portalEnabled": false,
+      "userId": null
+    },
+    {
+      "id": "tec-002",
+      "active": true,
+      "companyName": "Empresa Demo 02",
+      "contactName": "Técnico Demo 02",
+      "phone": "098 182 282",
+      "whatsapp": "598098182282",
+      "email": "tecnico02@qcasa.demo",
+      "rut": "219999990002",
+      "address": "Montevideo · dirección demo 2",
+      "zones": [
+        "Montevideo"
+      ],
+      "specialties": [
+        "Electricidad"
+      ],
+      "notes": "Proveedor ficticio para pruebas.",
+      "portalEnabled": false,
+      "userId": null
+    },
+    {
+      "id": "tec-003",
+      "active": true,
+      "companyName": "Empresa Demo 03",
+      "contactName": "Técnico Demo 03",
+      "phone": "099 183 283",
+      "whatsapp": "598099183283",
+      "email": "tecnico03@qcasa.demo",
+      "rut": "219999990003",
+      "address": "Montevideo · dirección demo 3",
+      "zones": [
+        "Montevideo"
+      ],
+      "specialties": [
+        "Cerrajería"
+      ],
+      "notes": "Proveedor ficticio para pruebas.",
+      "portalEnabled": false,
+      "userId": null
+    },
+    {
+      "id": "tec-004",
+      "active": true,
+      "companyName": "Empresa Demo 04",
+      "contactName": "Técnico Demo 04",
+      "phone": "097 184 284",
+      "whatsapp": "598097184284",
+      "email": "tecnico04@qcasa.demo",
+      "rut": "219999990004",
+      "address": "Montevideo · dirección demo 4",
+      "zones": [
+        "Montevideo"
+      ],
+      "specialties": [
+        "Pintura",
+        "Albañilería"
+      ],
+      "notes": "Proveedor ficticio para pruebas.",
+      "portalEnabled": false,
+      "userId": null
+    },
+    {
+      "id": "tec-005",
+      "active": true,
+      "companyName": "Empresa Demo 05",
+      "contactName": "Técnico Demo 05",
+      "phone": "098 185 285",
+      "whatsapp": "598098185285",
+      "email": "tecnico05@qcasa.demo",
+      "rut": "219999990005",
+      "address": "Montevideo · dirección demo 5",
+      "zones": [
+        "Montevideo"
+      ],
+      "specialties": [
+        "Climatización"
+      ],
+      "notes": "Proveedor ficticio para pruebas.",
+      "portalEnabled": false,
+      "userId": null
+    },
+    {
+      "id": "tec-006",
+      "active": true,
+      "companyName": "Empresa Demo 06",
+      "contactName": "Técnico Demo 06",
+      "phone": "099 186 286",
+      "whatsapp": "598099186286",
+      "email": "tecnico06@qcasa.demo",
+      "rut": "219999990006",
+      "address": "Montevideo · dirección demo 6",
+      "zones": [
+        "Montevideo"
+      ],
+      "specialties": [
+        "Techos",
+        "Impermeabilización"
+      ],
+      "notes": "Proveedor ficticio para pruebas.",
+      "portalEnabled": false,
+      "userId": null
+    },
+    {
+      "id": "tec-007",
+      "active": true,
+      "companyName": "Empresa Demo 07",
+      "contactName": "Técnico Demo 07",
+      "phone": "097 187 287",
+      "whatsapp": "598097187287",
+      "email": "tecnico07@qcasa.demo",
+      "rut": "219999990007",
+      "address": "Montevideo · dirección demo 7",
+      "zones": [
+        "Montevideo"
+      ],
+      "specialties": [
+        "Mantenimiento general"
+      ],
+      "notes": "Proveedor ficticio para pruebas.",
+      "portalEnabled": false,
+      "userId": null
+    },
+    {
+      "id": "tec-008",
+      "active": true,
+      "companyName": "Empresa Demo 08",
+      "contactName": "Técnico Demo 08",
+      "phone": "098 188 288",
+      "whatsapp": "598098188288",
+      "email": "tecnico08@qcasa.demo",
+      "rut": "219999990008",
+      "address": "Montevideo · dirección demo 8",
+      "zones": [
+        "Montevideo"
+      ],
+      "specialties": [
+        "Vidriería"
+      ],
+      "notes": "Proveedor ficticio para pruebas.",
+      "portalEnabled": false,
+      "userId": null
+    }
+  ],
+  "complaints": [
+    {
+      "id": "clm-201",
+      "number": 201,
+      "propertyCode": "QC-0003",
+      "category": "Electricidad",
+      "title": "Corte eléctrico",
+      "description": "Reclamo ficticio de demostración con información suficiente para probar el flujo.",
+      "phone": "097 103 203",
+      "priority": "medium",
+      "status": "Revisando",
+      "technicianId": null,
+      "technicianName": null,
+      "technicianEmail": null,
+      "attachments": [],
+      "shareToken": "c948e304375089fa91107bb6e95e5212",
+      "createdAt": "2026-08-11T12:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z",
+      "history": [
+        {
+          "at": "2026-08-28T12:00:00.000Z",
+          "status": "Revisando",
+          "note": "Estado demo."
+        }
+      ]
+    },
+    {
+      "id": "clm-202",
+      "number": 202,
+      "propertyCode": "QC-0005",
+      "category": "Cerrajería",
+      "title": "Cerradura trabada",
+      "description": "Reclamo ficticio de demostración con información suficiente para probar el flujo.",
+      "phone": "099 105 205",
+      "priority": "high",
+      "status": "Técnico asignado",
+      "technicianId": "tec-002",
+      "technicianName": "Técnico Demo 02",
+      "technicianEmail": "tecnico02@qcasa.demo",
+      "attachments": [],
+      "shareToken": "9a59f932389699ceb5cef7c3f9ff133e",
+      "createdAt": "2026-08-12T12:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z",
+      "history": [
+        {
+          "at": "2026-08-28T12:00:00.000Z",
+          "status": "Técnico asignado",
+          "note": "Estado demo."
+        }
+      ]
+    },
+    {
+      "id": "clm-203",
+      "number": 203,
+      "propertyCode": "QC-0007",
+      "category": "Humedad",
+      "title": "Humedad en pared",
+      "description": "Reclamo ficticio de demostración con información suficiente para probar el flujo.",
+      "phone": "098 107 207",
+      "priority": "urgent",
+      "status": "En reparación",
+      "technicianId": "tec-003",
+      "technicianName": "Técnico Demo 03",
+      "technicianEmail": "tecnico03@qcasa.demo",
+      "attachments": [],
+      "shareToken": "d04a6871bd932cd88f36dbe88919ea46",
+      "createdAt": "2026-08-13T12:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z",
+      "history": [
+        {
+          "at": "2026-08-28T12:00:00.000Z",
+          "status": "En reparación",
+          "note": "Estado demo."
+        }
+      ]
+    },
+    {
+      "id": "clm-204",
+      "number": 204,
+      "propertyCode": "QC-0009",
+      "category": "Pintura",
+      "title": "Pintura descascarada",
+      "description": "Reclamo ficticio de demostración con información suficiente para probar el flujo.",
+      "phone": "097 109 209",
+      "priority": "low",
+      "status": "Necesita presupuesto",
+      "technicianId": "tec-004",
+      "technicianName": "Técnico Demo 04",
+      "technicianEmail": "tecnico04@qcasa.demo",
+      "attachments": [],
+      "shareToken": "9d3dae151793751f30f8dc538398ce91",
+      "createdAt": "2026-08-14T12:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z",
+      "history": [
+        {
+          "at": "2026-08-28T12:00:00.000Z",
+          "status": "Necesita presupuesto",
+          "note": "Estado demo."
+        }
+      ]
+    },
+    {
+      "id": "clm-205",
+      "number": 205,
+      "propertyCode": "QC-0011",
+      "category": "Climatización",
+      "title": "Aire acondicionado no enfría",
+      "description": "Reclamo ficticio de demostración con información suficiente para probar el flujo.",
+      "phone": "099 111 211",
+      "priority": "medium",
+      "status": "Necesita repuesto",
+      "technicianId": "tec-005",
+      "technicianName": "Técnico Demo 05",
+      "technicianEmail": "tecnico05@qcasa.demo",
+      "attachments": [],
+      "shareToken": "25637d523776bc859d96d2f39dfeff53",
+      "createdAt": "2026-08-15T12:00:00.000Z",
+      "updatedAt": "2026-08-28T12:00:00.000Z",
+      "history": [
+        {
+          "at": "2026-08-28T12:00:00.000Z",
+          "status": "Necesita repuesto",
+          "note": "Estado demo."
+        }
+      ]
+    }
+  ],
+  "alerts": [
+    {
+      "id": "alt-demo-001",
+      "propertyCode": "QC-0001",
+      "type": "Impuesto",
+      "title": "Contribución inmobiliaria",
+      "dueDate": "2026-08-30",
+      "amount": 8200,
+      "currency": "UYU",
+      "paid": false,
+      "recurring": false,
+      "recurrence": "",
+      "notes": "Vencimiento demo dentro de los próximos 30 días."
+    },
+    {
+      "id": "alt-demo-002",
+      "propertyCode": "QC-0006",
+      "type": "Impuesto",
+      "title": "Contribución inmobiliaria",
+      "dueDate": "2026-09-05",
+      "amount": 7600,
+      "currency": "UYU",
+      "paid": false,
+      "recurring": false,
+      "recurrence": "",
+      "notes": "Vencimiento demo dentro de los próximos 30 días."
+    },
+    {
+      "id": "alt-demo-003",
+      "propertyCode": "QC-0012",
+      "type": "Impuesto",
+      "title": "Contribución inmobiliaria",
+      "dueDate": "2026-09-11",
+      "amount": 9100,
+      "currency": "UYU",
+      "paid": false,
+      "recurring": false,
+      "recurrence": "",
+      "notes": "Vencimiento demo dentro de los próximos 30 días."
+    },
+    {
+      "id": "alt-demo-004",
+      "propertyCode": "QC-0020",
+      "type": "Impuesto",
+      "title": "Contribución inmobiliaria",
+      "dueDate": "2026-09-18",
+      "amount": 8800,
+      "currency": "UYU",
+      "paid": false,
+      "recurring": false,
+      "recurrence": "",
+      "notes": "Vencimiento demo dentro de los próximos 30 días."
+    },
+    {
+      "id": "alt-demo-005",
+      "propertyCode": "QC-0030",
+      "type": "Impuesto",
+      "title": "Contribución inmobiliaria",
+      "dueDate": "2026-09-25",
+      "amount": 9400,
+      "currency": "UYU",
+      "paid": false,
+      "recurring": false,
+      "recurrence": "",
+      "notes": "Vencimiento demo dentro de los próximos 30 días."
+    },
+    {
+      "id": "alt-demo-006",
+      "propertyCode": "QC-0004",
+      "type": "Impuesto",
+      "title": "Impuesto de Primaria",
+      "dueDate": "2026-09-01",
+      "amount": 3100,
+      "currency": "UYU",
+      "paid": false,
+      "recurring": false,
+      "recurrence": "",
+      "notes": "Vencimiento demo dentro de los próximos 30 días."
+    },
+    {
+      "id": "alt-demo-007",
+      "propertyCode": "QC-0010",
+      "type": "Impuesto",
+      "title": "Impuesto de Primaria",
+      "dueDate": "2026-09-07",
+      "amount": 2800,
+      "currency": "UYU",
+      "paid": false,
+      "recurring": false,
+      "recurrence": "",
+      "notes": "Vencimiento demo dentro de los próximos 30 días."
+    },
+    {
+      "id": "alt-demo-008",
+      "propertyCode": "QC-0018",
+      "type": "Impuesto",
+      "title": "Impuesto de Primaria",
+      "dueDate": "2026-09-13",
+      "amount": 3400,
+      "currency": "UYU",
+      "paid": false,
+      "recurring": false,
+      "recurrence": "",
+      "notes": "Vencimiento demo dentro de los próximos 30 días."
+    },
+    {
+      "id": "alt-demo-009",
+      "propertyCode": "QC-0025",
+      "type": "Impuesto",
+      "title": "Impuesto de Primaria",
+      "dueDate": "2026-09-19",
+      "amount": 3000,
+      "currency": "UYU",
+      "paid": false,
+      "recurring": false,
+      "recurrence": "",
+      "notes": "Vencimiento demo dentro de los próximos 30 días."
+    },
+    {
+      "id": "alt-demo-010",
+      "propertyCode": "QC-0036",
+      "type": "Impuesto",
+      "title": "Impuesto de Primaria",
+      "dueDate": "2026-09-26",
+      "amount": 3600,
+      "currency": "UYU",
+      "paid": false,
+      "recurring": false,
+      "recurrence": "",
+      "notes": "Vencimiento demo dentro de los próximos 30 días."
+    },
+    {
+      "id": "alt-demo-011",
+      "propertyCode": "QC-0008",
+      "type": "Contrato",
+      "title": "Vencimiento contrato de alquiler",
+      "dueDate": "2026-09-02",
+      "amount": 0,
+      "currency": "UYU",
+      "paid": false,
+      "recurring": false,
+      "recurrence": "",
+      "notes": "Vencimiento demo dentro de los próximos 30 días."
+    },
+    {
+      "id": "alt-demo-012",
+      "propertyCode": "QC-0021",
+      "type": "Contrato",
+      "title": "Vencimiento contrato de alquiler",
+      "dueDate": "2026-09-08",
+      "amount": 0,
+      "currency": "UYU",
+      "paid": false,
+      "recurring": false,
+      "recurrence": "",
+      "notes": "Vencimiento demo dentro de los próximos 30 días."
+    },
+    {
+      "id": "alt-demo-013",
+      "propertyCode": "QC-0033",
+      "type": "Contrato",
+      "title": "Vencimiento contrato de alquiler",
+      "dueDate": "2026-09-14",
+      "amount": 0,
+      "currency": "UYU",
+      "paid": false,
+      "recurring": false,
+      "recurrence": "",
+      "notes": "Vencimiento demo dentro de los próximos 30 días."
+    },
+    {
+      "id": "alt-demo-014",
+      "propertyCode": "QC-0011",
+      "type": "Contrato",
+      "title": "Vencimiento contrato de alquiler",
+      "dueDate": "2026-09-20",
+      "amount": 0,
+      "currency": "UYU",
+      "paid": false,
+      "recurring": false,
+      "recurrence": "",
+      "notes": "Vencimiento demo dentro de los próximos 30 días."
+    },
+    {
+      "id": "alt-demo-015",
+      "propertyCode": "QC-0027",
+      "type": "Contrato",
+      "title": "Vencimiento contrato de alquiler",
+      "dueDate": "2026-09-27",
+      "amount": 0,
+      "currency": "UYU",
+      "paid": false,
+      "recurring": false,
+      "recurrence": "",
+      "notes": "Vencimiento demo dentro de los próximos 30 días."
+    },
+    {
+      "id": "alt-demo-016",
+      "propertyCode": "QC-0002",
+      "type": "Alquiler",
+      "title": "Cobro de alquiler",
+      "dueDate": "2026-08-31",
+      "amount": 59000,
+      "currency": "UYU",
+      "paid": false,
+      "recurring": false,
+      "recurrence": "",
+      "notes": "Sincronizado con el registro de cobro pendiente."
+    },
+    {
+      "id": "alt-demo-017",
+      "propertyCode": "QC-0003",
+      "type": "Alquiler",
+      "title": "Cobro de alquiler",
+      "dueDate": "2026-09-04",
+      "amount": 62500,
+      "currency": "UYU",
+      "paid": false,
+      "recurring": false,
+      "recurrence": "",
+      "notes": "Sincronizado con el registro de cobro pendiente."
+    },
+    {
+      "id": "alt-demo-018",
+      "propertyCode": "QC-0005",
+      "type": "Alquiler",
+      "title": "Cobro de alquiler",
+      "dueDate": "2026-09-09",
+      "amount": 55500,
+      "currency": "UYU",
+      "paid": false,
+      "recurring": false,
+      "recurrence": "",
+      "notes": "Sincronizado con el registro de cobro pendiente."
+    },
+    {
+      "id": "alt-demo-019",
+      "propertyCode": "QC-0009",
+      "type": "Alquiler",
+      "title": "Cobro de alquiler",
+      "dueDate": "2026-09-16",
+      "amount": 59000,
+      "currency": "UYU",
+      "paid": false,
+      "recurring": false,
+      "recurrence": "",
+      "notes": "Sincronizado con el registro de cobro pendiente."
+    },
+    {
+      "id": "alt-demo-020",
+      "propertyCode": "QC-0015",
+      "type": "Alquiler",
+      "title": "Cobro de alquiler",
+      "dueDate": "2026-09-24",
+      "amount": 55500,
+      "currency": "UYU",
+      "paid": false,
+      "recurring": false,
+      "recurrence": "",
+      "notes": "Sincronizado con el registro de cobro pendiente."
+    }
+  ],
+  "payments": [
+    {
+      "id": "pay-001",
+      "propertyCode": "QC-0001",
+      "period": "2026-08",
+      "concept": "Alquiler agosto",
+      "dueDate": "2026-08-06",
+      "amount": 55500,
+      "currency": "UYU",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
+      "method": "Transferencia",
+      "reference": "TRX-880001",
+      "notes": "Movimiento demo."
+    },
+    {
+      "id": "pay-002",
+      "propertyCode": "QC-0002",
+      "period": "2026-09",
+      "concept": "Alquiler agosto",
+      "dueDate": "2026-08-31",
+      "amount": 59000,
+      "currency": "UYU",
+      "status": "Pendiente",
+      "paidAt": "",
+      "method": "",
+      "reference": "",
+      "notes": "Movimiento demo."
+    },
+    {
+      "id": "pay-003",
+      "propertyCode": "QC-0003",
+      "period": "2026-09",
+      "concept": "Alquiler agosto",
+      "dueDate": "2026-09-04",
+      "amount": 62500,
+      "currency": "UYU",
+      "status": "Pendiente",
+      "paidAt": "",
+      "method": "",
+      "reference": "",
+      "notes": "Movimiento demo."
+    },
+    {
+      "id": "pay-004",
+      "propertyCode": "QC-0004",
+      "period": "2026-08",
+      "concept": "Alquiler agosto",
+      "dueDate": "2026-08-09",
+      "amount": 50000,
+      "currency": "UYU",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
+      "method": "Transferencia",
+      "reference": "TRX-880004",
+      "notes": "Movimiento demo."
+    },
+    {
+      "id": "pay-005",
+      "propertyCode": "QC-0005",
+      "period": "2026-09",
+      "concept": "Alquiler agosto",
+      "dueDate": "2026-09-09",
+      "amount": 55500,
+      "currency": "UYU",
+      "status": "Pendiente",
+      "paidAt": "",
+      "method": "",
+      "reference": "",
+      "notes": "Movimiento demo."
+    },
+    {
+      "id": "pay-006",
+      "propertyCode": "QC-0006",
+      "period": "2026-08",
+      "concept": "Alquiler agosto",
+      "dueDate": "2026-08-05",
+      "amount": 59000,
+      "currency": "UYU",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
+      "method": "Transferencia",
+      "reference": "TRX-880006",
+      "notes": "Movimiento demo."
+    },
+    {
+      "id": "pay-007",
+      "propertyCode": "QC-0007",
+      "period": "2026-08",
+      "concept": "Alquiler agosto",
+      "dueDate": "2026-08-06",
+      "amount": 36000,
+      "currency": "UYU",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
+      "method": "Transferencia",
+      "reference": "TRX-880007",
+      "notes": "Movimiento demo."
+    },
+    {
+      "id": "pay-008",
+      "propertyCode": "QC-0008",
+      "period": "2026-08",
+      "concept": "Alquiler agosto",
+      "dueDate": "2026-09-02",
+      "amount": 55500,
+      "currency": "UYU",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
+      "method": "",
+      "reference": "",
+      "notes": "Movimiento demo."
+    },
+    {
+      "id": "pay-009",
+      "propertyCode": "QC-0009",
+      "period": "2026-09",
+      "concept": "Alquiler agosto",
+      "dueDate": "2026-09-16",
+      "amount": 59000,
+      "currency": "UYU",
+      "status": "Pendiente",
+      "paidAt": "",
+      "method": "",
+      "reference": "",
+      "notes": "Movimiento demo."
+    },
+    {
+      "id": "pay-010",
+      "propertyCode": "QC-0010",
+      "period": "2026-08",
+      "concept": "Alquiler agosto",
+      "dueDate": "2026-08-09",
+      "amount": 46500,
+      "currency": "UYU",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
+      "method": "Transferencia",
+      "reference": "TRX-880010",
+      "notes": "Movimiento demo."
+    },
+    {
+      "id": "pay-011",
+      "propertyCode": "QC-0011",
+      "period": "2026-08",
+      "concept": "Alquiler agosto",
+      "dueDate": "2026-09-05",
+      "amount": 52000,
+      "currency": "UYU",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
+      "method": "",
+      "reference": "",
+      "notes": "Movimiento demo."
+    },
+    {
+      "id": "pay-012",
+      "propertyCode": "QC-0012",
+      "period": "2026-08",
+      "concept": "Alquiler agosto",
+      "dueDate": "2026-08-05",
+      "amount": 53500,
+      "currency": "UYU",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
+      "method": "Transferencia",
+      "reference": "TRX-880012",
+      "notes": "Movimiento demo."
+    },
+    {
+      "id": "pay-013",
+      "propertyCode": "QC-0013",
+      "period": "2026-08",
+      "concept": "Alquiler agosto",
+      "dueDate": "2026-08-06",
+      "amount": 59000,
+      "currency": "UYU",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
+      "method": "Transferencia",
+      "reference": "TRX-880013",
+      "notes": "Movimiento demo."
+    },
+    {
+      "id": "pay-014",
+      "propertyCode": "QC-0014",
+      "period": "2026-08",
+      "concept": "Alquiler agosto",
+      "dueDate": "2026-09-02",
+      "amount": 38000,
+      "currency": "UYU",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
+      "method": "",
+      "reference": "",
+      "notes": "Movimiento demo."
+    },
+    {
+      "id": "pay-015",
+      "propertyCode": "QC-0015",
+      "period": "2026-09",
+      "concept": "Alquiler agosto",
+      "dueDate": "2026-09-24",
+      "amount": 55500,
+      "currency": "UYU",
+      "status": "Pendiente",
+      "paidAt": "",
+      "method": "",
+      "reference": "",
+      "notes": "Movimiento demo."
+    },
+    {
+      "id": "pay-016",
+      "propertyCode": "QC-0016",
+      "period": "2026-08",
+      "concept": "Alquiler agosto",
+      "dueDate": "2026-08-09",
+      "amount": 43000,
+      "currency": "UYU",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
+      "method": "Transferencia",
+      "reference": "TRX-880016",
+      "notes": "Movimiento demo."
+    },
+    {
+      "id": "pay-018",
+      "propertyCode": "QC-0018",
+      "period": "2026-08",
+      "concept": "Alquiler agosto",
+      "dueDate": "2026-08-05",
+      "amount": 52000,
+      "currency": "UYU",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
+      "method": "Transferencia",
+      "reference": "TRX-880018",
+      "notes": "Movimiento demo."
+    },
+    {
+      "id": "pay-019",
+      "propertyCode": "QC-0019",
+      "period": "2026-08",
+      "concept": "Alquiler agosto",
+      "dueDate": "2026-08-06",
+      "amount": 69500,
+      "currency": "UYU",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
+      "method": "Transferencia",
+      "reference": "TRX-880019",
+      "notes": "Movimiento demo."
+    },
+    {
+      "id": "pay-020",
+      "propertyCode": "QC-0020",
+      "period": "2026-08",
+      "concept": "Alquiler agosto",
+      "dueDate": "2026-09-02",
+      "amount": 59000,
+      "currency": "UYU",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
+      "method": "",
+      "reference": "",
+      "notes": "Movimiento demo."
+    },
+    {
+      "id": "pay-021",
+      "propertyCode": "QC-0021",
+      "period": "2026-08",
+      "concept": "Alquiler agosto",
+      "dueDate": "2026-08-14",
+      "amount": 38000,
+      "currency": "UYU",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
+      "method": "",
+      "reference": "",
+      "notes": "Movimiento demo."
+    },
+    {
+      "id": "pay-022",
+      "propertyCode": "QC-0022",
+      "period": "2026-08",
+      "concept": "Alquiler agosto",
+      "dueDate": "2026-08-09",
+      "amount": 39500,
+      "currency": "UYU",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
+      "method": "Transferencia",
+      "reference": "TRX-880022",
+      "notes": "Movimiento demo."
+    },
+    {
+      "id": "pay-023",
+      "propertyCode": "QC-0023",
+      "period": "2026-08",
+      "concept": "Alquiler agosto",
+      "dueDate": "2026-09-05",
+      "amount": 43000,
+      "currency": "UYU",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
+      "method": "",
+      "reference": "",
+      "notes": "Movimiento demo."
+    },
+    {
+      "id": "pay-024",
+      "propertyCode": "QC-0024",
+      "period": "2026-08",
+      "concept": "Alquiler agosto",
+      "dueDate": "2026-08-05",
+      "amount": 46500,
+      "currency": "UYU",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
+      "method": "Transferencia",
+      "reference": "TRX-880024",
+      "notes": "Movimiento demo."
+    },
+    {
+      "id": "pay-025",
+      "propertyCode": "QC-0025",
+      "period": "2026-08",
+      "concept": "Alquiler agosto",
+      "dueDate": "2026-08-06",
+      "amount": 52000,
+      "currency": "UYU",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
+      "method": "Transferencia",
+      "reference": "TRX-880025",
+      "notes": "Movimiento demo."
+    },
+    {
+      "id": "pay-026",
+      "propertyCode": "QC-0026",
+      "period": "2026-08",
+      "concept": "Alquiler agosto",
+      "dueDate": "2026-09-02",
+      "amount": 55500,
+      "currency": "UYU",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
+      "method": "",
+      "reference": "",
+      "notes": "Movimiento demo."
+    },
+    {
+      "id": "pay-027",
+      "propertyCode": "QC-0027",
+      "period": "2026-08",
+      "concept": "Alquiler agosto",
+      "dueDate": "2026-08-20",
+      "amount": 91000,
+      "currency": "UYU",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
+      "method": "",
+      "reference": "",
+      "notes": "Movimiento demo."
+    },
+    {
+      "id": "pay-028",
+      "propertyCode": "QC-0028",
+      "period": "2026-08",
+      "concept": "Alquiler agosto",
+      "dueDate": "2026-08-09",
+      "amount": 36000,
+      "currency": "UYU",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
+      "method": "Transferencia",
+      "reference": "TRX-880028",
+      "notes": "Movimiento demo."
+    },
+    {
+      "id": "pay-029",
+      "propertyCode": "QC-0029",
+      "period": "2026-08",
+      "concept": "Alquiler agosto",
+      "dueDate": "2026-09-05",
+      "amount": 55500,
+      "currency": "UYU",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
+      "method": "",
+      "reference": "",
+      "notes": "Movimiento demo."
+    },
+    {
+      "id": "pay-030",
+      "propertyCode": "QC-0030",
+      "period": "2026-08",
+      "concept": "Alquiler agosto",
+      "dueDate": "2026-08-05",
+      "amount": 59000,
+      "currency": "UYU",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
+      "method": "Transferencia",
+      "reference": "TRX-880030",
+      "notes": "Movimiento demo."
+    },
+    {
+      "id": "pay-031",
+      "propertyCode": "QC-0031",
+      "period": "2026-08",
+      "concept": "Alquiler agosto",
+      "dueDate": "2026-08-06",
+      "amount": 46500,
+      "currency": "UYU",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
+      "method": "Transferencia",
+      "reference": "TRX-880031",
+      "notes": "Movimiento demo."
+    },
+    {
+      "id": "pay-032",
+      "propertyCode": "QC-0032",
+      "period": "2026-08",
+      "concept": "Alquiler agosto",
+      "dueDate": "2026-09-02",
+      "amount": 52000,
+      "currency": "UYU",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
+      "method": "",
+      "reference": "",
+      "notes": "Movimiento demo."
+    },
+    {
+      "id": "pay-033",
+      "propertyCode": "QC-0033",
+      "period": "2026-08",
+      "concept": "Alquiler agosto",
+      "dueDate": "2026-08-14",
+      "amount": 69500,
+      "currency": "UYU",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
+      "method": "",
+      "reference": "",
+      "notes": "Movimiento demo."
+    },
+    {
+      "id": "pay-034",
+      "propertyCode": "QC-0034",
+      "period": "2026-08",
+      "concept": "Alquiler agosto",
+      "dueDate": "2026-08-09",
+      "amount": 73000,
+      "currency": "UYU",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
+      "method": "Transferencia",
+      "reference": "TRX-880034",
+      "notes": "Movimiento demo."
+    },
+    {
+      "id": "pay-035",
+      "propertyCode": "QC-0035",
+      "period": "2026-08",
+      "concept": "Alquiler agosto",
+      "dueDate": "2026-09-05",
+      "amount": 52000,
+      "currency": "UYU",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
+      "method": "",
+      "reference": "",
+      "notes": "Movimiento demo."
+    },
+    {
+      "id": "pay-036",
+      "propertyCode": "QC-0036",
+      "period": "2026-08",
+      "concept": "Alquiler agosto",
+      "dueDate": "2026-08-05",
+      "amount": 55500,
+      "currency": "UYU",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
+      "method": "Transferencia",
+      "reference": "TRX-880036",
+      "notes": "Movimiento demo."
+    },
+    {
+      "id": "pay-037",
+      "propertyCode": "QC-0037",
+      "period": "2026-08",
+      "concept": "Alquiler agosto",
+      "dueDate": "2026-08-06",
+      "amount": 59000,
+      "currency": "UYU",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
+      "method": "Transferencia",
+      "reference": "TRX-880037",
+      "notes": "Movimiento demo."
+    },
+    {
+      "id": "pay-038",
+      "propertyCode": "QC-0038",
+      "period": "2026-08",
+      "concept": "Alquiler agosto",
+      "dueDate": "2026-09-02",
+      "amount": 48500,
+      "currency": "UYU",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
+      "method": "",
+      "reference": "",
+      "notes": "Movimiento demo."
+    },
+    {
+      "id": "pay-039",
+      "propertyCode": "QC-0039",
+      "period": "2026-08",
+      "concept": "Alquiler agosto",
+      "dueDate": "2026-08-20",
+      "amount": 66000,
+      "currency": "UYU",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
+      "method": "",
+      "reference": "",
+      "notes": "Movimiento demo."
+    },
+    {
+      "id": "pay-040",
+      "propertyCode": "QC-0040",
+      "period": "2026-08",
+      "concept": "Alquiler agosto",
+      "dueDate": "2026-08-09",
+      "amount": 69500,
+      "currency": "UYU",
+      "status": "Pagado",
+      "paidAt": "2026-08-28",
+      "method": "Transferencia",
+      "reference": "TRX-880040",
+      "notes": "Movimiento demo."
+    }
+  ],
+  "documents": [
+    {
+      "id": "doc-001-a",
+      "propertyCode": "QC-0001",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-001-b",
+      "propertyCode": "QC-0001",
+      "type": "Contrato",
+      "title": "Contrato de alquiler vigente",
+      "issueDate": "2026-02-02",
+      "dueDate": "2026-12-09",
+      "fileUrl": "#",
+      "notes": "Contrato demo."
+    },
+    {
+      "id": "doc-002-a",
+      "propertyCode": "QC-0002",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-002-b",
+      "propertyCode": "QC-0002",
+      "type": "Contrato",
+      "title": "Contrato de alquiler vigente",
+      "issueDate": "2025-03-03",
+      "dueDate": "2026-12-22",
+      "fileUrl": "#",
+      "notes": "Contrato demo."
+    },
+    {
+      "id": "doc-003-a",
+      "propertyCode": "QC-0003",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-003-b",
+      "propertyCode": "QC-0003",
+      "type": "Contrato",
+      "title": "Contrato de alquiler vigente",
+      "issueDate": "2026-04-04",
+      "dueDate": "2027-01-04",
+      "fileUrl": "#",
+      "notes": "Contrato demo."
+    },
+    {
+      "id": "doc-004-a",
+      "propertyCode": "QC-0004",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-004-b",
+      "propertyCode": "QC-0004",
+      "type": "Contrato",
+      "title": "Contrato de alquiler vigente",
+      "issueDate": "2025-05-05",
+      "dueDate": "2027-01-17",
+      "fileUrl": "#",
+      "notes": "Contrato demo."
+    },
+    {
+      "id": "doc-005-a",
+      "propertyCode": "QC-0005",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-005-b",
+      "propertyCode": "QC-0005",
+      "type": "Contrato",
+      "title": "Contrato de alquiler vigente",
+      "issueDate": "2026-06-06",
+      "dueDate": "2026-08-13",
+      "fileUrl": "#",
+      "notes": "Contrato demo."
+    },
+    {
+      "id": "doc-006-a",
+      "propertyCode": "QC-0006",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-006-b",
+      "propertyCode": "QC-0006",
+      "type": "Contrato",
+      "title": "Contrato de alquiler vigente",
+      "issueDate": "2025-07-07",
+      "dueDate": "2027-02-12",
+      "fileUrl": "#",
+      "notes": "Contrato demo."
+    },
+    {
+      "id": "doc-007-a",
+      "propertyCode": "QC-0007",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-007-b",
+      "propertyCode": "QC-0007",
+      "type": "Contrato",
+      "title": "Contrato de alquiler vigente",
+      "issueDate": "2026-08-08",
+      "dueDate": "2027-02-25",
+      "fileUrl": "#",
+      "notes": "Contrato demo."
+    },
+    {
+      "id": "doc-008-a",
+      "propertyCode": "QC-0008",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-008-b",
+      "propertyCode": "QC-0008",
+      "type": "Contrato",
+      "title": "Contrato de alquiler vigente",
+      "issueDate": "2025-09-09",
+      "dueDate": "2026-09-20",
+      "fileUrl": "#",
+      "notes": "Contrato demo."
+    },
+    {
+      "id": "doc-009-a",
+      "propertyCode": "QC-0009",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-009-b",
+      "propertyCode": "QC-0009",
+      "type": "Contrato",
+      "title": "Contrato de alquiler vigente",
+      "issueDate": "2026-10-10",
+      "dueDate": "2027-03-23",
+      "fileUrl": "#",
+      "notes": "Contrato demo."
+    },
+    {
+      "id": "doc-010-a",
+      "propertyCode": "QC-0010",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-010-b",
+      "propertyCode": "QC-0010",
+      "type": "Contrato",
+      "title": "Contrato de alquiler vigente",
+      "issueDate": "2025-01-11",
+      "dueDate": "2027-04-05",
+      "fileUrl": "#",
+      "notes": "Contrato demo."
+    },
+    {
+      "id": "doc-011-a",
+      "propertyCode": "QC-0011",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-011-b",
+      "propertyCode": "QC-0011",
+      "type": "Contrato",
+      "title": "Contrato de alquiler vigente",
+      "issueDate": "2026-02-12",
+      "dueDate": "2027-04-18",
+      "fileUrl": "#",
+      "notes": "Contrato demo."
+    },
+    {
+      "id": "doc-012-a",
+      "propertyCode": "QC-0012",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-012-b",
+      "propertyCode": "QC-0012",
+      "type": "Contrato",
+      "title": "Contrato de alquiler vigente",
+      "issueDate": "2025-03-13",
+      "dueDate": "2026-08-06",
+      "fileUrl": "#",
+      "notes": "Contrato demo."
+    },
+    {
+      "id": "doc-013-a",
+      "propertyCode": "QC-0013",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-013-b",
+      "propertyCode": "QC-0013",
+      "type": "Contrato",
+      "title": "Contrato de alquiler vigente",
+      "issueDate": "2026-04-14",
+      "dueDate": "2027-05-14",
+      "fileUrl": "#",
+      "notes": "Contrato demo."
+    },
+    {
+      "id": "doc-014-a",
+      "propertyCode": "QC-0014",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-014-b",
+      "propertyCode": "QC-0014",
+      "type": "Contrato",
+      "title": "Contrato de alquiler vigente",
+      "issueDate": "2025-05-15",
+      "dueDate": "2027-05-27",
+      "fileUrl": "#",
+      "notes": "Contrato demo."
+    },
+    {
+      "id": "doc-015-a",
+      "propertyCode": "QC-0015",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-015-b",
+      "propertyCode": "QC-0015",
+      "type": "Contrato",
+      "title": "Contrato de alquiler vigente",
+      "issueDate": "2026-06-16",
+      "dueDate": "2027-06-09",
+      "fileUrl": "#",
+      "notes": "Contrato demo."
+    },
+    {
+      "id": "doc-016-a",
+      "propertyCode": "QC-0016",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-016-b",
+      "propertyCode": "QC-0016",
+      "type": "Contrato",
+      "title": "Contrato de alquiler vigente",
+      "issueDate": "2025-07-17",
+      "dueDate": "2027-06-22",
+      "fileUrl": "#",
+      "notes": "Contrato demo."
+    },
+    {
+      "id": "doc-017-a",
+      "propertyCode": "QC-0017",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-018-a",
+      "propertyCode": "QC-0018",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-018-b",
+      "propertyCode": "QC-0018",
+      "type": "Contrato",
+      "title": "Contrato de alquiler vigente",
+      "issueDate": "2025-09-19",
+      "dueDate": "2027-07-18",
+      "fileUrl": "#",
+      "notes": "Contrato demo."
+    },
+    {
+      "id": "doc-019-a",
+      "propertyCode": "QC-0019",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-019-b",
+      "propertyCode": "QC-0019",
+      "type": "Contrato",
+      "title": "Contrato de alquiler vigente",
+      "issueDate": "2026-10-20",
+      "dueDate": "2027-07-31",
+      "fileUrl": "#",
+      "notes": "Contrato demo."
+    },
+    {
+      "id": "doc-020-a",
+      "propertyCode": "QC-0020",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-020-b",
+      "propertyCode": "QC-0020",
+      "type": "Contrato",
+      "title": "Contrato de alquiler vigente",
+      "issueDate": "2025-01-01",
+      "dueDate": "2027-08-13",
+      "fileUrl": "#",
+      "notes": "Contrato demo."
+    },
+    {
+      "id": "doc-021-a",
+      "propertyCode": "QC-0021",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-021-b",
+      "propertyCode": "QC-0021",
+      "type": "Contrato",
+      "title": "Contrato de alquiler vigente",
+      "issueDate": "2026-02-02",
+      "dueDate": "2026-09-13",
+      "fileUrl": "#",
+      "notes": "Contrato demo."
+    },
+    {
+      "id": "doc-022-a",
+      "propertyCode": "QC-0022",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-022-b",
+      "propertyCode": "QC-0022",
+      "type": "Contrato",
+      "title": "Contrato de alquiler vigente",
+      "issueDate": "2025-03-03",
+      "dueDate": "2027-09-08",
+      "fileUrl": "#",
+      "notes": "Contrato demo."
+    },
+    {
+      "id": "doc-023-a",
+      "propertyCode": "QC-0023",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-023-b",
+      "propertyCode": "QC-0023",
+      "type": "Contrato",
+      "title": "Contrato de alquiler vigente",
+      "issueDate": "2026-04-04",
+      "dueDate": "2027-09-21",
+      "fileUrl": "#",
+      "notes": "Contrato demo."
+    },
+    {
+      "id": "doc-024-a",
+      "propertyCode": "QC-0024",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-024-b",
+      "propertyCode": "QC-0024",
+      "type": "Contrato",
+      "title": "Contrato de alquiler vigente",
+      "issueDate": "2025-05-05",
+      "dueDate": "2027-10-04",
+      "fileUrl": "#",
+      "notes": "Contrato demo."
+    },
+    {
+      "id": "doc-025-a",
+      "propertyCode": "QC-0025",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-025-b",
+      "propertyCode": "QC-0025",
+      "type": "Contrato",
+      "title": "Contrato de alquiler vigente",
+      "issueDate": "2026-06-06",
+      "dueDate": "2027-10-17",
+      "fileUrl": "#",
+      "notes": "Contrato demo."
+    },
+    {
+      "id": "doc-026-a",
+      "propertyCode": "QC-0026",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-026-b",
+      "propertyCode": "QC-0026",
+      "type": "Contrato",
+      "title": "Contrato de alquiler vigente",
+      "issueDate": "2025-07-07",
+      "dueDate": "2027-10-30",
+      "fileUrl": "#",
+      "notes": "Contrato demo."
+    },
+    {
+      "id": "doc-027-a",
+      "propertyCode": "QC-0027",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-027-b",
+      "propertyCode": "QC-0027",
+      "type": "Contrato",
+      "title": "Contrato de alquiler vigente",
+      "issueDate": "2026-08-08",
+      "dueDate": "2027-11-12",
+      "fileUrl": "#",
+      "notes": "Contrato demo."
+    },
+    {
+      "id": "doc-028-a",
+      "propertyCode": "QC-0028",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-028-b",
+      "propertyCode": "QC-0028",
+      "type": "Contrato",
+      "title": "Contrato de alquiler vigente",
+      "issueDate": "2025-09-09",
+      "dueDate": "2027-11-25",
+      "fileUrl": "#",
+      "notes": "Contrato demo."
+    },
+    {
+      "id": "doc-029-a",
+      "propertyCode": "QC-0029",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-029-b",
+      "propertyCode": "QC-0029",
+      "type": "Contrato",
+      "title": "Contrato de alquiler vigente",
+      "issueDate": "2026-10-10",
+      "dueDate": "2027-12-08",
+      "fileUrl": "#",
+      "notes": "Contrato demo."
+    },
+    {
+      "id": "doc-030-a",
+      "propertyCode": "QC-0030",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-030-b",
+      "propertyCode": "QC-0030",
+      "type": "Contrato",
+      "title": "Contrato de alquiler vigente",
+      "issueDate": "2025-01-11",
+      "dueDate": "2027-12-21",
+      "fileUrl": "#",
+      "notes": "Contrato demo."
+    },
+    {
+      "id": "doc-031-a",
+      "propertyCode": "QC-0031",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-031-b",
+      "propertyCode": "QC-0031",
+      "type": "Contrato",
+      "title": "Contrato de alquiler vigente",
+      "issueDate": "2026-02-12",
+      "dueDate": "2028-01-03",
+      "fileUrl": "#",
+      "notes": "Contrato demo."
+    },
+    {
+      "id": "doc-032-a",
+      "propertyCode": "QC-0032",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-032-b",
+      "propertyCode": "QC-0032",
+      "type": "Contrato",
+      "title": "Contrato de alquiler vigente",
+      "issueDate": "2025-03-13",
+      "dueDate": "2028-01-16",
+      "fileUrl": "#",
+      "notes": "Contrato demo."
+    },
+    {
+      "id": "doc-033-a",
+      "propertyCode": "QC-0033",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-033-b",
+      "propertyCode": "QC-0033",
+      "type": "Contrato",
+      "title": "Contrato de alquiler vigente",
+      "issueDate": "2026-04-14",
+      "dueDate": "2026-09-25",
+      "fileUrl": "#",
+      "notes": "Contrato demo."
+    },
+    {
+      "id": "doc-034-a",
+      "propertyCode": "QC-0034",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-034-b",
+      "propertyCode": "QC-0034",
+      "type": "Contrato",
+      "title": "Contrato de alquiler vigente",
+      "issueDate": "2025-05-15",
+      "dueDate": "2028-02-11",
+      "fileUrl": "#",
+      "notes": "Contrato demo."
+    },
+    {
+      "id": "doc-035-a",
+      "propertyCode": "QC-0035",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-035-b",
+      "propertyCode": "QC-0035",
+      "type": "Contrato",
+      "title": "Contrato de alquiler vigente",
+      "issueDate": "2026-06-16",
+      "dueDate": "2028-02-24",
+      "fileUrl": "#",
+      "notes": "Contrato demo."
+    },
+    {
+      "id": "doc-036-a",
+      "propertyCode": "QC-0036",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-036-b",
+      "propertyCode": "QC-0036",
+      "type": "Contrato",
+      "title": "Contrato de alquiler vigente",
+      "issueDate": "2025-07-17",
+      "dueDate": "2028-03-08",
+      "fileUrl": "#",
+      "notes": "Contrato demo."
+    },
+    {
+      "id": "doc-037-a",
+      "propertyCode": "QC-0037",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-037-b",
+      "propertyCode": "QC-0037",
+      "type": "Contrato",
+      "title": "Contrato de alquiler vigente",
+      "issueDate": "2026-08-18",
+      "dueDate": "2028-03-21",
+      "fileUrl": "#",
+      "notes": "Contrato demo."
+    },
+    {
+      "id": "doc-038-a",
+      "propertyCode": "QC-0038",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-038-b",
+      "propertyCode": "QC-0038",
+      "type": "Contrato",
+      "title": "Contrato de alquiler vigente",
+      "issueDate": "2025-09-19",
+      "dueDate": "2028-04-03",
+      "fileUrl": "#",
+      "notes": "Contrato demo."
+    },
+    {
+      "id": "doc-039-a",
+      "propertyCode": "QC-0039",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-039-b",
+      "propertyCode": "QC-0039",
+      "type": "Contrato",
+      "title": "Contrato de alquiler vigente",
+      "issueDate": "2026-10-20",
+      "dueDate": "2028-04-16",
+      "fileUrl": "#",
+      "notes": "Contrato demo."
+    },
+    {
+      "id": "doc-040-a",
+      "propertyCode": "QC-0040",
+      "type": "Contribución",
+      "title": "Último comprobante de Contribución",
+      "issueDate": "2026-07-10",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-040-b",
+      "propertyCode": "QC-0040",
+      "type": "Contrato",
+      "title": "Contrato de alquiler vigente",
+      "issueDate": "2025-01-01",
+      "dueDate": "2028-04-29",
+      "fileUrl": "#",
+      "notes": "Contrato demo."
+    }
+  ],
+  "audit": [
+    {
+      "id": "aud-001",
+      "propertyCode": "QC-0001",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    },
+    {
+      "id": "aud-002",
+      "propertyCode": "QC-0002",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    },
+    {
+      "id": "aud-003",
+      "propertyCode": "QC-0003",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    },
+    {
+      "id": "aud-004",
+      "propertyCode": "QC-0004",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    },
+    {
+      "id": "aud-005",
+      "propertyCode": "QC-0005",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    },
+    {
+      "id": "aud-006",
+      "propertyCode": "QC-0006",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    },
+    {
+      "id": "aud-007",
+      "propertyCode": "QC-0007",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    },
+    {
+      "id": "aud-008",
+      "propertyCode": "QC-0008",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    },
+    {
+      "id": "aud-009",
+      "propertyCode": "QC-0009",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    },
+    {
+      "id": "aud-010",
+      "propertyCode": "QC-0010",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    },
+    {
+      "id": "aud-011",
+      "propertyCode": "QC-0011",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    },
+    {
+      "id": "aud-012",
+      "propertyCode": "QC-0012",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    },
+    {
+      "id": "aud-013",
+      "propertyCode": "QC-0013",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    },
+    {
+      "id": "aud-014",
+      "propertyCode": "QC-0014",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    },
+    {
+      "id": "aud-015",
+      "propertyCode": "QC-0015",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    },
+    {
+      "id": "aud-016",
+      "propertyCode": "QC-0016",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    },
+    {
+      "id": "aud-017",
+      "propertyCode": "QC-0017",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    },
+    {
+      "id": "aud-018",
+      "propertyCode": "QC-0018",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    },
+    {
+      "id": "aud-019",
+      "propertyCode": "QC-0019",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    },
+    {
+      "id": "aud-020",
+      "propertyCode": "QC-0020",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    },
+    {
+      "id": "aud-021",
+      "propertyCode": "QC-0021",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    },
+    {
+      "id": "aud-022",
+      "propertyCode": "QC-0022",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    },
+    {
+      "id": "aud-023",
+      "propertyCode": "QC-0023",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    },
+    {
+      "id": "aud-024",
+      "propertyCode": "QC-0024",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    },
+    {
+      "id": "aud-025",
+      "propertyCode": "QC-0025",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    },
+    {
+      "id": "aud-026",
+      "propertyCode": "QC-0026",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    },
+    {
+      "id": "aud-027",
+      "propertyCode": "QC-0027",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    },
+    {
+      "id": "aud-028",
+      "propertyCode": "QC-0028",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    },
+    {
+      "id": "aud-029",
+      "propertyCode": "QC-0029",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    },
+    {
+      "id": "aud-030",
+      "propertyCode": "QC-0030",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    },
+    {
+      "id": "aud-031",
+      "propertyCode": "QC-0031",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    },
+    {
+      "id": "aud-032",
+      "propertyCode": "QC-0032",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    },
+    {
+      "id": "aud-033",
+      "propertyCode": "QC-0033",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    },
+    {
+      "id": "aud-034",
+      "propertyCode": "QC-0034",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    },
+    {
+      "id": "aud-035",
+      "propertyCode": "QC-0035",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    },
+    {
+      "id": "aud-036",
+      "propertyCode": "QC-0036",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    },
+    {
+      "id": "aud-037",
+      "propertyCode": "QC-0037",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    },
+    {
+      "id": "aud-038",
+      "propertyCode": "QC-0038",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    },
+    {
+      "id": "aud-039",
+      "propertyCode": "QC-0039",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    },
+    {
+      "id": "aud-040",
+      "propertyCode": "QC-0040",
+      "at": "2026-08-20T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Alta de propiedad demo",
+      "detail": "Se cargó la ficha inicial de la propiedad."
+    }
+  ]
+}

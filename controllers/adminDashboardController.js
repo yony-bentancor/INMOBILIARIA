@@ -105,9 +105,16 @@ exports.dashboard = (req, res) => {
     .filter(alert => codes.has(alert.propertyCode))
     .map(alert => enrichDashboardAlert(alert, propertyMap));
 
-  const pendingAlerts = alerts
+  const pendingAlertsAll = alerts
     .filter(alert => !alert.paid && alert.dueDate)
     .sort(dateSort);
+
+  // Dashboard operativo: mostrar solamente vencimientos desde hoy
+  // hasta los próximos 30 días. Los vencidos anteriores no se incluyen.
+  const pendingAlerts = pendingAlertsAll.filter(alert => {
+    const days = daysUntil(alert.dueDate);
+    return days !== null && days >= 0 && days <= 30;
+  });
 
   const openClaims = store.complaints
     .filter(claim => codes.has(claim.propertyCode) && !CLOSED_CLAIM_STATUSES.has(claim.status))
