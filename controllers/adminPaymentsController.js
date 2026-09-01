@@ -6,11 +6,8 @@ const CLOSED_PAYMENT_STATUS='Pagado';
 function currentPeriod(){
   const now=new Date();
   const parts=new Intl.DateTimeFormat('en-CA',{
-    timeZone:'America/Montevideo',
-    year:'numeric',
-    month:'2-digit'
+    timeZone:'America/Montevideo',year:'numeric',month:'2-digit'
   }).formatToParts(now);
-
   const year=parts.find(x=>x.type==='year')?.value||String(now.getUTCFullYear());
   const month=parts.find(x=>x.type==='month')?.value||String(now.getUTCMonth()+1).padStart(2,'0');
   return `${year}-${month}`;
@@ -21,9 +18,7 @@ function periodLabel(period){
   if(!year||!month)return period||'';
   const d=new Date(Date.UTC(year,month-1,1,12,0,0));
   return new Intl.DateTimeFormat('es-UY',{
-    timeZone:'America/Montevideo',
-    month:'long',
-    year:'numeric'
+    timeZone:'America/Montevideo',month:'long',year:'numeric'
   }).format(d);
 }
 
@@ -32,32 +27,8 @@ function formatDate(value){
   const d=new Date(`${String(value).slice(0,10)}T12:00:00`);
   if(Number.isNaN(d.getTime()))return String(value);
   return new Intl.DateTimeFormat('es-UY',{
-    timeZone:'America/Montevideo',
-    day:'2-digit',
-    month:'2-digit',
-    year:'numeric'
+    timeZone:'America/Montevideo',day:'2-digit',month:'2-digit',year:'numeric'
   }).format(d);
-}
-
-function ownerKey(property){
-  const email=String(property?.owner?.email||'').trim().toLowerCase();
-  if(email)return `email:${email}`;
-  return `name:${String(property?.owner?.name||'Sin propietario').trim().toLowerCase()}`;
-}
-
-function buildOwners(properties){
-  const map=new Map();
-  properties.forEach(property=>{
-    const key=ownerKey(property);
-    if(!map.has(key)){
-      map.set(key,{
-        key,
-        name:property?.owner?.name||'Sin propietario',
-        email:property?.owner?.email||''
-      });
-    }
-  });
-  return [...map.values()].sort((a,b)=>a.name.localeCompare(b.name,'es'));
 }
 
 function paymentStatus(payment,today){
@@ -68,78 +39,48 @@ function paymentStatus(payment,today){
 
 function paymentSort(a,b){
   const order={Vencido:0,Pendiente:1,Pagado:2};
-  if(order[a.displayStatus]!==order[b.displayStatus]){
-    return order[a.displayStatus]-order[b.displayStatus];
-  }
+  if(order[a.displayStatus]!==order[b.displayStatus])return order[a.displayStatus]-order[b.displayStatus];
   return String(a.dueDate||'2999-12-31').localeCompare(String(b.dueDate||'2999-12-31'));
 }
 
 function monthPeriodOptions(payments){
   const set=new Set(payments.map(p=>p.period).filter(Boolean));
   set.add(currentPeriod());
-  return [...set]
-    .sort((a,b)=>String(b).localeCompare(String(a)))
+  return [...set].sort((a,b)=>String(b).localeCompare(String(a)))
     .map(value=>({value,label:periodLabel(value)}));
 }
 
 exports.payments=(req,res)=>{
   const today=new Intl.DateTimeFormat('en-CA',{
-    timeZone:'America/Montevideo',
-    year:'numeric',
-    month:'2-digit',
-    day:'2-digit'
+    timeZone:'America/Montevideo',year:'numeric',month:'2-digit',day:'2-digit'
   }).format(new Date());
 
   const period=String(req.query.period||currentPeriod());
-  const owner=String(req.query.owner||'all');
-
-  const activeProperties=store.properties.filter(p=>p.active!==false);
+  const activeProperties=req.adminOwnerContext.properties.filter(p=>p.active!==false);
+  const codes=new Set(activeProperties.map(p=>p.code));
   const propertyMap=new Map(activeProperties.map(p=>[p.code,p]));
-  const owners=buildOwners(activeProperties);
 
-  let payments=store.payments
-    .filter(p=>p.period===period)
+  const payments=store.payments
+    .filter(p=>p.period===period && codes.has(p.propertyCode))
     .map(payment=>{
-      const property=propertyMap.get(payment.propertyCode)||store.findProperty(payment.propertyCode)||null;
+      const property=propertyMap.get(payment.propertyCode)||null;
       const displayStatus=paymentStatus(payment,today);
       return{
-        ...payment,
-        property,
-        ownerKey:ownerKey(property),
-        displayStatus,
+        ...payment,property,displayStatus,
         dueDateLabel:formatDate(payment.dueDate),
         paidAtLabel:formatDate(payment.paidAt)
       };
-    });
+    })
+    .sort(paymentSort);
 
-  if(owner!=='all'){
-    payments=payments.filter(p=>p.ownerKey===owner);
-  }
-
-  payments.sort(paymentSort);
-
-  const visibleProperties=owner==='all'
-    ? activeProperties
-    : activeProperties.filter(p=>ownerKey(p)===owner);
-
-  const rentedProperties=visibleProperties.filter(p=>p.status==='Alquilada');
-
+  const rentedProperties=activeProperties.filter(p=>p.status==='Alquilada');
   const expected=rentedProperties.reduce((sum,p)=>sum+safeNumber(p.lease?.amount),0);
-  const collected=payments
-    .filter(p=>p.displayStatus==='Pagado')
-    .reduce((sum,p)=>sum+safeNumber(p.amount),0);
-  const pending=payments
-    .filter(p=>p.displayStatus==='Pendiente')
-    .reduce((sum,p)=>sum+safeNumber(p.amount),0);
-  const overdue=payments
-    .filter(p=>p.displayStatus==='Vencido')
-    .reduce((sum,p)=>sum+safeNumber(p.amount),0);
+  const collected=payments.filter(p=>p.displayStatus==='Pagado').reduce((sum,p)=>sum+safeNumber(p.amount),0);
+  const pending=payments.filter(p=>p.displayStatus==='Pendiente').reduce((sum,p)=>sum+safeNumber(p.amount),0);
+  const overdue=payments.filter(p=>p.displayStatus==='Vencido').reduce((sum,p)=>sum+safeNumber(p.amount),0);
 
   const stats={
-    expected,
-    collected,
-    pending,
-    overdue,
+    expected,collected,pending,overdue,
     expectedCount:rentedProperties.length,
     paidCount:payments.filter(p=>p.displayStatus==='Pagado').length,
     pendingCount:payments.filter(p=>p.displayStatus==='Pendiente').length,
@@ -147,9 +88,7 @@ exports.payments=(req,res)=>{
   };
 
   const registerProperties=rentedProperties.map(p=>({
-    code:p.code,
-    address:p.address,
-    unit:p.unit,
+    code:p.code,address:p.address,unit:p.unit,
     amount:safeNumber(p.lease?.amount),
     currency:p.lease?.currency||'UYU',
     paymentDay:safeNumber(p.lease?.paymentDay,5),
@@ -161,11 +100,11 @@ exports.payments=(req,res)=>{
     title:'Cobros | QCASA',
     payments,
     properties:registerProperties,
-    owners,
-    selectedOwner:owner,
+    owners:res.locals.adminOwners.map(o=>({key:o.id,name:o.name})),
+    selectedOwner:req.adminOwnerContext.ownerId||'all',
     period,
     periodLabel:periodLabel(period),
-    periodOptions:monthPeriodOptions(store.payments),
+    periodOptions:monthPeriodOptions(store.payments.filter(p=>codes.has(p.propertyCode))),
     stats,
     today
   });

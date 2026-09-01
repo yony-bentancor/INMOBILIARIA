@@ -1,38 +1,12 @@
 const store = require('../data/demoStore');
 const alertService = require('../services/alertService');
+const whatsapp = require('../services/whatsappService');
 const { safeNumber, daysUntil } = require('../utils/helpers');
 
 const CLOSED_CLAIM_STATUSES = new Set(['Resuelto', 'Cancelado']);
 
-function ownerKey(property) {
-  const email = String(property?.owner?.email || '').trim().toLowerCase();
-  const name = String(property?.owner?.name || '').trim().toLowerCase();
-  return email || name || 'sin-propietario';
-}
-
 function ownerLabel(property) {
   return String(property?.owner?.name || property?.owner?.email || 'Sin propietario').trim();
-}
-
-function buildOwners(properties) {
-  const map = new Map();
-
-  properties.forEach(property => {
-    const key = ownerKey(property);
-    const current = map.get(key) || {
-      key,
-      name: ownerLabel(property),
-      email: String(property?.owner?.email || '').trim(),
-      properties: 0
-    };
-
-    current.properties += 1;
-    map.set(key, current);
-  });
-
-  return [...map.values()].sort((a, b) =>
-    a.name.localeCompare(b.name, 'es', { sensitivity: 'base' })
-  );
 }
 
 function deadlineCategory(alert) {
@@ -51,17 +25,13 @@ function deadlineCategory(alert) {
 }
 
 function dateSort(a, b) {
-  return String(a?.dueDate || '2999-12-31').localeCompare(
-    String(b?.dueDate || '2999-12-31')
-  );
+  return String(a?.dueDate || '2999-12-31').localeCompare(String(b?.dueDate || '2999-12-31'));
 }
 
 function formatDateShort(value) {
   if (!value) return 'Sin fecha';
-
   const date = new Date(`${String(value).slice(0, 10)}T12:00:00Z`);
   if (Number.isNaN(date.getTime())) return String(value);
-
   return new Intl.DateTimeFormat('es-UY', {
     timeZone: 'America/Montevideo',
     day: '2-digit',
@@ -71,7 +41,6 @@ function formatDateShort(value) {
 
 function enrichDashboardAlert(alert, propertyMap) {
   const property = propertyMap.get(alert.propertyCode);
-
   return {
     ...alert,
     property,
@@ -87,21 +56,12 @@ function paymentIsOverdue(payment) {
 }
 
 exports.dashboard = (req, res) => {
-  const activeProperties = store.properties.filter(property => property.active !== false);
-  const owners = buildOwners(activeProperties);
+  const activeProperties = req.adminOwnerContext.properties.filter(property => property.active !== false);
+  const selectedOwner = req.adminOwnerContext.selectedOwner;
+  const codes = new Set(activeProperties.map(property => property.code));
+  const propertyMap = new Map(activeProperties.map(property => [property.code, property]));
 
-  const requestedOwner = String(req.query.owner || '').trim().toLowerCase();
-  const selectedOwner = owners.find(owner => owner.key === requestedOwner) || null;
-
-  const properties = selectedOwner
-    ? activeProperties.filter(property => ownerKey(property) === selectedOwner.key)
-    : activeProperties;
-
-  const codes = new Set(properties.map(property => property.code));
-  const propertyMap = new Map(properties.map(property => [property.code, property]));
-
-  const alerts = alertService
-    .enrichedAlerts()
+  const alerts = alertService.enrichedAlerts()
     .filter(alert => codes.has(alert.propertyCode))
     .map(alert => enrichDashboardAlert(alert, propertyMap));
 
@@ -109,8 +69,6 @@ exports.dashboard = (req, res) => {
     .filter(alert => !alert.paid && alert.dueDate)
     .sort(dateSort);
 
-  // Dashboard operativo: mostrar solamente vencimientos desde hoy
-  // hasta los próximos 30 días. Los vencidos anteriores no se incluyen.
   const pendingAlerts = pendingAlertsAll.filter(alert => {
     const days = daysUntil(alert.dueDate);
     return days !== null && days >= 0 && days <= 30;
@@ -139,11 +97,6 @@ exports.dashboard = (req, res) => {
       return dateSort(a, b);
     });
 
-  const overdueAlerts = pendingAlerts.filter(alert => {
-    const days = daysUntil(alert.dueDate);
-    return days !== null && days < 0;
-  });
-
   const nextSevenDays = pendingAlerts.filter(alert => {
     const days = daysUntil(alert.dueDate);
     return days !== null && days >= 0 && days <= 7;
@@ -162,55 +115,53 @@ exports.dashboard = (req, res) => {
   const deadlineGroups = categoryConfig
     .map(([key, label]) => {
       const allItems = pendingAlerts.filter(alert => deadlineCategory(alert) === key);
-      return {
-        key,
-        label,
-        count: allItems.length,
-        items: allItems.slice(0, 5)
-      };
+      return { key, label, count: allItems.length, items: allItems.slice(0, 5) };
     })
     .filter(group => group.count > 0);
 
-  const attention = [
-    ...overdueAlerts.slice(0, 4).map(alert => ({
-      kind: 'Vencimiento',
-      level: 'danger',
-      title: alert.title,
-      detail: alert.statusText || 'Vencido',
-      propertyCode: alert.propertyCode,
-      property: alert.property,
-      ownerName: alert.ownerName
-    })),
-    ...openClaims.slice(0, 4).map(claim => ({
-      kind: 'Reclamo',
-      level: String(claim.priority || '').toLowerCase() === 'urgent' ? 'danger' : 'warning',
-      title: `#${claim.number} · ${claim.title}`,
-      detail: claim.status,
-      propertyCode: claim.propertyCode,
-      property: claim.property,
-      ownerName: claim.ownerName
-    }))
-  ].slice(0, 6);
+  const attention = openClaims.slice(0, 6).map(claim => ({
+    kind: 'Reclamo',
+    level: String(claim.priority || '').toLowerCase() === 'urgent' ? 'danger' : 'warning',
+    title: `#${claim.number} · ${claim.title}`,
+    detail: claim.status,
+    propertyCode: claim.propertyCode,
+    property: claim.property,
+    ownerName: claim.ownerName
+  }));
 
-  const totalMonthlyRent = properties
+  const totalMonthlyRent = activeProperties
     .filter(property => property.status === 'Alquilada')
     .reduce((sum, property) => sum + safeNumber(property.lease?.amount), 0);
 
+  const ownerWhatsappUrl = selectedOwner
+    ? whatsapp.buildWhatsappUrl(
+        selectedOwner.phone,
+        whatsapp.buildOwnerSummaryMessage({
+          owner: selectedOwner,
+          properties: activeProperties,
+          openClaims,
+          alerts: pendingAlerts,
+          payments: pendingPayments
+        })
+      )
+    : null;
+
   res.render('admin/dashboard.njk', {
     title: 'Dashboard | QCASA',
-    owners,
-    selectedOwner,
-    properties,
+    owners: res.locals.adminOwners.map(o => ({...o, key:o.id, properties:store.ownerProperties(o.id).length})),
+    selectedOwner: selectedOwner ? {...selectedOwner, key:selectedOwner.id} : null,
+    properties: activeProperties,
     deadlineGroups,
     attention,
     latestClaims: openClaims.slice(0, 6),
     pendingPayments: pendingPayments.slice(0, 6),
+    ownerWhatsappUrl,
     stats: {
-      properties: properties.length,
-      owners: selectedOwner ? 1 : owners.length,
+      properties: activeProperties.length,
+      owners: selectedOwner ? 1 : res.locals.adminOwners.length,
       openClaims: openClaims.length,
       pendingPayments: pendingPayments.length,
-      overdueAlerts: overdueAlerts.length,
+      overdueAlerts: 0,
       nextSevenDays: nextSevenDays.length,
       pendingDeadlines: pendingAlerts.length,
       totalMonthlyRent

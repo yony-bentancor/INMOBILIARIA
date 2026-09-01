@@ -3,8 +3,10 @@ const c=require('../controllers/adminController');
 const dashboard=require('../controllers/adminDashboardController');
 const paymentsDashboard=require('../controllers/adminPaymentsController');
 const{requireRole}=require('../middleware/auth');
+const adminOwnerContext=require('../middleware/adminOwnerContext');
 
 r.use(requireRole('admin'));
+r.use(adminOwnerContext);
 
 r.get('/',dashboard.dashboard);
 
@@ -15,6 +17,14 @@ r.get('/propiedades/:code',c.propertyDetail);
 r.get('/propiedades/:code/editar',c.propertyEditForm);
 r.post('/propiedades/:code/editar',c.propertyUpdate);
 r.post('/propiedades/:code/eliminar',c.propertyDelete);
+
+r.get('/propietarios',c.owners);
+r.get('/propietarios/nuevo',c.ownerNewForm);
+r.post('/propietarios/nuevo',c.ownerCreate);
+r.get('/propietarios/:id',c.ownerDetail);
+r.get('/propietarios/:id/editar',c.ownerEditForm);
+r.post('/propietarios/:id/editar',c.ownerUpdate);
+r.post('/propietarios/:id/eliminar',c.ownerDelete);
 
 r.get('/reclamos',c.complaints);
 r.get('/reclamos/:number',c.complaintDetail);
