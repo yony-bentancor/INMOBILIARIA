@@ -1,46 +1,53 @@
 {
   "meta": {
-    "name": "QCASA dataset demo - 4 propietarios",
-    "version": 4,
-    "generatedFor": "Pruebas de contexto global por propietario",
+    "name": "QCASA dataset demo definitivo",
+    "version": 6,
+    "generatedFor": "Presentación y pruebas completas sin modificar código",
     "warning": "Todos los nombres, documentos, teléfonos, cuentas, direcciones y datos son ficticios/demo.",
-    "notes": "80 propiedades: 4 propietarios con 20 propiedades cada uno. Todos los alquileres de septiembre 2026 están cobrados. Reclamos por propietario: 0, 1, 2 y 1. Vencimientos por propietario: 2, 3, 2 y 3."
+    "notes": "85 propiedades y 5 propietarios. 80 propiedades alquiladas y 5 vacías. Septiembre 2026: 72 alquileres pagados, 5 pendientes y 3 vencidos. 6 reclamos en diferentes estados, 12 vencimientos variados, 8 documentos y 10 eventos de historial. Todos los celulares demo usan 095789647. Héctor Suárez fue reemplazado por Alejandro Gómez."
   },
   "owner": {
-    "name": "Héctor Suárez",
+    "name": "Alejandro Gómez",
     "document": "1.234.567-8",
-    "phone": "099 111 222",
-    "email": "hector.suarez@qcasa.demo",
+    "phone": "095789647",
+    "email": "alejandro.gomez@qcasa.demo",
     "address": "Pocitos, Montevideo"
   },
   "owners": [
     {
-      "name": "Héctor Suárez",
+      "name": "Alejandro Gómez",
       "document": "1.234.567-8",
-      "phone": "099 111 222",
-      "email": "hector.suarez@qcasa.demo",
+      "phone": "095789647",
+      "email": "alejandro.gomez@qcasa.demo",
       "address": "Pocitos, Montevideo"
     },
     {
       "name": "Mariana Pereira",
       "document": "2.345.678-9",
-      "phone": "099 222 333",
+      "phone": "095789647",
       "email": "mariana.pereira@qcasa.demo",
       "address": "Punta Carretas, Montevideo"
     },
     {
       "name": "Carlos Fernández",
       "document": "3.456.789-0",
-      "phone": "099 333 444",
+      "phone": "095789647",
       "email": "carlos.fernandez@qcasa.demo",
       "address": "Carrasco, Montevideo"
     },
     {
       "name": "Lucía Rodríguez",
       "document": "4.567.890-1",
-      "phone": "099 444 555",
+      "phone": "095789647",
       "email": "lucia.rodriguez@qcasa.demo",
       "address": "Malvín, Montevideo"
+    },
+    {
+      "name": "Gabriel Martínez",
+      "document": "5.678.901-2",
+      "phone": "095789647",
+      "email": "gabriel.martinez@qcasa.demo",
+      "address": "Prado, Montevideo"
     }
   ],
   "properties": [
@@ -68,18 +75,18 @@
       "longitude": -56.216,
       "coverPhoto": "/img/demo/fachada-2.svg",
       "owner": {
-        "name": "Héctor Suárez",
+        "name": "Alejandro Gómez",
         "document": "1.234.567-8",
-        "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "phone": "095789647",
+        "email": "alejandro.gomez@qcasa.demo",
         "address": "Pocitos, Montevideo"
       },
       "tenant": {
         "name": "Ana Rodríguez",
         "document": "4.100137-1",
-        "phone": "098 101 201",
+        "phone": "095789647",
         "email": "inquilino01@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 01 · 099 301 401",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -137,18 +144,18 @@
       "longitude": -56.212,
       "coverPhoto": "/img/demo/fachada-3.svg",
       "owner": {
-        "name": "Héctor Suárez",
+        "name": "Alejandro Gómez",
         "document": "1.234.567-8",
-        "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "phone": "095789647",
+        "email": "alejandro.gomez@qcasa.demo",
         "address": "Pocitos, Montevideo"
       },
       "tenant": {
         "name": "Martín Martínez",
         "document": "5.100274-2",
-        "phone": "099 102 202",
+        "phone": "095789647",
         "email": "inquilino02@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 02 · 099 302 402",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -206,18 +213,18 @@
       "longitude": -56.208,
       "coverPhoto": "/img/demo/fachada-1.svg",
       "owner": {
-        "name": "Héctor Suárez",
+        "name": "Alejandro Gómez",
         "document": "1.234.567-8",
-        "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "phone": "095789647",
+        "email": "alejandro.gomez@qcasa.demo",
         "address": "Pocitos, Montevideo"
       },
       "tenant": {
         "name": "Lucía García",
         "document": "6.100411-3",
-        "phone": "097 103 203",
+        "phone": "095789647",
         "email": "inquilino03@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 03 · 099 303 403",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -275,18 +282,18 @@
       "longitude": -56.204,
       "coverPhoto": "/img/demo/fachada-2.svg",
       "owner": {
-        "name": "Héctor Suárez",
+        "name": "Alejandro Gómez",
         "document": "1.234.567-8",
-        "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "phone": "095789647",
+        "email": "alejandro.gomez@qcasa.demo",
         "address": "Pocitos, Montevideo"
       },
       "tenant": {
         "name": "Diego Fernández",
         "document": "7.100548-4",
-        "phone": "098 104 204",
+        "phone": "095789647",
         "email": "inquilino04@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 04 · 099 304 404",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -344,18 +351,18 @@
       "longitude": -56.2,
       "coverPhoto": "/img/demo/fachada-3.svg",
       "owner": {
-        "name": "Héctor Suárez",
+        "name": "Alejandro Gómez",
         "document": "1.234.567-8",
-        "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "phone": "095789647",
+        "email": "alejandro.gomez@qcasa.demo",
         "address": "Pocitos, Montevideo"
       },
       "tenant": {
         "name": "Sofía Silva",
         "document": "3.100685-5",
-        "phone": "099 105 205",
+        "phone": "095789647",
         "email": "inquilino05@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 05 · 099 305 405",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -413,18 +420,18 @@
       "longitude": -56.196,
       "coverPhoto": "/img/demo/fachada-1.svg",
       "owner": {
-        "name": "Héctor Suárez",
+        "name": "Alejandro Gómez",
         "document": "1.234.567-8",
-        "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "phone": "095789647",
+        "email": "alejandro.gomez@qcasa.demo",
         "address": "Pocitos, Montevideo"
       },
       "tenant": {
         "name": "Nicolás López",
         "document": "4.100822-6",
-        "phone": "097 106 206",
+        "phone": "095789647",
         "email": "inquilino06@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 06 · 099 306 406",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -482,18 +489,18 @@
       "longitude": -56.192,
       "coverPhoto": "/img/demo/fachada-2.svg",
       "owner": {
-        "name": "Héctor Suárez",
+        "name": "Alejandro Gómez",
         "document": "1.234.567-8",
-        "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "phone": "095789647",
+        "email": "alejandro.gomez@qcasa.demo",
         "address": "Pocitos, Montevideo"
       },
       "tenant": {
         "name": "Camila González",
         "document": "5.100959-7",
-        "phone": "098 107 207",
+        "phone": "095789647",
         "email": "inquilino07@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 07 · 099 307 407",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -551,18 +558,18 @@
       "longitude": -56.188,
       "coverPhoto": "/img/demo/fachada-3.svg",
       "owner": {
-        "name": "Héctor Suárez",
+        "name": "Alejandro Gómez",
         "document": "1.234.567-8",
-        "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "phone": "095789647",
+        "email": "alejandro.gomez@qcasa.demo",
         "address": "Pocitos, Montevideo"
       },
       "tenant": {
         "name": "Federico Méndez",
         "document": "6.101096-8",
-        "phone": "099 108 208",
+        "phone": "095789647",
         "email": "inquilino08@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 08 · 099 308 408",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -620,18 +627,18 @@
       "longitude": -56.184,
       "coverPhoto": "/img/demo/fachada-1.svg",
       "owner": {
-        "name": "Héctor Suárez",
+        "name": "Alejandro Gómez",
         "document": "1.234.567-8",
-        "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "phone": "095789647",
+        "email": "alejandro.gomez@qcasa.demo",
         "address": "Pocitos, Montevideo"
       },
       "tenant": {
         "name": "Valentina Sosa",
         "document": "7.101233-9",
-        "phone": "097 109 209",
+        "phone": "095789647",
         "email": "inquilino09@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 09 · 099 309 409",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -689,18 +696,18 @@
       "longitude": -56.18,
       "coverPhoto": "/img/demo/fachada-2.svg",
       "owner": {
-        "name": "Héctor Suárez",
+        "name": "Alejandro Gómez",
         "document": "1.234.567-8",
-        "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "phone": "095789647",
+        "email": "alejandro.gomez@qcasa.demo",
         "address": "Pocitos, Montevideo"
       },
       "tenant": {
         "name": "Joaquín Pérez",
         "document": "3.101370-0",
-        "phone": "098 110 210",
+        "phone": "095789647",
         "email": "inquilino10@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 10 · 099 310 410",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -758,18 +765,18 @@
       "longitude": -56.176,
       "coverPhoto": "/img/demo/fachada-3.svg",
       "owner": {
-        "name": "Héctor Suárez",
+        "name": "Alejandro Gómez",
         "document": "1.234.567-8",
-        "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "phone": "095789647",
+        "email": "alejandro.gomez@qcasa.demo",
         "address": "Pocitos, Montevideo"
       },
       "tenant": {
         "name": "Florencia Rodríguez",
         "document": "4.101507-1",
-        "phone": "099 111 211",
+        "phone": "095789647",
         "email": "inquilino11@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 11 · 099 311 411",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -827,18 +834,18 @@
       "longitude": -56.172,
       "coverPhoto": "/img/demo/fachada-1.svg",
       "owner": {
-        "name": "Héctor Suárez",
+        "name": "Alejandro Gómez",
         "document": "1.234.567-8",
-        "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "phone": "095789647",
+        "email": "alejandro.gomez@qcasa.demo",
         "address": "Pocitos, Montevideo"
       },
       "tenant": {
         "name": "Agustín Martínez",
         "document": "5.101644-2",
-        "phone": "097 112 212",
+        "phone": "095789647",
         "email": "inquilino12@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 12 · 099 312 412",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -896,18 +903,18 @@
       "longitude": -56.168,
       "coverPhoto": "/img/demo/fachada-2.svg",
       "owner": {
-        "name": "Héctor Suárez",
+        "name": "Alejandro Gómez",
         "document": "1.234.567-8",
-        "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "phone": "095789647",
+        "email": "alejandro.gomez@qcasa.demo",
         "address": "Pocitos, Montevideo"
       },
       "tenant": {
         "name": "Carolina García",
         "document": "6.101781-3",
-        "phone": "098 113 213",
+        "phone": "095789647",
         "email": "inquilino13@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 13 · 099 313 413",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -965,18 +972,18 @@
       "longitude": -56.164,
       "coverPhoto": "/img/demo/fachada-3.svg",
       "owner": {
-        "name": "Héctor Suárez",
+        "name": "Alejandro Gómez",
         "document": "1.234.567-8",
-        "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "phone": "095789647",
+        "email": "alejandro.gomez@qcasa.demo",
         "address": "Pocitos, Montevideo"
       },
       "tenant": {
         "name": "Sebastián Fernández",
         "document": "7.101918-4",
-        "phone": "099 114 214",
+        "phone": "095789647",
         "email": "inquilino14@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 14 · 099 314 414",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -1034,18 +1041,18 @@
       "longitude": -56.16,
       "coverPhoto": "/img/demo/fachada-1.svg",
       "owner": {
-        "name": "Héctor Suárez",
+        "name": "Alejandro Gómez",
         "document": "1.234.567-8",
-        "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "phone": "095789647",
+        "email": "alejandro.gomez@qcasa.demo",
         "address": "Pocitos, Montevideo"
       },
       "tenant": {
         "name": "Paula Silva",
         "document": "3.102055-5",
-        "phone": "097 115 215",
+        "phone": "095789647",
         "email": "inquilino15@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 15 · 099 315 415",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -1103,18 +1110,18 @@
       "longitude": -56.156,
       "coverPhoto": "/img/demo/fachada-2.svg",
       "owner": {
-        "name": "Héctor Suárez",
+        "name": "Alejandro Gómez",
         "document": "1.234.567-8",
-        "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "phone": "095789647",
+        "email": "alejandro.gomez@qcasa.demo",
         "address": "Pocitos, Montevideo"
       },
       "tenant": {
         "name": "Rodrigo López",
         "document": "4.102192-6",
-        "phone": "098 116 216",
+        "phone": "095789647",
         "email": "inquilino16@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 16 · 099 316 416",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -1172,18 +1179,18 @@
       "longitude": -56.152,
       "coverPhoto": "/img/demo/fachada-3.svg",
       "owner": {
-        "name": "Héctor Suárez",
+        "name": "Alejandro Gómez",
         "document": "1.234.567-8",
-        "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "phone": "095789647",
+        "email": "alejandro.gomez@qcasa.demo",
         "address": "Pocitos, Montevideo"
       },
       "tenant": {
         "name": "María González",
         "document": "5.102329-7",
-        "phone": "099 117 217",
+        "phone": "095789647",
         "email": "inquilino17@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 17 · 099 317 417",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -1241,18 +1248,18 @@
       "longitude": -56.148,
       "coverPhoto": "/img/demo/fachada-1.svg",
       "owner": {
-        "name": "Héctor Suárez",
+        "name": "Alejandro Gómez",
         "document": "1.234.567-8",
-        "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "phone": "095789647",
+        "email": "alejandro.gomez@qcasa.demo",
         "address": "Pocitos, Montevideo"
       },
       "tenant": {
         "name": "Andrés Méndez",
         "document": "6.102466-8",
-        "phone": "097 118 218",
+        "phone": "095789647",
         "email": "inquilino18@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 18 · 099 318 418",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -1310,18 +1317,18 @@
       "longitude": -56.144,
       "coverPhoto": "/img/demo/fachada-2.svg",
       "owner": {
-        "name": "Héctor Suárez",
+        "name": "Alejandro Gómez",
         "document": "1.234.567-8",
-        "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "phone": "095789647",
+        "email": "alejandro.gomez@qcasa.demo",
         "address": "Pocitos, Montevideo"
       },
       "tenant": {
         "name": "Natalia Sosa",
         "document": "7.102603-9",
-        "phone": "098 119 219",
+        "phone": "095789647",
         "email": "inquilino19@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 19 · 099 319 419",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -1379,18 +1386,18 @@
       "longitude": -56.22,
       "coverPhoto": "/img/demo/fachada-3.svg",
       "owner": {
-        "name": "Héctor Suárez",
+        "name": "Alejandro Gómez",
         "document": "1.234.567-8",
-        "phone": "099 111 222",
-        "email": "hector.suarez@qcasa.demo",
+        "phone": "095789647",
+        "email": "alejandro.gomez@qcasa.demo",
         "address": "Pocitos, Montevideo"
       },
       "tenant": {
         "name": "Gonzalo Pérez",
         "document": "3.102740-0",
-        "phone": "099 120 220",
+        "phone": "095789647",
         "email": "inquilino20@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 20 · 099 320 420",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -1450,16 +1457,16 @@
       "owner": {
         "name": "Mariana Pereira",
         "document": "2.345.678-9",
-        "phone": "099 222 333",
+        "phone": "095789647",
         "email": "mariana.pereira@qcasa.demo",
         "address": "Punta Carretas, Montevideo"
       },
       "tenant": {
         "name": "Ana Rodríguez",
         "document": "4.102877-1",
-        "phone": "097 121 221",
+        "phone": "095789647",
         "email": "inquilino21@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 21 · 099 321 421",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -1519,16 +1526,16 @@
       "owner": {
         "name": "Mariana Pereira",
         "document": "2.345.678-9",
-        "phone": "099 222 333",
+        "phone": "095789647",
         "email": "mariana.pereira@qcasa.demo",
         "address": "Punta Carretas, Montevideo"
       },
       "tenant": {
         "name": "Martín Martínez",
         "document": "5.103014-2",
-        "phone": "098 122 222",
+        "phone": "095789647",
         "email": "inquilino22@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 22 · 099 322 422",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -1588,16 +1595,16 @@
       "owner": {
         "name": "Mariana Pereira",
         "document": "2.345.678-9",
-        "phone": "099 222 333",
+        "phone": "095789647",
         "email": "mariana.pereira@qcasa.demo",
         "address": "Punta Carretas, Montevideo"
       },
       "tenant": {
         "name": "Lucía García",
         "document": "6.103151-3",
-        "phone": "099 123 223",
+        "phone": "095789647",
         "email": "inquilino23@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 23 · 099 323 423",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -1657,16 +1664,16 @@
       "owner": {
         "name": "Mariana Pereira",
         "document": "2.345.678-9",
-        "phone": "099 222 333",
+        "phone": "095789647",
         "email": "mariana.pereira@qcasa.demo",
         "address": "Punta Carretas, Montevideo"
       },
       "tenant": {
         "name": "Diego Fernández",
         "document": "7.103288-4",
-        "phone": "097 124 224",
+        "phone": "095789647",
         "email": "inquilino24@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 24 · 099 324 424",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -1726,16 +1733,16 @@
       "owner": {
         "name": "Mariana Pereira",
         "document": "2.345.678-9",
-        "phone": "099 222 333",
+        "phone": "095789647",
         "email": "mariana.pereira@qcasa.demo",
         "address": "Punta Carretas, Montevideo"
       },
       "tenant": {
         "name": "Sofía Silva",
         "document": "3.103425-5",
-        "phone": "098 125 225",
+        "phone": "095789647",
         "email": "inquilino25@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 25 · 099 325 425",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -1795,16 +1802,16 @@
       "owner": {
         "name": "Mariana Pereira",
         "document": "2.345.678-9",
-        "phone": "099 222 333",
+        "phone": "095789647",
         "email": "mariana.pereira@qcasa.demo",
         "address": "Punta Carretas, Montevideo"
       },
       "tenant": {
         "name": "Nicolás López",
         "document": "4.103562-6",
-        "phone": "099 126 226",
+        "phone": "095789647",
         "email": "inquilino26@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 26 · 099 326 426",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -1864,16 +1871,16 @@
       "owner": {
         "name": "Mariana Pereira",
         "document": "2.345.678-9",
-        "phone": "099 222 333",
+        "phone": "095789647",
         "email": "mariana.pereira@qcasa.demo",
         "address": "Punta Carretas, Montevideo"
       },
       "tenant": {
         "name": "Camila González",
         "document": "5.103699-7",
-        "phone": "097 127 227",
+        "phone": "095789647",
         "email": "inquilino27@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 27 · 099 327 427",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -1933,16 +1940,16 @@
       "owner": {
         "name": "Mariana Pereira",
         "document": "2.345.678-9",
-        "phone": "099 222 333",
+        "phone": "095789647",
         "email": "mariana.pereira@qcasa.demo",
         "address": "Punta Carretas, Montevideo"
       },
       "tenant": {
         "name": "Federico Méndez",
         "document": "6.103836-8",
-        "phone": "098 128 228",
+        "phone": "095789647",
         "email": "inquilino28@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 28 · 099 328 428",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -2002,16 +2009,16 @@
       "owner": {
         "name": "Mariana Pereira",
         "document": "2.345.678-9",
-        "phone": "099 222 333",
+        "phone": "095789647",
         "email": "mariana.pereira@qcasa.demo",
         "address": "Punta Carretas, Montevideo"
       },
       "tenant": {
         "name": "Valentina Sosa",
         "document": "7.103973-9",
-        "phone": "099 129 229",
+        "phone": "095789647",
         "email": "inquilino29@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 29 · 099 329 429",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -2071,16 +2078,16 @@
       "owner": {
         "name": "Mariana Pereira",
         "document": "2.345.678-9",
-        "phone": "099 222 333",
+        "phone": "095789647",
         "email": "mariana.pereira@qcasa.demo",
         "address": "Punta Carretas, Montevideo"
       },
       "tenant": {
         "name": "Joaquín Pérez",
         "document": "3.104110-0",
-        "phone": "097 130 230",
+        "phone": "095789647",
         "email": "inquilino30@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 30 · 099 330 430",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -2140,16 +2147,16 @@
       "owner": {
         "name": "Mariana Pereira",
         "document": "2.345.678-9",
-        "phone": "099 222 333",
+        "phone": "095789647",
         "email": "mariana.pereira@qcasa.demo",
         "address": "Punta Carretas, Montevideo"
       },
       "tenant": {
         "name": "Florencia Rodríguez",
         "document": "4.104247-1",
-        "phone": "098 131 231",
+        "phone": "095789647",
         "email": "inquilino31@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 31 · 099 331 431",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -2209,16 +2216,16 @@
       "owner": {
         "name": "Mariana Pereira",
         "document": "2.345.678-9",
-        "phone": "099 222 333",
+        "phone": "095789647",
         "email": "mariana.pereira@qcasa.demo",
         "address": "Punta Carretas, Montevideo"
       },
       "tenant": {
         "name": "Agustín Martínez",
         "document": "5.104384-2",
-        "phone": "099 132 232",
+        "phone": "095789647",
         "email": "inquilino32@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 32 · 099 332 432",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -2278,16 +2285,16 @@
       "owner": {
         "name": "Mariana Pereira",
         "document": "2.345.678-9",
-        "phone": "099 222 333",
+        "phone": "095789647",
         "email": "mariana.pereira@qcasa.demo",
         "address": "Punta Carretas, Montevideo"
       },
       "tenant": {
         "name": "Carolina García",
         "document": "6.104521-3",
-        "phone": "097 133 233",
+        "phone": "095789647",
         "email": "inquilino33@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 33 · 099 333 433",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -2347,16 +2354,16 @@
       "owner": {
         "name": "Mariana Pereira",
         "document": "2.345.678-9",
-        "phone": "099 222 333",
+        "phone": "095789647",
         "email": "mariana.pereira@qcasa.demo",
         "address": "Punta Carretas, Montevideo"
       },
       "tenant": {
         "name": "Sebastián Fernández",
         "document": "7.104658-4",
-        "phone": "098 134 234",
+        "phone": "095789647",
         "email": "inquilino34@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 34 · 099 334 434",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -2416,16 +2423,16 @@
       "owner": {
         "name": "Mariana Pereira",
         "document": "2.345.678-9",
-        "phone": "099 222 333",
+        "phone": "095789647",
         "email": "mariana.pereira@qcasa.demo",
         "address": "Punta Carretas, Montevideo"
       },
       "tenant": {
         "name": "Paula Silva",
         "document": "3.104795-5",
-        "phone": "099 135 235",
+        "phone": "095789647",
         "email": "inquilino35@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 35 · 099 335 435",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -2485,16 +2492,16 @@
       "owner": {
         "name": "Mariana Pereira",
         "document": "2.345.678-9",
-        "phone": "099 222 333",
+        "phone": "095789647",
         "email": "mariana.pereira@qcasa.demo",
         "address": "Punta Carretas, Montevideo"
       },
       "tenant": {
         "name": "Rodrigo López",
         "document": "4.104932-6",
-        "phone": "097 136 236",
+        "phone": "095789647",
         "email": "inquilino36@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 36 · 099 336 436",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -2554,16 +2561,16 @@
       "owner": {
         "name": "Mariana Pereira",
         "document": "2.345.678-9",
-        "phone": "099 222 333",
+        "phone": "095789647",
         "email": "mariana.pereira@qcasa.demo",
         "address": "Punta Carretas, Montevideo"
       },
       "tenant": {
         "name": "María González",
         "document": "5.105069-7",
-        "phone": "098 137 237",
+        "phone": "095789647",
         "email": "inquilino37@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 37 · 099 337 437",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -2623,16 +2630,16 @@
       "owner": {
         "name": "Mariana Pereira",
         "document": "2.345.678-9",
-        "phone": "099 222 333",
+        "phone": "095789647",
         "email": "mariana.pereira@qcasa.demo",
         "address": "Punta Carretas, Montevideo"
       },
       "tenant": {
         "name": "Andrés Méndez",
         "document": "6.105206-8",
-        "phone": "099 138 238",
+        "phone": "095789647",
         "email": "inquilino38@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 38 · 099 338 438",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -2692,16 +2699,16 @@
       "owner": {
         "name": "Mariana Pereira",
         "document": "2.345.678-9",
-        "phone": "099 222 333",
+        "phone": "095789647",
         "email": "mariana.pereira@qcasa.demo",
         "address": "Punta Carretas, Montevideo"
       },
       "tenant": {
         "name": "Natalia Sosa",
         "document": "7.105343-9",
-        "phone": "097 139 239",
+        "phone": "095789647",
         "email": "inquilino39@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 39 · 099 339 439",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -2761,16 +2768,16 @@
       "owner": {
         "name": "Mariana Pereira",
         "document": "2.345.678-9",
-        "phone": "099 222 333",
+        "phone": "095789647",
         "email": "mariana.pereira@qcasa.demo",
         "address": "Punta Carretas, Montevideo"
       },
       "tenant": {
         "name": "Gonzalo Pérez",
         "document": "3.105480-0",
-        "phone": "098 140 240",
+        "phone": "095789647",
         "email": "inquilino40@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 40 · 099 340 440",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -2830,16 +2837,16 @@
       "owner": {
         "name": "Carlos Fernández",
         "document": "3.456.789-0",
-        "phone": "099 333 444",
+        "phone": "095789647",
         "email": "carlos.fernandez@qcasa.demo",
         "address": "Carrasco, Montevideo"
       },
       "tenant": {
         "name": "Ana Rodríguez",
         "document": "4.105617-1",
-        "phone": "099 141 241",
+        "phone": "095789647",
         "email": "inquilino41@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 41 · 099 341 441",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -2899,16 +2906,16 @@
       "owner": {
         "name": "Carlos Fernández",
         "document": "3.456.789-0",
-        "phone": "099 333 444",
+        "phone": "095789647",
         "email": "carlos.fernandez@qcasa.demo",
         "address": "Carrasco, Montevideo"
       },
       "tenant": {
         "name": "Martín Martínez",
         "document": "5.105754-2",
-        "phone": "097 142 242",
+        "phone": "095789647",
         "email": "inquilino42@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 42 · 099 342 442",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -2968,16 +2975,16 @@
       "owner": {
         "name": "Carlos Fernández",
         "document": "3.456.789-0",
-        "phone": "099 333 444",
+        "phone": "095789647",
         "email": "carlos.fernandez@qcasa.demo",
         "address": "Carrasco, Montevideo"
       },
       "tenant": {
         "name": "Lucía García",
         "document": "6.105891-3",
-        "phone": "098 143 243",
+        "phone": "095789647",
         "email": "inquilino43@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 43 · 099 343 443",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -3037,16 +3044,16 @@
       "owner": {
         "name": "Carlos Fernández",
         "document": "3.456.789-0",
-        "phone": "099 333 444",
+        "phone": "095789647",
         "email": "carlos.fernandez@qcasa.demo",
         "address": "Carrasco, Montevideo"
       },
       "tenant": {
         "name": "Diego Fernández",
         "document": "7.106028-4",
-        "phone": "099 144 244",
+        "phone": "095789647",
         "email": "inquilino44@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 44 · 099 344 444",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -3106,16 +3113,16 @@
       "owner": {
         "name": "Carlos Fernández",
         "document": "3.456.789-0",
-        "phone": "099 333 444",
+        "phone": "095789647",
         "email": "carlos.fernandez@qcasa.demo",
         "address": "Carrasco, Montevideo"
       },
       "tenant": {
         "name": "Sofía Silva",
         "document": "3.106165-5",
-        "phone": "097 145 245",
+        "phone": "095789647",
         "email": "inquilino45@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 45 · 099 345 445",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -3175,16 +3182,16 @@
       "owner": {
         "name": "Carlos Fernández",
         "document": "3.456.789-0",
-        "phone": "099 333 444",
+        "phone": "095789647",
         "email": "carlos.fernandez@qcasa.demo",
         "address": "Carrasco, Montevideo"
       },
       "tenant": {
         "name": "Nicolás López",
         "document": "4.106302-6",
-        "phone": "098 146 246",
+        "phone": "095789647",
         "email": "inquilino46@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 46 · 099 346 446",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -3244,16 +3251,16 @@
       "owner": {
         "name": "Carlos Fernández",
         "document": "3.456.789-0",
-        "phone": "099 333 444",
+        "phone": "095789647",
         "email": "carlos.fernandez@qcasa.demo",
         "address": "Carrasco, Montevideo"
       },
       "tenant": {
         "name": "Camila González",
         "document": "5.106439-7",
-        "phone": "099 147 247",
+        "phone": "095789647",
         "email": "inquilino47@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 47 · 099 347 447",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -3313,16 +3320,16 @@
       "owner": {
         "name": "Carlos Fernández",
         "document": "3.456.789-0",
-        "phone": "099 333 444",
+        "phone": "095789647",
         "email": "carlos.fernandez@qcasa.demo",
         "address": "Carrasco, Montevideo"
       },
       "tenant": {
         "name": "Federico Méndez",
         "document": "6.106576-8",
-        "phone": "097 148 248",
+        "phone": "095789647",
         "email": "inquilino48@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 48 · 099 348 448",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -3382,16 +3389,16 @@
       "owner": {
         "name": "Carlos Fernández",
         "document": "3.456.789-0",
-        "phone": "099 333 444",
+        "phone": "095789647",
         "email": "carlos.fernandez@qcasa.demo",
         "address": "Carrasco, Montevideo"
       },
       "tenant": {
         "name": "Valentina Sosa",
         "document": "7.106713-9",
-        "phone": "098 149 249",
+        "phone": "095789647",
         "email": "inquilino49@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 49 · 099 349 449",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -3451,16 +3458,16 @@
       "owner": {
         "name": "Carlos Fernández",
         "document": "3.456.789-0",
-        "phone": "099 333 444",
+        "phone": "095789647",
         "email": "carlos.fernandez@qcasa.demo",
         "address": "Carrasco, Montevideo"
       },
       "tenant": {
         "name": "Joaquín Pérez",
         "document": "3.106850-0",
-        "phone": "099 150 250",
+        "phone": "095789647",
         "email": "inquilino50@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 50 · 099 350 450",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -3520,16 +3527,16 @@
       "owner": {
         "name": "Carlos Fernández",
         "document": "3.456.789-0",
-        "phone": "099 333 444",
+        "phone": "095789647",
         "email": "carlos.fernandez@qcasa.demo",
         "address": "Carrasco, Montevideo"
       },
       "tenant": {
         "name": "Florencia Rodríguez",
         "document": "4.106987-1",
-        "phone": "097 151 251",
+        "phone": "095789647",
         "email": "inquilino51@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 51 · 099 351 451",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -3589,16 +3596,16 @@
       "owner": {
         "name": "Carlos Fernández",
         "document": "3.456.789-0",
-        "phone": "099 333 444",
+        "phone": "095789647",
         "email": "carlos.fernandez@qcasa.demo",
         "address": "Carrasco, Montevideo"
       },
       "tenant": {
         "name": "Agustín Martínez",
         "document": "5.107124-2",
-        "phone": "098 152 252",
+        "phone": "095789647",
         "email": "inquilino52@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 52 · 099 352 452",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -3658,16 +3665,16 @@
       "owner": {
         "name": "Carlos Fernández",
         "document": "3.456.789-0",
-        "phone": "099 333 444",
+        "phone": "095789647",
         "email": "carlos.fernandez@qcasa.demo",
         "address": "Carrasco, Montevideo"
       },
       "tenant": {
         "name": "Carolina García",
         "document": "6.107261-3",
-        "phone": "099 153 253",
+        "phone": "095789647",
         "email": "inquilino53@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 53 · 099 353 453",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -3727,16 +3734,16 @@
       "owner": {
         "name": "Carlos Fernández",
         "document": "3.456.789-0",
-        "phone": "099 333 444",
+        "phone": "095789647",
         "email": "carlos.fernandez@qcasa.demo",
         "address": "Carrasco, Montevideo"
       },
       "tenant": {
         "name": "Sebastián Fernández",
         "document": "7.107398-4",
-        "phone": "097 154 254",
+        "phone": "095789647",
         "email": "inquilino54@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 54 · 099 354 454",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -3796,16 +3803,16 @@
       "owner": {
         "name": "Carlos Fernández",
         "document": "3.456.789-0",
-        "phone": "099 333 444",
+        "phone": "095789647",
         "email": "carlos.fernandez@qcasa.demo",
         "address": "Carrasco, Montevideo"
       },
       "tenant": {
         "name": "Paula Silva",
         "document": "3.107535-5",
-        "phone": "098 155 255",
+        "phone": "095789647",
         "email": "inquilino55@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 55 · 099 355 455",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -3865,16 +3872,16 @@
       "owner": {
         "name": "Carlos Fernández",
         "document": "3.456.789-0",
-        "phone": "099 333 444",
+        "phone": "095789647",
         "email": "carlos.fernandez@qcasa.demo",
         "address": "Carrasco, Montevideo"
       },
       "tenant": {
         "name": "Rodrigo López",
         "document": "4.107672-6",
-        "phone": "099 156 256",
+        "phone": "095789647",
         "email": "inquilino56@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 56 · 099 356 456",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -3934,16 +3941,16 @@
       "owner": {
         "name": "Carlos Fernández",
         "document": "3.456.789-0",
-        "phone": "099 333 444",
+        "phone": "095789647",
         "email": "carlos.fernandez@qcasa.demo",
         "address": "Carrasco, Montevideo"
       },
       "tenant": {
         "name": "María González",
         "document": "5.107809-7",
-        "phone": "097 157 257",
+        "phone": "095789647",
         "email": "inquilino57@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 57 · 099 357 457",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -4003,16 +4010,16 @@
       "owner": {
         "name": "Carlos Fernández",
         "document": "3.456.789-0",
-        "phone": "099 333 444",
+        "phone": "095789647",
         "email": "carlos.fernandez@qcasa.demo",
         "address": "Carrasco, Montevideo"
       },
       "tenant": {
         "name": "Andrés Méndez",
         "document": "6.107946-8",
-        "phone": "098 158 258",
+        "phone": "095789647",
         "email": "inquilino58@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 58 · 099 358 458",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -4072,16 +4079,16 @@
       "owner": {
         "name": "Carlos Fernández",
         "document": "3.456.789-0",
-        "phone": "099 333 444",
+        "phone": "095789647",
         "email": "carlos.fernandez@qcasa.demo",
         "address": "Carrasco, Montevideo"
       },
       "tenant": {
         "name": "Natalia Sosa",
         "document": "7.108083-9",
-        "phone": "099 159 259",
+        "phone": "095789647",
         "email": "inquilino59@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 59 · 099 359 459",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -4141,16 +4148,16 @@
       "owner": {
         "name": "Carlos Fernández",
         "document": "3.456.789-0",
-        "phone": "099 333 444",
+        "phone": "095789647",
         "email": "carlos.fernandez@qcasa.demo",
         "address": "Carrasco, Montevideo"
       },
       "tenant": {
         "name": "Gonzalo Pérez",
         "document": "3.108220-0",
-        "phone": "097 160 260",
+        "phone": "095789647",
         "email": "inquilino60@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 60 · 099 360 460",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -4210,16 +4217,16 @@
       "owner": {
         "name": "Lucía Rodríguez",
         "document": "4.567.890-1",
-        "phone": "099 444 555",
+        "phone": "095789647",
         "email": "lucia.rodriguez@qcasa.demo",
         "address": "Malvín, Montevideo"
       },
       "tenant": {
         "name": "Ana Rodríguez",
         "document": "4.108357-1",
-        "phone": "098 161 261",
+        "phone": "095789647",
         "email": "inquilino61@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 61 · 099 361 461",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -4279,16 +4286,16 @@
       "owner": {
         "name": "Lucía Rodríguez",
         "document": "4.567.890-1",
-        "phone": "099 444 555",
+        "phone": "095789647",
         "email": "lucia.rodriguez@qcasa.demo",
         "address": "Malvín, Montevideo"
       },
       "tenant": {
         "name": "Martín Martínez",
         "document": "5.108494-2",
-        "phone": "099 162 262",
+        "phone": "095789647",
         "email": "inquilino62@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 62 · 099 362 462",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -4348,16 +4355,16 @@
       "owner": {
         "name": "Lucía Rodríguez",
         "document": "4.567.890-1",
-        "phone": "099 444 555",
+        "phone": "095789647",
         "email": "lucia.rodriguez@qcasa.demo",
         "address": "Malvín, Montevideo"
       },
       "tenant": {
         "name": "Lucía García",
         "document": "6.108631-3",
-        "phone": "097 163 263",
+        "phone": "095789647",
         "email": "inquilino63@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 63 · 099 363 463",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -4417,16 +4424,16 @@
       "owner": {
         "name": "Lucía Rodríguez",
         "document": "4.567.890-1",
-        "phone": "099 444 555",
+        "phone": "095789647",
         "email": "lucia.rodriguez@qcasa.demo",
         "address": "Malvín, Montevideo"
       },
       "tenant": {
         "name": "Diego Fernández",
         "document": "7.108768-4",
-        "phone": "098 164 264",
+        "phone": "095789647",
         "email": "inquilino64@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 64 · 099 364 464",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -4486,16 +4493,16 @@
       "owner": {
         "name": "Lucía Rodríguez",
         "document": "4.567.890-1",
-        "phone": "099 444 555",
+        "phone": "095789647",
         "email": "lucia.rodriguez@qcasa.demo",
         "address": "Malvín, Montevideo"
       },
       "tenant": {
         "name": "Sofía Silva",
         "document": "3.108905-5",
-        "phone": "099 165 265",
+        "phone": "095789647",
         "email": "inquilino65@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 65 · 099 365 465",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -4555,16 +4562,16 @@
       "owner": {
         "name": "Lucía Rodríguez",
         "document": "4.567.890-1",
-        "phone": "099 444 555",
+        "phone": "095789647",
         "email": "lucia.rodriguez@qcasa.demo",
         "address": "Malvín, Montevideo"
       },
       "tenant": {
         "name": "Nicolás López",
         "document": "4.109042-6",
-        "phone": "097 166 266",
+        "phone": "095789647",
         "email": "inquilino66@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 66 · 099 366 466",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -4624,16 +4631,16 @@
       "owner": {
         "name": "Lucía Rodríguez",
         "document": "4.567.890-1",
-        "phone": "099 444 555",
+        "phone": "095789647",
         "email": "lucia.rodriguez@qcasa.demo",
         "address": "Malvín, Montevideo"
       },
       "tenant": {
         "name": "Camila González",
         "document": "5.109179-7",
-        "phone": "098 167 267",
+        "phone": "095789647",
         "email": "inquilino67@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 67 · 099 367 467",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -4693,16 +4700,16 @@
       "owner": {
         "name": "Lucía Rodríguez",
         "document": "4.567.890-1",
-        "phone": "099 444 555",
+        "phone": "095789647",
         "email": "lucia.rodriguez@qcasa.demo",
         "address": "Malvín, Montevideo"
       },
       "tenant": {
         "name": "Federico Méndez",
         "document": "6.109316-8",
-        "phone": "099 168 268",
+        "phone": "095789647",
         "email": "inquilino68@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 68 · 099 368 468",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -4762,16 +4769,16 @@
       "owner": {
         "name": "Lucía Rodríguez",
         "document": "4.567.890-1",
-        "phone": "099 444 555",
+        "phone": "095789647",
         "email": "lucia.rodriguez@qcasa.demo",
         "address": "Malvín, Montevideo"
       },
       "tenant": {
         "name": "Valentina Sosa",
         "document": "7.109453-9",
-        "phone": "097 169 269",
+        "phone": "095789647",
         "email": "inquilino69@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 69 · 099 369 469",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -4831,16 +4838,16 @@
       "owner": {
         "name": "Lucía Rodríguez",
         "document": "4.567.890-1",
-        "phone": "099 444 555",
+        "phone": "095789647",
         "email": "lucia.rodriguez@qcasa.demo",
         "address": "Malvín, Montevideo"
       },
       "tenant": {
         "name": "Joaquín Pérez",
         "document": "3.109590-0",
-        "phone": "098 170 270",
+        "phone": "095789647",
         "email": "inquilino70@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 70 · 099 370 470",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -4900,16 +4907,16 @@
       "owner": {
         "name": "Lucía Rodríguez",
         "document": "4.567.890-1",
-        "phone": "099 444 555",
+        "phone": "095789647",
         "email": "lucia.rodriguez@qcasa.demo",
         "address": "Malvín, Montevideo"
       },
       "tenant": {
         "name": "Florencia Rodríguez",
         "document": "4.109727-1",
-        "phone": "099 171 271",
+        "phone": "095789647",
         "email": "inquilino71@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 71 · 099 371 471",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -4969,16 +4976,16 @@
       "owner": {
         "name": "Lucía Rodríguez",
         "document": "4.567.890-1",
-        "phone": "099 444 555",
+        "phone": "095789647",
         "email": "lucia.rodriguez@qcasa.demo",
         "address": "Malvín, Montevideo"
       },
       "tenant": {
         "name": "Agustín Martínez",
         "document": "5.109864-2",
-        "phone": "097 172 272",
+        "phone": "095789647",
         "email": "inquilino72@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 72 · 099 372 472",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -5038,16 +5045,16 @@
       "owner": {
         "name": "Lucía Rodríguez",
         "document": "4.567.890-1",
-        "phone": "099 444 555",
+        "phone": "095789647",
         "email": "lucia.rodriguez@qcasa.demo",
         "address": "Malvín, Montevideo"
       },
       "tenant": {
         "name": "Carolina García",
         "document": "6.110001-3",
-        "phone": "098 173 273",
+        "phone": "095789647",
         "email": "inquilino73@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 73 · 099 373 473",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -5107,16 +5114,16 @@
       "owner": {
         "name": "Lucía Rodríguez",
         "document": "4.567.890-1",
-        "phone": "099 444 555",
+        "phone": "095789647",
         "email": "lucia.rodriguez@qcasa.demo",
         "address": "Malvín, Montevideo"
       },
       "tenant": {
         "name": "Sebastián Fernández",
         "document": "7.110138-4",
-        "phone": "099 174 274",
+        "phone": "095789647",
         "email": "inquilino74@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 74 · 099 374 474",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -5176,16 +5183,16 @@
       "owner": {
         "name": "Lucía Rodríguez",
         "document": "4.567.890-1",
-        "phone": "099 444 555",
+        "phone": "095789647",
         "email": "lucia.rodriguez@qcasa.demo",
         "address": "Malvín, Montevideo"
       },
       "tenant": {
         "name": "Paula Silva",
         "document": "3.110275-5",
-        "phone": "097 175 275",
+        "phone": "095789647",
         "email": "inquilino75@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 75 · 099 375 475",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -5245,16 +5252,16 @@
       "owner": {
         "name": "Lucía Rodríguez",
         "document": "4.567.890-1",
-        "phone": "099 444 555",
+        "phone": "095789647",
         "email": "lucia.rodriguez@qcasa.demo",
         "address": "Malvín, Montevideo"
       },
       "tenant": {
         "name": "Rodrigo López",
         "document": "4.110412-6",
-        "phone": "098 176 276",
+        "phone": "095789647",
         "email": "inquilino76@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 76 · 099 376 476",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -5314,16 +5321,16 @@
       "owner": {
         "name": "Lucía Rodríguez",
         "document": "4.567.890-1",
-        "phone": "099 444 555",
+        "phone": "095789647",
         "email": "lucia.rodriguez@qcasa.demo",
         "address": "Malvín, Montevideo"
       },
       "tenant": {
         "name": "María González",
         "document": "5.110549-7",
-        "phone": "099 177 277",
+        "phone": "095789647",
         "email": "inquilino77@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 77 · 099 377 477",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -5383,16 +5390,16 @@
       "owner": {
         "name": "Lucía Rodríguez",
         "document": "4.567.890-1",
-        "phone": "099 444 555",
+        "phone": "095789647",
         "email": "lucia.rodriguez@qcasa.demo",
         "address": "Malvín, Montevideo"
       },
       "tenant": {
         "name": "Andrés Méndez",
         "document": "6.110686-8",
-        "phone": "097 178 278",
+        "phone": "095789647",
         "email": "inquilino78@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 78 · 099 378 478",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -5452,16 +5459,16 @@
       "owner": {
         "name": "Lucía Rodríguez",
         "document": "4.567.890-1",
-        "phone": "099 444 555",
+        "phone": "095789647",
         "email": "lucia.rodriguez@qcasa.demo",
         "address": "Malvín, Montevideo"
       },
       "tenant": {
         "name": "Natalia Sosa",
         "document": "7.110823-9",
-        "phone": "098 179 279",
+        "phone": "095789647",
         "email": "inquilino79@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 79 · 099 379 479",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -5521,16 +5528,16 @@
       "owner": {
         "name": "Lucía Rodríguez",
         "document": "4.567.890-1",
-        "phone": "099 444 555",
+        "phone": "095789647",
         "email": "lucia.rodriguez@qcasa.demo",
         "address": "Malvín, Montevideo"
       },
       "tenant": {
         "name": "Gonzalo Pérez",
         "document": "3.110960-0",
-        "phone": "099 180 280",
+        "phone": "095789647",
         "email": "inquilino80@qcasa.demo",
-        "emergencyContact": "Contacto alternativo 80 · 099 380 480",
+        "emergencyContact": "Contacto alternativo · 095789647",
         "notes": "Prefiere coordinación por WhatsApp."
       },
       "lease": {
@@ -5563,6 +5570,351 @@
       ],
       "createdAt": "2026-08-01T10:00:00.000Z",
       "updatedAt": "2026-09-01T12:00:00.000Z"
+    },
+    {
+      "id": "prop-081",
+      "code": "QC-0081",
+      "active": true,
+      "type": "Apartamento",
+      "address": "Av. Millán 2100",
+      "unit": "Apto. 201",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Prado",
+      "postalCode": "11700",
+      "cadastralNumber": "150611",
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "builtArea": 58,
+      "landArea": 0,
+      "yearBuilt": 1985,
+      "status": "Vacía",
+      "notes": "Disponible para alquilar. Recién pintada.",
+      "mapUrl": "https://maps.google.com/?q=Av.+Millán+2100+Montevideo",
+      "latitude": -34.86,
+      "longitude": -56.2,
+      "coverPhoto": "/img/demo/fachada-1.svg",
+      "owner": {
+        "name": "Gabriel Martínez",
+        "document": "5.678.901-2",
+        "phone": "095789647",
+        "email": "gabriel.martinez@qcasa.demo",
+        "address": "Prado, Montevideo"
+      },
+      "tenant": {
+        "name": "",
+        "document": "",
+        "phone": "",
+        "email": "",
+        "emergencyContact": "",
+        "notes": ""
+      },
+      "lease": {
+        "amount": 0,
+        "currency": "UYU",
+        "paymentDay": 5,
+        "startDate": "",
+        "endDate": "",
+        "guaranteeType": "",
+        "guaranteeRef": "",
+        "depositAmount": 0,
+        "adjustment": "",
+        "status": "Sin contrato"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440081",
+        "uteAccount": "UTE-770081",
+        "antelAccount": "ANTEL-550081",
+        "commonExpensesAccount": "GC-0081"
+      },
+      "qrCode": "QC-0081",
+      "qrPublicPath": "/r/QC-0081",
+      "photos": [
+        {
+          "id": "ph-081-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-1.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-09-01T15:00:00.000Z",
+      "updatedAt": "2026-09-01T15:00:00.000Z"
+    },
+    {
+      "id": "prop-082",
+      "code": "QC-0082",
+      "active": true,
+      "type": "Apartamento",
+      "address": "Agraciada 2237",
+      "unit": "Apto. 202",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Aguada",
+      "postalCode": "11701",
+      "cadastralNumber": "150742",
+      "bedrooms": 3,
+      "bathrooms": 1,
+      "builtArea": 65,
+      "landArea": 0,
+      "yearBuilt": 1989,
+      "status": "Vacía",
+      "notes": "Vacía. Pendiente publicación comercial.",
+      "mapUrl": "https://maps.google.com/?q=Agraciada+2237+Montevideo",
+      "latitude": -34.856,
+      "longitude": -56.196,
+      "coverPhoto": "/img/demo/fachada-2.svg",
+      "owner": {
+        "name": "Gabriel Martínez",
+        "document": "5.678.901-2",
+        "phone": "095789647",
+        "email": "gabriel.martinez@qcasa.demo",
+        "address": "Prado, Montevideo"
+      },
+      "tenant": {
+        "name": "",
+        "document": "",
+        "phone": "",
+        "email": "",
+        "emergencyContact": "",
+        "notes": ""
+      },
+      "lease": {
+        "amount": 0,
+        "currency": "UYU",
+        "paymentDay": 5,
+        "startDate": "",
+        "endDate": "",
+        "guaranteeType": "",
+        "guaranteeRef": "",
+        "depositAmount": 0,
+        "adjustment": "",
+        "status": "Sin contrato"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440082",
+        "uteAccount": "UTE-770082",
+        "antelAccount": "ANTEL-550082",
+        "commonExpensesAccount": "GC-0082"
+      },
+      "qrCode": "QC-0082",
+      "qrPublicPath": "/r/QC-0082",
+      "photos": [
+        {
+          "id": "ph-082-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-2.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-09-01T15:00:00.000Z",
+      "updatedAt": "2026-09-01T15:00:00.000Z"
+    },
+    {
+      "id": "prop-083",
+      "code": "QC-0083",
+      "active": true,
+      "type": "Apartamento",
+      "address": "Av. Luis A. de Herrera 2374",
+      "unit": "Apto. 203",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Brazo Oriental",
+      "postalCode": "11702",
+      "cadastralNumber": "150873",
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "builtArea": 72,
+      "landArea": 0,
+      "yearBuilt": 1993,
+      "status": "Vacía",
+      "notes": "Disponible. Llaves en administración.",
+      "mapUrl": "https://maps.google.com/?q=Av.+Luis+A.+de+Herrera+2374+Montevideo",
+      "latitude": -34.852,
+      "longitude": -56.192,
+      "coverPhoto": "/img/demo/fachada-3.svg",
+      "owner": {
+        "name": "Gabriel Martínez",
+        "document": "5.678.901-2",
+        "phone": "095789647",
+        "email": "gabriel.martinez@qcasa.demo",
+        "address": "Prado, Montevideo"
+      },
+      "tenant": {
+        "name": "",
+        "document": "",
+        "phone": "",
+        "email": "",
+        "emergencyContact": "",
+        "notes": ""
+      },
+      "lease": {
+        "amount": 0,
+        "currency": "UYU",
+        "paymentDay": 5,
+        "startDate": "",
+        "endDate": "",
+        "guaranteeType": "",
+        "guaranteeRef": "",
+        "depositAmount": 0,
+        "adjustment": "",
+        "status": "Sin contrato"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440083",
+        "uteAccount": "UTE-770083",
+        "antelAccount": "ANTEL-550083",
+        "commonExpensesAccount": "GC-0083"
+      },
+      "qrCode": "QC-0083",
+      "qrPublicPath": "/r/QC-0083",
+      "photos": [
+        {
+          "id": "ph-083-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-3.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-09-01T15:00:00.000Z",
+      "updatedAt": "2026-09-01T15:00:00.000Z"
+    },
+    {
+      "id": "prop-084",
+      "code": "QC-0084",
+      "active": true,
+      "type": "Casa",
+      "address": "Av. Lezica 2511",
+      "unit": "",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Colón",
+      "postalCode": "11703",
+      "cadastralNumber": "151004",
+      "bedrooms": 3,
+      "bathrooms": 1,
+      "builtArea": 79,
+      "landArea": 210,
+      "yearBuilt": 1997,
+      "status": "Vacía",
+      "notes": "Vacía. Requiere limpieza antes de mostrar.",
+      "mapUrl": "https://maps.google.com/?q=Av.+Lezica+2511+Montevideo",
+      "latitude": -34.848,
+      "longitude": -56.188,
+      "coverPhoto": "/img/demo/fachada-1.svg",
+      "owner": {
+        "name": "Gabriel Martínez",
+        "document": "5.678.901-2",
+        "phone": "095789647",
+        "email": "gabriel.martinez@qcasa.demo",
+        "address": "Prado, Montevideo"
+      },
+      "tenant": {
+        "name": "",
+        "document": "",
+        "phone": "",
+        "email": "",
+        "emergencyContact": "",
+        "notes": ""
+      },
+      "lease": {
+        "amount": 0,
+        "currency": "UYU",
+        "paymentDay": 5,
+        "startDate": "",
+        "endDate": "",
+        "guaranteeType": "",
+        "guaranteeRef": "",
+        "depositAmount": 0,
+        "adjustment": "",
+        "status": "Sin contrato"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440084",
+        "uteAccount": "UTE-770084",
+        "antelAccount": "ANTEL-550084",
+        "commonExpensesAccount": "GC-0084"
+      },
+      "qrCode": "QC-0084",
+      "qrPublicPath": "/r/QC-0084",
+      "photos": [
+        {
+          "id": "ph-084-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-1.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-09-01T15:00:00.000Z",
+      "updatedAt": "2026-09-01T15:00:00.000Z"
+    },
+    {
+      "id": "prop-085",
+      "code": "QC-0085",
+      "active": true,
+      "type": "Casa",
+      "address": "Camino Castro 2648",
+      "unit": "",
+      "city": "Montevideo",
+      "department": "Montevideo",
+      "neighborhood": "Prado",
+      "postalCode": "11704",
+      "cadastralNumber": "151135",
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "builtArea": 86,
+      "landArea": 220,
+      "yearBuilt": 2001,
+      "status": "Vacía",
+      "notes": "Disponible para nuevo contrato.",
+      "mapUrl": "https://maps.google.com/?q=Camino+Castro+2648+Montevideo",
+      "latitude": -34.844,
+      "longitude": -56.184,
+      "coverPhoto": "/img/demo/fachada-2.svg",
+      "owner": {
+        "name": "Gabriel Martínez",
+        "document": "5.678.901-2",
+        "phone": "095789647",
+        "email": "gabriel.martinez@qcasa.demo",
+        "address": "Prado, Montevideo"
+      },
+      "tenant": {
+        "name": "",
+        "document": "",
+        "phone": "",
+        "email": "",
+        "emergencyContact": "",
+        "notes": ""
+      },
+      "lease": {
+        "amount": 0,
+        "currency": "UYU",
+        "paymentDay": 5,
+        "startDate": "",
+        "endDate": "",
+        "guaranteeType": "",
+        "guaranteeRef": "",
+        "depositAmount": 0,
+        "adjustment": "",
+        "status": "Sin contrato"
+      },
+      "utilities": {
+        "oseAccount": "OSE-440085",
+        "uteAccount": "UTE-770085",
+        "antelAccount": "ANTEL-550085",
+        "commonExpensesAccount": "GC-0085"
+      },
+      "qrCode": "QC-0085",
+      "qrPublicPath": "/r/QC-0085",
+      "photos": [
+        {
+          "id": "ph-085-a",
+          "label": "Fachada",
+          "url": "/img/demo/fachada-2.svg",
+          "kind": "image"
+        }
+      ],
+      "createdAt": "2026-09-01T15:00:00.000Z",
+      "updatedAt": "2026-09-01T15:00:00.000Z"
     }
   ],
   "technicians": [
@@ -5571,8 +5923,8 @@
       "active": true,
       "companyName": "ElectroSur",
       "contactName": "Martín López",
-      "phone": "099 700 101",
-      "whatsapp": "59899700101",
+      "phone": "095789647",
+      "whatsapp": "095789647",
       "email": "electrosur@qcasa.demo",
       "rut": "219900010011",
       "address": "Montevideo",
@@ -5592,8 +5944,8 @@
       "active": true,
       "companyName": "Sanitaria Centro",
       "contactName": "Diego Pérez",
-      "phone": "099 700 202",
-      "whatsapp": "59899700202",
+      "phone": "095789647",
+      "whatsapp": "095789647",
       "email": "sanitaria@qcasa.demo",
       "rut": "219900020012",
       "address": "Montevideo",
@@ -5613,8 +5965,8 @@
       "active": true,
       "companyName": "Hogar Soluciones",
       "contactName": "Carla Silva",
-      "phone": "099 700 303",
-      "whatsapp": "59899700303",
+      "phone": "095789647",
+      "whatsapp": "095789647",
       "email": "hogar@qcasa.demo",
       "rut": "219900030013",
       "address": "Montevideo",
@@ -5632,252 +5984,366 @@
   ],
   "complaints": [
     {
-      "id": "cmp-001",
-      "number": 201,
-      "propertyCode": "QC-0021",
-      "title": "Pérdida de agua",
-      "category": "Agua",
-      "description": "Reclamo demo: pérdida de agua.",
-      "priority": "Media",
-      "status": "Nuevo",
-      "name": "Ana Rodríguez",
-      "phone": "097 121 221",
-      "email": "inquilino21@qcasa.demo",
-      "preferredDate": "2026-09-05",
+      "id": "cmp-301",
+      "number": 301,
+      "propertyCode": "QC-0011",
+      "title": "Cortocircuito en cocina",
+      "category": "Electricidad",
+      "description": "Reclamo demo de presentación: cortocircuito en cocina.",
+      "priority": "Alta",
+      "status": "Resuelto",
+      "name": "Florencia Rodríguez",
+      "phone": "095789647",
+      "email": "inquilino11@qcasa.demo",
+      "preferredDate": "2026-09-03",
       "preferredTime": "14:00",
       "attachments": [],
-      "technicianId": null,
-      "technicianName": "",
-      "technicianEmail": "",
-      "shareToken": "demo-share-201",
+      "technicianId": "tec-001",
+      "technicianName": "Martín López",
+      "technicianEmail": "electrosur@qcasa.demo",
+      "shareToken": "demo-share-301",
       "history": [
         {
-          "at": "2026-09-01T12:00:00.000Z",
+          "at": "2026-09-01T09:00:00.000Z",
+          "status": "Resuelto",
+          "note": "Trabajo finalizado y verificado."
+        },
+        {
+          "at": "2026-08-31T10:00:00.000Z",
+          "status": "Técnico asignado",
+          "note": "Asignado a ElectroSur."
+        },
+        {
+          "at": "2026-08-30T11:00:00.000Z",
           "status": "Nuevo",
-          "note": "Reclamo demo creado."
+          "note": "Reclamo ingresado desde QR."
         }
       ],
-      "createdAt": "2026-09-01T12:00:00.000Z",
+      "createdAt": "2026-08-30T11:00:00.000Z",
+      "updatedAt": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "cmp-302",
+      "number": 302,
+      "propertyCode": "QC-0024",
+      "title": "Pérdida de agua bajo mesada",
+      "category": "Agua",
+      "description": "Reclamo demo de presentación: pérdida de agua bajo mesada.",
+      "priority": "Alta",
+      "status": "Técnico asignado",
+      "name": "Diego Fernández",
+      "phone": "095789647",
+      "email": "inquilino24@qcasa.demo",
+      "preferredDate": "2026-09-03",
+      "preferredTime": "14:00",
+      "attachments": [],
+      "technicianId": "tec-002",
+      "technicianName": "Diego Pérez",
+      "technicianEmail": "sanitaria@qcasa.demo",
+      "shareToken": "demo-share-302",
+      "history": [
+        {
+          "at": "2026-08-31T10:00:00.000Z",
+          "status": "Técnico asignado",
+          "note": "Asignado a Sanitaria Centro."
+        },
+        {
+          "at": "2026-08-30T11:00:00.000Z",
+          "status": "Nuevo",
+          "note": "Reclamo ingresado desde QR."
+        }
+      ],
+      "createdAt": "2026-08-30T11:00:00.000Z",
       "updatedAt": "2026-09-01T12:00:00.000Z"
     },
     {
-      "id": "cmp-002",
-      "number": 202,
-      "propertyCode": "QC-0041",
+      "id": "cmp-303",
+      "number": 303,
+      "propertyCode": "QC-0043",
       "title": "Calefón no enciende",
       "category": "Electricidad",
-      "description": "Reclamo demo: calefón no enciende.",
-      "priority": "Alta",
-      "status": "En coordinación",
-      "name": "Ana Rodríguez",
-      "phone": "099 141 241",
-      "email": "inquilino41@qcasa.demo",
-      "preferredDate": "2026-09-05",
-      "preferredTime": "14:00",
-      "attachments": [],
-      "technicianId": null,
-      "technicianName": "",
-      "technicianEmail": "",
-      "shareToken": "demo-share-202",
-      "history": [
-        {
-          "at": "2026-09-01T12:00:00.000Z",
-          "status": "Nuevo",
-          "note": "Reclamo demo creado."
-        }
-      ],
-      "createdAt": "2026-09-01T12:00:00.000Z",
-      "updatedAt": "2026-09-01T12:00:00.000Z"
-    },
-    {
-      "id": "cmp-003",
-      "number": 203,
-      "propertyCode": "QC-0052",
-      "title": "Humedad en pared",
-      "category": "Infraestructura",
-      "description": "Reclamo demo: humedad en pared.",
+      "description": "Reclamo demo de presentación: calefón no enciende.",
       "priority": "Media",
-      "status": "Nuevo",
-      "name": "Agustín Martínez",
-      "phone": "098 152 252",
-      "email": "inquilino52@qcasa.demo",
-      "preferredDate": "2026-09-05",
+      "status": "En coordinación",
+      "name": "Lucía García",
+      "phone": "095789647",
+      "email": "inquilino43@qcasa.demo",
+      "preferredDate": "2026-09-03",
       "preferredTime": "14:00",
       "attachments": [],
       "technicianId": null,
       "technicianName": "",
       "technicianEmail": "",
-      "shareToken": "demo-share-203",
+      "shareToken": "demo-share-303",
       "history": [
         {
-          "at": "2026-09-01T12:00:00.000Z",
+          "at": "2026-08-30T11:00:00.000Z",
           "status": "Nuevo",
-          "note": "Reclamo demo creado."
+          "note": "Reclamo ingresado desde QR."
         }
       ],
-      "createdAt": "2026-09-01T12:00:00.000Z",
+      "createdAt": "2026-08-30T11:00:00.000Z",
       "updatedAt": "2026-09-01T12:00:00.000Z"
     },
     {
-      "id": "cmp-004",
-      "number": 204,
-      "propertyCode": "QC-0061",
-      "title": "Cerradura con falla",
+      "id": "cmp-304",
+      "number": 304,
+      "propertyCode": "QC-0056",
+      "title": "Humedad en dormitorio",
+      "category": "Infraestructura",
+      "description": "Reclamo demo de presentación: humedad en dormitorio.",
+      "priority": "Media",
+      "status": "Técnico asignado",
+      "name": "Rodrigo López",
+      "phone": "095789647",
+      "email": "inquilino56@qcasa.demo",
+      "preferredDate": "2026-09-03",
+      "preferredTime": "14:00",
+      "attachments": [],
+      "technicianId": "tec-003",
+      "technicianName": "Carla Silva",
+      "technicianEmail": "hogar@qcasa.demo",
+      "shareToken": "demo-share-304",
+      "history": [
+        {
+          "at": "2026-08-31T10:00:00.000Z",
+          "status": "Técnico asignado",
+          "note": "Asignado a Hogar Soluciones."
+        },
+        {
+          "at": "2026-08-30T11:00:00.000Z",
+          "status": "Nuevo",
+          "note": "Reclamo ingresado desde QR."
+        }
+      ],
+      "createdAt": "2026-08-30T11:00:00.000Z",
+      "updatedAt": "2026-09-01T12:00:00.000Z"
+    },
+    {
+      "id": "cmp-305",
+      "number": 305,
+      "propertyCode": "QC-0067",
+      "title": "Cerradura de acceso trabada",
       "category": "Otro",
-      "description": "Reclamo demo: cerradura con falla.",
-      "priority": "Baja",
-      "status": "En coordinación",
-      "name": "Ana Rodríguez",
-      "phone": "098 161 261",
-      "email": "inquilino61@qcasa.demo",
-      "preferredDate": "2026-09-05",
+      "description": "Reclamo demo de presentación: cerradura de acceso trabada.",
+      "priority": "Alta",
+      "status": "Nuevo",
+      "name": "Camila González",
+      "phone": "095789647",
+      "email": "inquilino67@qcasa.demo",
+      "preferredDate": "2026-09-03",
       "preferredTime": "14:00",
       "attachments": [],
       "technicianId": null,
       "technicianName": "",
       "technicianEmail": "",
-      "shareToken": "demo-share-204",
+      "shareToken": "demo-share-305",
       "history": [
         {
-          "at": "2026-09-01T12:00:00.000Z",
+          "at": "2026-08-30T11:00:00.000Z",
           "status": "Nuevo",
-          "note": "Reclamo demo creado."
+          "note": "Reclamo ingresado desde QR."
         }
       ],
-      "createdAt": "2026-09-01T12:00:00.000Z",
+      "createdAt": "2026-08-30T11:00:00.000Z",
       "updatedAt": "2026-09-01T12:00:00.000Z"
+    },
+    {
+      "id": "cmp-306",
+      "number": 306,
+      "propertyCode": "QC-0074",
+      "title": "Canilla del baño pierde",
+      "category": "Agua",
+      "description": "Reclamo demo de presentación: canilla del baño pierde.",
+      "priority": "Baja",
+      "status": "Resuelto",
+      "name": "Sebastián Fernández",
+      "phone": "095789647",
+      "email": "inquilino74@qcasa.demo",
+      "preferredDate": "2026-09-03",
+      "preferredTime": "14:00",
+      "attachments": [],
+      "technicianId": "tec-002",
+      "technicianName": "Diego Pérez",
+      "technicianEmail": "sanitaria@qcasa.demo",
+      "shareToken": "demo-share-306",
+      "history": [
+        {
+          "at": "2026-09-01T09:00:00.000Z",
+          "status": "Resuelto",
+          "note": "Trabajo finalizado y verificado."
+        },
+        {
+          "at": "2026-08-31T10:00:00.000Z",
+          "status": "Técnico asignado",
+          "note": "Asignado a Sanitaria Centro."
+        },
+        {
+          "at": "2026-08-30T11:00:00.000Z",
+          "status": "Nuevo",
+          "note": "Reclamo ingresado desde QR."
+        }
+      ],
+      "createdAt": "2026-08-30T11:00:00.000Z",
+      "updatedAt": "2026-09-01T09:00:00.000Z"
     }
   ],
   "alerts": [
     {
       "id": "alt-001",
-      "propertyCode": "QC-0001",
+      "propertyCode": "QC-0005",
       "type": "Contribución",
-      "title": "Contribución - Av. 18 de Julio 817",
-      "dueDate": "2026-09-06",
-      "amount": 3150,
+      "title": "Contribución inmobiliaria",
+      "dueDate": "2026-09-04",
+      "amount": 7800,
       "currency": "UYU",
       "paid": false,
       "recurring": true,
       "recurrence": "Anual",
-      "notes": "Vencimiento demo para pruebas por propietario."
+      "notes": "Vencimiento demo para presentación de QCASA."
     },
     {
       "id": "alt-002",
-      "propertyCode": "QC-0008",
+      "propertyCode": "QC-0016",
       "type": "Primaria",
-      "title": "Primaria - Yi 936",
-      "dueDate": "2026-09-08",
-      "amount": 3800,
+      "title": "Impuesto de Primaria",
+      "dueDate": "2026-09-12",
+      "amount": 3200,
       "currency": "UYU",
       "paid": false,
       "recurring": true,
       "recurrence": "Anual",
-      "notes": "Vencimiento demo para pruebas por propietario."
+      "notes": "Vencimiento demo para presentación de QCASA."
     },
     {
       "id": "alt-003",
-      "propertyCode": "QC-0021",
+      "propertyCode": "QC-0023",
       "type": "Contrato",
-      "title": "Contrato - Av. 18 de Julio 1157",
-      "dueDate": "2026-09-10",
-      "amount": 4450,
+      "title": "Renovación de contrato",
+      "dueDate": "2026-09-06",
+      "amount": 0,
       "currency": "UYU",
       "paid": false,
       "recurring": false,
       "recurrence": "",
-      "notes": "Vencimiento demo para pruebas por propietario."
+      "notes": "Vencimiento demo para presentación de QCASA."
     },
     {
       "id": "alt-004",
-      "propertyCode": "QC-0027",
-      "type": "Contribución",
-      "title": "Contribución - Convención 1259",
-      "dueDate": "2026-09-12",
-      "amount": 5100,
+      "propertyCode": "QC-0031",
+      "type": "Seguro",
+      "title": "Renovación de seguro de alquiler",
+      "dueDate": "2026-09-18",
+      "amount": 5600,
       "currency": "UYU",
       "paid": false,
       "recurring": true,
       "recurrence": "Anual",
-      "notes": "Vencimiento demo para pruebas por propietario."
+      "notes": "Vencimiento demo para presentación de QCASA."
     },
     {
       "id": "alt-005",
-      "propertyCode": "QC-0034",
-      "type": "Primaria",
-      "title": "Primaria - Paysandú 1378",
-      "dueDate": "2026-09-14",
-      "amount": 5750,
+      "propertyCode": "QC-0038",
+      "type": "Contribución",
+      "title": "Contribución inmobiliaria",
+      "dueDate": "2026-09-27",
+      "amount": 9100,
       "currency": "UYU",
       "paid": false,
       "recurring": true,
       "recurrence": "Anual",
-      "notes": "Vencimiento demo para pruebas por propietario."
+      "notes": "Vencimiento demo para presentación de QCASA."
     },
     {
       "id": "alt-006",
-      "propertyCode": "QC-0041",
-      "type": "Contrato",
-      "title": "Contrato - Av. 18 de Julio 1497",
-      "dueDate": "2026-09-16",
-      "amount": 6400,
+      "propertyCode": "QC-0045",
+      "type": "Primaria",
+      "title": "Impuesto de Primaria",
+      "dueDate": "2026-09-03",
+      "amount": 2900,
       "currency": "UYU",
       "paid": false,
-      "recurring": false,
-      "recurrence": "",
-      "notes": "Vencimiento demo para pruebas por propietario."
+      "recurring": true,
+      "recurrence": "Anual",
+      "notes": "Vencimiento demo para presentación de QCASA."
     },
     {
       "id": "alt-007",
-      "propertyCode": "QC-0055",
-      "type": "Contribución",
-      "title": "Contribución - San José 1735",
-      "dueDate": "2026-09-18",
-      "amount": 7050,
-      "currency": "UYU",
-      "paid": false,
-      "recurring": true,
-      "recurrence": "Anual",
-      "notes": "Vencimiento demo para pruebas por propietario."
-    },
-    {
-      "id": "alt-008",
-      "propertyCode": "QC-0061",
-      "type": "Primaria",
-      "title": "Primaria - Av. 18 de Julio 1837",
-      "dueDate": "2026-09-20",
-      "amount": 7700,
-      "currency": "UYU",
-      "paid": false,
-      "recurring": true,
-      "recurrence": "Anual",
-      "notes": "Vencimiento demo para pruebas por propietario."
-    },
-    {
-      "id": "alt-009",
-      "propertyCode": "QC-0068",
+      "propertyCode": "QC-0057",
       "type": "Contrato",
-      "title": "Contrato - Yi 1956",
-      "dueDate": "2026-09-22",
-      "amount": 8350,
+      "title": "Vencimiento de contrato",
+      "dueDate": "2026-09-20",
+      "amount": 0,
       "currency": "UYU",
       "paid": false,
       "recurring": false,
       "recurrence": "",
-      "notes": "Vencimiento demo para pruebas por propietario."
+      "notes": "Vencimiento demo para presentación de QCASA."
+    },
+    {
+      "id": "alt-008",
+      "propertyCode": "QC-0062",
+      "type": "Contribución",
+      "title": "Contribución inmobiliaria",
+      "dueDate": "2026-09-02",
+      "amount": 8400,
+      "currency": "UYU",
+      "paid": false,
+      "recurring": true,
+      "recurrence": "Anual",
+      "notes": "Vencimiento demo para presentación de QCASA."
+    },
+    {
+      "id": "alt-009",
+      "propertyCode": "QC-0070",
+      "type": "Primaria",
+      "title": "Impuesto de Primaria",
+      "dueDate": "2026-09-14",
+      "amount": 3400,
+      "currency": "UYU",
+      "paid": false,
+      "recurring": true,
+      "recurrence": "Anual",
+      "notes": "Vencimiento demo para presentación de QCASA."
     },
     {
       "id": "alt-010",
       "propertyCode": "QC-0079",
       "type": "Seguro",
-      "title": "Seguro - Minas 2143",
-      "dueDate": "2026-09-24",
-      "amount": 9000,
+      "title": "Seguro de incendio",
+      "dueDate": "2026-09-25",
+      "amount": 4700,
       "currency": "UYU",
       "paid": false,
-      "recurring": false,
-      "recurrence": "",
-      "notes": "Vencimiento demo para pruebas por propietario."
+      "recurring": true,
+      "recurrence": "Anual",
+      "notes": "Vencimiento demo para presentación de QCASA."
+    },
+    {
+      "id": "alt-011",
+      "propertyCode": "QC-0081",
+      "type": "Contribución",
+      "title": "Contribución de propiedad vacía",
+      "dueDate": "2026-09-08",
+      "amount": 6900,
+      "currency": "UYU",
+      "paid": false,
+      "recurring": true,
+      "recurrence": "Anual",
+      "notes": "Vencimiento demo para presentación de QCASA."
+    },
+    {
+      "id": "alt-012",
+      "propertyCode": "QC-0084",
+      "type": "Seguro",
+      "title": "Seguro de propiedad vacía",
+      "dueDate": "2026-09-22",
+      "amount": 4100,
+      "currency": "UYU",
+      "paid": false,
+      "recurring": true,
+      "recurrence": "Anual",
+      "notes": "Vencimiento demo para presentación de QCASA."
     }
   ],
   "payments": [
@@ -5890,7 +6356,7 @@
       "amount": 35500,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-02",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0001",
       "notes": "Cobro demo registrado como pagado."
@@ -5904,7 +6370,7 @@
       "amount": 39000,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-03",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0002",
       "notes": "Cobro demo registrado como pagado."
@@ -5914,14 +6380,14 @@
       "propertyCode": "QC-0003",
       "period": "2026-09",
       "concept": "Alquiler septiembre 2026",
-      "dueDate": "2026-09-04",
+      "dueDate": "2026-09-08",
       "amount": 42500,
       "currency": "UYU",
-      "status": "Pagado",
-      "paidAt": "2026-09-04",
-      "method": "Transferencia",
-      "reference": "TRX-SEP-0003",
-      "notes": "Cobro demo registrado como pagado."
+      "status": "Pendiente",
+      "paidAt": "",
+      "method": "",
+      "reference": "",
+      "notes": "Cobro demo pendiente para probar aviso por WhatsApp."
     },
     {
       "id": "pay-004",
@@ -5932,7 +6398,7 @@
       "amount": 46000,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-05",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0004",
       "notes": "Cobro demo registrado como pagado."
@@ -5960,7 +6426,7 @@
       "amount": 53000,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-02",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0006",
       "notes": "Cobro demo registrado como pagado."
@@ -5974,7 +6440,7 @@
       "amount": 56500,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-03",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0007",
       "notes": "Cobro demo registrado como pagado."
@@ -5988,7 +6454,7 @@
       "amount": 60000,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-04",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0008",
       "notes": "Cobro demo registrado como pagado."
@@ -6002,7 +6468,7 @@
       "amount": 63500,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-05",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0009",
       "notes": "Cobro demo registrado como pagado."
@@ -6030,7 +6496,7 @@
       "amount": 34500,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-02",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0011",
       "notes": "Cobro demo registrado como pagado."
@@ -6044,7 +6510,7 @@
       "amount": 38000,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-03",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0012",
       "notes": "Cobro demo registrado como pagado."
@@ -6058,7 +6524,7 @@
       "amount": 41500,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-04",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0013",
       "notes": "Cobro demo registrado como pagado."
@@ -6072,7 +6538,7 @@
       "amount": 45000,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-05",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0014",
       "notes": "Cobro demo registrado como pagado."
@@ -6100,7 +6566,7 @@
       "amount": 52000,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-02",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0016",
       "notes": "Cobro demo registrado como pagado."
@@ -6114,7 +6580,7 @@
       "amount": 55500,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-03",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0017",
       "notes": "Cobro demo registrado como pagado."
@@ -6128,7 +6594,7 @@
       "amount": 59000,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-04",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0018",
       "notes": "Cobro demo registrado como pagado."
@@ -6142,7 +6608,7 @@
       "amount": 62500,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-05",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0019",
       "notes": "Cobro demo registrado como pagado."
@@ -6170,7 +6636,7 @@
       "amount": 33500,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-02",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0021",
       "notes": "Cobro demo registrado como pagado."
@@ -6180,14 +6646,14 @@
       "propertyCode": "QC-0022",
       "period": "2026-09",
       "concept": "Alquiler septiembre 2026",
-      "dueDate": "2026-09-03",
+      "dueDate": "2026-09-07",
       "amount": 37000,
       "currency": "UYU",
-      "status": "Pagado",
-      "paidAt": "2026-09-03",
-      "method": "Transferencia",
-      "reference": "TRX-SEP-0022",
-      "notes": "Cobro demo registrado como pagado."
+      "status": "Pendiente",
+      "paidAt": "",
+      "method": "",
+      "reference": "",
+      "notes": "Cobro demo pendiente para probar aviso por WhatsApp."
     },
     {
       "id": "pay-023",
@@ -6198,7 +6664,7 @@
       "amount": 40500,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-04",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0023",
       "notes": "Cobro demo registrado como pagado."
@@ -6212,7 +6678,7 @@
       "amount": 44000,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-05",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0024",
       "notes": "Cobro demo registrado como pagado."
@@ -6240,7 +6706,7 @@
       "amount": 51000,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-02",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0026",
       "notes": "Cobro demo registrado como pagado."
@@ -6250,14 +6716,14 @@
       "propertyCode": "QC-0027",
       "period": "2026-09",
       "concept": "Alquiler septiembre 2026",
-      "dueDate": "2026-09-08",
+      "dueDate": "2026-08-28",
       "amount": 54500,
       "currency": "UYU",
-      "status": "Pagado",
-      "paidAt": "2026-09-03",
-      "method": "Transferencia",
-      "reference": "TRX-SEP-0027",
-      "notes": "Cobro demo registrado como pagado."
+      "status": "Pendiente",
+      "paidAt": "",
+      "method": "",
+      "reference": "",
+      "notes": "Cobro demo vencido para probar seguimiento de mora."
     },
     {
       "id": "pay-028",
@@ -6268,7 +6734,7 @@
       "amount": 58000,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-04",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0028",
       "notes": "Cobro demo registrado como pagado."
@@ -6282,7 +6748,7 @@
       "amount": 61500,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-05",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0029",
       "notes": "Cobro demo registrado como pagado."
@@ -6310,7 +6776,7 @@
       "amount": 32500,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-02",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0031",
       "notes": "Cobro demo registrado como pagado."
@@ -6324,7 +6790,7 @@
       "amount": 36000,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-03",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0032",
       "notes": "Cobro demo registrado como pagado."
@@ -6338,7 +6804,7 @@
       "amount": 39500,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-04",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0033",
       "notes": "Cobro demo registrado como pagado."
@@ -6352,7 +6818,7 @@
       "amount": 43000,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-05",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0034",
       "notes": "Cobro demo registrado como pagado."
@@ -6362,14 +6828,14 @@
       "propertyCode": "QC-0035",
       "period": "2026-09",
       "concept": "Alquiler septiembre 2026",
-      "dueDate": "2026-09-06",
+      "dueDate": "2026-09-05",
       "amount": 46500,
       "currency": "UYU",
-      "status": "Pagado",
-      "paidAt": "2026-09-01",
-      "method": "Transferencia",
-      "reference": "TRX-SEP-0035",
-      "notes": "Cobro demo registrado como pagado."
+      "status": "Pendiente",
+      "paidAt": "",
+      "method": "",
+      "reference": "",
+      "notes": "Cobro demo pendiente para probar aviso por WhatsApp."
     },
     {
       "id": "pay-036",
@@ -6380,7 +6846,7 @@
       "amount": 50000,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-02",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0036",
       "notes": "Cobro demo registrado como pagado."
@@ -6394,7 +6860,7 @@
       "amount": 53500,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-03",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0037",
       "notes": "Cobro demo registrado como pagado."
@@ -6408,7 +6874,7 @@
       "amount": 57000,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-04",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0038",
       "notes": "Cobro demo registrado como pagado."
@@ -6422,7 +6888,7 @@
       "amount": 60500,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-05",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0039",
       "notes": "Cobro demo registrado como pagado."
@@ -6450,7 +6916,7 @@
       "amount": 67500,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-02",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0041",
       "notes": "Cobro demo registrado como pagado."
@@ -6464,7 +6930,7 @@
       "amount": 35000,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-03",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0042",
       "notes": "Cobro demo registrado como pagado."
@@ -6478,7 +6944,7 @@
       "amount": 38500,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-04",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0043",
       "notes": "Cobro demo registrado como pagado."
@@ -6492,7 +6958,7 @@
       "amount": 42000,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-05",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0044",
       "notes": "Cobro demo registrado como pagado."
@@ -6520,7 +6986,7 @@
       "amount": 49000,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-02",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0046",
       "notes": "Cobro demo registrado como pagado."
@@ -6534,7 +7000,7 @@
       "amount": 52500,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-03",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0047",
       "notes": "Cobro demo registrado como pagado."
@@ -6544,14 +7010,14 @@
       "propertyCode": "QC-0048",
       "period": "2026-09",
       "concept": "Alquiler septiembre 2026",
-      "dueDate": "2026-09-09",
+      "dueDate": "2026-09-08",
       "amount": 56000,
       "currency": "UYU",
-      "status": "Pagado",
-      "paidAt": "2026-09-04",
-      "method": "Transferencia",
-      "reference": "TRX-SEP-0048",
-      "notes": "Cobro demo registrado como pagado."
+      "status": "Pendiente",
+      "paidAt": "",
+      "method": "",
+      "reference": "",
+      "notes": "Cobro demo pendiente para probar aviso por WhatsApp."
     },
     {
       "id": "pay-049",
@@ -6562,7 +7028,7 @@
       "amount": 59500,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-05",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0049",
       "notes": "Cobro demo registrado como pagado."
@@ -6590,7 +7056,7 @@
       "amount": 66500,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-02",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0051",
       "notes": "Cobro demo registrado como pagado."
@@ -6600,14 +7066,14 @@
       "propertyCode": "QC-0052",
       "period": "2026-09",
       "concept": "Alquiler septiembre 2026",
-      "dueDate": "2026-09-03",
+      "dueDate": "2026-08-28",
       "amount": 34000,
       "currency": "UYU",
-      "status": "Pagado",
-      "paidAt": "2026-09-03",
-      "method": "Transferencia",
-      "reference": "TRX-SEP-0052",
-      "notes": "Cobro demo registrado como pagado."
+      "status": "Pendiente",
+      "paidAt": "",
+      "method": "",
+      "reference": "",
+      "notes": "Cobro demo vencido para probar seguimiento de mora."
     },
     {
       "id": "pay-053",
@@ -6618,7 +7084,7 @@
       "amount": 37500,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-04",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0053",
       "notes": "Cobro demo registrado como pagado."
@@ -6632,7 +7098,7 @@
       "amount": 41000,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-05",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0054",
       "notes": "Cobro demo registrado como pagado."
@@ -6660,7 +7126,7 @@
       "amount": 48000,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-02",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0056",
       "notes": "Cobro demo registrado como pagado."
@@ -6674,7 +7140,7 @@
       "amount": 51500,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-03",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0057",
       "notes": "Cobro demo registrado como pagado."
@@ -6688,7 +7154,7 @@
       "amount": 55000,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-04",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0058",
       "notes": "Cobro demo registrado como pagado."
@@ -6702,7 +7168,7 @@
       "amount": 58500,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-05",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0059",
       "notes": "Cobro demo registrado como pagado."
@@ -6730,7 +7196,7 @@
       "amount": 65500,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-02",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0061",
       "notes": "Cobro demo registrado como pagado."
@@ -6744,7 +7210,7 @@
       "amount": 33000,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-03",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0062",
       "notes": "Cobro demo registrado como pagado."
@@ -6758,7 +7224,7 @@
       "amount": 36500,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-04",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0063",
       "notes": "Cobro demo registrado como pagado."
@@ -6768,14 +7234,14 @@
       "propertyCode": "QC-0064",
       "period": "2026-09",
       "concept": "Alquiler septiembre 2026",
-      "dueDate": "2026-09-05",
+      "dueDate": "2026-09-09",
       "amount": 40000,
       "currency": "UYU",
-      "status": "Pagado",
-      "paidAt": "2026-09-05",
-      "method": "Transferencia",
-      "reference": "TRX-SEP-0064",
-      "notes": "Cobro demo registrado como pagado."
+      "status": "Pendiente",
+      "paidAt": "",
+      "method": "",
+      "reference": "",
+      "notes": "Cobro demo pendiente para probar aviso por WhatsApp."
     },
     {
       "id": "pay-065",
@@ -6800,7 +7266,7 @@
       "amount": 47000,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-02",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0066",
       "notes": "Cobro demo registrado como pagado."
@@ -6814,7 +7280,7 @@
       "amount": 50500,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-03",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0067",
       "notes": "Cobro demo registrado como pagado."
@@ -6828,7 +7294,7 @@
       "amount": 54000,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-04",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0068",
       "notes": "Cobro demo registrado como pagado."
@@ -6842,7 +7308,7 @@
       "amount": 57500,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-05",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0069",
       "notes": "Cobro demo registrado como pagado."
@@ -6870,7 +7336,7 @@
       "amount": 64500,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-02",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0071",
       "notes": "Cobro demo registrado como pagado."
@@ -6884,7 +7350,7 @@
       "amount": 32000,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-03",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0072",
       "notes": "Cobro demo registrado como pagado."
@@ -6898,7 +7364,7 @@
       "amount": 35500,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-04",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0073",
       "notes": "Cobro demo registrado como pagado."
@@ -6912,7 +7378,7 @@
       "amount": 39000,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-05",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0074",
       "notes": "Cobro demo registrado como pagado."
@@ -6940,7 +7406,7 @@
       "amount": 46000,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-02",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0076",
       "notes": "Cobro demo registrado como pagado."
@@ -6950,14 +7416,14 @@
       "propertyCode": "QC-0077",
       "period": "2026-09",
       "concept": "Alquiler septiembre 2026",
-      "dueDate": "2026-09-08",
+      "dueDate": "2026-08-28",
       "amount": 49500,
       "currency": "UYU",
-      "status": "Pagado",
-      "paidAt": "2026-09-03",
-      "method": "Transferencia",
-      "reference": "TRX-SEP-0077",
-      "notes": "Cobro demo registrado como pagado."
+      "status": "Pendiente",
+      "paidAt": "",
+      "method": "",
+      "reference": "",
+      "notes": "Cobro demo vencido para probar seguimiento de mora."
     },
     {
       "id": "pay-078",
@@ -6968,7 +7434,7 @@
       "amount": 53000,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-04",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0078",
       "notes": "Cobro demo registrado como pagado."
@@ -6982,7 +7448,7 @@
       "amount": 56500,
       "currency": "UYU",
       "status": "Pagado",
-      "paidAt": "2026-09-05",
+      "paidAt": "2026-09-01",
       "method": "Transferencia",
       "reference": "TRX-SEP-0079",
       "notes": "Cobro demo registrado como pagado."
@@ -7002,6 +7468,168 @@
       "notes": "Cobro demo registrado como pagado."
     }
   ],
-  "documents": [],
-  "audit": []
+  "documents": [
+    {
+      "id": "doc-001",
+      "propertyCode": "QC-0005",
+      "type": "Contrato",
+      "title": "Contrato de arrendamiento vigente",
+      "issueDate": "2026-02-01",
+      "dueDate": "2027-02-01",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-002",
+      "propertyCode": "QC-0023",
+      "type": "Contrato",
+      "title": "Contrato próximo a renovar",
+      "issueDate": "2025-09-06",
+      "dueDate": "2026-09-06",
+      "fileUrl": "#",
+      "notes": "Documento demo para probar vencimiento contractual."
+    },
+    {
+      "id": "doc-003",
+      "propertyCode": "QC-0031",
+      "type": "Seguro",
+      "title": "Póliza de seguro de alquiler",
+      "issueDate": "2025-09-18",
+      "dueDate": "2026-09-18",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-004",
+      "propertyCode": "QC-0045",
+      "type": "Factura",
+      "title": "Comprobante de Primaria 2025",
+      "issueDate": "2025-09-03",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-005",
+      "propertyCode": "QC-0056",
+      "type": "Factura",
+      "title": "Factura reparación humedad",
+      "issueDate": "2026-08-31",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Asociada a reclamo demo #304."
+    },
+    {
+      "id": "doc-006",
+      "propertyCode": "QC-0067",
+      "type": "Otro",
+      "title": "Registro de cerrajería",
+      "issueDate": "2026-09-01",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-007",
+      "propertyCode": "QC-0079",
+      "type": "Seguro",
+      "title": "Póliza de incendio",
+      "issueDate": "2025-09-25",
+      "dueDate": "2026-09-25",
+      "fileUrl": "#",
+      "notes": "Documento demo."
+    },
+    {
+      "id": "doc-008",
+      "propertyCode": "QC-0081",
+      "type": "Otro",
+      "title": "Ficha de propiedad disponible",
+      "issueDate": "2026-09-01",
+      "dueDate": "",
+      "fileUrl": "#",
+      "notes": "Propiedad vacía del quinto propietario."
+    }
+  ],
+  "audit": [
+    {
+      "id": "aud-001",
+      "propertyCode": "QC-0003",
+      "at": "2026-09-01T10:15:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Seguimiento de cobro",
+      "detail": "Alquiler de septiembre pendiente."
+    },
+    {
+      "id": "aud-002",
+      "propertyCode": "QC-0011",
+      "at": "2026-09-01T09:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Reclamo resuelto",
+      "detail": "Se cerró el reclamo #301."
+    },
+    {
+      "id": "aud-003",
+      "propertyCode": "QC-0024",
+      "at": "2026-08-31T10:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Asignación de técnico",
+      "detail": "Reclamo #302 asignado a Sanitaria Centro."
+    },
+    {
+      "id": "aud-004",
+      "propertyCode": "QC-0027",
+      "at": "2026-09-01T08:30:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Cobro vencido",
+      "detail": "Alquiler con vencimiento anterior y sin pago registrado."
+    },
+    {
+      "id": "aud-005",
+      "propertyCode": "QC-0043",
+      "at": "2026-09-01T11:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Reclamo en coordinación",
+      "detail": "Pendiente coordinar técnico para reclamo #303."
+    },
+    {
+      "id": "aud-006",
+      "propertyCode": "QC-0056",
+      "at": "2026-08-31T15:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Asignación de técnico",
+      "detail": "Reclamo #304 asignado a Hogar Soluciones."
+    },
+    {
+      "id": "aud-007",
+      "propertyCode": "QC-0067",
+      "at": "2026-09-01T12:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Nuevo reclamo",
+      "detail": "Ingreso de reclamo #305 desde QR."
+    },
+    {
+      "id": "aud-008",
+      "propertyCode": "QC-0077",
+      "at": "2026-09-01T08:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Cobro vencido",
+      "detail": "Alquiler vencido pendiente de contacto."
+    },
+    {
+      "id": "aud-009",
+      "propertyCode": "QC-0081",
+      "at": "2026-09-01T15:00:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Propiedad vacía",
+      "detail": "Disponible para nuevo alquiler."
+    },
+    {
+      "id": "aud-010",
+      "propertyCode": "QC-0084",
+      "at": "2026-09-01T15:05:00.000Z",
+      "actor": "Administrador QCASA",
+      "action": "Control documental",
+      "detail": "Seguro próximo a vencer."
+    }
+  ]
 }

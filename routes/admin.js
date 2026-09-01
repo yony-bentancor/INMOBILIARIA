@@ -2,6 +2,7 @@ const r=require('express').Router();
 const c=require('../controllers/adminController');
 const dashboard=require('../controllers/adminDashboardController');
 const paymentsDashboard=require('../controllers/adminPaymentsController');
+const complaintsDashboard=require('../controllers/adminComplaintsController');
 const{requireRole}=require('../middleware/auth');
 const adminOwnerContext=require('../middleware/adminOwnerContext');
 
@@ -26,7 +27,7 @@ r.get('/propietarios/:id/editar',c.ownerEditForm);
 r.post('/propietarios/:id/editar',c.ownerUpdate);
 r.post('/propietarios/:id/eliminar',c.ownerDelete);
 
-r.get('/reclamos',c.complaints);
+r.get('/reclamos',complaintsDashboard.complaints);
 r.get('/reclamos/:number',c.complaintDetail);
 r.post('/reclamos/:number/asignar',c.complaintAssign);
 r.post('/reclamos/:number/estado',c.complaintStatus);
