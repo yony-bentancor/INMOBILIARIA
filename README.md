@@ -1,6 +1,6 @@
-# QCASA V1 — Proyecto completo demo
+# QPROPIEDADES — Proyecto demo
 
-QCASA centraliza la gestión de propiedades, inquilinos, propietarios, alquileres, impuestos, documentos, vencimientos, reclamos y proveedores.
+QPROPIEDADES centraliza la gestión de propiedades, inquilinos, propietarios, alquileres, impuestos, documentos, vencimientos, reclamos y proveedores.
 
 ## Incluido
 
@@ -22,12 +22,16 @@ QCASA centraliza la gestión de propiedades, inquilinos, propietarios, alquilere
 ## Usuarios demo
 
 Administrador
-- admin@qcasa.uy
+- admin@qpropiedades.uy
 - admin123
 
-Propietario
-- propietario@qcasa.uy
+Propietario Suárez
+- suarez@qpropiedades.demo
 - prop123
+
+Propietario Carlos Fernández
+- carlos.fernandez@qpropiedades.demo
+- carlos123
 
 QR demo
 - http://localhost:3000/r/QC-0001
@@ -63,21 +67,13 @@ Los archivos cargados desde QR van a `/uploads`. En Heroku el disco es efímero,
 
 ## WhatsApp
 
-Desde un reclamo se asigna una empresa y se genera un enlace `wa.me` con:
-- trabajo y número;
-- propiedad;
-- Google Maps;
-- inquilino y teléfono;
-- categoría y prioridad;
-- descripción;
-- fotos/videos;
-- ficha pública del trabajo.
+Desde un reclamo se asigna una empresa y se genera un enlace `wa.me` con los datos necesarios del trabajo, propiedad, inquilino, categoría, descripción, multimedia y ficha pública.
 
 El administrador hace clic y confirma el envío en WhatsApp.
 
 ## MongoDB futuro
 
-Los modelos ya están en `/models`. La V1 usa memoria para poder probar sin base de datos. La siguiente etapa será implementar services/repositories que usen MongoDB cuando `USE_MONGO=true`.
+Los modelos ya están en `/models`. La versión demo usa memoria para poder probar sin base de datos. La siguiente etapa será implementar services/repositories que usen MongoDB cuando `USE_MONGO=true`.
 
 ## Seguridad futura
 
@@ -92,12 +88,4 @@ SESSION_SECRET=<clave-larga>
 BASE_URL=https://TU-APP.herokuapp.com
 USE_MONGO=false
 NODE_ENV=production
-```
-
-Luego:
-
-```powershell
-git add -A
-git commit -m "QCASA V1 completa"
-git push
 ```
