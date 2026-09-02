@@ -1,193 +1,135 @@
 {% extends 'layouts/base.njk' %}
 {% block body %}
-<div class="landing-v2">
+<link rel="stylesheet" href="/css/qpropiedades-front.css">
 
-  <header class="landing-v2-nav">
-    <a class="landing-v2-brand" href="/" aria-label="QCASA">
-      <span class="landing-v2-brand-mark">Q</span>
-      <span>QCASA</span>
+<div class="qp-page">
+  <header class="qp-nav">
+    <a class="qp-brand" href="/" aria-label="QPROPIEDADES">
+      <span class="qp-brand-mark">Q</span>
+      <span class="qp-brand-name">QPROPIEDADES</span>
+      <small>GESTIÓN INTELIGENTE<br>DE PROPIEDADES</small>
     </a>
 
-    <nav class="landing-v2-menu" aria-label="Navegación principal">
-      <a href="#quienes-somos">Quiénes somos</a>
-      <a href="#alta">Darse de alta</a>
-      <a href="/ingresar" class="landing-v2-login">Ingresar</a>
+    <nav class="qp-menu" aria-label="Navegación principal">
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#propietarios">Para propietarios</a>
+      <a href="#servicios">Servicios</a>
+      <a href="/ingresar" class="qp-login">Ingresar</a>
     </nav>
   </header>
 
   <main>
-    <section class="landing-v2-hero">
-      <div class="landing-v2-hero-copy">
-        <span class="landing-v2-kicker">GESTIÓN DE PROPIEDADES + QR</span>
+    <section class="qp-hero">
+      <div class="qp-hero-copy">
+        <span class="qp-kicker">GESTIÓN INTEGRAL DE PROPIEDADES</span>
+        <h1>Tu propiedad,<br><em>bajo control.</em></h1>
 
-        <h1>
-          Tu propiedad<br>
-          conectada.<br>
-          <em>Los problemas,<br>resueltos.</em>
-        </h1>
-
-        <p class="landing-v2-hero-short">
-          Un QR en cada propiedad para reportar, organizar y resolver.
+        <p class="qp-lead">
+          Alquileres, vencimientos, documentos, inquilinos,
+          reparaciones e historial. Toda la información de tu propiedad,
+          en un solo lugar.
         </p>
 
-        <div class="landing-v2-actions">
-          <button type="button" class="landing-v2-btn landing-v2-btn-primary" data-open-qr-reader>
-            <span class="landing-v2-btn-icon">⌗</span>
-            Leer QR
-          </button>
-          <a href="#alta" class="landing-v2-btn landing-v2-btn-outline">Darse de alta →</a>
+        <div class="qp-actions">
+          <a href="/alta" class="qp-btn qp-btn-primary">Gestionar mis propiedades</a>
+          <a href="#como-funciona" class="qp-btn qp-btn-outline">Ver cómo funciona →</a>
+        </div>
+
+        <div class="qp-tenant-links">
+          <span>¿Sos inquilino?</span>
+          <button type="button" class="qp-text-link" data-open-qr-reader>Escanear QR</button>
+          <span class="qp-dot">·</span>
+          <a class="qp-text-link" href="/seguimiento">Ver mi reclamo</a>
         </div>
       </div>
 
-      <div class="landing-v2-hero-visual" aria-label="QCASA QR en una propiedad">
-        <div class="landing-v2-house">
-          <img src="/img/landing/modern-house.svg" alt="Propiedad gestionada con QCASA">
+      <div class="qp-hero-visual" aria-label="Propiedad gestionada con QPROPIEDADES">
+        <div class="qp-building" aria-hidden="true">
+          <div class="qp-building-floor qp-floor-3"><i></i><i></i><i></i></div>
+          <div class="qp-building-floor qp-floor-2"><i></i><i></i><i></i></div>
+          <div class="qp-building-floor qp-floor-1"><i></i><i></i><i></i></div>
+          <div class="qp-building-ground"><span></span><span></span></div>
         </div>
 
-        <div class="landing-v2-qr-plaque">
-          <div class="landing-v2-plaque-head">
-            <span class="landing-v2-plaque-logo"><b>Q</b> QCASA</span>
-            <span class="landing-v2-code">QC-24</span>
-          </div>
-          <strong>¿ALGO NO FUNCIONA?</strong>
-          <span>ESCANEÁ Y REPORTALO</span>
-          <img src="/img/landing/qr-demo.png" alt="QR de demostración QCASA">
-          <div class="landing-v2-plaque-icons" aria-hidden="true">
-            <span>▣</span><span>⌕</span><span>◊</span><span>ϟ</span>
-          </div>
-          <small>No necesitás descargar una app</small>
-        </div>
-      </div>
-    </section>
-
-    <section class="landing-v2-flow" id="quienes-somos">
-      <div class="landing-v2-section-head">
-        <span class="landing-v2-kicker">ASÍ FUNCIONA</span>
-        <h2>UN QR. TRES PERSONAS. UNA SOLUCIÓN.</h2>
-      </div>
-
-      <div class="landing-v2-flow-grid">
-        <article>
-          <div class="landing-v2-flow-icon">01</div>
-          <div>
-            <h3>INQUILINO</h3>
-            <p>Escanea el QR, cuenta qué pasa y puede adjuntar fotos o videos.</p>
-          </div>
-        </article>
-
-        <article>
-          <div class="landing-v2-flow-icon">02</div>
-          <div>
-            <h3>PROPIETARIO</h3>
-            <p>Conoce el problema y sigue lo que está pasando en cada propiedad.</p>
-          </div>
-        </article>
-
-        <article>
-          <div class="landing-v2-flow-icon">03</div>
-          <div>
-            <h3>QCASA</h3>
-            <p>Organiza el reclamo, deriva el trabajo y mantiene el seguimiento.</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="landing-v2-control">
-      <div class="landing-v2-dashboard-mock">
-        <div class="landing-v2-mock-sidebar">
-          <span class="landing-v2-mini-brand"><b>Q</b> QCASA</span>
-          <i></i><i></i><i></i><i></i><i></i><i></i>
-        </div>
-        <div class="landing-v2-mock-main">
-          <strong>Dashboard</strong>
-          <div class="landing-v2-mock-stats">
-            <div><b>40</b><span>Propiedades</span></div>
-            <div><b>39</b><span>Alquiladas</span></div>
-            <div><b>1</b><span>Vacía</span></div>
-            <div><b>3</b><span>Reclamos</span></div>
-          </div>
-          <div class="landing-v2-mock-panels">
-            <div>
-              <b>Próximos vencimientos</b>
-              <span class="danger">● Contribución · 3 días</span>
-              <span class="warning">● Alquiler · 5 días</span>
-              <span class="ok">● Contrato · 18 días</span>
+        <div class="qp-phone">
+          <div class="qp-phone-screen">
+            <div class="qp-phone-head">
+              <span><b>Q</b> QPROPIEDADES</span>
+              <strong>QP-24</strong>
             </div>
-            <div>
-              <b>Reclamos abiertos</b>
-              <span>Fuga de agua · En reparación</span>
-              <span>Aire acondicionado · Asignado</span>
-              <span>Cerradura · Nuevo</span>
-            </div>
+            <h3>¿NECESITÁS ALGO?</h3>
+            <p>ESCANEÁ Y REPORTALO</p>
+            <img src="/img/landing/qr-demo.png" alt="QR de demostración">
+            <small>Rápido, simple y seguro.</small>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="landing-v2-control-copy">
-        <span class="landing-v2-kicker">TODO EN UN LUGAR</span>
-        <h2>Lo importante, siempre bajo control.</h2>
-
-        <div class="landing-v2-feature-list">
-          <div><b>PROPIEDADES</b><span>Información, inquilinos y ubicación.</span></div>
-          <div><b>ALQUILERES</b><span>Pagos, pendientes y vencimientos.</span></div>
-          <div><b>DOCUMENTACIÓN</b><span>Contratos, impuestos y comprobantes.</span></div>
-          <div><b>REPARACIONES</b><span>Desde el QR hasta la resolución.</span></div>
-          <div><b>ALERTAS</b><span>Nada importante queda olvidado.</span></div>
-        </div>
+    <section class="qp-services" id="servicios">
+      <h2>TODO LO QUE NECESITÁS, EN UN SOLO LUGAR</h2>
+      <div class="qp-service-grid">
+        <article><span>⌂</span><div><b>Propiedades</b><small>Datos, ubicación e historial.</small></div></article>
+        <article><span>◎</span><div><b>Inquilinos</b><small>Información y contrato.</small></div></article>
+        <article><span>$</span><div><b>Alquileres</b><small>Cobros y vencimientos.</small></div></article>
+        <article><span>▤</span><div><b>Documentos</b><small>Contratos e impuestos.</small></div></article>
+        <article><span>⌕</span><div><b>Mantenimiento</b><small>Reclamos y reparaciones.</small></div></article>
+        <article><span>◌</span><div><b>Alertas</b><small>Lo importante, a tiempo.</small></div></article>
       </div>
     </section>
 
-    <section class="landing-v2-strip">
-      <div><strong>40</strong><span>PROPIEDADES</span></div>
-      <div><strong>39</strong><span>ALQUILADAS</span></div>
-      <div><strong>1</strong><span>VACÍA</span></div>
-      <div><strong>3</strong><span>RECLAMOS ABIERTOS</span></div>
-      <div><strong>79</strong><span>DOCUMENTOS</span></div>
-    </section>
-
-    <section class="landing-v2-cta" id="alta">
-      <div class="landing-v2-building" aria-hidden="true">
-        <span></span><span></span><span></span>
-      </div>
-      <div>
-        <h2>Cada propiedad tiene una historia.<br><em>QCASA la mantiene ordenada.</em></h2>
-        <p>Centralizá la información de tus propiedades y simplificá la gestión de cada problema.</p>
-        <div class="landing-v2-actions">
-          <a href="/ingresar" class="landing-v2-btn landing-v2-btn-dark">Ingresar a QCASA →</a>
-          <button type="button" class="landing-v2-btn landing-v2-btn-outline" data-open-qr-reader>Leer QR</button>
+    <section class="qp-overview" id="como-funciona">
+      <div class="qp-mini-dashboard" aria-hidden="true">
+        <div class="qp-mini-sidebar"><b>Q</b><i></i><i></i><i></i><i></i></div>
+        <div class="qp-mini-content">
+          <strong>Mis propiedades</strong>
+          <div class="qp-mini-cards">
+            <span><b>12</b> Propiedades</span>
+            <span><b>11</b> Alquiladas</span>
+            <span><b>2</b> Alertas</span>
+          </div>
+          <div class="qp-mini-lines"><i></i><i></i><i></i><i></i></div>
         </div>
+      </div>
+
+      <div class="qp-overview-copy" id="propietarios">
+        <span class="qp-kicker">UNA VISIÓN COMPLETA</span>
+        <h2>Cada propiedad, clara y ordenada.</h2>
+        <p>Consultá en segundos qué está al día, qué vence y qué necesita atención.</p>
+        <a href="/alta" class="qp-btn qp-btn-outline">Quiero usar QPROPIEDADES →</a>
       </div>
     </section>
   </main>
 
-  <footer class="landing-v2-footer">
-    <a class="landing-v2-brand landing-v2-brand-footer" href="/">
-      <span class="landing-v2-brand-mark">Q</span>
-      <span>QCASA</span>
-    </a>
-    <span>Gestión de propiedades y reparaciones con QR</span>
-    <small>© 2026 QCASA</small>
+  <footer class="qp-footer">
+    <div class="qp-footer-brand">
+      <span class="qp-brand-mark">Q</span>
+      <div><b>QPROPIEDADES</b><small>Gestión inteligente de propiedades.</small></div>
+    </div>
+    <div class="qp-footer-links">
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="/alta">Contacto</a>
+      <a href="/ingresar">Ingresar</a>
+    </div>
+    <small>© 2026 QPROPIEDADES</small>
   </footer>
 
   <div class="qr-reader-modal" data-qr-reader-modal hidden>
     <div class="qr-reader-backdrop" data-close-qr-reader></div>
     <section class="qr-reader-card" role="dialog" aria-modal="true" aria-labelledby="qr-reader-title">
       <button type="button" class="qr-reader-close" data-close-qr-reader aria-label="Cerrar">×</button>
-      <span class="landing-v2-kicker">QCASA QR</span>
-      <h2 id="qr-reader-title">Leer QR de la propiedad</h2>
-      <p>Apuntá la cámara al QR de QCASA.</p>
+      <span class="qp-kicker">QR DE LA PROPIEDAD</span>
+      <h2 id="qr-reader-title">Escanear QR</h2>
+      <p>Apuntá la cámara al QR de la propiedad.</p>
 
       <div class="qr-reader-camera">
         <video data-qr-video playsinline muted></video>
         <div class="qr-reader-frame"></div>
       </div>
 
-      <p class="qr-reader-status" data-qr-status>
-        Presioná “Activar cámara” para comenzar.
-      </p>
+      <p class="qr-reader-status" data-qr-status>Presioná “Activar cámara” para comenzar.</p>
 
-      <button type="button" class="landing-v2-btn landing-v2-btn-primary qr-reader-start" data-start-qr>
+      <button type="button" class="qp-btn qp-btn-primary qr-reader-start" data-start-qr>
         Activar cámara
       </button>
 
@@ -195,11 +137,10 @@
         <span>También podés ingresar el código:</span>
         <div>
           <input type="text" data-qr-code placeholder="Ej: QC-0001" autocomplete="off">
-          <button type="button" class="landing-v2-btn landing-v2-btn-dark" data-go-qr>Ir</button>
+          <button type="button" class="qp-btn qp-btn-dark" data-go-qr>Ir</button>
         </div>
       </div>
     </section>
   </div>
-
 </div>
 {% endblock %}
