@@ -1,0 +1,27 @@
+{% extends 'qcasa/layout.njk' %}
+{% block qcbody %}
+<main class="qc-search-page">
+  <section class="qc-search-head">
+    <span class="qc-kicker">PROPIEDADES</span><h1>Encontrá la indicada</h1>
+    <form action="/qcasa/buscar" method="get" class="qc-filters">
+      <input name="q" value="{{ filters.q or '' }}" placeholder="Zona o palabra clave">
+      <select name="operation"><option value="">Operación</option><option value="Venta" {% if filters.operation=='Venta' %}selected{% endif %}>Venta</option><option value="Alquiler" {% if filters.operation=='Alquiler' %}selected{% endif %}>Alquiler</option></select>
+      <select name="category"><option value="">Tipo</option>{% for c in categories %}<option value="{{ c }}" {% if filters.category==c %}selected{% endif %}>{{ c }}</option>{% endfor %}</select>
+      <select name="department"><option value="">Departamento</option>{% for d in departments %}<option value="{{ d }}" {% if filters.department==d %}selected{% endif %}>{{ d }}</option>{% endfor %}</select>
+      <input type="number" name="maxPrice" value="{{ filters.maxPrice or '' }}" placeholder="Precio máximo">
+      <button>Buscar</button>
+    </form>
+  </section>
+  <section class="qc-results">
+    <div class="qc-results-head"><b>{{ results | length }} propiedades</b><a href="/qcasa/buscar">Limpiar filtros</a></div>
+    <div class="qc-card-grid">
+      {% for p in results %}
+      <a class="qc-property-card" href="/qcasa/propiedad/{{ p.slug }}">
+        <div class="qc-property-photo qc-tone-{{ p.tone }}"><span>{{ p.category }}</span></div>
+        <div class="qc-property-body"><small>{{ p.operation }} · {{ p.department }}</small><h3>{{ p.title }}</h3><strong>{{ money(p) }}</strong><p>{{ p.city }} · {{ p.area | int }} m²{% if p.bedrooms %} · {{ p.bedrooms }} dorm.{% endif %}</p></div>
+      </a>
+      {% else %}<div class="qc-empty">No encontramos propiedades con esos filtros.</div>{% endfor %}
+    </div>
+  </section>
+</main>
+{% endblock %}

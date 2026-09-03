@@ -1,0 +1,47 @@
+{% extends 'qcasa/layout.njk' %}
+{% block qcbody %}
+<main>
+  <section class="qc-hero">
+    <div class="qc-hero-copy">
+      <span class="qc-kicker">INMOBILIARIA</span>
+      <h1>Encontrá tu<br><em>próximo lugar.</em></h1>
+      <p>Casas, apartamentos, locales, chacras, campos e industriales para comprar o alquilar.</p>
+      <form class="qc-searchbar" action="/qcasa/buscar" method="get">
+        <select name="operation"><option value="">Comprar o alquilar</option><option>Venta</option><option>Alquiler</option></select>
+        <select name="category"><option value="">Tipo de propiedad</option>{% for c in categories %}<option>{{ c }}</option>{% endfor %}</select>
+        <input name="q" placeholder="Zona, ciudad o palabra clave">
+        <button>Buscar</button>
+      </form>
+      <div class="qc-shortcuts">
+        {% for c in categories %}<a href="/qcasa/buscar?category={{ c | urlencode }}">{{ c }}</a>{% endfor %}
+      </div>
+    </div>
+    <div class="qc-hero-visual">
+      <div class="qc-house"><span></span><i></i><b></b></div>
+      <div class="qc-feature-chip"><small>PROPIEDAD DESTACADA</small><strong>{{ featured[0].title }}</strong><span>{{ featured[0].operation }} · {{ money(featured[0]) }}</span></div>
+    </div>
+  </section>
+
+  <section class="qc-section">
+    <div class="qc-section-head"><div><span class="qc-kicker">SELECCIÓN QCASA</span><h2>Propiedades destacadas</h2></div><a href="/qcasa/buscar">Ver todas →</a></div>
+    <div class="qc-card-grid">
+      {% for p in featured %}
+      <a class="qc-property-card" href="/qcasa/propiedad/{{ p.slug }}">
+        <div class="qc-property-photo qc-tone-{{ p.tone }}"><span>{{ p.category }}</span></div>
+        <div class="qc-property-body"><small>{{ p.operation }} · {{ p.department }}</small><h3>{{ p.title }}</h3><strong>{{ money(p) }}</strong><p>{{ p.city }} · {{ p.area | int }} m²{% if p.bedrooms %} · {{ p.bedrooms }} dorm.{% endif %}</p></div>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="qc-categories">
+    <span class="qc-kicker">EXPLORÁ</span><h2>Una búsqueda para cada propiedad</h2>
+    <div>{% for c in categories %}<a href="/qcasa/buscar?category={{ c | urlencode }}"><b>{{ c }}</b><small>Ver opciones de venta y alquiler →</small></a>{% endfor %}</div>
+  </section>
+
+  <section class="qc-connect">
+    <div><span class="qc-kicker">QCASA + QPROPIEDADES</span><h2>Publicá acá. Gestioná todo allá.</h2><p>Una propiedad puede ofrecerse en QCASA y, una vez alquilada, continuar su gestión en QPROPIEDADES.</p></div>
+    <a href="/qpropiedades">Conocer QPROPIEDADES →</a>
+  </section>
+</main>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'qcasa/layout.njk' %}
+{% block qcbody %}
+<main class="qc-admin">
+  <div class="qc-admin-head"><div><span class="qc-kicker">ADMINISTRACIÓN QCASA</span><h1>Panel inmobiliario</h1><p>{{ admin.name }}</p></div><div><a class="qc-admin-primary" href="/qcasa/admin/propiedades/nueva">+ Cargar propiedad</a><form method="post" action="/qcasa/salir"><button class="qc-admin-link">Salir</button></form></div></div>
+  <section class="qc-stats"><article><small>Propiedades</small><b>{{ stats.total }}</b></article><article><small>En venta</small><b>{{ stats.sale }}</b></article><article><small>En alquiler</small><b>{{ stats.rent }}</b></article><article><small>Publicadas</small><b>{{ stats.published }}</b></article><article><small>Consultas</small><b>{{ stats.inquiries }}</b></article></section>
+
+  <section class="qc-admin-panel">
+    <div class="qc-panel-head"><h2>Propiedades</h2><span>Datos demo en memoria · no modifica QPROPIEDADES</span></div>
+    <div class="qc-table-wrap"><table><thead><tr><th>Ref.</th><th>Propiedad</th><th>Tipo</th><th>Operación</th><th>Precio</th><th>Estado</th><th></th></tr></thead><tbody>
+    {% for p in properties %}<tr><td>{{ p.id }}</td><td><b>{{ p.title }}</b><small>{{ p.city }}, {{ p.department }}</small></td><td>{{ p.category }}</td><td>{{ p.operation }}</td><td>{{ money(p) }}</td><td><span class="qc-status">{{ p.status }}</span></td><td class="qc-row-actions"><a href="/qcasa/admin/propiedades/{{ p.id }}/editar">Editar</a><form action="/qcasa/admin/propiedades/{{ p.id }}/publicar" method="post"><button>{{ 'Ocultar' if p.status=='Publicada' else 'Publicar' }}</button></form><form action="/qcasa/admin/propiedades/{{ p.id }}/eliminar" method="post" onsubmit="return confirm('¿Eliminar propiedad?')"><button>Eliminar</button></form></td></tr>{% endfor %}
+    </tbody></table></div>
+  </section>
+
+  <section class="qc-admin-panel">
+    <div class="qc-panel-head"><h2>Consultas recibidas</h2><span>Se generan desde la ficha pública</span></div>
+    {% if inquiries.length %}<div class="qc-inquiries">{% for i in inquiries %}<article><b>{{ i.propertyTitle }}</b><span>{{ i.name }} · {{ i.phone }}{% if i.email %} · {{ i.email }}{% endif %}</span><p>{{ i.message or 'Sin mensaje adicional.' }}</p></article>{% endfor %}</div>{% else %}<div class="qc-empty">Todavía no hay consultas. Podés probar enviando una desde cualquier propiedad.</div>{% endif %}
+  </section>
+</main>
+{% endblock %}

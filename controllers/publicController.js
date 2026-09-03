@@ -4,6 +4,7 @@ const{CLAIM_CATEGORIES}=require('../config/constants');
 
 const normalizePhone=value=>String(value||'').replace(/\D/g,'');
 
+exports.gateway=(req,res)=>res.render('public/ecosistema.njk',{title:'QPROPIEDADES + QCASA'});
 exports.home=(req,res)=>res.render('public/home.njk',{title:'QPROPIEDADES'});
 
 exports.signupForm=(req,res)=>{
@@ -117,7 +118,7 @@ exports.publicJob=(req,res)=>{
   const c=store.complaints.find(x=>x.shareToken===req.params.token);
   if(!c)return res.status(404).send('Trabajo no encontrado.');
   res.render('public/job.njk',{
-    title:`Trabajo #${c.number} | QCASA`,
+    title:`Trabajo #${c.number} | QPROPIEDADES`,
     complaint:c,
     property:store.findProperty(c.propertyCode)
   });

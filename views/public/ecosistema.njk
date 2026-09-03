@@ -1,0 +1,78 @@
+{% extends 'layouts/base.njk' %}
+{% block body %}
+<link rel="stylesheet" href="/css/ecosistema.css">
+
+<div class="eco-page">
+  <header class="eco-nav">
+    <div class="eco-brand">
+      <span class="eco-brand-mark">Q</span>
+      <span><b>Q</b> ECOSISTEMA</span>
+    </div>
+    <nav>
+      <a href="#soluciones">Soluciones</a>
+      <a href="/qpropiedades">QPROPIEDADES</a>
+      <a href="/qcasa">QCASA</a>
+    </nav>
+  </header>
+
+  <main class="eco-main" id="soluciones">
+    <span class="eco-kicker">DOS SOLUCIONES, UN MISMO ECOSISTEMA</span>
+    <h1>Elegí cómo querés continuar</h1>
+    <p class="eco-lead">Gestioná tus propiedades o encontrá tu próximo lugar.</p>
+
+    <section class="eco-grid">
+      <article class="eco-card eco-qp">
+        <div class="eco-card-head">
+          <span class="eco-logo eco-logo-qp">Q</span>
+          <div><strong>QPROPIEDADES</strong><small>GESTIÓN INTELIGENTE DE PROPIEDADES</small></div>
+        </div>
+        <div class="eco-card-content">
+          <span class="eco-mini-kicker">GESTIÓN</span>
+          <h2>Tu propiedad,<br><em>bajo control.</em></h2>
+          <p>Alquileres, vencimientos, inquilinos, cobros, documentos, reparaciones e historial.</p>
+          <ul>
+            <li>Gestión completa de propiedades</li>
+            <li>Alquileres y vencimientos</li>
+            <li>Documentos y reportes</li>
+            <li>Reclamos y mantenimiento</li>
+            <li>Cobros y economía</li>
+          </ul>
+          <a class="eco-button eco-button-qp" href="/qpropiedades">Ingresar a QPROPIEDADES →</a>
+        </div>
+        <div class="eco-building eco-building-qp" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      </article>
+
+      <article class="eco-card eco-qc">
+        <div class="eco-card-head">
+          <span class="eco-logo eco-logo-qc">Q</span>
+          <div><strong>QCASA</strong><small>ENCONTRÁ TU PRÓXIMO LUGAR</small></div>
+        </div>
+        <div class="eco-card-content">
+          <span class="eco-mini-kicker">INMOBILIARIA</span>
+          <h2>Encontrá tu<br><em>próximo lugar.</em></h2>
+          <p>Buscá propiedades para comprar o alquilar y publicá de forma simple.</p>
+          <ul>
+            <li>Casas, apartamentos y locales</li>
+            <li>Chacras, campos e industriales</li>
+            <li>Venta y alquiler</li>
+            <li>Búsqueda simple y directa</li>
+            <li>Contacto por propiedad</li>
+          </ul>
+          <a class="eco-button eco-button-qc" href="/qcasa">Ingresar a QCASA →</a>
+        </div>
+        <div class="eco-building eco-building-qc" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      </article>
+    </section>
+
+    <section class="eco-link">
+      <b>Ambas plataformas pueden trabajar conectadas.</b>
+      <span>Una propiedad puede publicarse en QCASA y gestionarse en QPROPIEDADES sin duplicar información.</span>
+    </section>
+  </main>
+
+  <footer class="eco-footer">
+    <span>© 2026 QPROPIEDADES & QCASA</span>
+    <span>Dos productos. Una estructura preparada para crecer.</span>
+  </footer>
+</div>
+{% endblock %}

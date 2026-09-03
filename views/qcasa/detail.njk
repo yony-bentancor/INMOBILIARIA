@@ -1,0 +1,25 @@
+{% extends 'qcasa/layout.njk' %}
+{% block qcbody %}
+<main class="qc-detail">
+  <a class="qc-back" href="/qcasa/buscar">← Volver a propiedades</a>
+  <section class="qc-detail-grid">
+    <div class="qc-detail-photo qc-tone-{{ property.tone }}"><span>{{ property.category }}</span><b>QCASA</b></div>
+    <div class="qc-detail-info">
+      <span class="qc-kicker">{{ property.operation }} · {{ property.department }}</span>
+      <h1>{{ property.title }}</h1>
+      <strong class="qc-price">{{ money(property) }}</strong>
+      <p class="qc-location">{{ property.city }}</p>
+      <div class="qc-features"><span>{{ property.area | int }} m²</span>{% if property.bedrooms %}<span>{{ property.bedrooms }} dormitorios</span>{% endif %}{% if property.bathrooms %}<span>{{ property.bathrooms }} baños</span>{% endif %}</div>
+      <p class="qc-description">{{ property.summary }}</p>
+      <div class="qc-id">Referencia {{ property.id }}</div>
+    </div>
+  </section>
+  <section class="qc-contact-box">
+    <div><span class="qc-kicker">CONSULTAR</span><h2>¿Querés saber más?</h2><p>Dejanos tus datos y QCASA registra la consulta asociada a esta propiedad.</p></div>
+    {% if consulted %}<div class="qc-success">✓ Consulta recibida. Te contactaremos con la información de la propiedad.</div>{% else %}
+    <form action="/qcasa/propiedad/{{ property.slug }}/consulta" method="post">
+      <input name="name" placeholder="Nombre" required><input name="phone" placeholder="Teléfono" required><input type="email" name="email" placeholder="Email"><textarea name="message" rows="3" placeholder="Mensaje"></textarea><button>Enviar consulta</button>
+    </form>{% endif %}
+  </section>
+</main>
+{% endblock %}

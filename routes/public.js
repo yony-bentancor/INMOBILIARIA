@@ -2,7 +2,8 @@ const r=require('express').Router();
 const c=require('../controllers/publicController');
 const upload=require('../middleware/upload');
 
-r.get('/',c.home);
+r.get('/',c.gateway);
+r.get('/qpropiedades',c.home);
 
 r.get('/alta',c.signupForm);
 r.post('/alta',c.signupSubmit);

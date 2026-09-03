@@ -1,0 +1,24 @@
+{% extends 'layouts/base.njk' %}
+{% block body %}
+<link rel="stylesheet" href="/css/qcasa.css">
+<div class="qc-page">
+  <header class="qc-nav">
+    <a class="qc-brand" href="/qcasa">
+      <span class="qc-mark">Q</span>
+      <span class="qc-name">QCASA<small>ENCONTRÁ TU PRÓXIMO LUGAR</small></span>
+    </a>
+    <nav>
+      <a href="/qcasa/buscar?operation=Venta">Comprar</a>
+      <a href="/qcasa/buscar?operation=Alquiler">Alquilar</a>
+      <a href="/qcasa/buscar">Buscar</a>
+      <a href="/qcasa/ingresar" class="qc-login">Ingresar</a>
+    </nav>
+  </header>
+  {% block qcbody %}{% endblock %}
+  <footer class="qc-footer">
+    <div><b>QCASA</b><small>Comprar · Alquilar · Buscar · Publicar</small></div>
+    <div><a href="/">Ecosistema</a><a href="/qpropiedades">QPROPIEDADES</a><a href="/qcasa/buscar">Propiedades</a></div>
+    <small>© 2026 QCASA</small>
+  </footer>
+</div>
+{% endblock %}
