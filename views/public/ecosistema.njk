@@ -2,77 +2,82 @@
 {% block body %}
 <link rel="stylesheet" href="/css/ecosistema.css">
 
-<div class="eco-page">
-  <header class="eco-nav">
-    <div class="eco-brand">
-      <span class="eco-brand-mark">Q</span>
-      <span><b>Q</b> ECOSISTEMA</span>
+<main class="qeco">
+  <nav class="qeco-nav" aria-label="Navegación principal">
+    <a href="#ecosistema" class="active">Ecosistema</a>
+    <a href="#hablemos">Hablemos</a>
+  </nav>
+
+  <section class="qeco-universe" id="ecosistema" aria-label="Ecosistema Q">
+    <div class="qeco-center">
+      <div class="qeco-qmark" aria-hidden="true">Q</div>
+      <div class="qeco-center-copy">
+        <strong>ECOSISTEMA</strong>
+        <span>TECNOLOGÍA QUE CONECTA</span>
+      </div>
     </div>
-    <nav>
-      <a href="#soluciones">Soluciones</a>
-      <a href="/qpropiedades">QPROPIEDADES</a>
-      <a href="/qcasa">QCASA</a>
-    </nav>
-  </header>
 
-  <main class="eco-main" id="soluciones">
-    <span class="eco-kicker">DOS SOLUCIONES, UN MISMO ECOSISTEMA</span>
-    <h1>Elegí cómo querés continuar</h1>
-    <p class="eco-lead">Gestioná tus propiedades o encontrá tu próximo lugar.</p>
+    <article class="qeco-node qeco-ideas" tabindex="0">
+      <div class="qeco-icon">✦</div>
+      <div>
+        <h2>Conectamos ideas</h2>
+        <p>Escuchamos, entendemos y transformamos ideas en soluciones reales.</p>
+      </div>
+    </article>
 
-    <section class="eco-grid">
-      <article class="eco-card eco-qp">
-        <div class="eco-card-head">
-          <span class="eco-logo eco-logo-qp">Q</span>
-          <div><strong>QPROPIEDADES</strong><small>GESTIÓN INTELIGENTE DE PROPIEDADES</small></div>
-        </div>
-        <div class="eco-card-content">
-          <span class="eco-mini-kicker">GESTIÓN</span>
-          <h2>Tu propiedad,<br><em>bajo control.</em></h2>
-          <p>Alquileres, vencimientos, inquilinos, cobros, documentos, reparaciones e historial.</p>
-          <ul>
-            <li>Gestión completa de propiedades</li>
-            <li>Alquileres y vencimientos</li>
-            <li>Documentos y reportes</li>
-            <li>Reclamos y mantenimiento</li>
-            <li>Cobros y economía</li>
-          </ul>
-          <a class="eco-button eco-button-qp" href="/qpropiedades">Ingresar a QPROPIEDADES →</a>
-        </div>
-        <div class="eco-building eco-building-qp" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-      </article>
+    <a class="qeco-node qeco-propiedades" href="/qpropiedades">
+      <div class="qeco-icon qeco-orange">⌂</div>
+      <div>
+        <h2><em>Q</em>PROPIEDADES</h2>
+        <p>Gestión integral de propiedades.</p>
+        <span class="qeco-arrow">→</span>
+      </div>
+    </a>
 
-      <article class="eco-card eco-qc">
-        <div class="eco-card-head">
-          <span class="eco-logo eco-logo-qc">Q</span>
-          <div><strong>QCASA</strong><small>ENCONTRÁ TU PRÓXIMO LUGAR</small></div>
-        </div>
-        <div class="eco-card-content">
-          <span class="eco-mini-kicker">INMOBILIARIA</span>
-          <h2>Encontrá tu<br><em>próximo lugar.</em></h2>
-          <p>Buscá propiedades para comprar o alquilar y publicá de forma simple.</p>
-          <ul>
-            <li>Casas, apartamentos y locales</li>
-            <li>Chacras, campos e industriales</li>
-            <li>Venta y alquiler</li>
-            <li>Búsqueda simple y directa</li>
-            <li>Contacto por propiedad</li>
-          </ul>
-          <a class="eco-button eco-button-qc" href="/qcasa">Ingresar a QCASA →</a>
-        </div>
-        <div class="eco-building eco-building-qc" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-      </article>
-    </section>
+    <article class="qeco-node qeco-tech" tabindex="0">
+      <div class="qeco-icon">◎</div>
+      <div>
+        <h2>Tecnología que impulsa</h2>
+        <p>Desarrollamos ecosistemas digitales a medida para simplificar la gestión y conectar personas.</p>
+      </div>
+    </article>
 
-    <section class="eco-link">
-      <b>Ambas plataformas pueden trabajar conectadas.</b>
-      <span>Una propiedad puede publicarse en QCASA y gestionarse en QPROPIEDADES sin duplicar información.</span>
-    </section>
-  </main>
+    <a class="qeco-node qeco-talk" id="hablemos" href="mailto:hola@ecosistemaq.uy?subject=Quiero%20contarte%20una%20idea">
+      <div class="qeco-icon">◌</div>
+      <div>
+        <h2>Hablemos</h2>
+        <p>Contanos tu idea y exploremos juntos cómo hacerla realidad.</p>
+      </div>
+    </a>
 
-  <footer class="eco-footer">
-    <span>© 2026 QPROPIEDADES & QCASA</span>
-    <span>Dos productos. Una estructura preparada para crecer.</span>
+    <a class="qeco-node qeco-casa" href="/qcasa">
+      <div class="qeco-icon qeco-green">⌂</div>
+      <div>
+        <h2><em>Q</em>CASA</h2>
+        <p>Marketplace inmobiliario.</p>
+        <span class="qeco-arrow">→</span>
+      </div>
+    </a>
+
+    <article class="qeco-node qeco-opportunities" tabindex="0">
+      <div class="qeco-icon">◎</div>
+      <div>
+        <h2>Nuevas oportunidades</h2>
+        <p>Creamos soluciones que abren caminos y generan valor real.</p>
+      </div>
+    </article>
+
+    <span class="qeco-line line-ideas" aria-hidden="true"></span>
+    <span class="qeco-line line-propiedades" aria-hidden="true"></span>
+    <span class="qeco-line line-tech" aria-hidden="true"></span>
+    <span class="qeco-line line-talk" aria-hidden="true"></span>
+    <span class="qeco-line line-casa" aria-hidden="true"></span>
+    <span class="qeco-line line-opportunities" aria-hidden="true"></span>
+  </section>
+
+  <footer class="qeco-footer">
+    <div class="qeco-footer-brand"><span>Q</span><p>Creamos ecosistemas que impulsan<br>negocios y personas.</p></div>
+    <small>© 2026 Ecosistema Q. Todos los derechos reservados.</small>
   </footer>
-</div>
+</main>
 {% endblock %}
