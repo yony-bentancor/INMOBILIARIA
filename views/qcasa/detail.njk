@@ -3,7 +3,10 @@
 <main class="qc-detail">
   <a class="qc-back" href="/qcasa/buscar">← Volver a propiedades</a>
   <section class="qc-detail-grid">
-    <div class="qc-detail-photo qc-tone-{{ property.tone }}"><span>{{ property.category }}</span><b>QCASA</b></div>
+    <div class="qc-detail-photo qc-tone-{{ property.tone }}" style="position:relative;overflow:hidden;">
+      <img src="{{ property.image }}" alt="{{ property.title }}" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
+      <span>{{ property.category }}</span><b>QCASA</b>
+    </div>
     <div class="qc-detail-info">
       <span class="qc-kicker">{{ property.operation }} · {{ property.department }}</span>
       <h1>{{ property.title }}</h1>
