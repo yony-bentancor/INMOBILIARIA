@@ -11,7 +11,7 @@ const data = JSON.parse(raw);
 // trabaja con una selección representativa de aproximadamente la mitad.
 const TARGET_PROPERTY_COUNT = 42;
 
-const relationCode = item => item && (
+const relationKey = item => item && (
   item.propertyCode ||
   item.code ||
   item.property?.code ||
@@ -27,9 +27,11 @@ function selectDemoProperties(allProperties = []) {
   if (allProperties.length <= TARGET_PROPERTY_COUNT) return [...allProperties];
 
   const byCode = new Map(allProperties.map(p => [p.code, p]));
+  const byId = new Map(allProperties.map(p => [p.id, p]));
   const keep = new Set();
-  const add = code => {
-    if (code && byCode.has(code)) keep.add(code);
+  const add = key => {
+    const property = byCode.get(key) || byId.get(key);
+    if (property?.code) keep.add(property.code);
   };
 
   // Conservamos todos los inmuebles vacíos para demostrar disponibilidad y alta de alquiler.
@@ -57,10 +59,10 @@ function selectDemoProperties(allProperties = []) {
 
   // Conservamos casos vinculados a reclamos, alertas, documentos, historial y pagos problemáticos.
   ['complaints', 'alerts', 'documents', 'audit'].forEach(key => {
-    (data[key] || []).forEach(item => add(relationCode(item)));
+    (data[key] || []).forEach(item => add(relationKey(item)));
   });
   (data.payments || []).forEach(item => {
-    if (String(item.status || '').toLowerCase() !== 'pagado') add(relationCode(item));
+    if (String(item.status || '').toLowerCase() !== 'pagado') add(relationKey(item));
   });
 
   // Completa la muestra de forma repartida en todo el dataset para evitar que queden
@@ -105,10 +107,14 @@ properties.forEach((property, index) => {
   else property.photos.push({ id: `demo-photo-${property.code}`, label: 'Fachada', url: photo, kind: 'image' });
 });
 
-const selectedCodes = new Set(properties.map(p => p.code));
+const selectedKeys = new Set();
+properties.forEach(p => {
+  if (p.code) selectedKeys.add(p.code);
+  if (p.id) selectedKeys.add(p.id);
+});
 const filterRelated = items => (items || []).filter(item => {
-  const code = relationCode(item);
-  return !code || selectedCodes.has(code);
+  const key = relationKey(item);
+  return !key || selectedKeys.has(key);
 });
 
 // Se exportan referencias mutables para que el CRUD demo siga funcionando en memoria.
