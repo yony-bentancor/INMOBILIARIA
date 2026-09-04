@@ -15,6 +15,26 @@ const properties=[
   {id:'QC-6002',slug:'industrial-ruta-5-alquiler',title:'Depósito logístico Ruta 5',category:'Industrial',operation:'Alquiler',department:'Montevideo',city:'La Tablada',price:7800,currency:'USD',bedrooms:0,bathrooms:3,area:1750,featured:false,status:'Publicada',summary:'Depósito con gran altura, docks y acceso para camiones.',tone:'industrial',contact:'099 700 602'}
 ];
 
+const PHOTO_URLS=[
+  'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=78',
+  'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1400&q=78',
+  'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1400&q=78',
+  'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=78',
+  'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1400&q=78',
+  'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=78',
+  'https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?auto=format&fit=crop&w=1400&q=78',
+  'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1400&q=78',
+  'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1400&q=78',
+  'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=78',
+  'https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1400&q=78',
+  'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=1400&q=78'
+];
+
+properties.forEach((property,index)=>{
+  property.image=PHOTO_URLS[index%PHOTO_URLS.length];
+  property.images=[property.image];
+});
+
 const inquiries=[];
 const admin={email:'admin@qcasa.uy',password:'qcasa123',name:'Administrador QCASA'};
 

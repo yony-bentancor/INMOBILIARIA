@@ -16,8 +16,7 @@
         {% for c in categories %}<a href="/qcasa/buscar?category={{ c | urlencode }}">{{ c }}</a>{% endfor %}
       </div>
     </div>
-    <div class="qc-hero-visual">
-      <div class="qc-house"><span></span><i></i><b></b></div>
+    <div class="qc-hero-visual qc-hero-photo" style="background-image:linear-gradient(180deg,rgba(10,40,31,.05),rgba(10,40,31,.45)),url('{{ featured[0].image }}');background-size:cover;background-position:center;">
       <div class="qc-feature-chip"><small>PROPIEDAD DESTACADA</small><strong>{{ featured[0].title }}</strong><span>{{ featured[0].operation }} · {{ money(featured[0]) }}</span></div>
     </div>
   </section>
@@ -27,7 +26,10 @@
     <div class="qc-card-grid">
       {% for p in featured %}
       <a class="qc-property-card" href="/qcasa/propiedad/{{ p.slug }}">
-        <div class="qc-property-photo qc-tone-{{ p.tone }}"><span>{{ p.category }}</span></div>
+        <div class="qc-property-photo qc-tone-{{ p.tone }}" style="position:relative;overflow:hidden;">
+          <img src="{{ p.image }}" alt="{{ p.title }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
+          <span>{{ p.category }}</span>
+        </div>
         <div class="qc-property-body"><small>{{ p.operation }} · {{ p.department }}</small><h3>{{ p.title }}</h3><strong>{{ money(p) }}</strong><p>{{ p.city }} · {{ p.area | int }} m²{% if p.bedrooms %} · {{ p.bedrooms }} dorm.{% endif %}</p></div>
       </a>
       {% endfor %}

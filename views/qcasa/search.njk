@@ -17,7 +17,10 @@
     <div class="qc-card-grid">
       {% for p in results %}
       <a class="qc-property-card" href="/qcasa/propiedad/{{ p.slug }}">
-        <div class="qc-property-photo qc-tone-{{ p.tone }}"><span>{{ p.category }}</span></div>
+        <div class="qc-property-photo qc-tone-{{ p.tone }}" style="position:relative;overflow:hidden;">
+          <img src="{{ p.image }}" alt="{{ p.title }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
+          <span>{{ p.category }}</span>
+        </div>
         <div class="qc-property-body"><small>{{ p.operation }} · {{ p.department }}</small><h3>{{ p.title }}</h3><strong>{{ money(p) }}</strong><p>{{ p.city }} · {{ p.area | int }} m²{% if p.bedrooms %} · {{ p.bedrooms }} dorm.{% endif %}</p></div>
       </a>
       {% else %}<div class="qc-empty">No encontramos propiedades con esos filtros.</div>{% endfor %}
