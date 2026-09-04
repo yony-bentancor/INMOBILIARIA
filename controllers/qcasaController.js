@@ -2,6 +2,14 @@ const store=require('../data/qcasaMarketplaceStore');
 
 const money=p=>`${p.currency} ${Number(p.price||0).toLocaleString('es-UY')}`;
 const publicProperties=()=>store.properties.filter(p=>p.status==='Publicada');
+const demoPhotoByCategory={
+  Casa:'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=78',
+  Local:'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1400&q=78',
+  Apartamento:'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1400&q=78',
+  Chacra:'https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?auto=format&fit=crop&w=1400&q=78',
+  Campo:'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1400&q=78',
+  Industrial:'https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1400&q=78'
+};
 
 exports.home=(req,res)=>{
   const featured=publicProperties().filter(p=>p.featured).slice(0,4);
@@ -101,7 +109,8 @@ exports.adminCreate=(req,res)=>{
   const data=formPayload(req);
   const id=store.nextId();
   const slug=`${store.slugify(data.title)}-${id.toLowerCase()}`;
-  store.properties.unshift({id,slug,status:'Publicada',...data});
+  const image=demoPhotoByCategory[data.category]||demoPhotoByCategory.Casa;
+  store.properties.unshift({id,slug,status:'Publicada',image,images:[image],...data});
   res.redirect('/qcasa/admin');
 };
 exports.adminEditForm=(req,res)=>{
@@ -112,7 +121,12 @@ exports.adminEditForm=(req,res)=>{
 exports.adminUpdate=(req,res)=>{
   const property=store.findById(req.params.id);
   if(!property)return res.status(404).send('Propiedad no encontrada.');
-  Object.assign(property,formPayload(req));
+  const data=formPayload(req);
+  Object.assign(property,data);
+  if(!property.image){
+    property.image=demoPhotoByCategory[data.category]||demoPhotoByCategory.Casa;
+    property.images=[property.image];
+  }
   res.redirect('/qcasa/admin');
 };
 exports.adminTogglePublish=(req,res)=>{
