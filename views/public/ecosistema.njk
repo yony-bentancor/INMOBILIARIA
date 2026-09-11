@@ -1,83 +1,87 @@
 {% extends 'layouts/base.njk' %}
 {% block body %}
-<link rel="stylesheet" href="/css/ecosistema.css">
+  <link rel="stylesheet" href="/css/ecosistema.css">
 
-<main class="qeco">
-  <nav class="qeco-nav" aria-label="Navegación principal">
-    <a href="#ecosistema" class="active">Ecosistema</a>
-    <a href="#hablemos">Hablemos</a>
-  </nav>
+  <main class="qeco">
+    <nav class="qeco-nav" aria-label="Navegación principal">
+      <a href="#ecosistema" class="active">Ecosistema</a>
+      <a href="#hablemos">Hablemos</a>
+    </nav>
 
-  <section class="qeco-universe" id="ecosistema" aria-label="Ecosistema Q">
-    <div class="qeco-center">
-      <div class="qeco-qmark" aria-hidden="true">Q</div>
-      <div class="qeco-center-copy">
-        <strong>ECOSISTEMA</strong>
-        <span>TECNOLOGÍA QUE CONECTA</span>
+    <section class="qeco-universe" id="ecosistema" aria-label="Ecosistema Q">
+      <div class="qeco-center">
+        <div class="qeco-qmark" aria-hidden="true">Q</div>
+        <div class="qeco-center-copy">
+          <strong>ESTUDIO</strong>
+          <span></span>
+        </div>
       </div>
-    </div>
 
-    <article class="qeco-node qeco-ideas" tabindex="0">
-      <div class="qeco-icon">✦</div>
-      <div>
+      <article class="qeco-node qeco-ideas" tabindex="0">
+        {#  <div class="qeco-icon">✦</div> #}
+        {#   <div>
         <h2>Conectamos ideas</h2>
         <p>Escuchamos, entendemos y transformamos ideas en soluciones reales.</p>
-      </div>
-    </article>
+      </div> #}
+      </article>
 
-    <a class="qeco-node qeco-propiedades" href="/qpropiedades">
-      <div class="qeco-icon qeco-orange">⌂</div>
-      <div>
-        <h2><em>Q</em>PROPIEDADES</h2>
-        <p>Gestión integral de propiedades.</p>
-        <span class="qeco-arrow">→</span>
-      </div>
-    </a>
+      <a class="qeco-node qeco-propiedades" href="/qpropiedades">
+        <div class="qeco-icon qeco-orange">⌂</div>
+        <div>
+          <h2>
+            <em>Q</em>PROPIEDADES</h2>
+          <p>Gestión integral de propiedades.</p>
+          <span class="qeco-arrow">→</span>
+        </div>
+      </a>
 
-    <article class="qeco-node qeco-tech" tabindex="0">
-      <div class="qeco-icon">◎</div>
+      <article class="qeco-node qeco-tech" tabindex="0">
+        {#   <div class="qeco-icon">◎</div>
       <div>
         <h2>Tecnología que impulsa</h2>
         <p>Desarrollamos ecosistemas digitales a medida para simplificar la gestión y conectar personas.</p>
-      </div>
-    </article>
+      </div> #}
+      </article>
 
-    <a class="qeco-node qeco-talk" id="hablemos" href="mailto:hola@ecosistemaq.uy?subject=Quiero%20contarte%20una%20idea">
-      <div class="qeco-icon">◌</div>
+      <a class="qeco-node qeco-talk" id="hablemos" href="mailto:hola@ecosistemaq.uy?subject=Quiero%20contarte%20una%20idea">
+        {#<div class="qeco-icon">◌</div>
       <div>
         <h2>Hablemos</h2>
         <p>Contanos tu idea y exploremos juntos cómo hacerla realidad.</p>
-      </div>
-    </a>
+      </div> #}
+      </a>
 
-    <a class="qeco-node qeco-casa" href="/qcasa">
-      <div class="qeco-icon qeco-green">⌂</div>
+      <a class="qeco-node qeco-casa" href="/qcasa">
+        {# <div class="qeco-icon qeco-green">⌂</div>
       <div>
         <h2><em>Q</em>CASA</h2>
         <p>Marketplace inmobiliario.</p>
         <span class="qeco-arrow">→</span>
-      </div>
-    </a>
+      </div> #}
+      </a>
 
-    <article class="qeco-node qeco-opportunities" tabindex="0">
+      {#  <article class="qeco-node qeco-opportunities" tabindex="0">
       <div class="qeco-icon">◎</div>
       <div>
         <h2>Nuevas oportunidades</h2>
         <p>Creamos soluciones que abren caminos y generan valor real.</p>
       </div>
     </article>
+ #}
+      <span class="qeco-line line-ideas" aria-hidden="true"></span>
+      <span class="qeco-line line-propiedades" aria-hidden="true"></span>
+      <span class="qeco-line line-tech" aria-hidden="true"></span>
+      <span class="qeco-line line-talk" aria-hidden="true"></span>
+      <span class="qeco-line line-casa" aria-hidden="true"></span>
+      <span class="qeco-line line-opportunities" aria-hidden="true"></span>
+    </section>
 
-    <span class="qeco-line line-ideas" aria-hidden="true"></span>
-    <span class="qeco-line line-propiedades" aria-hidden="true"></span>
-    <span class="qeco-line line-tech" aria-hidden="true"></span>
-    <span class="qeco-line line-talk" aria-hidden="true"></span>
-    <span class="qeco-line line-casa" aria-hidden="true"></span>
-    <span class="qeco-line line-opportunities" aria-hidden="true"></span>
-  </section>
-
-  <footer class="qeco-footer">
-    <div class="qeco-footer-brand"><span>Q</span><p>Creamos ecosistemas que impulsan<br>negocios y personas.</p></div>
-    <small>© 2026 Ecosistema Q. Todos los derechos reservados.</small>
-  </footer>
-</main>
+    <footer class="qeco-footer">
+      <div class="qeco-footer-brand">
+        <span>Q</span>
+        <p>Creamos ecosistemas que impulsan<br>negocios y personas.</p>
+      </div>
+      <small>© 2026 Ecosistema Q. Todos los derechos reservados.</small>
+    </footer>
+  </main>
 {% endblock %}
