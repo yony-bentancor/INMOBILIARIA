@@ -29,7 +29,7 @@ body{overflow-x:hidden}
 .eqr-brand{
   text-decoration:none;color:#0d0d0d;
   display:flex;gap:9px;align-items:baseline;
-  font-size:21px;font-weight:800;letter-spacing:.28em;
+  font-size:25px;font-weight:800;letter-spacing:.28em;
   white-space:nowrap
 }
 .eqr-brand strong{color:var(--gold);font-weight:600;font-size:1.13em;letter-spacing:.04em}
@@ -38,10 +38,18 @@ body{overflow-x:hidden}
   display:grid;gap:2px;
   font-size:8px;line-height:1.15;letter-spacing:.22em
 }
-.eqr-nav{margin-left:auto;display:flex;gap:42px;padding-top:7px}
-.eqr-nav a{color:#333;text-decoration:none;font-size:10px;letter-spacing:.15em;position:relative}
-.eqr-nav a:after{content:"";position:absolute;left:0;right:100%;bottom:-7px;height:1px;background:#111;transition:.25s}
-.eqr-nav a:hover:after{right:0}
+.eqr-nav{margin-left:auto;display:flex;gap:42px;padding-top:7px;align-items:center}
+.eqr-nav a,.eqr-nav-link{
+  color:#333;text-decoration:none;font-size:10px;letter-spacing:.15em;position:relative;
+  font-family:inherit
+}
+.eqr-nav-link{
+  appearance:none;border:0;background:transparent;padding:0;cursor:pointer
+}
+.eqr-nav a:after,.eqr-nav-link:after{
+  content:"";position:absolute;left:0;right:100%;bottom:-7px;height:1px;background:#111;transition:.25s
+}
+.eqr-nav a:hover:after,.eqr-nav-link:hover:after{right:0}
 .eqr-menu{
   margin-left:42px;width:30px;height:25px;border:0;background:transparent;padding:3px 0;
   display:grid;gap:4px;align-content:center;cursor:pointer
@@ -179,8 +187,73 @@ body{overflow-x:hidden}
   font-size:9px;letter-spacing:.15em;z-index:20
 }
 .eqr-place{display:flex;gap:18px;align-items:stretch;line-height:1.5}
-.eqr-place i,.eqr-explore i{width:1px;background:#222}
-.eqr-explore{display:flex;gap:18px;align-items:stretch;text-align:right;line-height:1.4}
+.eqr-place i{width:1px;background:#222}
+
+/* WhatsApp integrado a la paleta */
+.eqr-whatsapp{
+  width:42px;height:42px;display:grid;place-items:center;text-decoration:none;
+  transition:transform .25s ease,opacity .25s ease
+}
+.eqr-whatsapp svg{width:28px;height:28px;fill:var(--gold)}
+.eqr-whatsapp:hover{transform:translateY(-3px);opacity:.72}
+
+/* Modal contacto */
+.eqr-modal{
+  position:fixed;inset:0;z-index:100;
+  display:grid;place-items:center;
+  padding:24px;
+  opacity:0;visibility:hidden;
+  transition:opacity .28s ease,visibility .28s ease
+}
+.eqr-modal.is-open{opacity:1;visibility:visible}
+.eqr-modal-backdrop{
+  position:absolute;inset:0;border:0;background:rgba(8,8,8,.42);
+  backdrop-filter:blur(6px);cursor:pointer
+}
+.eqr-modal-card{
+  width:min(760px,100%);
+  position:relative;z-index:2;
+  background:var(--bg);
+  border:1px solid rgba(8,8,8,.12);
+  box-shadow:0 28px 80px rgba(0,0,0,.18);
+  padding:48px;
+  display:grid;
+  grid-template-columns:.75fr 1.25fr;
+  gap:48px;
+  transform:translateY(14px) scale(.985);
+  transition:transform .28s ease
+}
+.eqr-modal.is-open .eqr-modal-card{transform:translateY(0) scale(1)}
+.eqr-modal-close{
+  position:absolute;top:15px;right:18px;border:0;background:transparent;
+  color:#222;font:300 28px/1 Arial,Helvetica,sans-serif;cursor:pointer
+}
+.eqr-modal-copy>span{font-size:8px;letter-spacing:.22em;color:#96928c}
+.eqr-modal-copy h2{
+  margin:16px 0 12px;font-size:clamp(34px,4vw,52px);line-height:.96;
+  letter-spacing:-.05em
+}
+.eqr-modal-copy p{margin:0;color:#96928c;font-size:12px;line-height:1.55}
+
+.eqr-contact-form{display:grid;grid-template-columns:1fr 1fr;gap:24px 18px}
+.eqr-field{display:grid;gap:8px}
+.eqr-field-wide{grid-column:1/-1}
+.eqr-field label{font-size:8px;letter-spacing:.18em;color:#77716b}
+.eqr-field input,.eqr-field textarea{
+  width:100%;border:0;border-bottom:1px solid #aaa39b;background:transparent;
+  border-radius:0;padding:9px 0;font:14px Arial,Helvetica,sans-serif;color:#111;outline:none
+}
+.eqr-field textarea{resize:vertical;min-height:80px}
+.eqr-field input:focus,.eqr-field textarea:focus{border-bottom-color:var(--gold)}
+.eqr-send{
+  grid-column:1/-1;justify-self:start;
+  border:1px solid #77716b;border-radius:7px;background:transparent;
+  padding:14px 20px;font-size:9px;font-weight:700;letter-spacing:.16em;
+  cursor:pointer;display:flex;align-items:center;gap:42px;transition:.25s ease
+}
+.eqr-send span{font-size:18px;font-weight:400}
+.eqr-send:hover{background:#0b0b0b;color:#fff;border-color:#0b0b0b;transform:translateY(-2px)}
+body.eqr-modal-open{overflow:hidden}
 
 /* TABLET */
 @media(max-width:1180px){
@@ -201,7 +274,7 @@ body{overflow-x:hidden}
 @media(max-width:680px){
   .eqr{overflow:visible}
   .eqr-header{height:86px;padding:25px 20px 0}
-  .eqr-brand{font-size:17px}
+  .eqr-brand{font-size:19px}
   .eqr-mini{display:none}
   .eqr-menu{width:27px}
   .eqr-main{
@@ -269,66 +342,21 @@ body{overflow-x:hidden}
     left:auto;right:auto;bottom:auto;
     margin:0;padding:10px 20px 25px
   }
+
+  .eqr-modal{padding:14px}
+  .eqr-modal-card{
+    padding:38px 24px 26px;
+    grid-template-columns:1fr;
+    gap:28px;
+    max-height:92vh;
+    overflow:auto
+  }
+  .eqr-contact-form{grid-template-columns:1fr;gap:20px}
+  .eqr-field-wide,.eqr-send{grid-column:1}
+  .eqr-whatsapp{width:38px;height:38px}
+  .eqr-whatsapp svg{width:25px;height:25px}
 }
 
 @media(prefers-reduced-motion:reduce){
-  .eqr-stage,.eqr-px,.eqr-projects a,.eqr-projects a b{transition:none!important}
-}
-/* ESTUDIO QR - ajustes 14/09/2026
-   Agregar al FINAL del ecosistema.css actual.
-   No elimina estilos/animaciones existentes. */
-
-.eqr-brand{font-size:25px}
-.eqr-brand strong{font-size:1.13em}
-
-/* Contacto */
-.eqr-contact{
-  margin:0 5.3vw 105px;
-  padding:70px 0 0;
-  border-top:1px solid rgba(8,8,8,.14);
-  display:grid;
-  grid-template-columns:minmax(260px,.75fr) minmax(420px,1.25fr);
-  gap:8vw;
-  position:relative;
-  z-index:3
-}
-.eqr-contact-copy>span{font-size:9px;letter-spacing:.22em;color:#96928c}
-.eqr-contact-copy h2{font-size:clamp(34px,3.2vw,54px);letter-spacing:-.045em;margin:16px 0 10px;line-height:1}
-.eqr-contact-copy p{color:#96928c;font-size:12px;letter-spacing:.05em}
-.eqr-contact-form{display:grid;grid-template-columns:1fr 1fr;gap:28px 22px}
-.eqr-field{display:grid;gap:9px}
-.eqr-field-wide{grid-column:1/-1}
-.eqr-field label{font-size:8px;letter-spacing:.18em;color:#77716b}
-.eqr-field input,.eqr-field textarea{
-  width:100%;border:0;border-bottom:1px solid #aaa39b;background:transparent;
-  border-radius:0;padding:9px 0;font:14px Arial,Helvetica,sans-serif;color:#111;outline:none
-}
-.eqr-field textarea{resize:vertical;min-height:75px}
-.eqr-field input:focus,.eqr-field textarea:focus{border-bottom-color:#b58955}
-.eqr-contact-form button{
-  grid-column:1/-1;justify-self:start;border:1px solid #77716b;border-radius:7px;
-  background:transparent;padding:16px 22px;font-size:9px;font-weight:700;letter-spacing:.16em;
-  cursor:pointer;display:flex;gap:45px;align-items:center;transition:.25s
-}
-.eqr-contact-form button span{font-size:17px;font-weight:400}
-.eqr-contact-form button:hover{background:#0b0b0b;color:#fff;border-color:#0b0b0b;transform:translateY(-2px)}
-
-/* WhatsApp: sólo icono y en la paleta de Estudio QR */
-.eqr-whatsapp{
-  width:39px;height:39px;display:grid;place-items:center;text-decoration:none;
-  transition:transform .25s ease,opacity .25s ease
-}
-.eqr-whatsapp svg{width:27px;height:27px;fill:#b58955}
-.eqr-whatsapp:hover{transform:translateY(-3px);opacity:.72}
-
-@media(max-width:1180px){
-  .eqr-contact{margin:30px 30px 90px;padding-top:55px}
-}
-@media(max-width:680px){
-  .eqr-brand{font-size:19px}
-  .eqr-contact{margin:0 20px 60px;padding-top:45px;grid-template-columns:1fr;gap:35px}
-  .eqr-contact-form{grid-template-columns:1fr;gap:23px}
-  .eqr-field-wide,.eqr-contact-form button{grid-column:1}
-  .eqr-whatsapp{width:36px;height:36px}
-  .eqr-whatsapp svg{width:25px;height:25px}
+  .eqr-stage,.eqr-px,.eqr-projects a,.eqr-projects a b,.eqr-modal,.eqr-modal-card,.eqr-whatsapp{transition:none!important}
 }
