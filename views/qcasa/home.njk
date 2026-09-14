@@ -1,51 +1,202 @@
 {% extends 'qcasa/layout.njk' %}
 {% block qcbody %}
-<main class="qc-colonia-home">
-  <section class="qc-hero qc-colonia-hero">
-    <div class="qc-hero-copy">
-      <span class="qc-kicker">INMOBILIARIA EN COLONIA DEL SACRAMENTO</span>
-      <h1>Tu lugar en<br><em>Colonia.</em></h1>
-      <p>Casas, apartamentos, terrenos, chacras, campos y locales para vivir, invertir o comenzar una nueva etapa en Colonia.</p>
-      <form class="qc-searchbar" action="/qcasa/buscar" method="get">
-        <select name="operation"><option value="">Comprar o alquilar</option><option>Venta</option><option>Alquiler</option></select>
-        <select name="category"><option value="">Tipo de propiedad</option>{% for c in categories %}<option>{{ c }}</option>{% endfor %}</select>
-        <input name="q" placeholder="Zona, barrio o palabra clave">
-        <button>Buscar</button>
-      </form>
-      <div class="qc-shortcuts">{% for c in categories %}<a href="/qcasa/buscar?category={{ c | urlencode }}">{{ c }}</a>{% endfor %}</div>
-    </div>
-    <div class="qc-hero-visual qc-colonia-hero-photo" style="background-image:linear-gradient(180deg,rgba(5,30,26,.06),rgba(5,30,26,.38)),url('https://commons.wikimedia.org/wiki/Special:FilePath/Uruguay%20-%20Colonia%20del%20Sacramento%2001.jpg?width=1800');">
-      <div class="qc-colonia-location"><small>QCASA COLONIA</small><strong>Colonia del Sacramento</strong><span>Uruguay</span></div>
+<link rel="stylesheet" href="/css/qcasa-home-v2.css">
+
+<main class="qc-colonia-home qc-home-v2">
+
+  <section class="qc-hero qc-colonia-hero qc-v2-hero">
+    <div class="qc-v2-hero-photo"
+      style="background-image:
+        linear-gradient(90deg,rgba(3,23,20,.86) 0%,rgba(3,23,20,.72) 38%,rgba(3,23,20,.18) 68%,rgba(3,23,20,.10) 100%),
+        url('https://commons.wikimedia.org/wiki/Special:FilePath/Uruguay%20-%20Colonia%20del%20Sacramento%2001.jpg?width=1800');">
+
+      <div class="qc-hero-copy qc-v2-copy">
+        <span class="qc-kicker">INMOBILIARIA EN COLONIA DEL SACRAMENTO</span>
+
+        <h1>Tu lugar en<br><em>Colonia.</em></h1>
+
+        <p>
+          Casas, apartamentos, terrenos, chacras, campos y locales para vivir,
+          invertir o comenzar una nueva etapa en Colonia.
+        </p>
+
+        <form class="qc-searchbar qc-v2-search" action="/qcasa/buscar" method="get">
+          <select name="operation">
+            <option value="">Comprar o alquilar</option>
+            <option>Venta</option>
+            <option>Alquiler</option>
+          </select>
+
+          <select name="category">
+            <option value="">Tipo de propiedad</option>
+            {% for c in categories %}
+              <option>{{ c }}</option>
+            {% endfor %}
+          </select>
+
+          <input name="q" placeholder="Zona, barrio o palabra clave">
+          <button>Buscar</button>
+        </form>
+
+        <div class="qc-shortcuts qc-v2-shortcuts">
+          {% for c in categories %}
+            <a href="/qcasa/buscar?category={{ c | urlencode }}">{{ c }}</a>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="qc-v2-slogan" aria-hidden="true">
+        <span>Historia,</span>
+        <span>naturaleza</span>
+        <span>y nuevas historias</span>
+      </div>
+
+      <div class="qc-colonia-location qc-v2-location">
+        <small>QCASA COLONIA</small>
+        <strong>Colonia del Sacramento</strong>
+        <span>Uruguay</span>
+      </div>
     </div>
   </section>
-  <section class="qc-colonia-values">
-    <article><b>Conocemos Colonia</b><span>Una propuesta local y cercana.</span></article>
-    <article><b>Compra, venta y alquiler</b><span>Todo el proceso desde un mismo lugar.</span></article>
-    <article><b>Información clara</b><span>Datos y seguimiento de cada consulta.</span></article>
-    <article><b>Soluciones para propietarios</b><span>Conexión con QPROPIEDADES para administrar.</span></article>
+
+  <section class="qc-colonia-values qc-v2-values">
+    <article>
+      <i>⌖</i>
+      <div><b>Conocemos Colonia</b><span>Una propuesta local y cercana.</span></div>
+    </article>
+    <article>
+      <i>◇</i>
+      <div><b>Compra, venta y alquiler</b><span>Todo el proceso desde un mismo lugar.</span></div>
+    </article>
+    <article>
+      <i>▤</i>
+      <div><b>Información clara</b><span>Datos y seguimiento de cada consulta.</span></div>
+    </article>
+    <article>
+      <i>◎</i>
+      <div><b>Soluciones para propietarios</b><span>Conexión con QPROPIEDADES para administrar.</span></div>
+    </article>
   </section>
-  <section class="qc-section qc-colonia-featured">
-    <div class="qc-section-head"><div><span class="qc-kicker">SELECCIÓN QCASA COLONIA</span><h2>Propiedades destacadas en Colonia</h2><p class="qc-colonia-demo-note">Contenido de ejemplo para visualizar el funcionamiento hasta incorporar propiedades reales.</p></div><a href="/qcasa/buscar">Ver todas →</a></div>
-    <div class="qc-card-grid">
+
+  <section class="qc-section qc-colonia-featured qc-v2-featured">
+    <div class="qc-section-head">
+      <div>
+        <span class="qc-kicker">SELECCIÓN QCASA COLONIA</span>
+        <h2>Propiedades destacadas en Colonia</h2>
+        <p class="qc-colonia-demo-note">
+          Contenido de ejemplo para visualizar el funcionamiento hasta incorporar propiedades reales.
+        </p>
+      </div>
+      <a class="qc-v2-see-all" href="/qcasa/buscar">Ver todas →</a>
+    </div>
+
+    <div class="qc-card-grid qc-v2-card-grid">
       {% for p in featured %}
-      <a class="qc-property-card" href="/qcasa/propiedad/{{ p.slug }}">
-        <div class="qc-property-photo qc-tone-{{ p.tone }}" style="position:relative;overflow:hidden;"><img src="{{ p.image }}" alt="{{ p.title }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'"><span>{{ p.operation }}</span></div>
-        <div class="qc-property-body"><small>{{ p.category }} · {{ p.department }}</small><h3>{{ p.title }}</h3><strong>{{ money(p) }}</strong><p>{{ p.city }} · {{ p.area | int }} m²{% if p.bedrooms %} · {{ p.bedrooms }} dorm.{% endif %}</p></div>
-      </a>{% endfor %}
+      <a class="qc-property-card qc-v2-card" href="/qcasa/propiedad/{{ p.slug }}">
+        <div class="qc-property-photo qc-tone-{{ p.tone }}" style="position:relative;overflow:hidden;">
+          <img
+            src="{{ p.image }}"
+            alt="{{ p.title }}"
+            loading="lazy"
+            style="width:100%;height:100%;object-fit:cover;display:block;"
+            onerror="this.style.display='none'">
+          <span>{{ p.operation }}</span>
+        </div>
+
+        <div class="qc-property-body">
+          <small>{{ p.category }} · {{ p.department }}</small>
+          <h3>{{ p.title }}</h3>
+          <strong>{{ money(p) }}</strong>
+          <p>
+            {{ p.city }} · {{ p.area | int }} m²
+            {% if p.bedrooms %} · {{ p.bedrooms }} dorm.{% endif %}
+          </p>
+        </div>
+      </a>
+      {% endfor %}
     </div>
   </section>
-  <section class="qc-colonia-zones">
-    <div class="qc-colonia-zones-head"><span class="qc-kicker">EXPLORÁ COLONIA</span><h2>Buscá por zona</h2><p>Empezamos por Colonia del Sacramento y alrededores, con una estructura preparada para crecer hacia todo el departamento.</p></div>
-    <div class="qc-colonia-zone-grid">
-      <a href="/qcasa/buscar?q=Barrio%20Histórico" class="qc-zone-card" style="background-image:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.58)),url('https://commons.wikimedia.org/wiki/Special:FilePath/ColoniaDelSacramentoCalleDeLosSuspiros2013.JPG?width=1200');"><b>Barrio Histórico</b><small>Casas y oportunidades con identidad única</small></a>
-      <a href="/qcasa/buscar?q=Rambla" class="qc-zone-card" style="background-image:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.58)),url('https://commons.wikimedia.org/wiki/Special:FilePath/Colonia%20del%20Sacramento%20Uruguay.jpg?width=1200');"><b>Rambla y costa</b><small>Apartamentos y propiedades próximas al río</small></a>
-      <a href="/qcasa/buscar?q=Real%20de%20San%20Carlos" class="qc-zone-card" style="background-image:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.58)),url('https://commons.wikimedia.org/wiki/Special:FilePath/Colonia%20del%20Sacramento%20-%20Lighthouse.jpg?width=1200');"><b>Real de San Carlos</b><small>Residencial, terrenos y expansión</small></a>
-      <a href="/qcasa/buscar?q=El%20General" class="qc-zone-card" style="background-image:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.58)),url('https://commons.wikimedia.org/wiki/Special:FilePath/Colonia-Lighthouse-FranciscanConvent.jpg?width=1200');"><b>El General y alrededores</b><small>Casas, terrenos y chacras</small></a>
-      <a href="/qcasa/buscar?department=Colonia" class="qc-zone-card" style="background-image:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.58)),url('https://commons.wikimedia.org/wiki/Special:FilePath/Calle%20De%20Los%20Suspiros%2C%20Colonia%20del%20Sacramento.jpg?width=1200');"><b>Departamento de Colonia</b><small>Carmelo, Rosario, Nueva Helvecia y más</small></a>
+
+  <section class="qc-colonia-zones qc-v2-zones">
+    <div class="qc-colonia-zones-head">
+      <span class="qc-kicker">EXPLORÁ COLONIA</span>
+      <h2>Buscá por zona</h2>
+      <p>
+        Empezamos por Colonia del Sacramento y alrededores, con una estructura
+        preparada para crecer hacia todo el departamento.
+      </p>
+    </div>
+
+    <div class="qc-colonia-zone-grid qc-v2-zone-grid">
+      <a href="/qcasa/buscar?q=Barrio%20Histórico"
+         class="qc-zone-card"
+         style="background-image:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.60)),url('https://commons.wikimedia.org/wiki/Special:FilePath/ColoniaDelSacramentoCalleDeLosSuspiros2013.JPG?width=1200');">
+        <b>Barrio Histórico</b>
+        <small>Casas y oportunidades con identidad única</small>
+      </a>
+
+      <a href="/qcasa/buscar?q=Rambla"
+         class="qc-zone-card"
+         style="background-image:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.60)),url('https://commons.wikimedia.org/wiki/Special:FilePath/Colonia%20del%20Sacramento%20Uruguay.jpg?width=1200');">
+        <b>Rambla y costa</b>
+        <small>Apartamentos y propiedades próximas al río</small>
+      </a>
+
+      <a href="/qcasa/buscar?q=Real%20de%20San%20Carlos"
+         class="qc-zone-card"
+         style="background-image:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.60)),url('https://commons.wikimedia.org/wiki/Special:FilePath/Colonia%20del%20Sacramento%20-%20Lighthouse.jpg?width=1200');">
+        <b>Real de San Carlos</b>
+        <small>Residencial, terrenos y expansión</small>
+      </a>
+
+      <a href="/qcasa/buscar?q=El%20General"
+         class="qc-zone-card"
+         style="background-image:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.60)),url('https://commons.wikimedia.org/wiki/Special:FilePath/Colonia-Lighthouse-FranciscanConvent.jpg?width=1200');">
+        <b>El General y alrededores</b>
+        <small>Casas, terrenos y chacras</small>
+      </a>
+
+      <a href="/qcasa/buscar?department=Colonia"
+         class="qc-zone-card"
+         style="background-image:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.60)),url('https://commons.wikimedia.org/wiki/Special:FilePath/Calle%20De%20Los%20Suspiros%2C%20Colonia%20del%20Sacramento.jpg?width=1200');">
+        <b>Departamento de Colonia</b>
+        <small>Carmelo, Rosario, Nueva Helvecia y más</small>
+      </a>
     </div>
   </section>
-  <section class="qc-colonia-owner"><div><span class="qc-kicker">PROPIETARIOS</span><h2>¿Tenés una propiedad en Colonia?</h2><p>Publicala en QCASA y centralizá consultas. Si además la administrás, podés continuar su gestión en QPROPIEDADES.</p></div><div class="qc-colonia-owner-actions"><a class="qc-colonia-primary" href="/qcasa/ingresar">Publicar propiedad</a><a class="qc-colonia-secondary" href="/qcasa/buscar">Ver propiedades</a></div></section>
-  <section class="qc-connect"><div><span class="qc-kicker">QCASA + QPROPIEDADES</span><h2>Publicá acá. Gestioná todo allá.</h2><p>Una propiedad puede ofrecerse en QCASA y, una vez alquilada, continuar su gestión en QPROPIEDADES.</p></div><a href="/qpropiedades">Conocer QPROPIEDADES →</a></section>
-  <div class="qc-colonia-photo-credit">Fotos de Colonia usadas en la demo: Wikimedia Commons. Ver créditos y licencias en LEEME-QCASA-COLONIA.txt.</div>
+
+  <section class="qc-colonia-owner qc-v2-owner">
+    <div>
+      <span class="qc-kicker">PROPIETARIOS</span>
+      <h2>¿Tenés una propiedad en Colonia?</h2>
+      <p>
+        Publicala en QCASA y centralizá consultas. Si además la administrás,
+        podés continuar su gestión en QPROPIEDADES.
+      </p>
+    </div>
+
+    <div class="qc-colonia-owner-actions">
+      <a class="qc-colonia-primary" href="/qcasa/ingresar">Publicar propiedad</a>
+      <a class="qc-colonia-secondary" href="/qcasa/buscar">Ver propiedades</a>
+    </div>
+  </section>
+
+  <section class="qc-connect qc-v2-connect">
+    <div>
+      <span class="qc-kicker">QCASA + QPROPIEDADES</span>
+      <h2>Publicá acá. Gestioná todo allá.</h2>
+      <p>
+        Una propiedad puede ofrecerse en QCASA y, una vez alquilada,
+        continuar su gestión en QPROPIEDADES.
+      </p>
+    </div>
+
+    <a href="/qpropiedades">Conocer QPROPIEDADES →</a>
+  </section>
+
+  <div class="qc-colonia-photo-credit">
+    Fotos de Colonia usadas en la demo: Wikimedia Commons.
+    Ver créditos y licencias en LEEME-QCASA-COLONIA.txt.
+  </div>
 </main>
 {% endblock %}
