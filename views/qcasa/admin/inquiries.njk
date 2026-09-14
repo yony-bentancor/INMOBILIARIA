@@ -1,0 +1,39 @@
+{% extends 'qcasa/layout.njk' %}
+{% block qcbody %}
+<main class="qc-admin">
+  <div class="qc-admin-head">
+    <div><span class="qc-kicker">ADMINISTRACIÓN QCASA</span><h1>Consultas</h1><p>Seguimiento comercial de cada contacto.</p></div>
+    {% include 'qcasa/admin/_nav.njk' %}
+  </div>
+
+  <section class="qc-admin-panel">
+    <div class="qc-panel-head"><h2>Pipeline comercial</h2><span>{{ inquiries.length }} consultas</span></div>
+    <div class="qc-inquiry-list">
+      {% for i in inquiries %}
+      <article>
+        <div>
+          <small>{{ i.id }}</small>
+          <b>{{ i.propertyTitle }}</b>
+          <span>{{ i.name }} · {{ i.phone }}{% if i.email %} · {{ i.email }}{% endif %}</span>
+          <p>{{ i.message }}</p>
+        </div>
+        <div class="qc-inquiry-actions">
+          <form method="post" action="/qcasa/admin/consultas/{{ i.id }}/estado">
+            <label>Estado
+              <select name="status" onchange="this.form.submit()">
+                {% for s in statuses %}<option value="{{ s }}" {% if i.status==s %}selected{% endif %}>{{ s }}</option>{% endfor %}
+              </select>
+            </label>
+          </form>
+
+          <div class="qc-whatsapp-stack">
+            {% if i.whatsappInterested %}<a href="{{ i.whatsappInterested }}" target="_blank" rel="noopener">WhatsApp interesado</a>{% endif %}
+            {% if i.whatsappOwner %}<a href="{{ i.whatsappOwner }}" target="_blank" rel="noopener">WhatsApp propietario</a>{% endif %}
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+</main>
+{% endblock %}

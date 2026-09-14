@@ -6,6 +6,7 @@ r.get('/',c.home);
 r.get('/buscar',c.search);
 r.get('/propiedad/:slug',c.detail);
 r.post('/propiedad/:slug/consulta',c.inquiry);
+r.post('/moneda',c.currencyPreference);
 
 /* Acceso y registro */
 r.get('/ingresar',c.loginForm);
@@ -21,10 +22,18 @@ r.post('/mi-qcasa/propiedades',c.requireUser,upload.array('photos',8),c.userCrea
 r.get('/mi-qcasa/propiedades/:id/editar',c.requireUser,c.userEditPropertyForm);
 r.post('/mi-qcasa/propiedades/:id',c.requireUser,upload.array('photos',8),c.userUpdateProperty);
 r.post('/mi-qcasa/propiedades/:id/reenviar',c.requireUser,c.userResubmitProperty);
+r.post('/mi-qcasa/propiedades/:id/cambios',c.requireUser,upload.array('photos',8),c.userSubmitPublishedChanges);
 r.post('/mi-qcasa/notificaciones/leer',c.requireUser,c.userMarkNotificationsRead);
 
 /* Admin */
 r.get('/admin',c.requireAdmin,c.adminDashboard);
+
+r.get('/admin/consultas',c.requireAdmin,c.adminInquiries);
+r.post('/admin/consultas/:id/estado',c.requireAdmin,c.adminInquiryStatus);
+
+r.get('/admin/configuracion',c.requireAdmin,c.adminSettings);
+r.post('/admin/configuracion',c.requireAdmin,c.adminSettingsUpdate);
+r.post('/admin/comunicaciones',c.requireAdmin,c.adminBroadcast);
 
 r.get('/admin/usuarios',c.requireAdmin,c.adminUsers);
 r.get('/admin/usuarios/nuevo',c.requireAdmin,c.adminUserNewForm);
@@ -41,6 +50,8 @@ r.post('/admin/propiedades/:id',c.requireAdmin,upload.array('photos',8),c.adminU
 r.post('/admin/propiedades/:id/publicar',c.requireAdmin,c.adminTogglePublish);
 r.post('/admin/propiedades/:id/aprobar',c.requireAdmin,c.adminApprove);
 r.post('/admin/propiedades/:id/rechazar',c.requireAdmin,c.adminReject);
+r.post('/admin/propiedades/:id/cambios/aprobar',c.requireAdmin,c.adminApproveChanges);
+r.post('/admin/propiedades/:id/cambios/rechazar',c.requireAdmin,c.adminRejectChanges);
 r.post('/admin/propiedades/:id/eliminar',c.requireAdmin,c.adminDelete);
 
 module.exports=r;

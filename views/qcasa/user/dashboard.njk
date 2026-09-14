@@ -10,6 +10,7 @@
 
     <div class="qc-user-actions">
       <a class="qc-admin-primary" href="/qcasa/mi-qcasa/publicar">+ Publicar propiedad</a>
+      {% if whatsappQcasa %}<a class="qc-whatsapp-link" href="{{ whatsappQcasa }}" target="_blank" rel="noopener">WhatsApp QCASA</a>{% endif %}
       <form method="post" action="/qcasa/salir"><button class="qc-admin-link">Salir</button></form>
     </div>
   </header>
@@ -60,6 +61,12 @@
               {% elif p.status == 'Publicada' %}
                 <small>Tu propiedad está visible en QCASA.</small>
                 <a href="/qcasa/propiedad/{{ p.slug }}">Ver publicación →</a>
+                <a href="/qcasa/mi-qcasa/propiedades/{{ p.id }}/editar">Modificar publicación →</a>
+                {% if p.changeStatus == 'Pendiente' %}
+                  <span class="qc-change-badge">Cambios esperando aprobación</span>
+                {% elif p.changeStatus == 'Rechazado' %}
+                  <small class="qc-change-rejected">{{ p.changeReviewNote }}</small>
+                {% endif %}
               {% elif p.status == 'Rechazada' %}
                 <small>{{ p.reviewNote or 'La publicación necesita cambios.' }}</small>
                 <a href="/qcasa/mi-qcasa/propiedades/{{ p.id }}/editar">Corregir publicación →</a>
