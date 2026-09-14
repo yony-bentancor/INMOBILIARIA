@@ -2,36 +2,30 @@
 {% block body %}
 <link rel="stylesheet" href="/css/qcasa.css">
 <link rel="stylesheet" href="/css/qcasa-colonia.css">
-
+<link rel="stylesheet" href="/css/qcasa-mvp.css">
 <div class="qc-page">
   <header class="qc-nav qc-colonia-nav">
     <a class="qc-brand" href="/qcasa">
       <span class="qc-mark">Q</span>
       <span class="qc-name">QCASA<small>COLONIA · TU LUGAR EN COLONIA</small></span>
     </a>
-
     <nav>
       <a href="/qcasa/buscar?operation=Venta">Comprar</a>
       <a href="/qcasa/buscar?operation=Alquiler">Alquilar</a>
       <a href="/qcasa/buscar">Buscar</a>
-      <a href="/qcasa/ingresar" class="qc-login">Ingresar</a>
+      {% if session.qcasaUser %}
+        <a href="/qcasa/mi-qcasa">Mi QCASA</a>
+      {% else %}
+        <a href="/qcasa/ingresar" class="qc-login">Ingresar</a>
+      {% endif %}
     </nav>
   </header>
 
   {% block qcbody %}{% endblock %}
 
   <footer class="qc-footer">
-    <div>
-      <b>QCASA COLONIA</b>
-      <small>Comprar · Alquilar · Buscar · Publicar</small>
-    </div>
-
-    <div>
-      <a href="/">Estudio QR</a>
-      <a href="/qpropiedades">QPROPIEDADES</a>
-      <a href="/qcasa/buscar">Propiedades</a>
-    </div>
-
+    <div><b>QCASA COLONIA</b><small>Comprar · Alquilar · Buscar · Publicar</small></div>
+    <div><a href="/">Estudio QR</a><a href="/qpropiedades">QPROPIEDADES</a><a href="/qcasa/buscar">Propiedades</a></div>
     <small>© 2026 QCASA Colonia</small>
   </footer>
 </div>

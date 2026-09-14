@@ -1,19 +1,120 @@
 {% extends 'qcasa/layout.njk' %}
 {% block qcbody %}
 <main class="qc-admin">
-  <div class="qc-admin-head"><div><span class="qc-kicker">ADMINISTRACIÓN QCASA</span><h1>Panel inmobiliario</h1><p>{{ admin.name }}</p></div><div><a class="qc-admin-primary" href="/qcasa/admin/propiedades/nueva">+ Cargar propiedad</a><form method="post" action="/qcasa/salir"><button class="qc-admin-link">Salir</button></form></div></div>
-  <section class="qc-stats"><article><small>Propiedades</small><b>{{ stats.total }}</b></article><article><small>En venta</small><b>{{ stats.sale }}</b></article><article><small>En alquiler</small><b>{{ stats.rent }}</b></article><article><small>Publicadas</small><b>{{ stats.published }}</b></article><article><small>Consultas</small><b>{{ stats.inquiries }}</b></article></section>
+  <div class="qc-admin-head">
+    <div>
+      <span class="qc-kicker">ADMINISTRACIÓN QCASA</span>
+      <h1>Panel inmobiliario</h1>
+      <p>{{ admin.name }}</p>
+    </div>
 
-  <section class="qc-admin-panel">
-    <div class="qc-panel-head"><h2>Propiedades</h2><span>Datos demo en memoria · no modifica QPROPIEDADES</span></div>
-    <div class="qc-table-wrap"><table><thead><tr><th>Ref.</th><th>Propiedad</th><th>Tipo</th><th>Operación</th><th>Precio</th><th>Estado</th><th></th></tr></thead><tbody>
-    {% for p in properties %}<tr><td>{{ p.id }}</td><td><b>{{ p.title }}</b><small>{{ p.city }}, {{ p.department }}</small></td><td>{{ p.category }}</td><td>{{ p.operation }}</td><td>{{ money(p) }}</td><td><span class="qc-status">{{ p.status }}</span></td><td class="qc-row-actions"><a href="/qcasa/admin/propiedades/{{ p.id }}/editar">Editar</a><form action="/qcasa/admin/propiedades/{{ p.id }}/publicar" method="post"><button>{{ 'Ocultar' if p.status=='Publicada' else 'Publicar' }}</button></form><form action="/qcasa/admin/propiedades/{{ p.id }}/eliminar" method="post" onsubmit="return confirm('¿Eliminar propiedad?')"><button>Eliminar</button></form></td></tr>{% endfor %}
-    </tbody></table></div>
+    <div>
+      <a class="qc-admin-secondary" href="/qcasa/admin/usuarios">Usuarios</a>
+      <a class="qc-admin-primary" href="/qcasa/admin/propiedades/nueva">+ Cargar propiedad</a>
+      <form method="post" action="/qcasa/salir"><button class="qc-admin-link">Salir</button></form>
+    </div>
+  </div>
+
+  <section class="qc-stats qc-stats-mvp">
+    <article><small>Propiedades</small><b>{{ stats.total }}</b></article>
+    <article><small>Publicadas</small><b>{{ stats.published }}</b></article>
+    <article class="qc-stat-pending"><small>Pendientes aprobación</small><b>{{ stats.pending }}</b></article>
+    <article><small>Usuarios</small><b>{{ stats.users }}</b></article>
+    <article><small>En venta</small><b>{{ stats.sale }}</b></article>
+    <article><small>Consultas</small><b>{{ stats.inquiries }}</b></article>
+  </section>
+
+  <section class="qc-admin-panel qc-review-panel" id="pendientes">
+    <div class="qc-panel-head">
+      <h2>Publicaciones pendientes de aprobación</h2>
+      <span>Enviadas por usuarios de QCASA</span>
+    </div>
+
+    {% if pending.length %}
+      <div class="qc-review-list">
+        {% for p in pending %}
+        <article class="qc-review-card">
+          <div class="qc-review-photo">
+            <img src="{{ p.image }}" alt="">
+          </div>
+
+          <div class="qc-review-content">
+            <small>{{ p.id }} · {{ p.category }} · {{ p.operation }}</small>
+            <h3>{{ p.title }}</h3>
+            <strong>{{ money(p) }}</strong>
+            <p>{{ p.city }}, {{ p.department }} · {{ p.area | int }} m²</p>
+            <p class="qc-review-description">{{ p.summary }}</p>
+            {% if p.images and p.images.length > 1 %}
+              <small>{{ p.images.length }} imágenes cargadas</small>
+            {% endif %}
+
+            <div class="qc-review-owner">
+              <b>Enviado por</b>
+              <span>{{ p.ownerName }}</span>
+              <span>{{ p.ownerEmail }} · {{ p.ownerPhone }}</span>
+            </div>
+          </div>
+
+          <div class="qc-review-actions">
+            <form method="post" action="/qcasa/admin/propiedades/{{ p.id }}/aprobar">
+              <button class="qc-approve">✓ Aprobar y publicar</button>
+            </form>
+
+            <form method="post" action="/qcasa/admin/propiedades/{{ p.id }}/rechazar" class="qc-reject-form">
+              <textarea name="reason" rows="3" placeholder="Motivo del rechazo o cambio solicitado"></textarea>
+              <button class="qc-reject">× Rechazar</button>
+            </form>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="qc-empty qc-review-empty">
+        No hay publicaciones pendientes. Cuando un usuario envíe una propiedad aparecerá acá.
+      </div>
+    {% endif %}
   </section>
 
   <section class="qc-admin-panel">
-    <div class="qc-panel-head"><h2>Consultas recibidas</h2><span>Se generan desde la ficha pública</span></div>
-    {% if inquiries.length %}<div class="qc-inquiries">{% for i in inquiries %}<article><b>{{ i.propertyTitle }}</b><span>{{ i.name }} · {{ i.phone }}{% if i.email %} · {{ i.email }}{% endif %}</span><p>{{ i.message or 'Sin mensaje adicional.' }}</p></article>{% endfor %}</div>{% else %}<div class="qc-empty">Todavía no hay consultas. Podés probar enviando una desde cualquier propiedad.</div>{% endif %}
+    <div class="qc-panel-head">
+      <h2>Propiedades</h2>
+      <span>Datos demo en memoria · aprobaciones incluidas</span>
+    </div>
+
+    <div class="qc-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Ref.</th><th>Propiedad</th><th>Tipo</th><th>Operación</th>
+            <th>Precio</th><th>Estado</th><th>Origen</th><th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for p in properties %}
+          <tr>
+            <td>{{ p.id }}</td>
+            <td><b>{{ p.title }}</b><small>{{ p.city }}, {{ p.department }}</small></td>
+            <td>{{ p.category }}</td>
+            <td>{{ p.operation }}</td>
+            <td>{{ money(p) }}</td>
+            <td><span class="qc-status qc-status-{{ p.status | lower }}">{{ p.status }}</span></td>
+            <td>{{ p.ownerName or 'Administración' }}</td>
+            <td class="qc-row-actions">
+              <a href="/qcasa/admin/propiedades/{{ p.id }}/editar">Editar</a>
+              {% if p.status != 'Pendiente' %}
+              <form action="/qcasa/admin/propiedades/{{ p.id }}/publicar" method="post">
+                <button>{{ 'Ocultar' if p.status=='Publicada' else 'Publicar' }}</button>
+              </form>
+              {% endif %}
+              <form action="/qcasa/admin/propiedades/{{ p.id }}/eliminar" method="post" onsubmit="return confirm('¿Eliminar propiedad?')">
+                <button>Eliminar</button>
+              </form>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
   </section>
 </main>
 {% endblock %}
