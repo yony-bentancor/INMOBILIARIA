@@ -43,26 +43,55 @@
         </div>
       </div>
 
-      <div class="qp-hero-visual" aria-label="Propiedad gestionada con QPROPIEDADES">
-        <div class="qp-building" aria-hidden="true">
-          <div class="qp-building-floor qp-floor-3"><i></i><i></i><i></i></div>
-          <div class="qp-building-floor qp-floor-2"><i></i><i></i><i></i></div>
-          <div class="qp-building-floor qp-floor-1"><i></i><i></i><i></i></div>
-          <div class="qp-building-ground"><span></span><span></span></div>
+      <div class="qp-hero-visual qp-hero-ecosystem" aria-label="Ecosistema digital de la propiedad">
+        <div class="qp-property-core">
+          <img src="/img/landing/qpropiedades-house.svg" alt="Propiedad gestionada con QPROPIEDADES">
         </div>
 
-        <div class="qp-phone">
-          <div class="qp-phone-screen">
-            <div class="qp-phone-head">
-              <span><b>Q</b> QPROPIEDADES</span>
-              <strong>QP-24</strong>
-            </div>
-            <h3>¿NECESITÁS ALGO?</h3>
-            <p>ESCANEÁ Y REPORTALO</p>
-            <img src="/img/landing/qr-demo.png" alt="QR de demostración">
-            <small>Rápido, simple y seguro.</small>
-          </div>
+        <article class="qp-orbit-card qp-card-docs">
+          <span>▤</span>
+          <div><b>Documentos</b><small>Contratos e impuestos</small></div>
+        </article>
+
+        <article class="qp-orbit-card qp-card-rent">
+          <span>$</span>
+          <div><b>Alquileres</b><small>Cobros y vencimientos</small></div>
+        </article>
+
+        <article class="qp-orbit-card qp-card-tenant">
+          <span>●</span>
+          <div><b>Inquilinos</b><small>Información y contacto</small></div>
+        </article>
+
+        <article class="qp-orbit-card qp-card-dates">
+          <span>□</span>
+          <div><b>Vencimientos</b><small>Recordatorios a tiempo</small></div>
+        </article>
+
+        <article class="qp-orbit-card qp-card-repairs">
+          <span>🔧</span>
+          <div><b>Reparaciones</b><small>Reclamos y mantenimiento</small></div>
+        </article>
+
+        <article class="qp-orbit-card qp-card-history">
+          <span>▥</span>
+          <div><b>Historial</b><small>Todo el registro de tu propiedad</small></div>
+        </article>
+
+        <div class="qp-orbit-qr">
+          <img src="/img/landing/qr-demo.png" alt="QR de demostración">
+          <small>Tu propiedad<br>en un QR</small>
         </div>
+
+        <svg class="qp-orbit-lines" viewBox="0 0 760 500" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M165 90 H290 Q305 90 305 110 V165"/>
+          <path d="M596 90 H482 Q465 90 465 110 V165"/>
+          <path d="M160 250 H260 Q280 250 280 235"/>
+          <path d="M600 250 H500 Q480 250 480 235"/>
+          <path d="M180 410 H300 Q315 410 315 355"/>
+          <path d="M580 410 H470 Q455 410 455 355"/>
+          <path d="M380 390 V330"/>
+        </svg>
       </div>
     </section>
 
@@ -101,17 +130,22 @@
     </section>
   </main>
 
-  <footer class="qp-footer">
+  <footer class="qp-footer qp-footer-light">
     <div class="qp-footer-brand">
       <span class="qp-brand-mark">Q</span>
       <div><b>QPROPIEDADES</b><small>Gestión inteligente de propiedades.</small></div>
     </div>
+
     <div class="qp-footer-links">
       <a href="#como-funciona">Cómo funciona</a>
       <a href="/alta">Contacto</a>
       <a href="/ingresar">Ingresar</a>
     </div>
-    <small>© 2026 QPROPIEDADES</small>
+
+    <div class="qp-footer-meta">
+      <span>Montevideo, Uruguay</span>
+      <span>© 2026 QPROPIEDADES</span>
+    </div>
   </footer>
 
   <div class="qr-reader-modal" data-qr-reader-modal hidden>
