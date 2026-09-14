@@ -1,126 +1,135 @@
 {% extends 'layouts/base.njk' %}
 
 {% block body %}
-  <link rel="stylesheet" href="/css/ecosistema.css">
+<link rel="stylesheet" href="/css/ecosistema.css">
 
-  <main class="qrsite">
-    <header class="qrsite-top">
-      <a href="/" class="qrsite-brand" aria-label="Estudio QR, inicio">
-        <span>ESTUDIO</span>
-        <strong>QR</strong>
-      </a>
+<main class="eqr">
+  <header class="eqr-header">
+    <a class="eqr-brand" href="/" aria-label="Estudio QR">
+      <span>ESTUDIO</span><strong>QR</strong>
+    </a>
 
-      <div class="qrsite-manifest">
-        <span>IDEAS</span>
-        <span>PROYECTOS</span>
-        <span>NEGOCIOS</span>
-      </div>
+    <div class="eqr-mini">
+      <span>IDEAS</span>
+      <span>PROYECTOS</span>
+      <span>NEGOCIOS</span>
+    </div>
 
-      <nav class="qrsite-nav" aria-label="Navegación principal">
-        <a href="#proyectos">PROYECTOS</a>
-        <a href="#nosotros">NOSOTROS</a>
-        <a href="mailto:hola@ecosistemaq.uy?subject=Quiero%20contarte%20una%20idea">CONTACTO</a>
-      </nav>
+    <nav class="eqr-nav">
+      <a href="#proyectos">PROYECTOS</a>
+      <a href="#nosotros">NOSOTROS</a>
+      <a href="mailto:hola@ecosistemaq.uy?subject=Quiero%20contarte%20una%20idea">CONTACTO</a>
+    </nav>
 
-      <button class="qrsite-menu" type="button" aria-label="Menú">
-        <i></i>
-        <i></i>
-        <i></i>
-      </button>
-    </header>
+    <button class="eqr-menu" type="button" aria-label="Menú">
+      <i></i><i></i><i></i>
+    </button>
+  </header>
 
-    <section class="qrsite-hero" id="nosotros">
-      <div class="qrsite-copy">
-        <p class="qrsite-eyebrow">DESARROLLO DIGITAL<br>PARA IDEAS REALES</p>
+  <section class="eqr-main" id="nosotros">
+    <div class="eqr-copy">
+      <p class="eqr-eyebrow">DESARROLLO DIGITAL<br>PARA IDEAS REALES</p>
 
-        <h1>
+      <h1>
         Tecnología<br>
         que impulsa<br>
-          <span>tu negocio</span>
-        </h1>
+        <span>tu negocio</span>
+      </h1>
 
-        <div class="qrsite-rule" aria-hidden="true"></div>
+      <div class="eqr-rule"></div>
 
-        <div class="qrsite-values" aria-label="Qué hacemos">
-          <span>IDEAS</span>
-          <span>DESARROLLO</span>
-          <span>SOLUCIONES</span>
-          <span>RESULTADOS</span>
-        </div>
-
-        <nav class="qrsite-projects" id="proyectos" aria-label="Proyectos de Estudio QR">
-          <a href="/qpropiedades" class="qrsite-project">
-            <span>GESTOR DE PROPIEDADES</span>
-            <b aria-hidden="true">→</b>
-          </a>
-
-          <a href="/qcasa" class="qrsite-project">
-            <span>INMOBILIARIA</span>
-            <b aria-hidden="true">→</b>
-          </a>
-
-          {#
-          FUTUROS PROYECTOS
-          Podés duplicar uno de los enlaces .qrsite-project.
-          La grilla se adapta automáticamente.
-        #}
-        </nav>
+      <div class="eqr-values">
+        <span>IDEAS</span>
+        <span>DESARROLLO</span>
+        <span>SOLUCIONES</span>
+        <span>RESULTADOS</span>
       </div>
 
-      <div class="qrsite-art" data-qr-art>
-        <div class="qrsite-scanner" aria-hidden="true">
-          <span class="corner c1"></span>
-          <span class="corner c2"></span>
-          <span class="corner c3"></span>
-          <span class="corner c4"></span>
+      <nav class="eqr-projects" id="proyectos">
+        <a href="/qpropiedades">
+          <span>GESTOR DE PROPIEDADES</span><b>→</b>
+        </a>
+        <a href="/qcasa">
+          <span>INMOBILIARIA</span><b>→</b>
+        </a>
+      </nav>
+    </div>
 
-          <div class="qrsite-object" data-qr-object aria-label="QR interactivo de Estudio QR"></div>
+    <div class="eqr-showcase" data-eqr-showcase>
+      <div class="eqr-track">
 
-          <div class="qrsite-cursor">
-            <span></span>
+        <button class="eqr-stage is-active" type="button" data-stage="scan">
+          <div class="eqr-visual eqr-visual-scan">
+            <span class="eqr-corner c1"></span>
+            <span class="eqr-corner c2"></span>
+            <span class="eqr-corner c3"></span>
+            <span class="eqr-corner c4"></span>
+            <div class="eqr-qr" data-qr="scan"></div>
           </div>
-        </div>
+          <strong>ESCANEÁ</strong>
+          <small>IDEAS EN MOVIMIENTO</small>
+        </button>
 
-        <div class="qrsite-motion-copy" aria-live="polite">
-          <strong data-stage-title>ESCANEÁ</strong>
-          <span data-stage-subtitle>IDEAS EN MOVIMIENTO</span>
-        </div>
+        <span class="eqr-arrow">→</span>
 
-        <div class="qrsite-stage-strip" aria-label="Transformaciones del QR">
-          <button type="button" class="active" data-stage-button="qr">01</button>
-          <button type="button" data-stage-button="explode">02</button>
-          <button type="button" data-stage-button="wave">03</button>
-          <button type="button" data-stage-button="orb">04</button>
-          <button type="button" data-stage-button="stack">05</button>
-        </div>
+        <button class="eqr-stage" type="button" data-stage="connect">
+          <div class="eqr-visual">
+            <div class="eqr-particle-field" data-qr="connect"></div>
+          </div>
+          <strong>CONECTA</strong>
+          <small>&nbsp;</small>
+        </button>
 
-        <div class="qrsite-flow" aria-hidden="true">
-          <span>ESCANEA</span>
-          <i>→</i>
-          <span>CONECTA</span>
-          <i>→</i>
-          <span>CREA</span>
-          <i>→</i>
-          <span>TRANSFORMA</span>
-          <i>→</i>
-          <span>IMPULSA</span>
-        </div>
+        <span class="eqr-arrow">→</span>
 
-        <p class="qrsite-hint">
-          <span class="qrsite-mouse">⌁</span>
-        PASÁ EL CURSOR<br>PARA EXPLORAR
-      </p>
+        <button class="eqr-stage" type="button" data-stage="create">
+          <div class="eqr-visual">
+            <div class="eqr-wave" data-qr="create"></div>
+          </div>
+          <strong>CREA</strong>
+          <small>&nbsp;</small>
+        </button>
+
+        <span class="eqr-arrow">→</span>
+
+        <button class="eqr-stage" type="button" data-stage="transform">
+          <div class="eqr-visual">
+            <div class="eqr-orb" data-qr="transform"></div>
+          </div>
+          <strong>TRANSFORMA</strong>
+          <small>&nbsp;</small>
+        </button>
+
+        <span class="eqr-arrow">→</span>
+
+        <button class="eqr-stage" type="button" data-stage="boost">
+          <div class="eqr-visual">
+            <div class="eqr-stack" data-qr="boost"></div>
+          </div>
+          <strong>IMPULSA</strong>
+          <small>&nbsp;</small>
+        </button>
+
       </div>
-    </section>
 
-    <footer class="qrsite-footer">
-      <div class="qrsite-place">
-        <i></i>
-        <span>MONTEVIDEO<br>URUGUAY</span>
+      <div class="eqr-dots" aria-hidden="true">
+        <i class="active"></i><i></i><i></i><i></i><i></i>
       </div>
-      <span class="qrsite-counter">01 — 05</span>
-    </footer>
-  </main>
+    </div>
+  </section>
 
-  <script src="/js/ecosistema.js" defer></script>
+  <footer class="eqr-footer">
+    <div class="eqr-place">
+      <i></i>
+      <span>MONTEVIDEO<br>URUGUAY</span>
+    </div>
+
+    <div class="eqr-explore">
+      DESLIZÁ<br>PARA EXPLORAR
+      <i></i>
+    </div>
+  </footer>
+</main>
+
+<script src="/js/ecosistema.js" defer></script>
 {% endblock %}

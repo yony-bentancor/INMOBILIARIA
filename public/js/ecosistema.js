@@ -1,18 +1,12 @@
 document.addEventListener('DOMContentLoaded',()=>{
-  const art=document.querySelector('[data-qr-art]');
-  const object=document.querySelector('[data-qr-object]');
-  if(!art||!object) return;
+  const stages=[...document.querySelectorAll('.eqr-stage')];
+  const dots=[...document.querySelectorAll('.eqr-dots i')];
+  if(!stages.length) return;
 
-  const title=document.querySelector('[data-stage-title]');
-  const subtitle=document.querySelector('[data-stage-subtitle]');
-  const buttons=[...document.querySelectorAll('[data-stage-button]')];
-
-  // Matriz visual QR: finder patterns + datos deterministas.
-  // Es un objeto gráfico interactivo, no se usa para navegación/lectura real.
   const size=21;
   const matrix=Array.from({length:size},()=>Array(size).fill(false));
 
-  const finder=(ox,oy)=>{
+  function finder(ox,oy){
     for(let y=0;y<7;y++){
       for(let x=0;x<7;x++){
         const edge=x===0||y===0||x===6||y===6;
@@ -20,183 +14,168 @@ document.addEventListener('DOMContentLoaded',()=>{
         if(edge||core) matrix[oy+y][ox+x]=true;
       }
     }
-  };
+  }
+  finder(0,0); finder(14,0); finder(0,14);
 
-  finder(0,0);
-  finder(size-7,0);
-  finder(0,size-7);
-
-  for(let i=8;i<size-8;i++){
+  for(let i=8;i<13;i++){
     matrix[6][i]=i%2===0;
     matrix[i][6]=i%2===0;
   }
 
-  // Datos pseudoaleatorios reproducibles para completar el patrón.
-  let seed=1931;
+  let seed=4471;
   const rand=()=>{
     seed=(seed*9301+49297)%233280;
     return seed/233280;
   };
-
   for(let y=0;y<size;y++){
     for(let x=0;x<size;x++){
-      const inFinder=
-        (x<8&&y<8)||
-        (x>=size-8&&y<8)||
-        (x<8&&y>=size-8)||
-        x===6||y===6;
-      if(!inFinder && rand()>.56) matrix[y][x]=true;
+      const reserved=(x<8&&y<8)||(x>12&&y<8)||(x<8&&y>12)||x===6||y===6;
+      if(!reserved && rand()>.58) matrix[y][x]=true;
     }
   }
 
-  const cells=[];
-  const step=12.2;
-  const half=(size-1)/2;
-
+  const templates=[];
   matrix.forEach((row,y)=>{
     row.forEach((on,x)=>{
-      if(!on) return;
-      const el=document.createElement('span');
-      el.className='qr-pixel';
-      el.dataset.x=x;
-      el.dataset.y=y;
-      el.dataset.n=cells.length;
-      object.appendChild(el);
-      cells.push({el,x,y,n:cells.length});
+      if(on) templates.push({x,y});
     });
   });
 
-  const stages={
-    qr:{title:'ESCANEÁ',subtitle:'IDEAS EN MOVIMIENTO'},
-    explode:{title:'CONECTA',subtitle:'PIEZAS QUE SE ENCUENTRAN'},
-    wave:{title:'CREA',subtitle:'LA IDEA CAMBIA DE FORMA'},
-    orb:{title:'TRANSFORMA',subtitle:'UN SISTEMA, MUCHAS POSIBILIDADES'},
-    stack:{title:'IMPULSA',subtitle:'TECNOLOGÍA QUE SE CONVIERTE EN NEGOCIO'}
-  };
-  const order=Object.keys(stages);
-  let current=0;
-  let timer=null;
+  function mount(el,type){
+    if(!el) return;
+    el.innerHTML='';
+    templates.forEach((p,n)=>{
+      const s=document.createElement('span');
+      s.className='eqr-px';
+      s.dataset.x=p.x;
+      s.dataset.y=p.y;
+      s.dataset.n=n;
+      el.appendChild(s);
+    });
+    position(el,type,false);
+  }
 
-  const t=(x,y,z=0,s=1,r=0)=>`translate3d(${x}px,${y}px,${z}px) scale(${s}) rotate(${r}deg)`;
+  function position(el,type,animate=false){
+    const px=[...el.querySelectorAll('.eqr-px')];
+    const half=10;
+    const base=type==='scan'?5.75:5.1;
 
-  function paint(stage){
-    object.dataset.stage=stage;
-    const meta=stages[stage];
-    if(title) title.textContent=meta.title;
-    if(subtitle) subtitle.textContent=meta.subtitle;
+    px.forEach((node,n)=>{
+      const x=+node.dataset.x, y=+node.dataset.y;
+      let tx=(x-half)*base, ty=(y-half)*base, z=0, sc=1, rot=0, op=1;
 
-    buttons.forEach(btn=>btn.classList.toggle('active',btn.dataset.stageButton===stage));
-
-    cells.forEach(({el,x,y,n})=>{
-      const bx=(x-half)*step;
-      const by=(y-half)*step;
-      let tx=bx,ty=by,tz=0,scale=1,rot=0,opacity=1;
-
-      if(stage==='explode'){
-        const angle=(n*137.508)*Math.PI/180;
-        const distance=26+((n*17)%55);
-        tx=bx+Math.cos(angle)*distance;
-        ty=by+Math.sin(angle)*distance;
-        tz=((n%9)-4)*9;
-        scale=.72+((n%7)/18);
-        rot=(n%2?1:-1)*(8+(n%5)*4);
-        opacity=.78+(n%4)*.055;
+      if(type==='connect'){
+        const a=(n*137.5)*Math.PI/180;
+        const dist=9+(n%12)*1.7;
+        tx=(x-half)*4.0 + Math.cos(a)*dist;
+        ty=(y-half)*4.0 + Math.sin(a)*dist;
+        z=((n%7)-3)*4;
+        sc=.55+(n%5)*.06;
+        rot=(n%2?-1:1)*(5+(n%8)*2);
+        op=.78+(n%4)*.05;
       }
 
-      if(stage==='wave'){
-        tx=bx*.93;
-        ty=by*.78+Math.sin((x*.72)+(y*.17))*28;
-        tz=Math.cos((x*.45)+(y*.3))*34;
-        scale=.78+(Math.sin(x*.4+y*.18)+1)*.12;
-        rot=Math.sin(y*.55)*15;
-        opacity=.9;
+      if(type==='create'){
+        tx=(x-half)*4.3;
+        ty=(y-half)*3.6 + Math.sin(x*.75+y*.14)*14;
+        z=Math.cos(x*.4+y*.25)*18;
+        sc=.6+(Math.sin(x*.3+y*.2)+1)*.08;
+        rot=Math.sin(y*.4)*13;
+        op=.84;
       }
 
-      if(stage==='orb'){
+      if(type==='transform'){
         const nx=(x-half)/half;
         const ny=(y-half)/half;
         const rr=Math.min(1,Math.sqrt(nx*nx+ny*ny));
-        const theta=Math.atan2(ny,nx);
-        const radial=rr*112;
-        const sphere=Math.sqrt(Math.max(0,1-Math.min(1,rr*rr)));
-        tx=Math.cos(theta)*radial;
-        ty=Math.sin(theta)*radial*.96;
-        tz=sphere*82-28;
-        scale=.55+sphere*.65;
-        rot=theta*12;
-        opacity=.64+sphere*.36;
+        const a=Math.atan2(ny,nx);
+        const radial=rr*44;
+        const sph=Math.sqrt(Math.max(0,1-Math.min(1,rr*rr)));
+        tx=Math.cos(a)*radial;
+        ty=Math.sin(a)*radial;
+        z=sph*28;
+        sc=.5+sph*.38;
+        op=.72+sph*.25;
       }
 
-      if(stage==='stack'){
-        const layer=(x+y)%5;
-        tx=(x-half)*8.6 + (layer-2)*13;
-        ty=(y-half)*8.6 - (layer-2)*9;
-        tz=(layer-2)*32;
-        scale=.72+(layer*.045);
-        rot=-7+(layer*3.5);
-        opacity=.74+layer*.055;
+      if(type==='boost'){
+        const layer=(x+y)%4;
+        tx=(x-half)*3.7+(layer-1.5)*7;
+        ty=(y-half)*3.7-(layer-1.5)*5;
+        z=(layer-1.5)*15;
+        sc=.57+layer*.055;
+        rot=-10+layer*6;
+        op=.76+layer*.05;
       }
 
-      el.style.transform=t(tx,ty,tz,scale,rot);
-      el.style.opacity=opacity;
-      el.style.zIndex=String(Math.round(tz+100));
-      el.style.transitionDelay=`${(n%17)*7}ms`;
+      node.style.transform=`translate3d(${tx}px,${ty}px,${z}px) scale(${sc}) rotate(${rot}deg)`;
+      node.style.opacity=op;
+      node.style.transitionDelay=animate ? `${(n%19)*5}ms` : '0ms';
+    });
+  }
+
+  const configs=[
+    ['[data-qr="scan"]','scan'],
+    ['[data-qr="connect"]','connect'],
+    ['[data-qr="create"]','create'],
+    ['[data-qr="transform"]','transform'],
+    ['[data-qr="boost"]','boost']
+  ];
+
+  configs.forEach(([sel,type])=>mount(document.querySelector(sel),type));
+
+  function pulse(stage,index){
+    stages.forEach((s,i)=>{
+      s.classList.toggle('is-active',i===index);
+      s.classList.toggle('is-playing',i===index);
+    });
+    dots.forEach((d,i)=>d.classList.toggle('active',i===index));
+
+    const type=stage.dataset.stage;
+    const target=stage.querySelector('[data-qr]');
+    if(!target) return;
+
+    // brief "departure" then return to its designed state
+    [...target.querySelectorAll('.eqr-px')].forEach((node,n)=>{
+      const a=(n*137.5)*Math.PI/180;
+      const dx=Math.cos(a)*(10+(n%8)*2);
+      const dy=Math.sin(a)*(10+(n%8)*2);
+      const original=node.style.transform;
+      node.animate([
+        {transform:original, opacity:node.style.opacity || 1},
+        {transform:`${original} translate3d(${dx}px,${dy}px,18px) scale(.76)`, opacity:.45},
+        {transform:original, opacity:node.style.opacity || 1}
+      ],{
+        duration:700,
+        delay:(n%13)*6,
+        easing:'cubic-bezier(.2,.75,.2,1)'
+      });
     });
 
-    if(stage==='orb') object.style.transform='rotateY(-12deg) rotateX(5deg)';
-    else if(stage==='stack') object.style.transform='rotateY(-17deg) rotateX(8deg)';
-    else if(stage==='wave') object.style.transform='rotateY(8deg)';
-    else object.style.transform='none';
+    setTimeout(()=>stage.classList.remove('is-playing'),850);
   }
 
-  function next(){
-    current=(current+1)%order.length;
-    paint(order[current]);
+  stages.forEach((stage,index)=>{
+    stage.addEventListener('mouseenter',()=>pulse(stage,index));
+    stage.addEventListener('focus',()=>pulse(stage,index));
+    stage.addEventListener('click',()=>pulse(stage,index));
+  });
+
+  // subtle automatic intro, once, showing the flow while keeping all 5 states visible.
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
+    setTimeout(()=>{
+      let i=0;
+      const intro=setInterval(()=>{
+        pulse(stages[i],i);
+        i++;
+        if(i>=stages.length){
+          clearInterval(intro);
+          setTimeout(()=>{
+            stages.forEach((s,j)=>s.classList.toggle('is-active',j===0));
+            dots.forEach((d,j)=>d.classList.toggle('active',j===0));
+          },650);
+        }
+      },520);
+    },650);
   }
-
-  function start(){
-    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    clearInterval(timer);
-    timer=setInterval(next,1050);
-  }
-
-  function stop(){
-    clearInterval(timer);
-    timer=null;
-    current=0;
-    paint('qr');
-  }
-
-  art.addEventListener('pointerenter',start);
-  art.addEventListener('pointerleave',stop);
-
-  art.addEventListener('pointermove',e=>{
-    const rect=art.getBoundingClientRect();
-    const nx=(e.clientX-rect.left)/rect.width-.5;
-    const ny=(e.clientY-rect.top)/rect.height-.5;
-    const scanner=art.querySelector('.qrsite-scanner');
-    if(scanner){
-      scanner.style.transform=`rotateY(${nx*5}deg) rotateX(${-ny*4}deg) scale(1.02)`;
-    }
-  });
-
-  art.addEventListener('pointerleave',()=>{
-    const scanner=art.querySelector('.qrsite-scanner');
-    if(scanner) scanner.style.transform='';
-  });
-
-  buttons.forEach(btn=>{
-    btn.addEventListener('click',()=>{
-      clearInterval(timer);
-      current=Math.max(0,order.indexOf(btn.dataset.stageButton));
-      paint(order[current]);
-    });
-  });
-
-  // En pantallas táctiles, tocar el QR cambia de forma.
-  object.addEventListener('click',()=>{
-    if(matchMedia('(hover: none)').matches) next();
-  });
-
-  paint('qr');
 });
