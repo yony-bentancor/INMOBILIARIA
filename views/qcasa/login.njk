@@ -6,12 +6,27 @@
     <h1>Ingresar</h1>
     <p>Acceso independiente para administrar publicaciones, propiedades y consultas de QCASA.</p>
   </section>
+
   <form class="qc-login-card" method="post" action="/qcasa/ingresar">
     {% if error %}<div class="qc-error">{{ error }}</div>{% endif %}
-    <label>Email<input type="email" name="email" required></label>
-    <label>Contraseña<input type="password" name="password" required></label>
+
+    <label>
+      Email
+      <input type="email" name="email" required>
+    </label>
+
+    <label>
+      Contraseña
+      <input type="password" name="password" required>
+    </label>
+
     <button>Ingresar</button>
-    <div class="qc-demo"><b>Usuario demo</b><code>admin@qcasa.uy</code><code>qcasa123</code></div>
+
+    <div class="qc-demo">
+      <b>Usuario demo · {{ demoAdmin.name }}</b>
+      <code>{{ demoAdmin.email }}</code>
+      <code>{{ demoAdmin.password }}</code>
+    </div>
   </form>
 </main>
 {% endblock %}
