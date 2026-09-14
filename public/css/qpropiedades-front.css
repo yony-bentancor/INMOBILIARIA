@@ -353,3 +353,161 @@
   .qp-control-grid{grid-template-columns:1fr}
   .qp-control-grid article{min-height:78px}
 }
+/* ===== SECCIÓN CENTRAL 50% MÁS COMPACTA - ESCRITORIO ===== */
+@media (min-width: 1001px) {
+
+  .qp-control-showcase {
+    gap: 9px;
+    padding: 9px 5vw 20px;
+  }
+
+  .qp-control-left,
+  .qp-control-right {
+    min-height: 300px;
+    border-radius: 8px;
+  }
+
+  /* COLUMNA IZQUIERDA */
+  .qp-control-left {
+    padding: 20px;
+  }
+
+  .qp-control-left .qp-kicker,
+  .qp-control-right .qp-kicker {
+    font-size: 8px;
+    margin-bottom: 9px;
+  }
+
+  .qp-control-left h2 {
+    font-size: 25px;
+    letter-spacing: -1px;
+  }
+
+  .qp-control-left > p {
+    width: 43%;
+    font-size: 10px;
+    line-height: 1.4;
+    margin: 11px 0;
+  }
+
+  .qp-control-stats {
+    width: 43%;
+    gap: 6px;
+    margin: 10px 0 8px;
+  }
+
+  .qp-control-stats div {
+    padding: 7px;
+    border-radius: 4px;
+  }
+
+  .qp-control-stats b {
+    font-size: 16px;
+  }
+
+  .qp-control-stats span {
+    font-size: 7px;
+  }
+
+  .qp-control-cta {
+    width: 43%;
+    min-height: 34px;
+    padding: 0 11px;
+    font-size: 9px;
+    border-radius: 4px;
+  }
+
+  /* NOTEBOOK */
+  .qp-laptop {
+    width: 45%;
+    right: 4%;
+    bottom: 35px;
+  }
+
+  .qp-laptop-screen {
+    height: 170px;
+    border-width: 5px;
+  }
+
+  .qp-laptop-screen aside {
+    padding: 9px 6px;
+    gap: 5px;
+  }
+
+  .qp-laptop-screen aside b {
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+  }
+
+  .qp-laptop-screen aside small {
+    font-size: 4.5px;
+  }
+
+  .qp-laptop-content {
+    padding: 9px 7px;
+  }
+
+  .qp-laptop-content article {
+    grid-template-columns: 28px 1fr;
+    padding: 4px;
+    margin: 4px 0;
+  }
+
+  .qp-laptop-base {
+    height: 7px;
+  }
+
+  .qp-control-benefits {
+    left: 20px;
+    bottom: 16px;
+    gap: 15px;
+    font-size: 7px;
+  }
+
+  /* COLUMNA DERECHA */
+  .qp-control-right {
+    padding: 20px;
+  }
+
+  .qp-control-right h2 {
+    font-size: 23px;
+    letter-spacing: -1px;
+  }
+
+  .qp-control-right > p {
+    font-size: 9px;
+    margin: 8px 0 13px;
+  }
+
+  .qp-control-grid {
+    gap: 6px;
+  }
+
+  .qp-control-grid article {
+    min-height: 52px;
+    padding: 7px;
+    grid-template-columns: 30px 1fr 10px;
+    gap: 6px;
+    border-radius: 6px;
+  }
+
+  .qp-control-grid article > span {
+    width: 27px;
+    height: 27px;
+    font-size: 13px;
+  }
+
+  .qp-control-grid b {
+    font-size: 9px;
+    margin-bottom: 2px;
+  }
+
+  .qp-control-grid small {
+    font-size: 6.5px;
+  }
+
+  .qp-control-grid i {
+    font-size: 9px;
+  }
+}
