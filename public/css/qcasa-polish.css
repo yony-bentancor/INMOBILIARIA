@@ -176,4 +176,92 @@
   .qc-home-v2 .qc-v3-hero-photo{background-position:64% center}
   .qc-home-v2 .qc-v2-copy{width:100%;padding-top:50px}
 }
-\n\n/* =========================================================\n   QCASA · AJUSTES 15 SEP · BUSCADOR + ADMIN\n   ========================================================= */\n/* Admin: una sola navegación, siempre en la misma posición */\n.qc-admin-mode{display:none!important}\n.qc-admin-head{display:flex;align-items:flex-end;justify-content:space-between;gap:28px}\n.qc-admin-head>.qc-admin-nav{margin:0 0 2px auto!important;align-self:flex-end}\n.qc-admin-nav{display:flex;align-items:center;gap:10px;flex-wrap:wrap}\n.qc-admin-nav>a,.qc-admin-nav>form>button,.qc-admin-dropdown>button{min-height:38px;padding:0 14px!important;font-size:10px!important;font-weight:800}\n.qc-admin-page-actions{display:flex;justify-content:flex-end;gap:10px;margin:18px 0}\n.qc-admin-dropdown>button.is-active{background:#073c35!important;color:#fff!important;border-color:#073c35!important}\n\n/* Propiedades: acceso directo a publicaciones con video */\n.qc-property-status-tabs{grid-template-columns:repeat(7,1fr)}\n\n/* Comprar / Alquilar / Buscar: buscador más fino y editorial */\n.qc-search-head-premium{padding-top:40px!important;padding-bottom:34px!important}\n.qc-search-title-row{display:flex;align-items:flex-end;justify-content:space-between;gap:24px}\n.qc-search-head-premium h1{font-size:38px!important;line-height:1.02!important;margin-top:7px!important}\n.qc-search-context{font-size:13px!important}\n.qc-map-cta{display:inline-flex!important;align-items:center;justify-content:center;min-height:38px!important;padding:0 14px!important;background:transparent!important;color:#075248!important;border:1px solid #9fbab1!important;border-radius:5px!important;font-size:11px!important;font-weight:800!important;text-decoration:none!important;box-shadow:none!important;white-space:nowrap}\n.qc-map-cta:hover{background:#075248!important;color:#fff!important}\n.qc-filters-primary{margin-top:22px!important;grid-template-columns:minmax(220px,1.35fr) repeat(3,minmax(135px,.92fr)) auto auto!important;border-radius:5px!important;box-shadow:0 5px 18px rgba(7,60,53,.035)!important}\n.qc-filters-primary>input,.qc-filters-primary>select{min-height:44px!important;height:44px!important;padding:0 14px!important;font-size:12px!important}\n.qc-filters-primary>button{min-height:44px!important;height:44px!important;padding:0 17px!important;font-size:11px!important}\n.qc-filters-primary .qc-more-filters{padding-left:16px!important;padding-right:16px!important}\n.qc-advanced-filters{padding:14px!important}\n.qc-results{padding-top:30px!important}\n@media(max-width:1100px){.qc-admin-head{align-items:flex-start;flex-direction:column}.qc-admin-head>.qc-admin-nav{margin-left:0!important}.qc-property-status-tabs{grid-template-columns:repeat(4,1fr)}}\n@media(max-width:900px){.qc-filters-primary{grid-template-columns:1fr 1fr!important}.qc-search-title-row{align-items:flex-start}.qc-property-status-tabs{grid-template-columns:repeat(3,1fr)}}\n@media(max-width:760px){.qc-search-title-row{display:block}.qc-map-cta{margin-top:16px}.qc-filters-primary{grid-template-columns:1fr!important}.qc-property-status-tabs{grid-template-columns:repeat(2,1fr)}}\n
+\n\n/* =========================================================\n   QCASA · AJUSTES 15 SEP · BUSCADOR + ADMIN\n   ========================================================= */\n/* Admin: una sola navegación, siempre en la misma posición */\n.qc-admin-mode{display:none!important}\n.qc-admin-head{display:flex;align-items:flex-end;justify-content:space-between;gap:28px}\n.qc-admin-head>.qc-admin-nav{margin:0 0 2px auto!important;align-self:flex-end}\n.qc-admin-nav{display:flex;align-items:center;gap:10px;flex-wrap:wrap}\n.qc-admin-nav>a,.qc-admin-nav>form>button,.qc-admin-dropdown>button{min-height:38px;padding:0 14px!important;font-size:10px!important;font-weight:800}\n.qc-admin-page-actions{display:flex;justify-content:flex-end;gap:10px;margin:18px 0}\n.qc-admin-dropdown>button.is-active{background:#073c35!important;color:#fff!important;border-color:#073c35!important}\n\n/* Propiedades: acceso directo a publicaciones con video */\n.qc-property-status-tabs{grid-template-columns:repeat(7,1fr)}\n\n/* Comprar / Alquilar / Buscar: buscador más fino y editorial */\n.qc-search-head-premium{padding-top:40px!important;padding-bottom:34px!important}\n.qc-search-title-row{display:flex;align-items:flex-end;justify-content:space-between;gap:24px}\n.qc-search-head-premium h1{font-size:38px!important;line-height:1.02!important;margin-top:7px!important}\n.qc-search-context{font-size:13px!important}\n.qc-map-cta{display:inline-flex!important;align-items:center;justify-content:center;min-height:38px!important;padding:0 14px!important;background:transparent!important;color:#075248!important;border:1px solid #9fbab1!important;border-radius:5px!important;font-size:11px!important;font-weight:800!important;text-decoration:none!important;box-shadow:none!important;white-space:nowrap}\n.qc-map-cta:hover{background:#075248!important;color:#fff!important}\n.qc-filters-primary{margin-top:22px!important;grid-template-columns:minmax(220px,1.35fr) repeat(3,minmax(135px,.92fr)) auto auto!important;border-radius:5px!important;box-shadow:0 5px 18px rgba(7,60,53,.035)!important}\n.qc-filters-primary>input,.qc-filters-primary>select{min-height:44px!important;height:44px!important;padding:0 14px!important;font-size:12px!important}\n.qc-filters-primary>button{min-height:44px!important;height:44px!important;padding:0 17px!important;font-size:11px!important}\n.qc-filters-primary .qc-more-filters{padding-left:16px!important;padding-right:16px!important}\n.qc-advanced-filters{padding:14px!important}\n.qc-results{padding-top:30px!important}\n@media(max-width:1100px){.qc-admin-head{align-items:flex-start;flex-direction:column}.qc-admin-head>.qc-admin-nav{margin-left:0!important}.qc-property-status-tabs{grid-template-columns:repeat(4,1fr)}}\n@media(max-width:900px){.qc-filters-primary{grid-template-columns:1fr 1fr!important}.qc-search-title-row{align-items:flex-start}.qc-property-status-tabs{grid-template-columns:repeat(3,1fr)}}\n@media(max-width:760px){.qc-search-title-row{display:block}.qc-map-cta{margin-top:16px}.qc-filters-primary{grid-template-columns:1fr!important}.qc-property-status-tabs{grid-template-columns:repeat(2,1fr)}}\n\n\n/* =========================================================
+   QCASA · HERO COMPACTO · BENEFICIOS SOBRE LA IMAGEN
+   ========================================================= */
+.qc-home-v2 .qc-v3-hero-photo{
+  position:relative;
+  min-height:610px;
+}
+.qc-home-v2 .qc-v2-copy{
+  position:relative;
+  z-index:2;
+  width:min(760px,58%);
+}
+.qc-hero-values{
+  position:absolute;
+  z-index:3;
+  right:clamp(28px,5vw,82px);
+  top:50%;
+  transform:translateY(-48%);
+  width:min(430px,31vw);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.qc-hero-values article{
+  min-height:112px;
+  padding:16px 15px;
+  display:flex;
+  align-items:flex-start;
+  gap:11px;
+  border:1px solid rgba(216,176,92,.25);
+  border-radius:8px;
+  background:rgba(4,24,22,.46);
+  box-shadow:0 12px 30px rgba(0,0,0,.14);
+  backdrop-filter:blur(7px);
+  -webkit-backdrop-filter:blur(7px);
+}
+.qc-hero-values i{
+  flex:0 0 27px;
+  width:27px;
+  height:27px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(224,188,109,.38);
+  border-radius:50%;
+  color:#e0bc6d;
+  font-style:normal;
+  font-size:13px;
+}
+.qc-hero-values div{display:flex;flex-direction:column;gap:5px}
+.qc-hero-values b{
+  color:#fff;
+  font-size:12px;
+  line-height:1.25;
+  letter-spacing:.01em;
+}
+.qc-hero-values span{
+  color:rgba(239,244,241,.72);
+  font-size:10px;
+  line-height:1.4;
+}
+/* El bloque ya vive dentro del hero: la franja inferior desaparece. */
+.qc-home-v2 + .qc-colonia-values,.qc-home-v2 .qc-v2-values{display:none!important}
+
+@media(max-width:1180px){
+  .qc-home-v2 .qc-v2-copy{width:min(700px,62%)}
+  .qc-hero-values{right:28px;width:min(360px,29vw);grid-template-columns:1fr}
+  .qc-hero-values article{min-height:auto;padding:12px}
+}
+@media(max-width:900px){
+  .qc-home-v2 .qc-v3-hero-photo{min-height:auto;padding-bottom:28px}
+  .qc-home-v2 .qc-v2-copy{width:100%;padding-right:24px}
+  .qc-hero-values{
+    position:relative;
+    right:auto;
+    top:auto;
+    transform:none;
+    width:auto;
+    margin:24px 22px 0;
+    grid-template-columns:1fr 1fr;
+  }
+  .qc-hero-values article{min-height:92px;background:rgba(4,24,22,.58)}
+}
+@media(max-width:560px){
+  .qc-hero-values{gap:8px;margin:20px 16px 0}
+  .qc-hero-values article{min-height:88px;padding:11px 10px;gap:8px}
+  .qc-hero-values i{width:24px;height:24px;flex-basis:24px;font-size:11px}
+  .qc-hero-values b{font-size:11px}
+  .qc-hero-values span{font-size:9px}
+}
