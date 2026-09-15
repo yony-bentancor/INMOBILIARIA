@@ -1,113 +1,59 @@
 {% extends 'qcasa/layout.njk' %}
 {% block qcbody %}
-<main class="qc-user">
-  <header class="qc-user-head">
-    <div>
+<main class="qc-user qc-user-refined">
+  <header class="qc-user-head qc-user-head-refined">
+    <div class="qc-user-welcome">
       <span class="qc-kicker">MI QCASA</span>
-      <h1>Hola, {{ user.name }}.</h1>
-      <p>Administrá tus publicaciones y seguí su estado de aprobación.</p>
+      <h1>Hola, {{ user.name }}</h1>
+      <p>Administrá tus publicaciones y seguí su estado.</p>
     </div>
-
-    <div class="qc-user-actions">
-      <a class="qc-admin-primary" href="/qcasa/mi-qcasa/publicar">+ Publicar propiedad</a>
-      {% if whatsappQcasa %}<a class="qc-whatsapp-link" href="{{ whatsappQcasa }}" target="_blank" rel="noopener">WhatsApp QCASA</a>{% endif %}
-      <form method="post" action="/qcasa/salir"><button class="qc-admin-link">Salir</button></form>
+    <div class="qc-user-actions qc-user-actions-refined">
+      <a class="qc-user-primary" href="/qcasa/mi-qcasa/publicar">+ Publicar propiedad</a>
+      {% if whatsappQcasa %}<a class="qc-user-secondary" href="{{ whatsappQcasa }}" target="_blank" rel="noopener">WhatsApp QCASA</a>{% endif %}
+      <form method="post" action="/qcasa/salir"><button class="qc-user-quiet">Salir</button></form>
     </div>
   </header>
 
   {% if unread %}
-  <section class="qc-notice-bar">
-    <b>Tenés {{ unread }} notificación{{ 'es' if unread != 1 else '' }} nueva{{ 's' if unread != 1 else '' }}.</b>
-    <form method="post" action="/qcasa/mi-qcasa/notificaciones/leer">
-      <button>Marcar como leídas</button>
-    </form>
+  <section class="qc-notice-bar qc-notice-refined">
+    <div><span class="qc-notice-dot"></span><b>{{ unread }} notificación{{ 'es' if unread != 1 else '' }} nueva{{ 's' if unread != 1 else '' }}</b></div>
+    <form method="post" action="/qcasa/mi-qcasa/notificaciones/leer"><button>Marcar como leídas</button></form>
   </section>
   {% endif %}
 
   <section class="qc-user-grid">
     <div class="qc-user-main">
-      <div class="qc-user-section-head">
-        <div>
-          <span class="qc-kicker">MIS PUBLICACIONES</span>
-          <h2>Propiedades</h2>
-        </div>
-        <span>{{ properties.length }} total</span>
-      </div>
-
+      <div class="qc-user-section-head"><div><span class="qc-kicker">MIS PUBLICACIONES</span><h2>Propiedades</h2></div><span>{{ properties.length }} total</span></div>
       {% if properties.length %}
-        <div class="qc-user-properties">
-          {% for p in properties %}
-          <article>
-            <div class="qc-user-property-image">
-              <img src="{{ p.image }}" alt="">
-            </div>
-
-            <div class="qc-user-property-copy">
-              <small>{{ p.category }} · {{ p.city }}, {{ p.department }}</small>
-              <h3>{{ p.title }}</h3>
-              <strong>{{ money(p) }}</strong>
-              <p>{{ p.operation }} · {{ p.area | int }} m²</p>
-              {% if p.images and p.images.length > 1 %}
-                <small>{{ p.images.length }} fotos</small>
-              {% endif %}
-            </div>
-
-            <div class="qc-user-property-status">
-              <span class="qc-state qc-state-{{ p.status | lower }}">{{ p.status }}</span>
-
-              {% if p.status == 'Pendiente' %}
-                <small>Esperando revisión del administrador.</small>
-                <a href="/qcasa/mi-qcasa/propiedades/{{ p.id }}/editar">Editar mientras está pendiente →</a>
-              {% elif p.status == 'Publicada' %}
-                <small>Tu propiedad está visible en QCASA.</small>
-                <a href="/qcasa/propiedad/{{ p.slug }}">Ver publicación →</a>
-                <a href="/qcasa/mi-qcasa/propiedades/{{ p.id }}/editar">Modificar publicación →</a>
-                {% if p.changeStatus == 'Pendiente' %}
-                  <span class="qc-change-badge">Cambios esperando aprobación</span>
-                {% elif p.changeStatus == 'Rechazado' %}
-                  <small class="qc-change-rejected">{{ p.changeReviewNote }}</small>
-                {% endif %}
-              {% elif p.status == 'Rechazada' %}
-                <small>{{ p.reviewNote or 'La publicación necesita cambios.' }}</small>
-                <a href="/qcasa/mi-qcasa/propiedades/{{ p.id }}/editar">Corregir publicación →</a>
-              {% elif p.status == 'Borrador' %}
-                <small>Corregida. Podés volver a enviarla.</small>
-                <form method="post" action="/qcasa/mi-qcasa/propiedades/{{ p.id }}/reenviar">
-                  <button class="qc-user-resubmit">Reenviar a revisión</button>
-                </form>
-              {% endif %}
-            </div>
-          </article>
-          {% endfor %}
-        </div>
+      <div class="qc-user-properties">
+        {% for p in properties %}
+        <article>
+          <div class="qc-user-property-image"><img src="{{ p.image }}" alt=""></div>
+          <div class="qc-user-property-copy">
+            <small>{{ p.category }} · {{ p.city }}, {{ p.department }}</small>
+            <h3>{{ p.title }}</h3><strong>{{ money(p) }}</strong><p>{{ p.operation }} · {{ p.area | int }} m²</p>
+            {% if p.images and p.images.length > 1 %}<small>{{ p.images.length }} fotos</small>{% endif %}
+            {% if p.videoUrl %}<small>▶ Video</small>{% endif %}
+          </div>
+          <div class="qc-user-property-status">
+            <span class="qc-state qc-state-{{ p.status | lower }}">{{ p.status }}</span>
+            {% if p.status == 'Pendiente' %}<small>Esperando revisión del administrador.</small><a href="/qcasa/mi-qcasa/propiedades/{{ p.id }}/editar">Editar mientras está pendiente →</a>
+            {% elif p.status == 'Publicada' %}<small>Tu propiedad está visible en QCASA.</small><a href="/qcasa/propiedad/{{ p.slug }}">Ver publicación →</a><a href="/qcasa/mi-qcasa/propiedades/{{ p.id }}/editar">Modificar publicación →</a>{% if p.changeStatus == 'Pendiente' %}<span class="qc-change-badge">Cambios esperando aprobación</span>{% elif p.changeStatus == 'Rechazado' %}<small class="qc-change-rejected">{{ p.changeReviewNote }}</small>{% endif %}
+            {% elif p.status == 'Rechazada' %}<small>{{ p.reviewNote or 'La publicación necesita cambios.' }}</small><a href="/qcasa/mi-qcasa/propiedades/{{ p.id }}/editar">Corregir publicación →</a>
+            {% elif p.status == 'Borrador' %}<small>Corregida. Podés volver a enviarla.</small><form method="post" action="/qcasa/mi-qcasa/propiedades/{{ p.id }}/reenviar"><button class="qc-user-resubmit">Reenviar a revisión</button></form>{% endif %}
+          </div>
+        </article>
+        {% endfor %}
+      </div>
       {% else %}
-        <div class="qc-empty qc-user-empty">
-          <h3>Todavía no publicaste ninguna propiedad.</h3>
-          <p>Podés cargar la primera ahora. La publicación llegará al administrador de QCASA para revisión.</p>
-          <a href="/qcasa/mi-qcasa/publicar">Publicar mi propiedad →</a>
-        </div>
+      <div class="qc-empty qc-user-empty"><h3>Todavía no publicaste ninguna propiedad.</h3><p>Podés cargar la primera ahora. QCASA la revisará antes de publicarla.</p><a href="/qcasa/mi-qcasa/publicar">Publicar mi propiedad →</a></div>
       {% endif %}
     </div>
 
     <aside class="qc-user-notifications">
-      <div class="qc-user-section-head">
-        <div>
-          <span class="qc-kicker">ACTIVIDAD</span>
-          <h2>Notificaciones</h2>
-        </div>
-      </div>
-
-      {% if notifications.length %}
-        {% for n in notifications %}
-        <article class="qc-note qc-note-{{ n.type }} {% if not n.read %}is-unread{% endif %}">
-          <b>{{ n.title }}</b>
-          <p>{{ n.message }}</p>
-          <small>{{ n.createdAt | replace('T',' ') | truncate(16, true, '') }}</small>
-        </article>
-        {% endfor %}
-      {% else %}
-        <div class="qc-empty">No tenés notificaciones todavía.</div>
-      {% endif %}
+      <div class="qc-user-section-head"><div><span class="qc-kicker">ACTIVIDAD</span><h2>Notificaciones</h2></div></div>
+      {% if notifications.length %}{% for n in notifications %}<article class="qc-note qc-note-{{ n.type }} {% if not n.read %}is-unread{% endif %}"><b>{{ n.title }}</b><p>{{ n.message }}</p><small>{{ n.createdAt | replace('T',' ') | truncate(16, true, '') }}</small></article>{% endfor %}
+      {% else %}<div class="qc-empty">No tenés notificaciones todavía.</div>{% endif %}
     </aside>
   </section>
 </main>
