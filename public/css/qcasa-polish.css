@@ -1,0 +1,28 @@
+
+/* QCASA polish final: navegación, tipografía, admin, video y mapa */
+.qc-nav-unified .qc-main-nav>a{position:relative;font-weight:720;letter-spacing:-.01em}
+.qc-nav-unified .qc-main-nav>a.is-active{color:#073c35}
+.qc-nav-unified .qc-main-nav>a.is-active:not(.qc-publish-nav):after{content:"";position:absolute;left:10px;right:10px;bottom:3px;height:2px;background:#d7a955}
+.qc-search-head-premium h1,.qc-map-head h1,.qc-admin h1{letter-spacing:-.035em;font-weight:720}
+.qc-search-context{margin:7px 0 0;color:#64726d;font-size:14px}
+.qc-filters-primary input,.qc-filters-primary select{font-size:14px;font-weight:450}
+.qc-filters-primary button{font-size:13px;font-weight:760;letter-spacing:-.01em}
+.qc-more-filters{font-weight:680!important}
+.qc-admin-mode{display:inline-flex;align-items:center;background:#073c35;color:#fff;padding:10px 12px;font-size:9px;font-weight:900;letter-spacing:.08em}
+.qc-admin-nav a,.qc-admin-nav button{position:relative}
+.qc-admin-nav a.is-active{background:#073c35;color:#fff;border-color:#073c35}
+.qc-dashboard-kpis{grid-template-columns:repeat(6,minmax(0,1fr))!important}
+.qc-dashboard-kpis>a{display:flex;flex-direction:column;background:#fff;border:1px solid #d9e2dd;padding:18px;text-decoration:none;color:#0b1715;min-height:112px;transition:.18s ease}
+.qc-dashboard-kpis>a:hover{transform:translateY(-2px);border-color:#0c5d51;box-shadow:0 8px 24px rgba(7,60,53,.08)}
+.qc-dashboard-kpis>a small,.qc-dashboard-kpis>a span{color:#6c7974}.qc-dashboard-kpis>a b{font-size:28px;margin:6px 0}
+.qc-funnel>a{display:flex;flex-direction:column;background:#f7f9f8;border:1px solid #dce4df;padding:16px;text-decoration:none;color:#0b1715;min-width:135px}
+.qc-funnel>a:hover{border-color:#0c5d51;background:#fff}.qc-funnel>a small{font-size:9px;color:#6f7c77}.qc-funnel>a b{font-size:25px;margin-top:5px}
+.qc-property-status-tabs{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:18px}
+.qc-property-status-tabs a{background:#fff;border:1px solid #d9e2dd;padding:14px;text-decoration:none;color:#0b1715}.qc-property-status-tabs a.is-active{background:#073c35;color:#fff}.qc-property-status-tabs b,.qc-property-status-tabs span{display:block}.qc-property-status-tabs b{font-size:22px}.qc-property-status-tabs span{font-size:10px;margin-top:4px}
+.qc-admin-property-list article{display:grid;grid-template-columns:92px 1fr auto;gap:16px;align-items:center;padding:14px;border-bottom:1px solid #e1e7e4}.qc-admin-property-list img{width:92px;height:66px;object-fit:cover}.qc-admin-property-list b,.qc-admin-property-list span,.qc-admin-property-list small{display:block}.qc-admin-property-list small{font-size:8px;color:#71807a}.qc-admin-property-list span{font-size:11px;color:#69766f;margin-top:4px}.qc-admin-property-list em{display:inline-block;margin-top:6px;font-size:9px;color:#0c5d51;font-style:normal;font-weight:800}.qc-admin-property-list>a{font-size:10px;font-weight:900;color:#073c35;text-decoration:none}
+.qc-video-badge{position:absolute;right:12px;bottom:12px;background:#073c35;color:#fff;padding:7px 10px;font-size:9px;font-weight:900;font-style:normal;z-index:3}
+.qc-detail-photo{position:relative}
+.qc-property-video{margin:26px 0;background:#081512;color:#fff;padding:28px;display:grid;grid-template-columns:280px 1fr;gap:28px;align-items:center}.qc-property-video h2{font-size:28px;margin:6px 0}.qc-property-video iframe,.qc-property-video video{width:100%;aspect-ratio:16/9;border:0;background:#000;max-height:520px}
+.qc-map-visible-list{border-top:1px solid #d9e2dd;max-height:300px;overflow:auto}.qc-map-visible-list button{width:100%;display:grid;text-align:left;background:#fff;border:0;border-bottom:1px solid #edf1ef;padding:12px 16px;cursor:pointer}.qc-map-visible-list button:hover{background:#f4f7f5}.qc-map-visible-list span{font-size:8px;color:#71807a}.qc-map-visible-list b{font-size:11px;margin:3px 0}.qc-map-visible-list strong{font-size:11px;color:#0c5d51}.qc-map-more{padding:12px 16px;font-size:10px;color:#6f7b76}
+@media(max-width:1200px){.qc-dashboard-kpis{grid-template-columns:repeat(3,1fr)!important}}
+@media(max-width:760px){.qc-dashboard-kpis{grid-template-columns:1fr 1fr!important}.qc-property-status-tabs{grid-template-columns:repeat(2,1fr)}.qc-property-video{grid-template-columns:1fr}.qc-admin-property-list article{grid-template-columns:70px 1fr}.qc-admin-property-list article>a{grid-column:2}.qc-admin-mode{display:none}}
