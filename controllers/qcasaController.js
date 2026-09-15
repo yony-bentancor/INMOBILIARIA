@@ -30,7 +30,7 @@ function amountIn(currency,amount,target){
 }
 
 function moneyFor(req){
-  const mode=req.session?.qcasaCurrency||store.settings.currencyDisplay||'dual';
+  const mode=req.session?.qcasaCurrency||store.settings.currencyDisplay||'USD';
   return p=>{
     const currency=p.currency||'USD';
     const amount=Number(p.price||0);
@@ -38,7 +38,7 @@ function moneyFor(req){
     const uyu=amountIn(currency,amount,'UYU');
     if(mode==='USD')return `USD ${fmt(usd)}`;
     if(mode==='UYU')return `UYU ${fmt(uyu)}`;
-    return `USD ${fmt(usd)} · UYU ${fmt(uyu)}`;
+    return `USD ${fmt(usd)}`;
   };
 }
 
@@ -60,6 +60,11 @@ function userFormPayload(req){
     area:Number(req.body.area||0),
     summary:clean(req.body.summary),
     contact:clean(req.body.contact),
+    lat:req.body.lat!==undefined&&req.body.lat!==''?Number(req.body.lat):null,
+    lng:req.body.lng!==undefined&&req.body.lng!==''?Number(req.body.lng):null,
+    garage:req.body.garage==='on'||req.body.garage==='1',
+    furnished:req.body.furnished==='on'||req.body.furnished==='1',
+    garden:req.body.garden==='on'||req.body.garden==='1',
     featured:false,
     tone:(clean(req.body.category)||'propiedad').toLowerCase()
   };
@@ -113,10 +118,31 @@ function audienceUsers(audience,department){
   return users;
 }
 
+
+function sharePropertyUrl(req,p){
+  const base=`${req.protocol}://${req.get('host')}`;
+  const text=`Mirá esta propiedad en QCASA: ${p.title} · ${moneyFor(req)(p)} · ${base}/qcasa/propiedad/${p.slug}`;
+  return `https://wa.me/?text=${encodeURIComponent(text)}`;
+}
+function filterProperties(req){
+  const f=req.query||{}, q=clean(f.q).toLowerCase(), category=clean(f.category), operation=clean(f.operation), department=clean(f.department);
+  const minPrice=Number(f.minPrice||0),maxPrice=Number(f.maxPrice||0),bedrooms=Number(f.bedrooms||0),bathrooms=Number(f.bathrooms||0),minArea=Number(f.minArea||0),maxArea=Number(f.maxArea||0);
+  const target=req.session?.qcasaCurrency==='UYU'?'UYU':'USD';
+  return publicProperties().filter(p=>{
+    const hay=[p.title,p.summary,p.city,p.department,p.category].join(' ').toLowerCase();
+    const price=amountIn(p.currency,p.price,target);
+    return (!q||hay.includes(q))&&(!category||p.category===category)&&(!operation||p.operation===operation)&&(!department||p.department===department)
+      &&(!minPrice||price>=minPrice)&&(!maxPrice||price<=maxPrice)
+      &&(!bedrooms||Number(p.bedrooms)>=bedrooms)&&(!bathrooms||Number(p.bathrooms)>=bathrooms)
+      &&(!minArea||Number(p.area)>=minArea)&&(!maxArea||Number(p.area)<=maxArea)
+      &&(!f.garage||p.garage)&&(!f.furnished||p.furnished)&&(!f.garden||p.garden);
+  });
+}
+
 /* Público */
 exports.currencyPreference=(req,res)=>{
   const value=clean(req.body.currencyMode);
-  if(['dual','USD','UYU'].includes(value))req.session.qcasaCurrency=value;
+  if(['USD','UYU'].includes(value))req.session.qcasaCurrency=value;
   res.redirect(req.get('referer')||'/qcasa');
 };
 
@@ -127,17 +153,25 @@ exports.home=(req,res)=>{
 };
 
 exports.search=(req,res)=>{
-  const q=clean(req.query.q).toLowerCase();
-  const category=clean(req.query.category),operation=clean(req.query.operation),department=clean(req.query.department);
-  const maxPrice=Number(req.query.maxPrice||0);
-  const results=publicProperties().filter(p=>{
-    const hay=[p.title,p.summary,p.city,p.department,p.category].join(' ').toLowerCase();
-    const inFilterCurrency=req.session?.qcasaCurrency==='UYU'?'UYU':'USD';
-    const comparable=amountIn(p.currency,p.price,inFilterCurrency);
-    return (!q||hay.includes(q))&&(!category||p.category===category)&&(!operation||p.operation===operation)&&(!department||p.department===department)&&(!maxPrice||comparable<=maxPrice);
-  });
+  const results=filterProperties(req).map(p=>({...p,shareWhatsApp:sharePropertyUrl(req,p)}));
   const departments=[...new Set(publicProperties().map(p=>p.department))].sort();
-  res.render('qcasa/search.njk',{title:'Buscar | QCASA',results,categories:store.categories,departments,filters:req.query,money:moneyFor(req),qcasaUser:sessionUser(req)});
+  const advancedKeys=['minPrice','maxPrice','bedrooms','bathrooms','minArea','maxArea','garage','furnished','garden'];
+  const advancedActive=advancedKeys.some(k=>req.query[k]);
+  const queryString=new URLSearchParams(req.query).toString();
+  res.render('qcasa/search.njk',{title:'Buscar | QCASA',results,categories:store.categories,departments,filters:req.query,money:moneyFor(req),qcasaUser:sessionUser(req),advancedActive,queryString});
+};
+
+exports.map=(req,res)=>{
+  const results=filterProperties(req);
+  const money=moneyFor(req);
+  const mapData=results.filter(p=>Number.isFinite(Number(p.lat))&&Number.isFinite(Number(p.lng))).map(p=>({
+    id:p.id,slug:p.slug,title:p.title,category:p.category,operation:p.operation,city:p.city,area:p.area,bedrooms:p.bedrooms,
+    lat:Number(p.lat),lng:Number(p.lng),image:p.image,priceLabel:money(p),
+    priceShort:(req.session?.qcasaCurrency==='UYU'?'$ ':'USD ')+fmt(amountIn(p.currency,p.price,req.session?.qcasaCurrency==='UYU'?'UYU':'USD')),
+    shareWhatsApp:sharePropertyUrl(req,p)
+  }));
+  const cleanQuery={...req.query};delete cleanQuery.property;
+  res.render('qcasa/map.njk',{title:'Mapa | QCASA',results,mapProperties:JSON.stringify(mapData).replace(/</g,'\u003c'),focusProperty:clean(req.query.property),queryString:new URLSearchParams(cleanQuery).toString()});
 };
 
 exports.detail=(req,res)=>{
@@ -145,7 +179,8 @@ exports.detail=(req,res)=>{
   if(!property||property.status!=='Publicada')return res.status(404).send('Propiedad no encontrada.');
   property.views=Number(property.views||0)+1;
   res.render('qcasa/detail.njk',{title:`${property.title} | QCASA`,property,money:moneyFor(req),consulted:req.query.consulta==='1',qcasaUser:sessionUser(req),
-    whatsappQcasa:whatsappUrl(store.settings.contactPhone,`Hola QCASA, me interesa la propiedad ${property.title} (${property.id}).`)
+    whatsappQcasa:whatsappUrl(store.settings.contactPhone,`Hola QCASA, me interesa la propiedad ${property.title} (${property.id}).`),
+    shareWhatsApp:sharePropertyUrl(req,property)
   });
 };
 
@@ -179,7 +214,7 @@ exports.login=(req,res)=>{
   return res.status(401).render('qcasa/login.njk',{title:'Ingresar | QCASA',error:'Usuario o contraseña incorrectos.',demoAdmin:store.admin,demoUser:store.users[0]});
 };
 
-exports.registerForm=(req,res)=>res.render('qcasa/register.njk',{title:'Crear cuenta | QCASA',error:null});
+exports.registerForm=(req,res)=>res.render('qcasa/register.njk',{title:'Crear cuenta | QCASA',error:null,publishNext:req.query.publicar==='1'});
 exports.register=(req,res)=>{
   const name=clean(req.body.name),email=cleanEmail(req.body.email),phone=clean(req.body.phone);
   const password=String(req.body.password||''),password2=String(req.body.password2||'');
@@ -189,7 +224,7 @@ exports.register=(req,res)=>{
   const user={id:store.nextUserId(),name,email,phone,password,createdAt:new Date().toISOString(),active:true};
   store.users.push(user);
   req.session.qcasaUser={id:user.id,email:user.email,name:user.name,phone:user.phone};
-  req.session.save(()=>res.redirect('/qcasa/mi-qcasa'));
+  req.session.save(()=>res.redirect(req.body.next==='publicar'?'/qcasa/mi-qcasa/publicar':'/qcasa/mi-qcasa'));
 };
 
 exports.logout=(req,res)=>{
@@ -351,30 +386,28 @@ exports.adminDashboard=(req,res)=>{
 
 /* Admin consultas */
 exports.adminInquiries=(req,res)=>{
-  const inquiries=store.inquiries.slice().sort((a,b)=>new Date(b.createdAt)-new Date(a.createdAt)).map(i=>{
-    const property=store.findById(i.propertyId);
-    const owner=property?.ownerUserId?store.findUserById(property.ownerUserId):null;
-    return {
-      ...i,
-      property,
-      owner,
-      whatsappInterested:whatsappUrl(i.phone,`Hola ${i.name}, te contactamos desde QCASA por tu consulta sobre ${i.propertyTitle}.`),
-      whatsappOwner:owner?whatsappUrl(owner.phone,`Hola ${owner.name}, desde QCASA te avisamos que recibimos una consulta por ${i.propertyTitle}.`):null,
-      whatsappQcasa:whatsappUrl(store.settings.contactPhone,`Consulta ${i.id} sobre ${i.propertyTitle}.`)
-    };
+  const selected=clean(req.query.status)||'Pendientes';
+  const pendingStatuses=['Nueva','Contactado','Visita','Negociación'];
+  const all=store.inquiries.slice().sort((a,b)=>new Date(b.createdAt)-new Date(a.createdAt));
+  const counts={
+    Pendientes:all.filter(i=>pendingStatuses.includes(i.status)).length,
+    Nueva:all.filter(i=>i.status==='Nueva').length,Contactado:all.filter(i=>i.status==='Contactado').length,
+    Visita:all.filter(i=>i.status==='Visita').length,Negociación:all.filter(i=>i.status==='Negociación').length,
+    Cerrada:all.filter(i=>i.status==='Cerrada').length,Perdida:all.filter(i=>i.status==='Perdida').length,Todos:all.length
+  };
+  const filtered=selected==='Todos'?all:selected==='Pendientes'?all.filter(i=>pendingStatuses.includes(i.status)):all.filter(i=>i.status===selected);
+  const inquiries=filtered.map(i=>{
+    const property=store.findById(i.propertyId),owner=property?.ownerUserId?store.findUserById(property.ownerUserId):null;
+    return {...i,property,owner,whatsappInterested:whatsappUrl(i.phone,`Hola ${i.name}, te contactamos desde QCASA por tu consulta sobre ${i.propertyTitle}.`),whatsappOwner:owner?whatsappUrl(owner.phone,`Hola ${owner.name}, desde QCASA te avisamos que recibimos una consulta por ${i.propertyTitle}.`):null};
   });
-  res.render('qcasa/admin/inquiries.njk',{
-    title:'Consultas | QCASA',
-    inquiries,
-    statuses:['Nueva','Contactado','Visita','Negociación','Cerrada','Perdida']
-  });
+  res.render('qcasa/admin/inquiries.njk',{title:'Consultas | QCASA',inquiries,statuses:['Nueva','Contactado','Visita','Negociación','Cerrada','Perdida'],selected,counts});
 };
 exports.adminInquiryStatus=(req,res)=>{
   const inquiry=store.findInquiry(req.params.id);
   if(!inquiry)return res.status(404).send('Consulta no encontrada.');
   const status=clean(req.body.status);
   if(['Nueva','Contactado','Visita','Negociación','Cerrada','Perdida'].includes(status))inquiry.status=status;
-  res.redirect('/qcasa/admin/consultas');
+  res.redirect(req.get('referer')||'/qcasa/admin/consultas');
 };
 
 /* Admin configuración + comunicaciones */
@@ -391,7 +424,7 @@ exports.adminSettingsUpdate=(req,res)=>{
   store.settings.maxPhotos=Math.max(1,Math.min(20,Number(req.body.maxPhotos||8)));
   store.settings.staleDays=Math.max(1,Number(req.body.staleDays||30));
   store.settings.uyuPerUsd=Math.max(1,Number(req.body.uyuPerUsd||41.5));
-  store.settings.currencyDisplay=['dual','USD','UYU'].includes(req.body.currencyDisplay)?req.body.currencyDisplay:'dual';
+  store.settings.currencyDisplay=['USD','UYU'].includes(req.body.currencyDisplay)?req.body.currencyDisplay:'USD';
   store.settings.featuredLimit=Math.max(1,Math.min(12,Number(req.body.featuredLimit||4)));
   store.settings.contactEmail=clean(req.body.contactEmail);
   store.settings.contactPhone=clean(req.body.contactPhone);

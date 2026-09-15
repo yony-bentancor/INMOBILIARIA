@@ -12,7 +12,7 @@ const settings={
   maxPhotos:8,
   staleDays:30,
   uyuPerUsd:41.50,
-  currencyDisplay:'dual', // dual | USD | UYU
+  currencyDisplay:'USD', // USD | UYU
   featuredLimit:4,
   contactEmail:'hola@qcasa.uy',
   contactPhone:'095789647',
@@ -50,12 +50,39 @@ const PHOTO_URLS=[
   'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=1400&q=78'
 ];
 
+
+/* Ubicaciones demo para el mapa. Son puntos de demostración por zona, no domicilios reales. */
+const DEMO_GEO={
+  'QC-1001':[-34.4718,-57.8512],'QC-1002':[-34.4482,-57.8618],
+  'QC-2001':[-34.4650,-57.8404],'QC-2002':[-34.4620,-57.8425],
+  'QC-3001':[-34.4692,-57.8468],'QC-3002':[-34.4642,-57.8410],
+  'QC-4001':[-34.4315,-57.8045],'QC-4002':[-34.4365,-57.7105],
+  'QC-5001':[-34.3165,-57.3505],'QC-5002':[-34.2880,-57.2320],
+  'QC-6001':[-34.4320,-57.7560],'QC-6002':[-34.4260,-57.7930],
+  'QC-7001':[-34.4555,-57.8445],'QC-7002':[-34.4685,-57.8475],
+  'QC-7003':[-34.4385,-57.7130]
+};
+const DEMO_FEATURES={
+  'QC-1001':{garden:true,garage:false,furnished:false},
+  'QC-1002':{garden:true,garage:true,furnished:false},
+  'QC-3001':{garden:false,garage:true,furnished:false},
+  'QC-3002':{garden:false,garage:false,furnished:true},
+  'QC-4001':{garden:true,garage:true,furnished:false},
+  'QC-4002':{garden:true,garage:false,furnished:true},
+  'QC-7001':{garden:true,garage:true,furnished:false},
+  'QC-7002':{garden:false,garage:true,furnished:false},
+  'QC-7003':{garden:true,garage:true,furnished:false}
+};
+
 properties.forEach((property,index)=>{
   property.image=PHOTO_URLS[index%PHOTO_URLS.length];
   property.images=[property.image];
   property.ownerUserId=property.ownerUserId||null;
   property.createdAt=property.createdAt||new Date(Date.now()-(index+2)*86400000*4).toISOString();
   property.views=Number(property.views||0);
+  const geo=DEMO_GEO[property.id];
+  if(geo){property.lat=geo[0];property.lng=geo[1];}
+  Object.assign(property,{garage:false,furnished:false,garden:false},DEMO_FEATURES[property.id]||{});
 });
 
 const admin={
@@ -128,6 +155,12 @@ properties.unshift(
     pendingChangePhotos:[]
   }
 );
+
+properties.forEach(property=>{
+  const geo=DEMO_GEO[property.id];
+  if(geo&&!property.lat){property.lat=geo[0];property.lng=geo[1];}
+  if(property.garage===undefined)Object.assign(property,{garage:false,furnished:false,garden:false},DEMO_FEATURES[property.id]||{});
+});
 
 const inquiries=[
   {id:'CON-1001',propertyId:'QC-3001',propertyTitle:'Apartamento con terraza sobre la Rambla',name:'Ana López',phone:'099111111',email:'ana@demo.uy',message:'Quisiera coordinar una visita.',status:'Nueva',createdAt:'2026-09-14T09:15:00.000Z'},

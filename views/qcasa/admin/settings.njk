@@ -18,7 +18,7 @@
 
         <label>Visualización de moneda por defecto
           <select name="currencyDisplay">
-            <option value="dual" {% if settings.currencyDisplay=='dual' %}selected{% endif %}>USD + UYU</option>
+            
             <option value="USD" {% if settings.currencyDisplay=='USD' %}selected{% endif %}>Solo USD</option>
             <option value="UYU" {% if settings.currencyDisplay=='UYU' %}selected{% endif %}>Solo UYU</option>
           </select>

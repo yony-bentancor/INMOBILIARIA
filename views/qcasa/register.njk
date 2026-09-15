@@ -4,7 +4,7 @@
   <section class="qc-auth-intro">
     <span class="qc-kicker">PUBLICÁ EN QCASA</span>
     <h1>Creá tu cuenta.</h1>
-    <p>El MVP está activo en Colonia. Después de registrarte podés cargar tu propiedad y enviarla al equipo de QCASA para aprobación.</p>
+    <p>El MVP está activo en Colonia. Después de registrarte vas directo a cargar tu propiedad y enviarla al equipo de QCASA para aprobación.</p>
 
     <div class="qc-approval-flow">
       <span><b>1</b> Creás tu cuenta</span>
@@ -14,7 +14,7 @@
     </div>
   </section>
 
-  <form class="qc-auth-card" method="post" action="/qcasa/registro">
+  <form class="qc-auth-card" method="post" action="/qcasa/registro">{% if publishNext %}<input type="hidden" name="next" value="publicar">{% endif %}
     <h2>Registro</h2>
     {% if error %}<div class="qc-error">{{ error }}</div>{% endif %}
     <label>Nombre y apellido<input name="name" required></label>

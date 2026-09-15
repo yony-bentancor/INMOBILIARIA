@@ -4,6 +4,7 @@ const upload=require('../middleware/qcasaUpload');
 
 r.get('/',c.home);
 r.get('/buscar',c.search);
+r.get('/mapa',c.map);
 r.get('/propiedad/:slug',c.detail);
 r.post('/propiedad/:slug/consulta',c.inquiry);
 r.post('/moneda',c.currencyPreference);

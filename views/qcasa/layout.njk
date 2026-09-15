@@ -1,55 +1,15 @@
 {% extends 'layouts/base.njk' %}
 {% block body %}
-<link rel="stylesheet" href="/css/qcasa.css">
-<link rel="stylesheet" href="/css/qcasa-colonia.css">
-<link rel="stylesheet" href="/css/qcasa-mvp.css">
-
+<link rel="stylesheet" href="/css/qcasa.css"><link rel="stylesheet" href="/css/qcasa-colonia.css"><link rel="stylesheet" href="/css/qcasa-mvp.css">
 <div class="qc-page">
-  <header class="qc-nav qc-colonia-nav">
-    <a class="qc-brand" href="/qcasa">
-      <span class="qc-mark">Q</span>
-      <span class="qc-name">QCASA<small>COLONIA · TU LUGAR EN COLONIA</small></span>
-    </a>
-
-    <nav class="qc-main-nav">
-      <div class="qc-nav-dropdown">
-        <button type="button">Propiedades ▾</button>
-        <div class="qc-nav-menu">
-          <a href="/qcasa/buscar?operation=Venta">Comprar</a>
-          <a href="/qcasa/buscar?operation=Alquiler">Alquilar</a>
-          <a href="/qcasa/buscar">Buscar todas</a>
-        </div>
-      </div>
-
-      <form class="qc-currency-switch" method="post" action="/qcasa/moneda">
-        <select name="currencyMode" onchange="this.form.submit()" aria-label="Moneda">
-          <option value="dual" {% if session.qcasaCurrency == 'dual' or not session.qcasaCurrency %}selected{% endif %}>USD + UYU</option>
-          <option value="USD" {% if session.qcasaCurrency == 'USD' %}selected{% endif %}>USD</option>
-          <option value="UYU" {% if session.qcasaCurrency == 'UYU' %}selected{% endif %}>UYU</option>
-        </select>
-      </form>
-
-      {% if session.qcasaUser %}
-        <div class="qc-nav-dropdown">
-          <button type="button">Mi cuenta ▾</button>
-          <div class="qc-nav-menu qc-nav-menu-right">
-            <a href="/qcasa/mi-qcasa">Mi QCASA</a>
-            <a href="/qcasa/mi-qcasa/publicar">Publicar propiedad</a>
-            <form method="post" action="/qcasa/salir"><button type="submit">Salir</button></form>
-          </div>
-        </div>
-      {% else %}
-        <a href="/qcasa/ingresar" class="qc-login">Ingresar</a>
-      {% endif %}
-    </nav>
-  </header>
-
-  {% block qcbody %}{% endblock %}
-
-  <footer class="qc-footer">
-    <div><b>QCASA COLONIA</b><small>Comprar · Alquilar · Buscar · Publicar</small></div>
-    <div><a href="/">Estudio QR</a><a href="/qpropiedades">QPROPIEDADES</a><a href="/qcasa/buscar">Propiedades</a></div>
-    <small>© 2026 QCASA Colonia</small>
-  </footer>
-</div>
-{% endblock %}
+<header class="qc-nav qc-colonia-nav qc-nav-unified">
+<a class="qc-brand" href="/qcasa"><span class="qc-mark">Q</span><span class="qc-name">QCASA</span></a>
+<nav class="qc-main-nav">
+<a href="/qcasa/buscar?operation=Venta">Comprar</a><a href="/qcasa/buscar?operation=Alquiler">Alquilar</a><a href="/qcasa/buscar">Buscar</a><a href="/qcasa/mapa">Mapa</a>
+<a class="qc-publish-nav" href="{{ '/qcasa/mi-qcasa/publicar' if session.qcasaUser else '/qcasa/registro?publicar=1' }}">Publicar propiedad</a>
+<form class="qc-currency-switch" method="post" action="/qcasa/moneda"><select name="currencyMode" onchange="this.form.submit()" aria-label="Moneda"><option value="USD" {% if session.qcasaCurrency != 'UYU' %}selected{% endif %}>USD</option><option value="UYU" {% if session.qcasaCurrency == 'UYU' %}selected{% endif %}>UYU</option></select></form>
+{% if session.qcasaUser %}<div class="qc-nav-dropdown"><button type="button">Mi cuenta ▾</button><div class="qc-nav-menu qc-nav-menu-right"><a href="/qcasa/mi-qcasa">Mi QCASA</a><a href="/qcasa/mi-qcasa/publicar">Publicar propiedad</a><form method="post" action="/qcasa/salir"><button type="submit">Salir</button></form></div></div>{% else %}<a href="/qcasa/ingresar" class="qc-login">Ingresar</a>{% endif %}
+</nav></header>
+{% block qcbody %}{% endblock %}
+<footer class="qc-footer"><div><b>QCASA</b><small>Comprar · Alquilar · Buscar · Publicar</small></div><div><a href="/">Estudio QR</a><a href="/qpropiedades">QPROPIEDADES</a><a href="/qcasa/buscar">Propiedades</a></div><small>© 2026 QCASA</small></footer>
+</div>{% endblock %}

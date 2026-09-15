@@ -94,6 +94,12 @@
       <input name="contact" value="{{ property.pendingChanges.contact if mode=='published-edit' and property.pendingChanges else (property.contact if property else user.phone) }}" required>
     </label>
 
+    <label>Latitud para mapa<input type="number" step="any" name="lat" value="{{ property.lat if property and property.lat else '' }}" placeholder="-34.47"></label>
+    <label>Longitud para mapa<input type="number" step="any" name="lng" value="{{ property.lng if property and property.lng else '' }}" placeholder="-57.85"></label>
+    <label class="qc-check"><input type="checkbox" name="garage" {% if property and property.garage %}checked{% endif %}> Garage / cochera</label>
+    <label class="qc-check"><input type="checkbox" name="garden" {% if property and property.garden %}checked{% endif %}> Jardín</label>
+    <label class="qc-check"><input type="checkbox" name="furnished" {% if property and property.furnished %}checked{% endif %}> Amueblada</label>
+
     <label class="qc-wide">
       Fotos
       <input type="file" name="photos" accept="image/*" multiple>
