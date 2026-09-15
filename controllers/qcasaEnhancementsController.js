@@ -41,9 +41,10 @@ exports.adminDashboard=(req,res,next)=>{
 exports.adminProperties=(req,res)=>{
   const selected=clean(req.query.status)||'Todos';
   const all=store.properties.slice().sort((a,b)=>new Date(b.updatedAt||b.createdAt||0)-new Date(a.updatedAt||a.createdAt||0));
-  const counts={Todos:all.length,Publicada:all.filter(p=>p.status==='Publicada').length,Pendiente:all.filter(p=>p.status==='Pendiente').length,Rechazada:all.filter(p=>p.status==='Rechazada').length,Borrador:all.filter(p=>p.status==='Borrador').length,Cambios:all.filter(p=>p.changeStatus==='Pendiente'&&p.pendingChanges).length};
+  const counts={Todos:all.length,Publicada:all.filter(p=>p.status==='Publicada').length,Pendiente:all.filter(p=>p.status==='Pendiente').length,Rechazada:all.filter(p=>p.status==='Rechazada').length,Borrador:all.filter(p=>p.status==='Borrador').length,Cambios:all.filter(p=>p.changeStatus==='Pendiente'&&p.pendingChanges).length,Videos:all.filter(p=>p.videoUrl||p.pendingChanges?.videoUrl).length};
   let properties=all;
   if(selected==='Cambios')properties=all.filter(p=>p.changeStatus==='Pendiente'&&p.pendingChanges);
+  else if(selected==='Videos')properties=all.filter(p=>p.videoUrl||p.pendingChanges?.videoUrl);
   else if(selected!=='Todos')properties=all.filter(p=>p.status===selected);
   res.render('qcasa/admin/properties.njk',{title:'Propiedades | Administración QCASA',properties,selected,counts});
 };
