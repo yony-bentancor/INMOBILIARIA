@@ -33,10 +33,37 @@ exports.adminDashboard=(req,res,next)=>{
       locals.stats.total=store.properties.length;
       locals.stats.rejected=store.properties.filter(p=>p.status==='Rechazada').length;
       locals.stats.drafts=store.properties.filter(p=>p.status==='Borrador').length;
+      const pub=store.properties.filter(p=>p.status==='Publicada');
+      locals.opportunities={
+        noVideo:pub.filter(p=>!p.videoUrl).length,
+        lowPhotos:pub.filter(p=>!Array.isArray(p.images)||p.images.length<5).length,
+        noInquiries:pub.filter(p=>!store.inquiries.some(i=>i.propertyId===p.id)).length,
+        highInterest:pub.slice().sort((a,b)=>(b.views||0)-(a.views||0)).slice(0,3)
+      };
+
     }
     return render(view,locals,cb);
   };
   return base.adminDashboard(req,res,next);
+};
+function qualityFor(p){
+  const checks=[
+    ['Fotos',Array.isArray(p.images)&&p.images.length>=5],['Ubicación',Boolean(p.city&&p.department&&p.lat&&p.lng)],['Descripción',String(p.summary||'').trim().length>=80],['Video',Boolean(p.videoUrl)],['Características',Boolean(p.area&&(p.bedrooms||p.bathrooms||p.category))],['Contacto',Boolean(p.ownerPhone||p.contact)]
+  ];
+  const ok=checks.filter(x=>x[1]).length;
+  return {score:Math.round(ok/checks.length*100),checks,missing:checks.filter(x=>!x[1]).map(x=>x[0]).join(' · ')};
+}
+exports.detail=(req,res,next)=>{
+  const render=res.render.bind(res);
+  res.render=(view,locals={},cb)=>{
+    if(view==='qcasa/detail.njk'&&locals.property){
+      const p=locals.property;
+      locals.galleryImages=JSON.stringify((p.images&&p.images.length?p.images:[p.image])).replace(/</g,'\\u003c');
+      locals.similar=store.properties.filter(x=>x.status==='Publicada'&&x.id!==p.id).map(x=>({x,score:(x.operation===p.operation?4:0)+(x.category===p.category?3:0)+(x.city===p.city?2:0)+(x.department===p.department?1:0)})).sort((a,b)=>b.score-a.score).slice(0,3).map(v=>v.x);
+    }
+    return render(view,locals,cb);
+  };
+  return base.detail(req,res,next);
 };
 exports.adminProperties=(req,res)=>{
   const selected=clean(req.query.status)||'Todos';
@@ -46,6 +73,7 @@ exports.adminProperties=(req,res)=>{
   if(selected==='Cambios')properties=all.filter(p=>p.changeStatus==='Pendiente'&&p.pendingChanges);
   else if(selected==='Videos')properties=all.filter(p=>p.videoUrl||p.pendingChanges?.videoUrl);
   else if(selected!=='Todos')properties=all.filter(p=>p.status===selected);
+  properties=properties.map(p=>({...p,quality:qualityFor(p)}));
   res.render('qcasa/admin/properties.njk',{title:'Propiedades | Administración QCASA',properties,selected,counts});
 };
 /* Video público CC0 de demostración: prueba el reproductor de punta a punta. */
