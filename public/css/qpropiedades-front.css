@@ -641,3 +641,22 @@
     min-height:76px;
   }
 }
+
+
+/* PATCH 5.1 · menú móvil QPROPIEDADES público */
+.qp-mobile-toggle,.qp-mobile-backdrop{display:none}
+@media(max-width:960px){
+  body.qp-mobile-nav-open{overflow:hidden}
+  .qp-nav{position:relative;z-index:1000}
+  .qp-mobile-toggle{display:flex;width:44px;height:44px;border:1px solid #ded8d0;background:#fff;align-items:center;justify-content:center;flex-direction:column;gap:5px;padding:0;cursor:pointer;position:relative;z-index:1102;margin-left:auto}
+  .qp-mobile-toggle span{display:block;width:19px;height:2px;background:#171717;transition:transform .2s ease,opacity .2s ease}
+  .qp-mobile-toggle.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .qp-mobile-toggle.is-open span:nth-child(2){opacity:0}
+  .qp-mobile-toggle.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .qp-menu[data-qp-mobile-nav]{display:flex!important;position:fixed;top:0;right:0;bottom:0;width:min(84vw,340px);height:100dvh;padding:88px 24px 30px;background:#fff;flex-direction:column;align-items:stretch;gap:0;transform:translateX(105%);visibility:hidden;pointer-events:none;transition:transform .25s ease,visibility .25s ease;z-index:1100;box-shadow:-20px 0 60px rgba(0,0,0,.16)}
+  .qp-menu[data-qp-mobile-nav].is-mobile-open{transform:translateX(0);visibility:visible;pointer-events:auto}
+  .qp-menu[data-qp-mobile-nav]>a{display:flex!important;align-items:center;min-height:54px;padding:0 4px;border-bottom:1px solid #eee;font-size:14px}
+  .qp-menu[data-qp-mobile-nav]>.qp-login{margin-top:14px;justify-content:center;border-bottom:0}
+  .qp-mobile-backdrop{display:block;position:fixed;inset:0;background:rgba(0,0,0,.3);opacity:0;visibility:hidden;pointer-events:none;transition:.25s;z-index:999}
+  .qp-mobile-backdrop.is-open{opacity:1;visibility:visible;pointer-events:auto}
+}

@@ -179,3 +179,24 @@ document.addEventListener('DOMContentLoaded',()=>{
     },650);
   }
 });
+
+
+/* PATCH 5.1 · navegación móvil Estudio QR */
+document.addEventListener('DOMContentLoaded',()=>{
+  const button=document.querySelector('[data-eqr-mobile-toggle]');
+  const nav=document.querySelector('[data-eqr-mobile-nav]');
+  const backdrop=document.querySelector('[data-eqr-mobile-backdrop]');
+  if(!button||!nav)return;
+  const setOpen=(open)=>{
+    nav.classList.toggle('is-mobile-open',open);
+    button.classList.toggle('is-open',open);
+    backdrop?.classList.toggle('is-open',open);
+    button.setAttribute('aria-expanded',String(open));
+    button.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú');
+    document.body.classList.toggle('eqr-mobile-nav-open',open);
+  };
+  button.addEventListener('click',()=>setOpen(!nav.classList.contains('is-mobile-open')));
+  backdrop?.addEventListener('click',()=>setOpen(false));
+  nav.querySelectorAll('a,button').forEach(el=>el.addEventListener('click',()=>setOpen(false)));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')setOpen(false)});
+});

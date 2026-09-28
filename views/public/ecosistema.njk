@@ -16,18 +16,19 @@
         <span>NEGOCIOS</span>
       </div>
 
-      <nav class="eqr-nav">
+      <nav class="eqr-nav" data-eqr-mobile-nav>
         <a href="#proyectos">PROYECTOS</a>
         <a href="https://www.instagram.com/estudio.qr/?hl=es" target="_blank" rel="noopener noreferrer">NOSOTROS</a>
         <button class="eqr-nav-link eqr-contact-trigger" type="button" data-contact-open>CONTACTO</button>
       </nav>
 
-      <button class="eqr-menu" type="button" aria-label="Menú">
+      <button class="eqr-menu" type="button" aria-label="Abrir menú" aria-expanded="false" data-eqr-mobile-toggle>
         <i></i>
         <i></i>
         <i></i>
       </button>
     </header>
+    <div class="eqr-mobile-backdrop" data-eqr-mobile-backdrop></div>
 
     <section class="eqr-main">
       <div class="eqr-copy">
@@ -182,6 +183,6 @@
     </section>
   </div>
 
-  <script src="/js/ecosistema.js" defer></script>
+  <script src="/js/ecosistema.js?v=51" defer></script>
   <script src="/js/contacto-modal.js" defer></script>
 {% endblock %}

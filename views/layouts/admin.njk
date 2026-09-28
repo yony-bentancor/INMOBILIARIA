@@ -1,5 +1,5 @@
 {% extends 'layouts/base.njk' %}
-{% block styles %}<link rel="stylesheet" href="/css/admin-context.css"><link rel="stylesheet" href="/css/admin-mobile.css"><script src="/js/admin-mobile.js" defer></script>
+{% block styles %}<link rel="stylesheet" href="/css/admin-context.css"><link rel="stylesheet" href="/css/admin-mobile.css"><script src="/js/admin-mobile.js?v=51" defer></script>
 {% endblock %}
 {% block body %}
 <div class="app-shell">
@@ -56,9 +56,8 @@
       </div>
       {% endif %}
     </div>
-    {% block content %}<script src="/js/admin-mobile.js" defer></script>
+    {% block content %}
 {% endblock %}
   </main>
 </div>
-<script src="/js/admin-mobile.js" defer></script>
 {% endblock %}
