@@ -1,4 +1,4 @@
-const store = require('../data/demoStore');
+const store = require('../repositories/qpropiedadesRepository');
 const whatsapp = require('../services/whatsappService');
 
 module.exports = function adminOwnerContext(req, res, next) {

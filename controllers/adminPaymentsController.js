@@ -1,4 +1,4 @@
-const store=require('../data/demoStore');
+const store=require('../repositories/qpropiedadesRepository');
 const{safeNumber}=require('../utils/helpers');
 
 const CLOSED_PAYMENT_STATUS='Pagado';

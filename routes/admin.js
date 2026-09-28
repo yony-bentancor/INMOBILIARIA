@@ -19,6 +19,8 @@ r.get('/propiedades/:code/editar',c.propertyEditForm);
 r.post('/propiedades/:code/editar',c.propertyUpdate);
 r.post('/propiedades/:code/eliminar',c.propertyDelete);
 
+r.get('/altas',c.leads);
+
 r.get('/propietarios',c.owners);
 r.get('/propietarios/nuevo',c.ownerNewForm);
 r.post('/propietarios/nuevo',c.ownerCreate);

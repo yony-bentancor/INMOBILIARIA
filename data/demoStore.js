@@ -134,43 +134,29 @@ function normalized(value) {
   return text(value).toLowerCase();
 }
 
-// Por ahora los propietarios se construyen desde los datos ya existentes en cada propiedad.
-// De esta forma la actualización funciona con el JSON demo actual sin exigir migración.
-const owners = [];
-const ownerByIdentity = new Map();
-
-properties.forEach(property => {
-  const snapshot = property.owner || {};
-  const identity = ownerIdentity(snapshot);
-  if (!identity) return;
-
-  let owner = ownerByIdentity.get(identity);
-  if (!owner) {
-    owner = {
-      id: uid('own'),
-      name: text(snapshot.name),
-      document: text(snapshot.document),
-      phone: text(snapshot.phone),
-      email: text(snapshot.email),
-      address: text(snapshot.address),
-      notes: '',
-      active: true,
-      createdAt: property.createdAt || nowISO(),
-      updatedAt: property.updatedAt || nowISO()
-    };
-    owners.push(owner);
-    ownerByIdentity.set(identity, owner);
+// Los propietarios se toman del JSON maestro y reciben IDs determinísticos.
+// Así los enlaces del admin permanecen estables entre reinicios mientras sigamos en modo demo.
+const sourceOwners = Array.isArray(data.owners) ? data.owners : [];
+const owners = sourceOwners.map((snapshot,index)=>({
+  id: snapshot.id || `own-${String(index+1).padStart(3,'0')}`,
+  name:text(snapshot.name),document:text(snapshot.document),phone:text(snapshot.phone),email:text(snapshot.email),address:text(snapshot.address),
+  notes:text(snapshot.notes),active:snapshot.active!==false,createdAt:snapshot.createdAt||data.meta?.generatedAt||'2026-01-01T00:00:00.000Z',updatedAt:snapshot.updatedAt||data.meta?.generatedAt||'2026-01-01T00:00:00.000Z'
+}));
+const ownerByIdentity=new Map(owners.map(owner=>[ownerIdentity(owner),owner]));
+properties.forEach(property=>{
+  const snapshot=property.owner||{};
+  const identity=ownerIdentity(snapshot);
+  if(!identity)return;
+  let owner=ownerByIdentity.get(identity);
+  if(!owner){
+    const stableKey=Buffer.from(identity).toString('hex').slice(0,12)||String(owners.length+1).padStart(3,'0');
+    owner={id:`own-${stableKey}`,name:text(snapshot.name),document:text(snapshot.document),phone:text(snapshot.phone),email:text(snapshot.email),address:text(snapshot.address),notes:'',active:true,createdAt:property.createdAt||'2026-01-01T00:00:00.000Z',updatedAt:property.updatedAt||'2026-01-01T00:00:00.000Z'};
+    owners.push(owner);ownerByIdentity.set(identity,owner);
   }
-
-  property.ownerId = owner.id;
-  property.owner = {
-    name: owner.name,
-    document: owner.document,
-    phone: owner.phone,
-    email: owner.email,
-    address: owner.address
-  };
+  property.ownerId=owner.id;
+  property.owner={name:owner.name,document:owner.document,phone:owner.phone,email:owner.email,address:owner.address};
 });
+const leads=[];
 
 function findProperty(code) {
   return properties.find(p => p.code === code);
@@ -237,6 +223,7 @@ module.exports = {
   payments,
   documents,
   audit,
+  leads,
   findProperty,
   findOwner,
   ownerProperties,

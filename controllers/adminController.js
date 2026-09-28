@@ -1,4 +1,4 @@
-const store=require('../data/demoStore');
+const store=require('../repositories/qpropiedadesRepository');
 const{uid,nowISO,safeNumber}=require('../utils/helpers');
 const{CLAIM_STATUSES,PROPERTY_TYPES,DOCUMENT_TYPES,ALERT_TYPES}=require('../config/constants');
 const alertService=require('../services/alertService');
@@ -169,10 +169,24 @@ exports.propertyUpdate=(req,res)=>{
 exports.propertyDelete=(req,res)=>{
   const p=store.findProperty(req.params.code);
   if(!p||!propertyAllowed(req,p))return res.status(404).send('Propiedad no encontrada.');
+  const related={
+    reclamos:store.complaints.filter(x=>x.propertyCode===p.code).length,
+    cobros:store.payments.filter(x=>x.propertyCode===p.code).length,
+    vencimientos:store.alerts.filter(x=>x.propertyCode===p.code).length,
+    documentos:store.documents.filter(x=>x.propertyCode===p.code).length,
+    historial:store.audit.filter(x=>x.propertyCode===p.code).length
+  };
+  const total=Object.values(related).reduce((a,b)=>a+b,0);
+  if(total){
+    const detail=Object.entries(related).filter(([,n])=>n).map(([k,n])=>`${n} ${k}`).join(', ');
+    return res.status(409).send(`No se puede eliminar ${p.code}: tiene información relacionada (${detail}). Conservá la propiedad o eliminá/reasigná primero esos registros.`);
+  }
   const i=store.properties.findIndex(x=>x.code===req.params.code);
   if(i>=0)store.properties.splice(i,1);
   res.redirect('/admin/propiedades');
 };
+
+exports.leads=(req,res)=>res.render('admin/leads.njk',{title:'Solicitudes de alta | QPROPIEDADES',leads:store.leads});
 
 exports.technicians=(req,res)=>res.render('admin/technicians.njk',{title:'Técnicos / Empresas | QCASA',technicians:store.technicians});
 exports.technicianNewForm=(req,res)=>res.render('admin/technician-form.njk',{title:'Nuevo técnico | QCASA',mode:'create',technician:{active:true,specialties:[],zones:[]}});

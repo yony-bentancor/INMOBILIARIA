@@ -63,7 +63,7 @@ app.use((req,res,next)=>{
 app.use('/css',express.static(path.join(__dirname,'public/css')));
 app.use('/js',express.static(path.join(__dirname,'public/js')));
 app.use('/img',express.static(path.join(__dirname,'public/img')));
-app.use('/uploads',express.static(path.join(__dirname,'uploads')));
+app.use('/uploads',(req,res,next)=>{res.setHeader('X-Content-Type-Options','nosniff');res.setHeader('Content-Disposition','inline');next();},express.static(path.join(__dirname,'uploads'),{fallthrough:true}));
 
 app.locals.money=money;
 app.locals.alertLevel=alertLevel;

@@ -1,6 +1,7 @@
 const path=require('path');
 const fs=require('fs');
 const multer=require('multer');
+const allowed=new Map([['image/jpeg',new Set(['.jpg','.jpeg'])],['image/png',new Set(['.png'])],['image/webp',new Set(['.webp'])]]);
 
 const uploadDir=path.join(__dirname,'..','uploads','qcasa');
 if(!fs.existsSync(uploadDir))fs.mkdirSync(uploadDir,{recursive:true});
@@ -20,7 +21,8 @@ module.exports=multer({
   storage,
   limits:{fileSize:8*1024*1024,files:8},
   fileFilter:(req,file,cb)=>{
-    const ok=/^image\//.test(file.mimetype);
-    cb(ok?null:new Error('Solo se permiten imágenes.'),ok);
+    const ext=path.extname(String(file.originalname||'')).toLowerCase();
+    const ok=allowed.has(file.mimetype)&&allowed.get(file.mimetype).has(ext);
+    cb(ok?null:new Error('Solo se permiten imágenes JPG, PNG o WebP.'),ok);
   }
 });

@@ -1,4 +1,4 @@
-const store=require('../data/demoStore');
+const store=require('../repositories/qpropiedadesRepository');
 const alertService=require('../services/alertService');
 const {safeNumber,daysUntil}=require('../utils/helpers');
 

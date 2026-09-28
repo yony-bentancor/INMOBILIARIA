@@ -1,4 +1,4 @@
-const store=require('../data/demoStore');
+const store=require('../repositories/qpropiedadesRepository');
 const{uid,nowISO,slugToken}=require('../utils/helpers');
 const{CLAIM_CATEGORIES}=require('../config/constants');
 
@@ -12,7 +12,6 @@ exports.signupForm=(req,res)=>{
 };
 
 exports.signupSubmit=(req,res)=>{
-  store.leads=store.leads||[];
   store.leads.unshift({
     id:uid('lead'),
     name:req.body.name||'',

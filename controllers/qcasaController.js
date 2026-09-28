@@ -1,10 +1,34 @@
-const store=require('../data/qcasaMarketplaceStore');
+const store=require('../repositories/qcasaRepository');
 
 const publicProperties=()=>store.properties.filter(p=>p.status==='Publicada');
 const cleanEmail=v=>String(v||'').trim().toLowerCase();
 const clean=v=>String(v||'').trim();
 const sessionUser=req=>req.session?.qcasaUser||null;
 const isAdmin=req=>Boolean(req.session?.qcasaAdmin);
+const normalizePhone=v=>clean(v).replace(/\D/g,'').replace(/^598/,'').replace(/^0/,'');
+
+function safeVideoUrl(raw){
+  const value=clean(raw);
+  if(!value)return '';
+  let url;try{url=new URL(value);}catch{return '';}
+  if(url.protocol!=='https:')return '';
+  const host=url.hostname.toLowerCase().replace(/^www\./,'');
+  let id='';
+  if(host==='youtu.be')id=url.pathname.split('/').filter(Boolean)[0]||'';
+  else if(host==='youtube.com'||host==='m.youtube.com'){
+    if(url.pathname==='/watch')id=url.searchParams.get('v')||'';
+    else if(url.pathname.startsWith('/embed/'))id=url.pathname.split('/')[2]||'';
+  }
+  if(id&&/^[A-Za-z0-9_-]{6,}$/.test(id))return `https://www.youtube.com/embed/${id}`;
+  if(host==='vimeo.com'&&/^\/\d+$/.test(url.pathname))return `https://player.vimeo.com/video/${url.pathname.slice(1)}`;
+  return '';
+}
+
+function inquiryBelongsToUser(inquiry,user){
+  if(inquiry.userId)return inquiry.userId===user.id;
+  return (inquiry.email&&cleanEmail(inquiry.email)===cleanEmail(user.email))||
+    (inquiry.phone&&normalizePhone(inquiry.phone)===normalizePhone(user.phone));
+}
 
 function whatsappPhone(raw){
   let digits=String(raw||'').replace(/\D/g,'');
@@ -66,6 +90,7 @@ function userFormPayload(req){
     furnished:req.body.furnished==='on'||req.body.furnished==='1',
     garden:req.body.garden==='on'||req.body.garden==='1',
     featured:false,
+    videoUrl:safeVideoUrl(req.body.videoUrl),
     tone:(clean(req.body.category)||'propiedad').toLowerCase()
   };
 }
@@ -171,14 +196,17 @@ exports.map=(req,res)=>{
     shareWhatsApp:sharePropertyUrl(req,p)
   }));
   const cleanQuery={...req.query};delete cleanQuery.property;
-  res.render('qcasa/map.njk',{title:'Mapa | QCASA',results,mapProperties:JSON.stringify(mapData).replace(/</g,'\u003c'),focusProperty:clean(req.query.property),queryString:new URLSearchParams(cleanQuery).toString()});
+  res.render('qcasa/map.njk',{title:'Mapa | QCASA',results,mapProperties:JSON.stringify(mapData).replace(/</g,'\\u003c').replace(/>/g,'\\u003e').replace(/&/g,'\\u0026'),focusProperty:clean(req.query.property),queryString:new URLSearchParams(cleanQuery).toString()});
 };
 
 exports.detail=(req,res)=>{
   const property=store.findBySlug(req.params.slug);
   if(!property||property.status!=='Publicada')return res.status(404).send('Propiedad no encontrada.');
   property.views=Number(property.views||0)+1;
+  const galleryImages=JSON.stringify(property.images?.length?property.images:[property.image]).replace(/</g,'\\u003c');
+  const similar=publicProperties().filter(p=>p.id!==property.id).slice(0,3);
   res.render('qcasa/detail.njk',{title:`${property.title} | QCASA`,property,money:moneyFor(req),consulted:req.query.consulta==='1',qcasaUser:sessionUser(req),
+    galleryImages,similar,
     whatsappQcasa:whatsappUrl(store.settings.contactPhone,`Hola QCASA, me interesa la propiedad ${property.title} (${property.id}).`),
     shareWhatsApp:sharePropertyUrl(req,property)
   });
@@ -190,7 +218,7 @@ exports.inquiry=(req,res)=>{
   store.inquiries.unshift({
     id:`CON-${Date.now()}`,propertyId:property.id,propertyTitle:property.title,
     name:clean(req.body.name),phone:clean(req.body.phone),email:clean(req.body.email),
-    message:clean(req.body.message),status:'Nueva',createdAt:new Date().toISOString()
+    message:clean(req.body.message),status:'Nueva',userId:sessionUser(req)?.id||null,replies:[],createdAt:new Date().toISOString()
   });
   res.redirect(`/qcasa/propiedad/${property.slug}?consulta=1`);
 };
@@ -240,7 +268,8 @@ exports.userDashboard=(req,res)=>{
   if(!user||user.active===false){delete req.session.qcasaUser;return res.redirect('/qcasa/ingresar');}
   const properties=store.userProperties(user.id).slice().sort((a,b)=>new Date(b.createdAt||0)-new Date(a.createdAt||0));
   const notifications=store.userNotifications(user.id),unread=notifications.filter(n=>!n.read).length;
-  res.render('qcasa/user/dashboard.njk',{title:'Mi QCASA',user,properties,notifications:notifications.slice(0,12),unread,money:moneyFor(req),
+  const myInquiries=store.inquiries.filter(i=>inquiryBelongsToUser(i,user)).sort((a,b)=>new Date(b.createdAt)-new Date(a.createdAt)).map(i=>({...i,replies:Array.isArray(i.replies)?i.replies:[]}));
+  res.render('qcasa/user/dashboard.njk',{title:'Mi QCASA',user,properties,notifications:notifications.slice(0,12),unread,myInquiries,money:moneyFor(req),
     whatsappQcasa:whatsappUrl(store.settings.contactPhone,`Hola QCASA, soy ${user.name}. Quiero hacer una consulta sobre mis publicaciones.`)
   });
 };
@@ -275,7 +304,11 @@ exports.userUpdateProperty=(req,res)=>{
   const data=userFormPayload(req),photoData=withPhotos(req,data,property);
 
   if(property.status==='Publicada'){
-    property.pendingChanges={...data,updatedAt:new Date().toISOString()};
+    const pending={...data};
+    if(req.body.lat===undefined||req.body.lat==='')pending.lat=property.lat;
+    if(req.body.lng===undefined||req.body.lng==='')pending.lng=property.lng;
+    pending.featured=property.featured;
+    property.pendingChanges={...pending,updatedAt:new Date().toISOString()};
     property.pendingChangePhotos=uploadedPhotos(req);
     property.changeStatus='Pendiente';
     store.addAdminNotification({
@@ -305,6 +338,9 @@ exports.userSubmitPublishedChanges=(req,res)=>{
   if(property.status!=='Publicada')return res.status(409).send('Esta ruta es sólo para publicaciones activas.');
 
   const data=userFormPayload(req);
+  if(req.body.lat===undefined||req.body.lat==='')data.lat=property.lat;
+  if(req.body.lng===undefined||req.body.lng==='')data.lng=property.lng;
+  data.featured=property.featured;
   property.pendingChanges={...data,updatedAt:new Date().toISOString()};
   property.pendingChangePhotos=uploadedPhotos(req);
   property.changeStatus='Pendiente';
@@ -352,9 +388,16 @@ exports.adminDashboard=(req,res)=>{
   const stale=staleProperties();
   const rejected=store.properties.filter(p=>p.status==='Rechazada');
   const pendingChanges=store.properties.filter(p=>p.changeStatus==='Pendiente'&&p.pendingChanges);
+  const stats={total:store.properties.length,rejected:rejected.length,drafts:store.properties.filter(p=>p.status==='Borrador').length};
+  const opportunities={
+    noVideo:published.filter(p=>!p.videoUrl).length,
+    lowPhotos:published.filter(p=>!p.images||p.images.length<5).length,
+    noInquiries:published.filter(p=>!store.inquiries.some(i=>i.propertyId===p.id)).length,
+    highInterest:published.slice().sort((a,b)=>(b.views||0)-(a.views||0)).slice(0,3)
+  };
 
   res.render('qcasa/admin/dashboard.njk',{
-    title:'Administración | QCASA',
+    title:'Administración | QCASA',stats,opportunities,
     pending:pending.slice(0,4),
     pendingChanges:pendingChanges.slice(0,4),
     adminNotifications:store.adminNotifications.slice(0,8),

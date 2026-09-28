@@ -1,4 +1,4 @@
-const store = require('../data/demoStore');
+const store = require('../repositories/qpropiedadesRepository');
 const alertService = require('../services/alertService');
 const whatsapp = require('../services/whatsappService');
 const { safeNumber, daysUntil } = require('../utils/helpers');
