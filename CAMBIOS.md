@@ -1,33 +1,37 @@
-# ETAPA 4 — Front, móvil y rendimiento
+# ETAPA 5 — Comercial y preparación para usuarios reales
 
-Aplicar sobre Etapas 0A + 1 + 2 + 3.
+Instalar sobre las etapas 0A + 1 + 2 + 3 + 4.
 
-## Cambios
-- QCASA: las 9 hojas CSS globales se consolidan en `qcasa-bundle.css`, preservando exactamente el orden de cascada. Los `<link>` pasan al `<head>` mediante un bloque `styles`.
-- Admin QPropiedades: menú móvil colapsable (hamburguesa) por debajo de 1000 px; evita apilar todos los enlaces antes del contenido.
-- Rendimiento: `compression` para respuestas HTTP; caché/ETag de CSS, JS e imágenes en producción.
-- Búsqueda QCASA: paginación de 12 propiedades por página. Las búsquedas de “solo nuevas” (`qcNewSince`) conservan su comportamiento y no se paginan para que el filtro cliente siga siendo correcto.
-- No se borran todavía las hojas CSS antiguas: quedan como respaldo, pero QCASA ya no las solicita individualmente.
+## Incluye
+- Helmet para cabeceras HTTP de seguridad (CSP desactivada por ahora para no romper scripts/recursos existentes).
+- Rate limit en login, registro, consultas de propiedades y formulario de contacto.
+- SESSION_SECRET obligatorio en producción.
+- DEMO_MODE explícito (por defecto true): mantiene las credenciales demo actuales.
+- Email opcional con Nodemailer: una nueva consulta/contacto puede avisar a QCASA sin afectar el guardado si SMTP no está configurado.
+- SEO técnico: canonical, description, Open Graph, robots.txt y sitemap.xml generado desde las propiedades publicadas.
+- Meta description e imagen OG específicas en la ficha de propiedad.
+- Se conserva el embudo/analítica comercial ya existente en el dashboard (consultas, visitas, cierres, tasas y vistas por publicación).
 
-## Importante al instalar
-Ejecutar `npm install` porque se agrega la dependencia `compression`.
+## Dependencias nuevas
+Después de reemplazar los archivos ejecutar:
+
+    npm install
+
+Se agregan: helmet, express-rate-limit y nodemailer.
+
+## Variables opcionales de email
+QCASA_NOTIFY_EMAIL, SMTP_HOST, SMTP_PORT, SMTP_SECURE, SMTP_USER, SMTP_PASS, MAIL_FROM.
+Si no se configuran, el sistema funciona igual y simplemente no envía correo.
 
 ## Pruebas recomendadas
-1. Abrir QCASA inicio, comprar, alquilar, mapa, detalle, Mi QCASA y publicar; comprobar que visualmente siguen iguales.
-2. Reducir navegador a ancho móvil: menú QCASA debe seguir funcionando.
-3. Entrar a `/admin`, reducir a móvil y probar ☰ / ×; verificar todos los enlaces.
-4. Probar `/qcasa/buscar` con filtros y cambiar de página si hay más de 12 resultados.
-5. Probar una búsqueda guardada con “ver nuevas” y comprobar que el contador/filtro de nuevas funciona.
-6. En Heroku, confirmar que el deploy ejecuta `npm install` automáticamente a partir de package.json.
+1. Arrancar con DEMO_MODE=true y USE_MONGO=false.
+2. Entrar con usuario/admin demo.
+3. Enviar una consulta desde una propiedad y desde Contacto; comprobar que aparece en Admin > Consultas.
+4. Abrir /qcasa/robots.txt y /qcasa/sitemap.xml.
+5. Revisar una ficha de propiedad y confirmar que funciona igual.
+6. En producción, configurar un SESSION_SECRET largo y propio antes de desplegar.
 
-## Archivos
-- app.js
-- package.json
-- controllers/qcasaController.js
-- views/layouts/base.njk
-- views/layouts/admin.njk
-- views/qcasa/layout.njk
-- views/qcasa/search.njk
-- public/css/qcasa-bundle.css (nuevo)
-- public/css/admin-mobile.css (nuevo)
-- public/js/admin-mobile.js (nuevo)
+## No se hizo a propósito
+- No se hashearon todavía las claves demo: DEMO_MODE debe seguir siendo utilizable.
+- No se fuerza CSRF token en todos los formularios todavía: requiere modificar de forma coordinada todas las vistas POST y conviene hacerlo junto con autenticación Mongo real.
+- No se activó Mongo como persistencia operativa.

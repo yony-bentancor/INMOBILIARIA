@@ -2,6 +2,8 @@ const router=require('express').Router();
 const qcasa=require('../controllers/qcasaController');
 const enhancements=require('../controllers/qcasaEnhancementsController');
 const upload=require('../middleware/qcasaUpload');
+const seo=require('../controllers/seoController');
+const{authLimiter,publicFormLimiter}=require('../middleware/commercialSecurity');
 
 // Público
 router.get('/',qcasa.home);

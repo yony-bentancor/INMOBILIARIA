@@ -1,5 +1,6 @@
 const store=require('../repositories/qcasaRepository');
 const base=require('./qcasaController');
+const emailService=require('../services/emailService');
 
 const clean=v=>String(v||'').trim();
 const email=v=>clean(v).toLowerCase();
@@ -18,7 +19,12 @@ exports.adminCreate=base.adminCreate;
 exports.adminUpdate=base.adminUpdate;
 exports.adminDashboard=base.adminDashboard;
 exports.detail=base.detail;
-exports.inquiry=base.inquiry;
+exports.inquiry=(req,res,next)=>{
+  const before=new Set(store.inquiries.map(i=>i.id));
+  base.inquiry(req,res,next);
+  const inquiry=store.inquiries.find(i=>!before.has(i.id));
+  if(inquiry)emailService.notifyNewInquiry(inquiry).catch(err=>console.error('Email QCASA:',err.message));
+};
 exports.userDashboard=base.userDashboard;
 
 function qualityFor(p){
@@ -96,13 +102,15 @@ exports.contact=(req,res)=>{
   const reason=clean(req.body.reason)||'Consulta general';
   const name=clean(req.body.name),ph=clean(req.body.phone),em=clean(req.body.email),message=clean(req.body.message);
   if(!name||!ph||!message)return res.status(400).send('Completá nombre, teléfono y mensaje.');
-  store.inquiries.unshift({
+  const inquiry={
     id:`CON-${Date.now()}`,
     propertyId:null,
     propertyTitle:`Contacto QCASA · ${reason}`,
     name,phone:ph,email:em,message,status:'Nueva',source:'Contacto general',reason,
     userId:req.session?.qcasaUser?.id||null,replies:[],createdAt:new Date().toISOString()
-  });
+  };
+  store.inquiries.unshift(inquiry);
+  emailService.notifyNewInquiry(inquiry).catch(err=>console.error('Email QCASA:',err.message));
   res.redirect('/qcasa?contacto=1');
 };
 

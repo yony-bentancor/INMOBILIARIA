@@ -7,9 +7,12 @@ const nunjucks=require('nunjucks');
 const{exposeSession}=require('./middleware/auth');
 const{money,alertLevel,alertText}=require('./utils/helpers');
 const{connectDatabase}=require('./config/database');
+const{helmetMiddleware}=require('./middleware/commercialSecurity');
 
 const app=express();
 const PORT=process.env.PORT||3000;
+const DEMO_MODE=String(process.env.DEMO_MODE||'true').toLowerCase()!=='false';
+app.locals.demoMode=DEMO_MODE;
 
 app.set('trust proxy',1);
 
@@ -23,6 +26,12 @@ app.set('view engine','njk');
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use(compression());
+app.use(helmetMiddleware);
+app.use((req,res,next)=>{
+  res.locals.canonicalUrl=`${req.protocol}://${req.get('host')}${req.originalUrl.split('?')[0]}`;
+  res.locals.metaDescription='QCASA · Propiedades en venta y alquiler. Buscar, comparar y publicar propiedades.';
+  next();
+});
 
 app.use(session({
   secret:process.env.SESSION_SECRET||'qcasa-dev-secret',
@@ -93,6 +102,7 @@ app.use((req,res)=>res.status(404).render('errors/404.njk',{
 
 async function start(){
   try{
+    if(process.env.NODE_ENV==='production'&&(!process.env.SESSION_SECRET||process.env.SESSION_SECRET==='qcasa-dev-secret')) throw new Error('SESSION_SECRET es obligatorio y debe ser propio en producción.');
     const db=await connectDatabase();
     if(db.connected) console.log('MongoDB conectado (infraestructura preparada; repositorios operativos continúan en modo demo en esta etapa).');
     app.listen(PORT,()=>console.log(`QPROPIEDADES + QCASA V4 activo en http://localhost:${PORT}`));

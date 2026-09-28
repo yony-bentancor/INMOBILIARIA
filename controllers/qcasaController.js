@@ -212,7 +212,7 @@ exports.detail=(req,res)=>{
   property.views=Number(property.views||0)+1;
   const galleryImages=JSON.stringify(property.images?.length?property.images:[property.image]).replace(/</g,'\\u003c');
   const similar=publicProperties().filter(p=>p.id!==property.id).slice(0,3);
-  res.render('qcasa/detail.njk',{title:`${property.title} | QCASA`,property,money:moneyFor(req),consulted:req.query.consulta==='1',qcasaUser:sessionUser(req),
+  res.render('qcasa/detail.njk',{title:`${property.title} | QCASA`,metaDescription:clean(property.summary)||`${property.category} en ${property.operation.toLowerCase()} en ${property.city}.`,metaImage:property.image,property,money:moneyFor(req),consulted:req.query.consulta==='1',qcasaUser:sessionUser(req),
     galleryImages,similar,
     whatsappQcasa:whatsappUrl(store.settings.contactPhone,`Hola QCASA, me interesa la propiedad ${property.title} (${property.id}).`),
     shareWhatsApp:sharePropertyUrl(req,property)
