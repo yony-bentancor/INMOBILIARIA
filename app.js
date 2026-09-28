@@ -5,6 +5,7 @@ const session=require('express-session');
 const nunjucks=require('nunjucks');
 const{exposeSession}=require('./middleware/auth');
 const{money,alertLevel,alertText}=require('./utils/helpers');
+const{connectDatabase}=require('./config/database');
 
 const app=express();
 const PORT=process.env.PORT||3000;
@@ -87,4 +88,15 @@ app.use((req,res)=>res.status(404).render('errors/404.njk',{
   title:res.locals.isQCasa?'Página no encontrada | QCASA':'Página no encontrada | QPROPIEDADES'
 }));
 
-app.listen(PORT,()=>console.log(`QPROPIEDADES + QCASA V4 activo en http://localhost:${PORT}`));
+async function start(){
+  try{
+    const db=await connectDatabase();
+    if(db.connected) console.log('MongoDB conectado (infraestructura preparada; repositorios operativos continúan en modo demo en esta etapa).');
+    app.listen(PORT,()=>console.log(`QPROPIEDADES + QCASA V4 activo en http://localhost:${PORT}`));
+  }catch(err){
+    console.error('No se pudo iniciar QCASA/QPROPIEDADES:',err.message);
+    process.exitCode=1;
+  }
+}
+if(require.main===module) start();
+module.exports={app,start};
