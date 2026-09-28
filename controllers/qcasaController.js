@@ -178,12 +178,19 @@ exports.home=(req,res)=>{
 };
 
 exports.search=(req,res)=>{
-  const results=filterProperties(req).map(p=>({...p,shareWhatsApp:sharePropertyUrl(req,p)}));
+  const allResults=filterProperties(req).map(p=>({...p,shareWhatsApp:sharePropertyUrl(req,p)}));
   const departments=[...new Set(publicProperties().map(p=>p.department))].sort();
   const advancedKeys=['minPrice','maxPrice','bedrooms','bathrooms','minArea','maxArea','garage','furnished','garden'];
   const advancedActive=advancedKeys.some(k=>req.query[k]);
-  const queryString=new URLSearchParams(req.query).toString();
-  res.render('qcasa/search.njk',{title:'Buscar | QCASA',results,categories:store.categories,departments,filters:req.query,money:moneyFor(req),qcasaUser:sessionUser(req),advancedActive,queryString});
+  const newOnly=Boolean(req.query.qcNewSince);
+  const perPage=newOnly?Math.max(allResults.length,1):12;
+  const totalPages=Math.max(1,Math.ceil(allResults.length/perPage));
+  const page=Math.min(totalPages,Math.max(1,Number.parseInt(req.query.page,10)||1));
+  const results=newOnly?allResults:allResults.slice((page-1)*perPage,page*perPage);
+  const baseQuery={...req.query}; delete baseQuery.page;
+  const queryString=new URLSearchParams(baseQuery).toString();
+  const pageHref=n=>`/qcasa/buscar?${new URLSearchParams({...baseQuery,page:String(n)}).toString()}`;
+  res.render('qcasa/search.njk',{title:'Buscar | QCASA',results,totalResults:allResults.length,categories:store.categories,departments,filters:req.query,money:moneyFor(req),qcasaUser:sessionUser(req),advancedActive,queryString,pagination:{page,totalPages,prev:page>1?pageHref(page-1):null,next:page<totalPages?pageHref(page+1):null}});
 };
 
 exports.map=(req,res)=>{

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>{% if isQPropiedades %}{{ (title or 'QPROPIEDADES') | replace('QCASA','QPROPIEDADES') }}{% else %}{{ title or 'Estudio QR' }}{% endif %}</title>
   <link rel="stylesheet" href="/css/app.css">
+  {% block styles %}{% endblock %}
 </head>
 <body>
   {% block body %}{% endblock %}

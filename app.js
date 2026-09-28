@@ -1,6 +1,7 @@
 require('dotenv').config();
 const path=require('path');
 const express=require('express');
+const compression=require('compression');
 const session=require('express-session');
 const nunjucks=require('nunjucks');
 const{exposeSession}=require('./middleware/auth');
@@ -21,6 +22,7 @@ nunjucks.configure(path.join(__dirname,'views'),{
 app.set('view engine','njk');
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
+app.use(compression());
 
 app.use(session({
   secret:process.env.SESSION_SECRET||'qcasa-dev-secret',
@@ -61,9 +63,10 @@ app.use((req,res,next)=>{
   next();
 });
 
-app.use('/css',express.static(path.join(__dirname,'public/css')));
-app.use('/js',express.static(path.join(__dirname,'public/js')));
-app.use('/img',express.static(path.join(__dirname,'public/img')));
+const staticOptions={maxAge:process.env.NODE_ENV==='production'?'7d':0,etag:true};
+app.use('/css',express.static(path.join(__dirname,'public/css'),staticOptions));
+app.use('/js',express.static(path.join(__dirname,'public/js'),staticOptions));
+app.use('/img',express.static(path.join(__dirname,'public/img'),staticOptions));
 app.use('/uploads',(req,res,next)=>{res.setHeader('X-Content-Type-Options','nosniff');res.setHeader('Content-Disposition','inline');next();},express.static(path.join(__dirname,'uploads'),{fallthrough:true}));
 
 app.locals.money=money;
