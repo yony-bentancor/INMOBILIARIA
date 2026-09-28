@@ -365,8 +365,8 @@ body.eqr-modal-open{overflow:hidden}
 /* PATCH 5.1 · menú móvil Estudio QR */
 .eqr-mobile-backdrop{display:none}
 @media(max-width:1180px){
-  body.eqr-mobile-nav-open{overflow:hidden}
-  .eqr-menu{position:relative;z-index:1202}
+  html.eqr-mobile-nav-open,body.eqr-mobile-nav-open{overflow:hidden}
+  .eqr-menu{position:relative;z-index:1202;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
   .eqr-nav[data-eqr-mobile-nav]{display:flex;position:fixed;top:0;right:0;bottom:0;width:min(84vw,340px);height:100dvh;padding:92px 28px 32px;background:#fbfaf7;flex-direction:column;align-items:stretch;gap:0;transform:translateX(105%);visibility:hidden;pointer-events:none;transition:transform .25s ease,visibility .25s ease;z-index:1201;box-shadow:-20px 0 60px rgba(0,0,0,.15)}
   .eqr-nav[data-eqr-mobile-nav].is-mobile-open{transform:translateX(0);visibility:visible;pointer-events:auto}
   .eqr-nav[data-eqr-mobile-nav] a,.eqr-nav[data-eqr-mobile-nav] .eqr-nav-link{width:100%;padding:17px 2px;border-bottom:1px solid rgba(0,0,0,.11);font-size:11px;text-align:left}

@@ -180,23 +180,36 @@ document.addEventListener('DOMContentLoaded',()=>{
   }
 });
 
+/* PATCH 5.2 · navegación móvil Estudio QR */
+(()=>{
+  const initMobileNav=()=>{
+    const button=document.querySelector('[data-eqr-mobile-toggle]');
+    const nav=document.querySelector('[data-eqr-mobile-nav]');
+    const backdrop=document.querySelector('[data-eqr-mobile-backdrop]');
+    if(!button||!nav)return;
 
-/* PATCH 5.1 · navegación móvil Estudio QR */
-document.addEventListener('DOMContentLoaded',()=>{
-  const button=document.querySelector('[data-eqr-mobile-toggle]');
-  const nav=document.querySelector('[data-eqr-mobile-nav]');
-  const backdrop=document.querySelector('[data-eqr-mobile-backdrop]');
-  if(!button||!nav)return;
-  const setOpen=(open)=>{
-    nav.classList.toggle('is-mobile-open',open);
-    button.classList.toggle('is-open',open);
-    backdrop?.classList.toggle('is-open',open);
-    button.setAttribute('aria-expanded',String(open));
-    button.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú');
-    document.body.classList.toggle('eqr-mobile-nav-open',open);
+    const setOpen=(open)=>{
+      nav.classList.toggle('is-mobile-open',open);
+      button.classList.toggle('is-open',open);
+      if(backdrop) backdrop.classList.toggle('is-open',open);
+      button.setAttribute('aria-expanded',open?'true':'false');
+      button.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú');
+      document.documentElement.classList.toggle('eqr-mobile-nav-open',open);
+      document.body.classList.toggle('eqr-mobile-nav-open',open);
+    };
+
+    button.addEventListener('click',(event)=>{
+      event.preventDefault();
+      event.stopPropagation();
+      setOpen(!nav.classList.contains('is-mobile-open'));
+    });
+
+    if(backdrop) backdrop.addEventListener('click',()=>setOpen(false));
+    nav.querySelectorAll('a,button').forEach(el=>el.addEventListener('click',()=>setOpen(false)));
+    document.addEventListener('keydown',event=>{if(event.key==='Escape')setOpen(false)});
+    window.addEventListener('resize',()=>{if(window.innerWidth>1180)setOpen(false)});
   };
-  button.addEventListener('click',()=>setOpen(!nav.classList.contains('is-mobile-open')));
-  backdrop?.addEventListener('click',()=>setOpen(false));
-  nav.querySelectorAll('a,button').forEach(el=>el.addEventListener('click',()=>setOpen(false)));
-  document.addEventListener('keydown',e=>{if(e.key==='Escape')setOpen(false)});
-});
+
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initMobileNav,{once:true});
+  else initMobileNav();
+})();
